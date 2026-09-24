@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { siteConfig, getWhatsAppUrl } from "@/data/siteConfig";
-import { destinations } from "@/data/destinations";
 import {
   Compass,
   Calendar,
@@ -52,10 +51,10 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
     }
   }, [prefilledDestination]);
 
-  const travelTypes = ["Solo", "Couple", "Family", "Friends", "Group", "Honeymoon"];
-  const popularDestinations = [
+  const travelTypes = ["Couple", "Family", "Honeymoon", "Solo", "Friends", "Small Group"];
+  const curatedDestinations = [
     "Dubai",
-    "Switzerland & Europe",
+    "Switzerland",
     "Kashmir",
     "Maldives",
     "Bali",
@@ -93,13 +92,12 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
     setSubmitted(true);
   };
 
-  // Generate dynamic WhatsApp message containing user's full enquiry
-  const generatedWhatsAppText = `*New Travel Enquiry - Darsh Dream Tours*
-• Destination: ${formData.destination || "To be discussed"}
-• Travel Window: ${formData.travelMonth}
-• Travel Type: ${formData.travelType} (${formData.travelersCount} Travelers)
-• Name: ${formData.name || "Traveler"}
-• Phone: ${formData.phone || "Not specified"}
+  const generatedWhatsAppText = `*Travel Enquiry - Darsh Dream Tours*
+• Destination: ${formData.destination || "Flexible / To be planned"}
+• Timing: ${formData.travelMonth}
+• Travel Style: ${formData.travelType} (${formData.travelersCount} Travelers)
+• Name: ${formData.name || "Guest"}
+• Phone / WhatsApp: ${formData.phone || "Not specified"}
 • Email: ${formData.email || "Not specified"}
 • Special Requests: ${formData.message || "None"}`;
 
@@ -123,39 +121,33 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
   };
 
   return (
-    <section id="planner" className="py-24 sm:py-32 bg-[#08152F] text-white relative overflow-hidden">
-      {/* Background Decorative Rings */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-        <div className="w-[900px] h-[900px] rounded-full border border-[#B87543]/30 border-dashed" />
-        <div className="w-[600px] h-[600px] rounded-full border border-[#244586]/40" />
-      </div>
-
+    <section id="planner" className="py-28 sm:py-36 bg-[#F8F7F3] text-[#17213A] relative border-t border-[#E7E4DA]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center space-x-2 text-[#D99767] text-xs font-sans uppercase tracking-[0.25em] mb-3">
-            <Compass className="w-3.5 h-3.5 text-[#B87543]" />
-            <span>Bespoke Travel Planner</span>
+        <div className="text-center mb-16 sm:mb-20">
+          <div className="inline-flex items-center space-x-2 text-[#9A5B2D] text-xs font-sans uppercase tracking-[0.25em] mb-3">
+            <Compass className="w-3.5 h-3.5" />
+            <span>Consultation Suite</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.08]">
+          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-[#08152F] tracking-tight leading-[1.06]">
             WHERE DO YOU WANT TO GO?
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-white/70 font-sans font-light max-w-xl mx-auto leading-relaxed">
-            Tell us a little about your trip and let's start planning. Every itinerary is shaped around you.
+          <p className="mt-4 text-base sm:text-lg text-[#687080] font-sans font-light max-w-xl mx-auto leading-relaxed">
+            Tell us a little about your trip and let's start planning. Every itinerary is shaped around your personal style.
           </p>
         </div>
 
-        {/* Multi-step Planner Card */}
-        <div className="bg-[#050D20] border border-[#1C366B] rounded-3xl p-6 sm:p-10 shadow-2xl relative">
+        {/* Multi-step Editorial Consultation Box */}
+        <div className="bg-white rounded-3xl p-6 sm:p-12 border border-[#E7E4DA] shadow-[0_20px_60px_rgba(8,21,47,0.06)] relative">
           {!submitted ? (
             <div>
-              {/* Step Indicators */}
-              <div className="grid grid-cols-4 gap-2 sm:gap-4 mb-8 sm:mb-12 pb-6 border-b border-white/10">
+              {/* Step Progression Indicators */}
+              <div className="grid grid-cols-4 gap-2 sm:gap-4 mb-10 sm:mb-12 pb-6 border-b border-[#E7E4DA]">
                 {[
                   { step: 1, label: "WHERE?" },
                   { step: 2, label: "WHEN?" },
                   { step: 3, label: "WHO?" },
-                  { step: 4, label: "LET'S PLAN" },
+                  { step: 4, label: "PLAN" },
                 ].map((s) => (
                   <button
                     key={s.step}
@@ -166,21 +158,21 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                     <span
                       className={`block text-[10px] font-sans font-semibold tracking-widest ${
                         currentStep === s.step
-                          ? "text-[#D99767]"
+                          ? "text-[#9A5B2D]"
                           : currentStep > s.step
-                          ? "text-white/80"
-                          : "text-white/30"
+                          ? "text-[#08152F]"
+                          : "text-[#687080]/40"
                       }`}
                     >
                       0{s.step}
                     </span>
                     <span
-                      className={`block font-serif text-xs sm:text-sm tracking-wider uppercase transition-colors ${
+                      className={`block font-serif text-xs sm:text-base tracking-wider uppercase transition-colors ${
                         currentStep === s.step
-                          ? "text-white font-medium"
+                          ? "text-[#08152F] font-semibold"
                           : currentStep > s.step
-                          ? "text-white/70"
-                          : "text-white/40"
+                          ? "text-[#08152F]/70"
+                          : "text-[#687080]/40"
                       }`}
                     >
                       {s.label}
@@ -190,8 +182,8 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                         currentStep === s.step
                           ? "bg-[#9A5B2D] w-full"
                           : currentStep > s.step
-                          ? "bg-white/40 w-full"
-                          : "bg-white/10 w-full"
+                          ? "bg-[#08152F] w-full"
+                          : "bg-[#E7E4DA] w-full"
                       }`}
                     />
                   </button>
@@ -202,27 +194,27 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
               <form onSubmit={handleSubmit}>
                 {/* STEP 1: WHERE */}
                 {currentStep === 1 && (
-                  <div className="space-y-6">
+                  <div className="space-y-8">
                     <div>
-                      <label className="block font-serif text-2xl text-white mb-2">
-                        Select or enter your dream destination
+                      <label className="block font-serif text-3xl sm:text-4xl text-[#08152F] mb-2">
+                        Which destination is calling you?
                       </label>
-                      <p className="text-xs text-white/60 font-sans mb-4">
-                        Choose from popular destinations or type any location worldwide.
+                      <p className="text-sm text-[#687080] font-sans">
+                        Select a curated destination or type any country or region across the world.
                       </p>
                     </div>
 
-                    {/* Popular destination pills */}
-                    <div className="flex flex-wrap gap-2 sm:gap-2.5">
-                      {popularDestinations.map((dest) => (
+                    {/* Curated destination pills */}
+                    <div className="flex flex-wrap gap-2.5">
+                      {curatedDestinations.map((dest) => (
                         <button
                           key={dest}
                           type="button"
                           onClick={() => setFormData({ ...formData, destination: dest })}
-                          className={`px-4 py-2 rounded-full text-xs font-sans tracking-wide transition-all ${
+                          className={`px-4 py-2.5 rounded-full text-xs font-sans tracking-wide transition-all ${
                             formData.destination === dest
-                              ? "bg-[#9A5B2D] text-white font-semibold shadow-md"
-                              : "bg-white/5 border border-white/15 text-white/80 hover:bg-white/10 hover:border-white/30"
+                              ? "bg-[#08152F] text-white font-medium shadow-sm"
+                              : "bg-[#F8F7F3] border border-[#E7E4DA] text-[#17213A] hover:border-[#08152F]"
                           }`}
                         >
                           {dest}
@@ -230,8 +222,8 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       ))}
                     </div>
 
-                    <div className="pt-3">
-                      <label className="block text-xs font-sans uppercase tracking-widest text-white/50 mb-2">
+                    <div className="pt-2">
+                      <label className="block text-xs font-sans uppercase tracking-widest text-[#687080] mb-2 font-medium">
                         Or enter a custom destination / multiple countries
                       </label>
                       <input
@@ -240,8 +232,8 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                         onChange={(e) =>
                           setFormData({ ...formData, destination: e.target.value })
                         }
-                        placeholder="e.g. South of France, Japan, New Zealand, Golden Triangle..."
-                        className="w-full px-5 py-3.5 rounded-xl bg-white/5 border border-white/20 text-white placeholder-white/30 text-sm font-sans focus:outline-none focus:border-[#D99767] transition-colors"
+                        placeholder="e.g. South of France & Amalfi Coast, New Zealand, Golden Triangle..."
+                        className="w-full px-5 py-4 rounded-xl bg-[#F8F7F3] border border-[#E7E4DA] text-[#08152F] placeholder-[#687080]/50 text-base font-sans focus:outline-none focus:border-[#9A5B2D] transition-colors"
                       />
                     </div>
 
@@ -250,7 +242,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                         type="button"
                         onClick={handleNext}
                         disabled={!formData.destination}
-                        className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-[#9A5B2D] hover:bg-[#B87543] disabled:opacity-40 disabled:hover:bg-[#9A5B2D] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md"
+                        className="inline-flex items-center space-x-2 px-9 py-4 rounded-full bg-[#08152F] hover:bg-[#9A5B2D] disabled:opacity-40 text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md"
                       >
                         <span>Next: When?</span>
                         <ArrowRight className="w-4 h-4" />
@@ -261,13 +253,13 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
 
                 {/* STEP 2: WHEN */}
                 {currentStep === 2 && (
-                  <div className="space-y-6">
+                  <div className="space-y-8">
                     <div>
-                      <label className="block font-serif text-2xl text-white mb-2">
+                      <label className="block font-serif text-3xl sm:text-4xl text-[#08152F] mb-2">
                         When are you looking to travel?
                       </label>
-                      <p className="text-xs text-white/60 font-sans mb-4">
-                        Timing helps us recommend the most scenic seasons and pleasant weather.
+                      <p className="text-sm text-[#687080] font-sans">
+                        Timing guides us toward the ideal seasons, calmest waters, and pleasant weather.
                       </p>
                     </div>
 
@@ -277,14 +269,14 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                           key={m}
                           type="button"
                           onClick={() => setFormData({ ...formData, travelMonth: m })}
-                          className={`p-3 rounded-xl text-left border text-xs sm:text-sm font-sans transition-all ${
+                          className={`p-4 rounded-2xl text-left border text-xs sm:text-sm font-sans transition-all ${
                             formData.travelMonth === m
-                              ? "bg-[#9A5B2D]/20 border-[#D99767] text-white font-medium shadow-sm"
-                              : "bg-white/5 border-white/10 text-white/70 hover:bg-white/10 hover:border-white/25"
+                              ? "bg-[#08152F] text-white border-[#08152F] font-medium shadow-sm"
+                              : "bg-[#F8F7F3] border-[#E7E4DA] text-[#17213A] hover:border-[#08152F]"
                           }`}
                         >
-                          <div className="flex items-center space-x-2">
-                            <Calendar className="w-3.5 h-3.5 text-[#B87543]" />
+                          <div className="flex items-center space-x-2.5">
+                            <Calendar className="w-4 h-4 text-[#9A5B2D]" />
                             <span>{m}</span>
                           </div>
                         </button>
@@ -295,7 +287,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       <button
                         type="button"
                         onClick={handleBack}
-                        className="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-white/60 hover:text-white font-sans"
+                        className="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-[#687080] hover:text-[#08152F] font-sans"
                       >
                         <ArrowLeft className="w-4 h-4" />
                         <span>Back</span>
@@ -304,7 +296,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       <button
                         type="button"
                         onClick={handleNext}
-                        className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-[#9A5B2D] hover:bg-[#B87543] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md"
+                        className="inline-flex items-center space-x-2 px-9 py-4 rounded-full bg-[#08152F] hover:bg-[#9A5B2D] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md"
                       >
                         <span>Next: Who?</span>
                         <ArrowRight className="w-4 h-4" />
@@ -315,19 +307,19 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
 
                 {/* STEP 3: WHO */}
                 {currentStep === 3 && (
-                  <div className="space-y-6">
+                  <div className="space-y-8">
                     <div>
-                      <label className="block font-serif text-2xl text-white mb-2">
-                        Who is travelling on this journey?
+                      <label className="block font-serif text-3xl sm:text-4xl text-[#08152F] mb-2">
+                        Who is joining this journey?
                       </label>
-                      <p className="text-xs text-white/60 font-sans mb-4">
-                        Select travel style and group size.
+                      <p className="text-sm text-[#687080] font-sans">
+                        Select travel style and party size to help us recommend suited stays.
                       </p>
                     </div>
 
                     {/* Travel Type */}
                     <div>
-                      <span className="block text-xs uppercase tracking-widest text-white/50 font-sans mb-3">
+                      <span className="block text-xs uppercase tracking-widest text-[#687080] font-sans mb-3 font-semibold">
                         Travel Style
                       </span>
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -336,10 +328,10 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                             key={type}
                             type="button"
                             onClick={() => setFormData({ ...formData, travelType: type })}
-                            className={`p-3 rounded-xl border text-xs sm:text-sm font-sans transition-all text-center ${
+                            className={`p-4 rounded-2xl border text-xs sm:text-sm font-sans transition-all text-center ${
                               formData.travelType === type
-                                ? "bg-[#9A5B2D] border-[#9A5B2D] text-white font-semibold"
-                                : "bg-white/5 border-white/10 text-white/70 hover:bg-white/10"
+                                ? "bg-[#08152F] text-white border-[#08152F] font-semibold"
+                                : "bg-[#F8F7F3] border-[#E7E4DA] text-[#17213A] hover:border-[#08152F]"
                             }`}
                           >
                             {type}
@@ -350,8 +342,8 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
 
                     {/* Travelers Count */}
                     <div className="pt-2">
-                      <span className="block text-xs uppercase tracking-widest text-white/50 font-sans mb-3">
-                        Number of Travellers: {formData.travelersCount}
+                      <span className="block text-xs uppercase tracking-widest text-[#687080] font-sans mb-3 font-semibold">
+                        Number of Guests: {formData.travelersCount}
                       </span>
                       <div className="flex items-center space-x-3">
                         {[1, 2, 3, 4, 5, 6, "7+"].map((num) => {
@@ -365,10 +357,10 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                               key={num}
                               type="button"
                               onClick={() => setFormData({ ...formData, travelersCount: val })}
-                              className={`w-11 h-11 rounded-full border text-xs font-sans font-semibold transition-all ${
+                              className={`w-12 h-12 rounded-full border text-sm font-sans font-semibold transition-all ${
                                 isSel
                                   ? "bg-[#9A5B2D] border-[#9A5B2D] text-white"
-                                  : "bg-white/5 border-white/15 text-white/70 hover:bg-white/10"
+                                  : "bg-[#F8F7F3] border-[#E7E4DA] text-[#17213A] hover:border-[#08152F]"
                               }`}
                             >
                               {num}
@@ -382,7 +374,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       <button
                         type="button"
                         onClick={handleBack}
-                        className="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-white/60 hover:text-white font-sans"
+                        className="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-[#687080] hover:text-[#08152F] font-sans"
                       >
                         <ArrowLeft className="w-4 h-4" />
                         <span>Back</span>
@@ -391,30 +383,30 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       <button
                         type="button"
                         onClick={handleNext}
-                        className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-[#9A5B2D] hover:bg-[#B87543] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md"
+                        className="inline-flex items-center space-x-2 px-9 py-4 rounded-full bg-[#08152F] hover:bg-[#9A5B2D] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md"
                       >
-                        <span>Next: Final Details</span>
+                        <span>Next: Final Step</span>
                         <ArrowRight className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
                 )}
 
-                {/* STEP 4: LET'S PLAN */}
+                {/* STEP 4: PLAN */}
                 {currentStep === 4 && (
                   <div className="space-y-6">
                     <div>
-                      <label className="block font-serif text-2xl text-white mb-2">
+                      <label className="block font-serif text-3xl sm:text-4xl text-[#08152F] mb-2">
                         How should Sakshi reach you?
                       </label>
-                      <p className="text-xs text-white/60 font-sans mb-4">
-                        We respect your privacy and will never share your details.
+                      <p className="text-sm text-[#687080] font-sans">
+                        We value your trust and privacy. Your information is only used to curate your trip.
                       </p>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-[11px] uppercase tracking-wider text-white/70 font-sans mb-1.5">
+                        <label className="block text-[11px] uppercase tracking-wider text-[#687080] font-sans mb-1.5 font-semibold">
                           Your Name *
                         </label>
                         <input
@@ -423,12 +415,12 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="e.g. Priya Sharma"
-                          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white placeholder-white/30 text-sm font-sans focus:outline-none focus:border-[#D99767]"
+                          className="w-full px-5 py-3.5 rounded-xl bg-[#F8F7F3] border border-[#E7E4DA] text-[#08152F] placeholder-[#687080]/50 text-sm font-sans focus:outline-none focus:border-[#9A5B2D]"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-[11px] uppercase tracking-wider text-white/70 font-sans mb-1.5">
+                        <label className="block text-[11px] uppercase tracking-wider text-[#687080] font-sans mb-1.5 font-semibold">
                           Phone / WhatsApp *
                         </label>
                         <input
@@ -437,13 +429,13 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="+91 98765 43210"
-                          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white placeholder-white/30 text-sm font-sans focus:outline-none focus:border-[#D99767]"
+                          className="w-full px-5 py-3.5 rounded-xl bg-[#F8F7F3] border border-[#E7E4DA] text-[#08152F] placeholder-[#687080]/50 text-sm font-sans focus:outline-none focus:border-[#9A5B2D]"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-[11px] uppercase tracking-wider text-white/70 font-sans mb-1.5">
+                      <label className="block text-[11px] uppercase tracking-wider text-[#687080] font-sans mb-1.5 font-semibold">
                         Email Address (Optional)
                       </label>
                       <input
@@ -451,20 +443,20 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="yourname@domain.com"
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white placeholder-white/30 text-sm font-sans focus:outline-none focus:border-[#D99767]"
+                        className="w-full px-5 py-3.5 rounded-xl bg-[#F8F7F3] border border-[#E7E4DA] text-[#08152F] placeholder-[#687080]/50 text-sm font-sans focus:outline-none focus:border-[#9A5B2D]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[11px] uppercase tracking-wider text-white/70 font-sans mb-1.5">
+                      <label className="block text-[11px] uppercase tracking-wider text-[#687080] font-sans mb-1.5 font-semibold">
                         Special Wishes or Requests (Optional)
                       </label>
                       <textarea
                         rows={3}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="e.g. Vegetarian dining preference, anniversary surprise, slow paced mornings..."
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white placeholder-white/30 text-sm font-sans focus:outline-none focus:border-[#D99767]"
+                        placeholder="e.g. Vegetarian dining preference, wedding anniversary celebration, slow paced mornings..."
+                        className="w-full px-5 py-3.5 rounded-xl bg-[#F8F7F3] border border-[#E7E4DA] text-[#08152F] placeholder-[#687080]/50 text-sm font-sans focus:outline-none focus:border-[#9A5B2D]"
                       />
                     </div>
 
@@ -472,7 +464,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       <button
                         type="button"
                         onClick={handleBack}
-                        className="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-white/60 hover:text-white font-sans"
+                        className="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-[#687080] hover:text-[#08152F] font-sans"
                       >
                         <ArrowLeft className="w-4 h-4" />
                         <span>Back</span>
@@ -481,10 +473,10 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       <button
                         type="submit"
                         disabled={!formData.name || !formData.phone}
-                        className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-[#9A5B2D] hover:bg-[#B87543] disabled:opacity-40 text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md"
+                        className="inline-flex items-center space-x-2 px-9 py-4 rounded-full bg-[#08152F] hover:bg-[#9A5B2D] disabled:opacity-40 text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md"
                       >
                         <Send className="w-4 h-4" />
-                        <span>Start Planning</span>
+                        <span>Start Planning →</span>
                       </button>
                     </div>
                   </div>
@@ -492,32 +484,32 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
               </form>
             </div>
           ) : (
-            /* SUBMITTED / CONFIRMATION STATE */
+            /* CONFIRMATION STATE */
             <div className="py-8 text-center animate-in fade-in duration-500">
-              <div className="w-16 h-16 rounded-full bg-[#9A5B2D]/20 border border-[#B87543] text-[#D99767] mx-auto flex items-center justify-center mb-6">
-                <CheckCircle2 className="w-8 h-8 text-[#D99767]" />
+              <div className="w-16 h-16 rounded-full bg-[#9A5B2D]/10 text-[#9A5B2D] mx-auto flex items-center justify-center mb-6 border border-[#9A5B2D]/20">
+                <CheckCircle2 className="w-8 h-8 text-[#9A5B2D]" />
               </div>
 
-              <span className="text-xs uppercase tracking-[0.25em] text-[#D99767] font-sans">
-                Itinerary Request Prepared
+              <span className="text-xs uppercase tracking-[0.25em] text-[#9A5B2D] font-sans font-semibold">
+                Itinerary Request Ready
               </span>
 
-              <h3 className="font-serif text-3xl sm:text-4xl text-white mt-2 mb-4">
+              <h3 className="font-serif text-3xl sm:text-4xl text-[#08152F] mt-2 mb-4">
                 Thank You, {formData.name}
               </h3>
 
-              <p className="text-sm sm:text-base text-white/80 font-sans max-w-lg mx-auto leading-relaxed mb-8">
-                Your journey request for <strong className="text-white">{formData.destination}</strong> in{" "}
-                <strong className="text-white">{formData.travelMonth}</strong> ({formData.travelType}, {formData.travelersCount} guests) is ready.
+              <p className="text-base text-[#687080] font-sans max-w-lg mx-auto leading-relaxed mb-8">
+                Your journey request for <strong className="text-[#08152F]">{formData.destination}</strong> in{" "}
+                <strong className="text-[#08152F]">{formData.travelMonth}</strong> ({formData.travelType}, {formData.travelersCount} guests) has been formatted.
               </p>
 
-              {/* Instant WhatsApp Send Button */}
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 max-w-md mx-auto mb-8 text-left">
-                <div className="flex items-center space-x-2 text-xs uppercase tracking-wider text-[#D99767] font-semibold mb-3">
+              {/* Instant WhatsApp Dispatch Card */}
+              <div className="bg-[#F8F7F3] border border-[#E7E4DA] rounded-2xl p-6 sm:p-8 max-w-md mx-auto mb-8 text-left">
+                <div className="flex items-center space-x-2 text-xs uppercase tracking-wider text-[#9A5B2D] font-semibold mb-2">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Send Directly To Sakshi</span>
                 </div>
-                <p className="text-xs text-white/70 font-sans leading-relaxed mb-5">
+                <p className="text-xs text-[#687080] font-sans leading-relaxed mb-6">
                   Click below to open WhatsApp with your pre-formatted enquiry details directly sent to Sakshi Chandiramani (+91 97243 91674).
                 </p>
 
@@ -526,7 +518,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                     href={getWhatsAppUrl(generatedWhatsAppText)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center space-x-2 py-3.5 px-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs uppercase tracking-wider font-semibold shadow-lg transition-all"
+                    className="flex-1 inline-flex items-center justify-center space-x-2 py-3.5 px-5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs uppercase tracking-wider font-semibold shadow-md transition-all"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>Send via WhatsApp</span>
@@ -534,10 +526,10 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
 
                   <a
                     href={generatedMailtoUrl}
-                    className="inline-flex items-center justify-center space-x-2 py-3.5 px-4 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs uppercase tracking-wider font-medium border border-white/15 transition-all"
+                    className="inline-flex items-center justify-center space-x-2 py-3.5 px-5 rounded-full bg-white hover:bg-gray-50 text-[#08152F] text-xs uppercase tracking-wider font-medium border border-[#E7E4DA] transition-all"
                   >
-                    <Mail className="w-4 h-4" />
-                    <span>Send via Email</span>
+                    <Mail className="w-4 h-4 text-[#9A5B2D]" />
+                    <span>Email</span>
                   </a>
                 </div>
               </div>
@@ -545,9 +537,9 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
               <button
                 type="button"
                 onClick={resetForm}
-                className="text-xs uppercase tracking-widest text-white/40 hover:text-white font-sans transition-colors"
+                className="text-xs uppercase tracking-widest text-[#687080] hover:text-[#08152F] font-sans transition-colors"
               >
-                Plan Another Trip
+                ← Plan Another Journey
               </button>
             </div>
           )}

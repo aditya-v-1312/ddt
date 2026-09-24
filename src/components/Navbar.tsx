@@ -12,7 +12,7 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
+      if (window.scrollY > 30) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -35,31 +35,25 @@ export const Navbar: React.FC = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           scrolled
-            ? "bg-[#F8F7F3]/95 backdrop-blur-md py-3 shadow-[0_4px_24px_rgba(8,21,47,0.06)] border-b border-[#E7E4DA]"
-            : "bg-gradient-to-b from-[#08152F]/70 via-[#08152F]/30 to-transparent py-5 text-white"
+            ? "bg-[#F8F7F3]/95 backdrop-blur-md py-3 shadow-[0_4px_20px_rgba(8,21,47,0.05)] border-b border-[#E7E4DA]"
+            : "bg-transparent py-5 text-[#17213A]"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Logo */}
+          {/* Brand Logo Asset */}
           <Link
             href="#"
-            className="flex items-center space-x-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9A5B2D]"
+            className="flex items-center space-x-3 group focus:outline-none"
             aria-label="Darsh Dream Tours - Return to top"
           >
-            <div
-              className={`relative h-11 w-32 sm:h-12 sm:w-36 transition-all duration-300 rounded px-1.5 py-0.5 ${
-                scrolled
-                  ? "bg-transparent"
-                  : "bg-white/95 p-1 rounded shadow-sm"
-              }`}
-            >
+            <div className="relative h-11 w-36 sm:h-12 sm:w-40 transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/images/logo.jpg"
                 alt={siteConfig.name}
                 fill
                 priority
                 className="object-contain"
-                sizes="(max-width: 768px) 130px, 150px"
+                sizes="(max-width: 768px) 140px, 160px"
               />
             </div>
           </Link>
@@ -67,17 +61,13 @@ export const Navbar: React.FC = () => {
           {/* Desktop Navigation Links */}
           <nav
             aria-label="Main Navigation"
-            className="hidden md:flex items-center space-x-8 text-[13px] tracking-[0.16em] uppercase font-sans font-medium"
+            className="hidden md:flex items-center space-x-8 text-[12px] tracking-[0.2em] uppercase font-sans font-medium text-[#17213A]"
           >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`relative py-1 transition-colors duration-300 group ${
-                  scrolled
-                    ? "text-[#17213A] hover:text-[#9A5B2D]"
-                    : "text-white/90 hover:text-white"
-                }`}
+                className="relative py-1 text-[#17213A]/80 hover:text-[#08152F] transition-colors duration-300 group"
               >
                 <span>{link.name}</span>
                 <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#9A5B2D] transition-all duration-300 group-hover:w-full" />
@@ -91,14 +81,10 @@ export const Navbar: React.FC = () => {
               href={getWhatsAppUrl("Hello Sakshi, I would like to talk with Darsh Dream Tours about planning a journey.")}
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-sans font-semibold px-5 py-2.5 rounded-full transition-all duration-300 border ${
-                scrolled
-                  ? "border-[#9A5B2D] text-[#9A5B2D] hover:bg-[#9A5B2D] hover:text-white"
-                  : "border-white/40 text-white hover:bg-white hover:text-[#08152F] hover:border-white"
-              }`}
+              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-sans font-semibold px-5 py-2.5 rounded-full border border-[#08152F]/20 text-[#08152F] hover:bg-[#08152F] hover:text-white transition-all duration-300 shadow-sm"
             >
               <span>Let's Talk</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#9A5B2D]" />
             </a>
           </div>
 
@@ -106,9 +92,7 @@ export const Navbar: React.FC = () => {
           <div className="flex md:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[#9A5B2D] ${
-                scrolled ? "text-[#08152F]" : "text-white bg-white/10"
-              }`}
+              className="p-2 text-[#08152F] rounded-lg focus:outline-none"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
             >
@@ -136,7 +120,7 @@ export const Navbar: React.FC = () => {
           </div>
           <button
             onClick={() => setMobileMenuOpen(false)}
-            className="p-2 text-white/80 hover:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9A5B2D]"
+            className="p-2 text-white/80 hover:text-white rounded-lg focus:outline-none"
             aria-label="Close menu"
           >
             <X className="w-7 h-7" />
@@ -156,14 +140,6 @@ export const Navbar: React.FC = () => {
               <span className="text-sm font-sans tracking-widest text-[#B87543]">→</span>
             </a>
           ))}
-          <a
-            href="#contact"
-            onClick={() => setMobileMenuOpen(false)}
-            className="font-serif text-3xl sm:text-4xl text-white/90 hover:text-[#B87543] transition-colors flex items-center justify-between"
-          >
-            <span>Contact & Location</span>
-            <span className="text-sm font-sans tracking-widest text-[#B87543]">→</span>
-          </a>
         </nav>
 
         {/* Bottom CTA on mobile drawer */}

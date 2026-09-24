@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { destinations, Destination } from "@/data/destinations";
 import VectorAirplane from "./VectorAirplane";
-import { Compass, Sparkles, Navigation } from "lucide-react";
+import { Compass, ArrowRight, Sparkles, Navigation } from "lucide-react";
 
 interface WorldMapProps {
   onSelectDestination?: (destName: string) => void;
@@ -15,16 +15,15 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
     destinations.find((d) => d.id === "dubai") || destinations[0]
   );
 
-  // Flight paths connecting India (Vadodara/Mumbai at ~68%, 46%) to destinations
-  const origin = { x: 680, y: 228 }; // Hub in India
+  const origin = { x: 680, y: 228 }; // Vadodara, India Hub
 
   const flightRoutes = [
-    { targetId: "dubai", to: { x: 610, y: 220 }, curve: "M 680 228 Q 640 180, 610 220" },
-    { targetId: "europe", to: { x: 505, y: 152 }, curve: "M 680 228 Q 570 120, 505 152" },
-    { targetId: "maldives", to: { x: 670, y: 305 }, curve: "M 680 228 Q 660 265, 670 305" },
-    { targetId: "singapore", to: { x: 780, y: 265 }, curve: "M 680 228 Q 740 230, 780 265" },
-    { targetId: "thailand", to: { x: 750, y: 232 }, curve: "M 680 228 Q 720 205, 750 232" },
-    { targetId: "bali", to: { x: 820, y: 320 }, curve: "M 680 228 Q 780 260, 820 320" },
+    { targetId: "dubai", curve: "M 680 228 Q 640 180, 610 220" },
+    { targetId: "europe", curve: "M 680 228 Q 570 120, 505 152" },
+    { targetId: "maldives", curve: "M 680 228 Q 660 265, 670 305" },
+    { targetId: "singapore", curve: "M 680 228 Q 740 230, 780 265" },
+    { targetId: "thailand", curve: "M 680 228 Q 720 205, 750 232" },
+    { targetId: "bali", curve: "M 680 228 Q 780 260, 820 320" },
   ];
 
   const handlePlanClick = (dest: Destination) => {
@@ -38,9 +37,12 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
   };
 
   return (
-    <section className="relative py-24 sm:py-32 bg-[#08152F] text-white overflow-hidden border-t border-b border-[#1C366B]">
-      {/* Background Ambience */}
-      <div className="absolute inset-0 bg-radial-gradient from-[#142954]/50 via-transparent to-[#050D20] pointer-events-none" />
+    <section className="relative py-28 sm:py-36 bg-[#08152F] text-white overflow-hidden">
+      {/* Background Starlight Ambience */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
+        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-[#244586] rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-[#9A5B2D] rounded-full blur-3xl" />
+      </div>
 
       {/* Header Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12 sm:mb-16">
@@ -48,20 +50,20 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
           <div>
             <div className="inline-flex items-center space-x-2 text-[#D99767] text-xs font-sans uppercase tracking-[0.25em] mb-3">
               <Compass className="w-3.5 h-3.5 text-[#B87543]" />
-              <span>Interactive Flight Grid</span>
+              <span>Interactive Navigation Grid</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1]">
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.08]">
               YOUR WORLD AWAITS
             </h2>
             <p className="mt-3 text-base text-white/70 font-sans font-light max-w-xl">
-              From our home in Vadodara to treasured sanctuaries across continents. Select any waypoint to preview curated travel routes.
+              From our base in Vadodara to treasured sanctuaries across continents. Select any waypoint to trace flight routes and preview experiences.
             </p>
           </div>
 
-          <div className="flex items-center space-x-4 text-xs font-sans text-white/60">
+          <div className="flex items-center space-x-5 text-xs font-sans text-white/60">
             <span className="flex items-center space-x-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#B87543] ring-4 ring-[#B87543]/30 animate-pulse" />
-              <span>Waypoints</span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#B87543] ring-4 ring-[#B87543]/20 animate-pulse" />
+              <span>Destination Waypoint</span>
             </span>
             <span className="flex items-center space-x-2">
               <span className="w-6 h-[1.5px] bg-[#B87543] border-dashed" />
@@ -73,20 +75,16 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
 
       {/* Interactive Map Visual Stage */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="relative rounded-3xl bg-[#050D20] border border-[#1C366B]/60 p-4 sm:p-8 lg:p-12 overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
+        <div className="relative rounded-3xl bg-[#050D20] border border-[#1C366B]/50 p-4 sm:p-8 lg:p-12 overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.6)]">
           {/* Subtle Latitude / Longitude Luxury Grid Lines */}
-          <div className="absolute inset-0 pointer-events-none opacity-25">
+          <div className="absolute inset-0 pointer-events-none opacity-20">
             <svg viewBox="0 0 1000 500" className="w-full h-full" preserveAspectRatio="none">
-              {/* Latitude lines */}
-              <line x1="0" y1="100" x2="1000" y2="100" stroke="#244586" strokeWidth="0.7" strokeDasharray="3 4" />
-              <line x1="0" y1="200" x2="1000" y2="200" stroke="#244586" strokeWidth="0.7" strokeDasharray="3 4" />
-              <line x1="0" y1="300" x2="1000" y2="300" stroke="#244586" strokeWidth="0.7" strokeDasharray="3 4" />
-              <line x1="0" y1="400" x2="1000" y2="400" stroke="#244586" strokeWidth="0.7" strokeDasharray="3 4" />
-              {/* Longitude lines */}
-              <line x1="200" y1="0" x2="200" y2="500" stroke="#244586" strokeWidth="0.7" strokeDasharray="3 4" />
-              <line x1="400" y1="0" x2="400" y2="500" stroke="#244586" strokeWidth="0.7" strokeDasharray="3 4" />
-              <line x1="600" y1="0" x2="600" y2="500" stroke="#244586" strokeWidth="0.7" strokeDasharray="3 4" />
-              <line x1="800" y1="0" x2="800" y2="500" stroke="#244586" strokeWidth="0.7" strokeDasharray="3 4" />
+              <line x1="0" y1="120" x2="1000" y2="120" stroke="#244586" strokeWidth="0.8" strokeDasharray="3 5" />
+              <line x1="0" y1="250" x2="1000" y2="250" stroke="#244586" strokeWidth="0.8" strokeDasharray="3 5" />
+              <line x1="0" y1="380" x2="1000" y2="380" stroke="#244586" strokeWidth="0.8" strokeDasharray="3 5" />
+              <line x1="250" y1="0" x2="250" y2="500" stroke="#244586" strokeWidth="0.8" strokeDasharray="3 5" />
+              <line x1="500" y1="0" x2="500" y2="500" stroke="#244586" strokeWidth="0.8" strokeDasharray="3 5" />
+              <line x1="750" y1="0" x2="750" y2="500" stroke="#244586" strokeWidth="0.8" strokeDasharray="3 5" />
             </svg>
           </div>
 
@@ -97,35 +95,27 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
               className="w-full h-full"
               preserveAspectRatio="xMidYMid meet"
             >
-              {/* World Continents Outlines (Simplified Luxury Mercator Silhouettes) */}
+              {/* World Continents Outlines */}
               <g fill="#0D1F42" stroke="#1C366B" strokeWidth="1" opacity="0.85">
-                {/* Europe & Scandinavia */}
+                {/* Europe */}
                 <path d="M 460 110 Q 500 90, 530 110 T 540 160 T 490 190 T 450 160 Z" />
                 <path d="M 480 80 Q 510 50, 520 80 T 500 110 Z" />
-
                 {/* Africa */}
                 <path d="M 470 200 Q 540 200, 560 250 T 540 350 T 490 330 T 460 250 Z" />
-
-                {/* Middle East & Arabian Peninsula */}
+                {/* Middle East */}
                 <path d="M 570 180 Q 620 180, 640 230 T 580 250 Z" />
-
                 {/* Indian Subcontinent */}
                 <path d="M 640 180 Q 710 180, 720 220 T 685 300 T 650 250 Z" />
-
-                {/* Central & East Asia */}
+                {/* East Asia */}
                 <path d="M 660 110 Q 780 100, 850 140 T 820 240 T 730 200 Z" />
-
-                {/* Southeast Asia */}
+                {/* Southeast Asia & Bali */}
                 <path d="M 740 220 Q 800 240, 790 300 T 750 280 Z" />
-                {/* Indonesian Archipelago / Bali */}
                 <path d="M 780 310 Q 840 315, 870 335 T 790 330 Z" />
-
                 {/* Australia */}
                 <path d="M 830 350 Q 920 340, 930 400 T 850 430 Z" />
-
-                {/* Americas (Left horizon context) */}
-                <path d="M 120 100 Q 240 110, 220 220 T 160 250 Z" opacity="0.5" />
-                <path d="M 210 260 Q 280 290, 270 410 T 200 400 Z" opacity="0.5" />
+                {/* Americas backdrop */}
+                <path d="M 120 100 Q 240 110, 220 220 T 160 250 Z" opacity="0.4" />
+                <path d="M 210 260 Q 280 290, 270 410 T 200 400 Z" opacity="0.4" />
               </g>
 
               {/* Connecting Curved Flight Arcs */}
@@ -173,7 +163,6 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
                     className="cursor-pointer group"
                     onClick={() => setActivePin(dest)}
                   >
-                    {/* Pulsing ring on selection */}
                     {isSelected && (
                       <circle
                         r="16"
@@ -184,7 +173,6 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
                       />
                     )}
 
-                    {/* Outer glow ring */}
                     <circle
                       r={isSelected ? "8" : "5"}
                       fill={isSelected ? "#B87543" : "#9A5B2D"}
@@ -193,7 +181,6 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
                       className="transition-all duration-300 group-hover:scale-125"
                     />
 
-                    {/* Label below dot */}
                     <text
                       x="0"
                       y={isSelected ? "22" : "16"}
@@ -201,7 +188,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
                       className={`font-sans text-[9px] uppercase tracking-widest transition-all duration-300 ${
                         isSelected
                           ? "fill-[#D99767] font-semibold text-[11px]"
-                          : "fill-white/70 group-hover:fill-white text-[9px]"
+                          : "fill-white/70 group-hover:fill-white"
                       }`}
                     >
                       {dest.name}
@@ -211,7 +198,15 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
               })}
             </svg>
 
-            {/* Active Destination Preview HUD Overlay */}
+            {/* Cruising Airplane Motif on Active Arc */}
+            <div
+              className="absolute top-1/3 left-1/2 pointer-events-none -rotate-12 opacity-80"
+              style={{ animation: "float 6s ease-in-out infinite" }}
+            >
+              <VectorAirplane size={22} color="#D99767" fill="#B87543" />
+            </div>
+
+            {/* Active Destination Waypoint Inspection Card */}
             {activePin && (
               <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-md bg-[#08152F]/95 backdrop-blur-xl border border-[#B87543]/40 rounded-2xl p-5 sm:p-6 shadow-2xl transition-all duration-500 animate-in fade-in">
                 <div className="flex items-start justify-between gap-4">

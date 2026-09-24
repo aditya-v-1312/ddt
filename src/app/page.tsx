@@ -1,11 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import IntroAnimation from "@/components/IntroAnimation";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import WorldMap from "@/components/WorldMap";
 import DestinationExplorer from "@/components/DestinationExplorer";
+import WorldMap from "@/components/WorldMap";
 import TravelCategories from "@/components/TravelCategories";
 import FeaturedJourneys from "@/components/FeaturedJourneys";
 import WhyDarshDream from "@/components/WhyDarshDream";
@@ -17,9 +16,8 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
-  const [introCompleted, setIntroCompleted] = useState(false);
   const [plannerDestination, setPlannerDestination] = useState<string>("");
-  const [showReplayIntro, setShowReplayIntro] = useState(false);
+  const [replayCounter, setReplayCounter] = useState<number>(0);
 
   const handleSelectDestination = (destName: string) => {
     setPlannerDestination(destName);
@@ -31,60 +29,49 @@ export default function Home() {
     } catch {
       // ignore
     }
-    setShowReplayIntro(true);
-    setIntroCompleted(false);
+    setReplayCounter((prev) => prev + 1);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <main className="min-h-screen bg-[#F8F7F3] text-[#17213A] relative">
-      {/* 1. Cinematic Opening Airplane Sequence (plays once per session) */}
-      {(!introCompleted || showReplayIntro) && (
-        <IntroAnimation
-          onComplete={() => {
-            setIntroCompleted(true);
-            setShowReplayIntro(false);
-          }}
-        />
-      )}
-
-      {/* 2. Top Navigation Bar */}
+      {/* 1. Minimal Luxury Top Navigation */}
       <Navbar />
 
-      {/* 3. Hero Section */}
-      <Hero />
+      {/* 2. Unified Hero + Opening Flight Experience */}
+      <Hero onReplayTrigger={replayCounter} />
 
-      {/* 4. Signature World Map & Flight Waypoints */}
-      <WorldMap onSelectDestination={handleSelectDestination} />
-
-      {/* 5. Explore The World: Asymmetrical Destination Layouts */}
+      {/* 3. Explore The World: Editorial Destination Layout */}
       <DestinationExplorer onSelectDestination={handleSelectDestination} />
 
-      {/* 6. Find Your Journey: Travel Categories Photography Collage */}
+      {/* 4. Signature World Map & Interactive Flight Waypoints (Deep Navy Contrast) */}
+      <WorldMap onSelectDestination={handleSelectDestination} />
+
+      {/* 5. Find Your Journey: Editorial Travel Styles */}
       <TravelCategories onSelectCategory={handleSelectDestination} />
 
-      {/* 7. Featured Journeys: Luxury Travel Magazine Spreads */}
+      {/* 6. Featured Journeys: Luxury Travel Magazine Spreads */}
       <FeaturedJourneys onSelectJourney={handleSelectDestination} />
 
-      {/* 8. Why Darsh Dream Tours: 4 Authentic Positioning Pillars */}
+      {/* 7. Why Darsh Dream Tours: 4 Authentic Numbered Principles */}
       <WhyDarshDream />
 
-      {/* 9. Meet Sakshi: Human Boutique Agency & Direct Consultation */}
+      {/* 8. Meet Sakshi: Human Boutique Agency & Direct Consultation */}
       <AboutSakshi />
 
-      {/* 10. Plan Your Journey: 4-Step Interactive Enquiry Experience */}
+      {/* 9. Plan Your Journey: Bespoke Multi-Step Travel Planner */}
       <JourneyPlanner prefilledDestination={plannerDestination} />
 
-      {/* 11. Testimonials Architecture (Strictly hidden until verified reviews exist) */}
+      {/* 10. Testimonials Architecture (Cleanly preserved, hidden until real reviews exist) */}
       <Testimonials />
 
-      {/* 12. Cinematic Final Adventure CTA */}
+      {/* 11. Cinematic Final Adventure CTA */}
       <FinalCTA />
 
-      {/* 13. Minimal Luxury Footer */}
+      {/* 12. Minimal Luxury Footer */}
       <Footer onReplayIntro={handleReplayIntro} />
 
-      {/* 14. Floating WhatsApp Instant Connect Button */}
+      {/* 13. Floating WhatsApp Instant Connect Button */}
       <WhatsAppButton />
     </main>
   );

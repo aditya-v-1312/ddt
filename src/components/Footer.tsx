@@ -12,7 +12,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
   return (
-    <footer id="contact" className="bg-[#050D20] text-white pt-20 pb-12 border-t border-[#1C366B]/50">
+    <footer id="contact" className="bg-[#050D20] text-white pt-20 pb-12 border-t border-[#1C366B]/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">
           {/* Brand Column (5 cols) */}
@@ -146,7 +146,7 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
           </div>
         </div>
 
-        {/* Bottom Copyright & Discreet Attribution */}
+        {/* Bottom Copyright & Attribution */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/40 font-sans tracking-wider gap-4">
           <p>© {new Date().getFullYear()} DARSH DREAM TOURS. All rights reserved.</p>
           <p className="text-[11px] text-white/30">
