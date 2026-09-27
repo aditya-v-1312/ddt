@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { getWhatsAppUrl } from "@/data/siteConfig";
 import { ArrowUpRight } from "lucide-react";
+import GoogleTrustBadge from "@/components/GoogleTrustBadge";
 
 const experiences = [
   {
@@ -249,6 +250,10 @@ export default function ExperiencesPage() {
               >
                 WhatsApp · +91 97243 91674
               </a>
+            </div>
+
+            <div className="mt-8">
+              <GoogleTrustBadge variant="pill" />
             </div>
           </div>
         </div>

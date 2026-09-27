@@ -16,7 +16,7 @@ export interface TravelImageItem {
 
 export const travelImages = {
   // Brand Assets
-  logo: "/images/logo.jpg",
+  logo: "/images/logo.png",
   businessCard: "/images/business_card.jpg",
 
   // Hero: Expansive coastal cliffs overlooking the ocean in golden natural light

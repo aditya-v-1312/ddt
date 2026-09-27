@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { getWhatsAppUrl } from "@/data/siteConfig";
 import { ArrowUpRight, Plane } from "lucide-react";
+import GoogleTrustBadge from "@/components/GoogleTrustBadge";
 
 const indiaDestinations = [
   {
@@ -656,6 +657,10 @@ export default function DestinationsPage() {
             >
               WhatsApp · +91 97243 91674
             </a>
+
+            <div className="mt-8">
+              <GoogleTrustBadge variant="pill" />
+            </div>
           </div>
         </div>
       </section>

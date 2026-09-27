@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/data/siteConfig";
 import { MapPin, Phone, Mail, Globe, RotateCcw } from "lucide-react";
+import GoogleTrustBadge from "./GoogleTrustBadge";
 
 interface FooterProps {
   onReplayIntro?: () => void;
@@ -17,13 +18,13 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">
           {/* Brand Column (5 cols) */}
           <div className="lg:col-span-5 flex flex-col items-start">
-            <Link href="#" className="inline-block bg-white p-2.5 rounded-lg mb-6 shadow-sm">
-              <div className="relative h-12 w-40">
+            <Link href="/" className="inline-block mb-6">
+              <div className="relative h-16 w-52">
                 <Image
-                  src="/images/logo.jpg"
+                  src="/images/logo.png"
                   alt={siteConfig.name}
                   fill
-                  className="object-contain"
+                  className="object-contain object-left drop-shadow-[0_2px_10px_rgba(255,255,255,0.22)] brightness-110"
                 />
               </div>
             </Link>
@@ -39,12 +40,16 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
             {onReplayIntro && (
               <button
                 onClick={onReplayIntro}
-                className="inline-flex items-center space-x-2 text-xs font-sans uppercase tracking-widest text-[#B87543] hover:text-[#D99767] transition-colors py-1"
+                className="inline-flex items-center space-x-2 text-xs font-sans uppercase tracking-widest text-[#B87543] hover:text-[#D99767] transition-colors py-1 mb-2"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Replay Opening Flight</span>
               </button>
             )}
+
+            <div className="mt-4">
+              <GoogleTrustBadge variant="pill" />
+            </div>
           </div>
 
           {/* Partner & Leadership (3 cols) */}

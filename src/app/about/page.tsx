@@ -6,6 +6,8 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { getWhatsAppUrl } from "@/data/siteConfig";
 import { travelImages } from "@/data/images";
 import { ArrowDown, ArrowUpRight, MessageCircle, Phone } from "lucide-react";
+import GoogleReviews from "@/components/GoogleReviews";
+import GoogleTrustBadge from "@/components/GoogleTrustBadge";
 
 export default function AboutPage() {
   return (
@@ -351,7 +353,12 @@ export default function AboutPage() {
       </section>
 
       {/* =========================================================
-          06 — FINAL CTA (DARK NAVY SECTION)
+          06 — GOOGLE REVIEWS & TRAVELER EXPERIENCES
+      ========================================================= */}
+      <GoogleReviews theme="light" />
+
+      {/* =========================================================
+          07 — FINAL CTA (DARK NAVY SECTION)
       ========================================================= */}
       <section className="relative overflow-hidden bg-[#07101F] px-5 py-28 text-white sm:px-8 sm:py-36 lg:px-12 border-t border-white/10">
         {/* Subtle decorative geometry */}
@@ -412,19 +419,23 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
             {/* Brand */}
             <div className="md:col-span-5">
-              <div className="relative h-[55px] w-[165px] bg-white">
+              <div className="relative h-[72px] w-[215px] sm:h-[80px] sm:w-[240px]">
                 <Image
-                  src="/images/logo.jpg"
+                  src="/images/logo.png"
                   alt="Darsh Dream Tours"
                   fill
-                  sizes="165px"
-                  className="object-contain"
+                  sizes="(max-width: 640px) 215px, 240px"
+                  className="object-contain object-left drop-shadow-[0_2px_10px_rgba(255,255,255,0.22)] brightness-110"
                 />
               </div>
 
               <p className="mt-5 max-w-sm font-sans text-xs leading-6 text-white/40">
                 Thoughtfully planned journeys across India and beyond. Personal planning by Sakshi Chandiramani in Vadodara, Gujarat.
               </p>
+
+              <div className="mt-6">
+                <GoogleTrustBadge variant="pill" />
+              </div>
             </div>
 
             {/* Navigation */}

@@ -7,6 +7,7 @@ import JourneyPlanner from "@/components/JourneyPlanner";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { getWhatsAppUrl } from "@/data/siteConfig";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
+import GoogleTrustBadge from "@/components/GoogleTrustBadge";
 
 function PlanContent() {
   const searchParams = useSearchParams();
@@ -63,6 +64,9 @@ export default function PlanPage() {
             <p className="mt-2 font-sans text-sm text-white/60">
               Vadodara, Gujarat · +91 97243 91674
             </p>
+            <div className="mt-4">
+              <GoogleTrustBadge variant="pill" />
+            </div>
           </div>
 
           <a

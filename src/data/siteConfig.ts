@@ -69,7 +69,7 @@ export const siteConfig: SiteConfig = {
 export function getWhatsAppUrl(
   message = "Hello Darsh Dream Tours,\n\nI came across your website and would like to plan a trip.\n\nCould you please help me with the details?\n\nThank you!",
 ) {
-  const phone = "919724391674";
+  const phone = "917487083499";
 
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }

@@ -51,16 +51,20 @@ export default function Navbar() {
           {/* Logo */}
           <a
             href="/"
-            className="relative z-10 block h-[48px] w-[142px]"
+            className="relative z-10 block h-[56px] w-[175px] sm:h-[66px] sm:w-[205px] transition-all duration-300"
             aria-label="Darsh Dream Tours home"
           >
             <Image
-              src="/images/logo.jpg"
+              src="/images/logo.png"
               alt={siteConfig.name}
               fill
               priority
-              sizes="142px"
-              className="object-contain"
+              sizes="(max-width: 640px) 175px, 205px"
+              className={`object-contain object-left transition-all duration-300 ${
+                !scrolled
+                  ? "drop-shadow-[0_2px_8px_rgba(255,255,255,0.25)] brightness-110"
+                  : ""
+              }`}
             />
           </a>
 
@@ -119,13 +123,13 @@ export default function Navbar() {
         }`}
       >
         <div className="flex h-[82px] items-center justify-between px-5 sm:px-8">
-          <div className="relative h-[48px] w-[142px] bg-white">
+          <div className="relative h-[56px] w-[175px]">
             <Image
-              src="/images/logo.jpg"
+              src="/images/logo.png"
               alt={siteConfig.name}
               fill
-              sizes="142px"
-              className="object-contain"
+              sizes="175px"
+              className="object-contain object-left drop-shadow-[0_2px_8px_rgba(255,255,255,0.25)] brightness-110"
             />
           </div>
 

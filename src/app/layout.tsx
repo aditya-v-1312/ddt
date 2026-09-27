@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     siteName: "Darsh Dream Tours",
     images: [
       {
-        url: "/images/logo.jpg",
-        width: 846,
-        height: 596,
+        url: "/images/logo.png",
+        width: 517,
+        height: 332,
         alt: "Darsh Dream Tours Logo",
       },
     ],
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/images/logo.jpg",
+    icon: "/images/logo.png",
   },
 };
 

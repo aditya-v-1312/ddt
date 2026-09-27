@@ -9,6 +9,7 @@ import VectorAirplane from "@/components/VectorAirplane";
 import { getWhatsAppUrl } from "@/data/siteConfig";
 import { travelImages } from "@/data/images";
 import { ArrowDown, ArrowUpRight, MessageCircle } from "lucide-react";
+import GoogleTrustBadge from "@/components/GoogleTrustBadge";
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -892,13 +893,13 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
             {/* Brand */}
             <div className="md:col-span-5">
-              <div className="relative h-[55px] w-[165px] bg-white">
+              <div className="relative h-[72px] w-[215px] sm:h-[80px] sm:w-[240px]">
                 <Image
-                  src="/images/logo.jpg"
+                  src="/images/logo.png"
                   alt="Darsh Dream Tours"
                   fill
-                  sizes="165px"
-                  className="object-contain"
+                  sizes="(max-width: 640px) 215px, 240px"
+                  className="object-contain object-left drop-shadow-[0_2px_10px_rgba(255,255,255,0.22)] brightness-110"
                 />
               </div>
 
@@ -918,6 +919,11 @@ export default function Home() {
                     ↺
                   </span>
                 </button>
+              </div>
+
+              {/* Verified Google Trust Badge */}
+              <div className="mt-6">
+                <GoogleTrustBadge variant="pill" />
               </div>
             </div>
 

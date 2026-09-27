@@ -214,13 +214,13 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) =>
               : "opacity-15 scale-90 -translate-y-4"
           }`}
         >
-          <div className="relative w-40 h-24 sm:w-52 sm:h-32 mb-3 bg-white p-2 border border-[#101A2E]/5 shadow-sm">
+          <div className="relative w-56 h-36 sm:w-72 sm:h-44 md:w-80 md:h-48 mb-3">
             <Image
-              src="/images/logo.jpg"
+              src="/images/logo.png"
               alt={siteConfig.name}
               fill
               priority
-              sizes="(max-width: 640px) 160px, 208px"
+              sizes="(max-width: 640px) 224px, 320px"
               className="object-contain"
             />
           </div>
