@@ -1,21 +1,35 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
-import { siteConfig } from "@/data/siteConfig";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-manrope",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.darshdreamtours.com"),
   title: "Darsh Dream Tours | Curated Travel Experiences",
   description:
-    "Darsh Dream Tours helps you plan memorable journeys across India and international destinations. Tailored itineraries, end-to-end guidance, and boutique travel care.",
+    "Darsh Dream Tours helps you plan memorable journeys across India and international destinations. Thoughtful travel curation, personalized itineraries, and boutique travel care.",
   keywords: [
     "Darsh Dream Tours",
     "Sakshi Chandiramani",
     "Vadodara travel agency",
-    "custom travel itinerary",
-    "Dubai luxury packages",
-    "Kashmir tour",
-    "Switzerland holiday",
-    "Kerala backwaters",
+    "curated travel itineraries",
+    "Dubai travel",
+    "Kashmir journey",
+    "Switzerland tour",
     "boutique travel planner",
   ],
   authors: [{ name: "Darsh Dream Tours" }, { name: "Sakshi Chandiramani" }],
@@ -47,12 +61,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
-      <body className="antialiased selection:bg-[#9A5B2D] selection:text-white">
+    <html
+      lang="en"
+      className={`${cormorant.variable} ${manrope.variable} scroll-smooth`}
+    >
+      <body className="antialiased selection:bg-[#9A5B2D] selection:text-white font-sans bg-[#F8F7F3] text-[#17213A]">
         {children}
       </body>
     </html>
