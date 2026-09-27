@@ -32,7 +32,8 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   name: "DARSH DREAM TOURS",
   tagline: "YOUR JOURNEY. YOUR DREAM. YOUR WORLD.",
-  subTagline: "Curated journeys, unforgettable experiences, and travel planned around you.",
+  subTagline:
+    "Curated journeys, unforgettable experiences, and travel planned around you.",
   partner: {
     name: "SAKSHI CHANDIRAMANI",
     role: "Partner",
@@ -57,14 +58,18 @@ export const siteConfig: SiteConfig = {
     },
   },
   social: {
-    whatsappDefaultMessage: "Hello Darsh Dream Tours, I would like to enquire about planning a trip.",
+    whatsappDefaultMessage:
+      "Hello Darsh Dream Tours, I would like to enquire about planning a trip.",
   },
 };
 
 /**
  * Builds a direct WhatsApp URL with an encoded message.
  */
-export function getWhatsAppUrl(customMessage?: string): string {
-  const message = customMessage || siteConfig.social.whatsappDefaultMessage;
-  return `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(message)}`;
+export function getWhatsAppUrl(
+  message = "Hello Darsh Dream Tours,\n\nI came across your website and would like to plan a trip.\n\nCould you please help me with the details?\n\nThank you!",
+) {
+  const phone = "919724391674";
+
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }

@@ -1,165 +1,191 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { siteConfig, getWhatsAppUrl } from "@/data/siteConfig";
-import { Menu, X, ArrowUpRight, MessageCircle } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+import { getWhatsAppUrl, siteConfig } from "@/data/siteConfig";
 
-export const Navbar: React.FC = () => {
+const navLinks = [
+  { label: "Destinations", href: "/destinations" },
+  { label: "Experiences", href: "/experiences" },
+  { label: "About", href: "/about" },
+  { label: "Plan a Journey", href: "/plan" },
+];
+
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 40);
     };
+
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Destinations", href: "#destinations" },
-    { name: "Experiences", href: "#categories" },
-    { name: "Featured", href: "#featured" },
-    { name: "About", href: "#about" },
-    { name: "Plan Your Journey", href: "#planner" },
-  ];
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  const closeMobile = () => setMobileOpen(false);
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-[#F8F7F3]/95 backdrop-blur-md py-3 shadow-[0_4px_20px_rgba(8,21,47,0.05)] border-b border-[#E7E4DA]"
-            : "bg-transparent py-5 text-[#17213A]"
+            ? "bg-[#F7F5F0]/95 backdrop-blur-xl border-b border-[#101A2E]/10"
+            : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Logo Asset */}
-          <Link
-            href="#"
-            className="flex items-center space-x-3 group focus:outline-none"
-            aria-label="Darsh Dream Tours - Return to top"
+        <div className="mx-auto flex h-[82px] max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12">
+          {/* Logo */}
+          <a
+            href="/"
+            className="relative z-10 block h-[48px] w-[142px]"
+            aria-label="Darsh Dream Tours home"
           >
-            <div className="relative h-11 w-36 sm:h-12 sm:w-40 transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src="/images/logo.jpg"
-                alt={siteConfig.name}
-                fill
-                priority
-                className="object-contain"
-                sizes="(max-width: 768px) 140px, 160px"
-              />
-            </div>
-          </Link>
-
-          {/* Desktop Navigation Links */}
-          <nav
-            aria-label="Main Navigation"
-            className="hidden md:flex items-center space-x-8 text-[12px] tracking-[0.2em] uppercase font-sans font-medium text-[#17213A]"
-          >
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="relative py-1 text-[#17213A]/80 hover:text-[#08152F] transition-colors duration-300 group"
-              >
-                <span>{link.name}</span>
-                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#9A5B2D] transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
-          </nav>
-
-          {/* Right Action: Let's Talk CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <a
-              href={getWhatsAppUrl("Hello Sakshi, I would like to talk with Darsh Dream Tours about planning a journey.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-sans font-semibold px-5 py-2.5 rounded-full border border-[#08152F]/20 text-[#08152F] hover:bg-[#08152F] hover:text-white transition-all duration-300 shadow-sm"
-            >
-              <span>Let's Talk</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#9A5B2D]" />
-            </a>
-          </div>
-
-          {/* Mobile Hamburger Button */}
-          <div className="flex md:hidden items-center">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-[#08152F] rounded-lg focus:outline-none"
-              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileMenuOpen}
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* Mobile Drawer Menu (Overlay) */}
-      <div
-        className={`fixed inset-0 z-50 md:hidden bg-[#08152F] text-white transition-all duration-500 flex flex-col justify-between p-6 sm:p-8 ${
-          mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
-        }`}
-      >
-        {/* Top bar inside mobile drawer */}
-        <div className="flex items-center justify-between border-b border-white/10 pb-5">
-          <div className="relative h-11 w-32 bg-white rounded p-1">
             <Image
               src="/images/logo.jpg"
               alt={siteConfig.name}
               fill
+              priority
+              sizes="142px"
+              className="object-contain"
+            />
+          </a>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden items-center gap-8 lg:flex">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`nav-link ${
+                  scrolled ? "text-[#101A2E]" : "text-white"
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Desktop CTA */}
+          <a
+            href={getWhatsAppUrl(
+              "Hello Darsh Dream Tours, I would like to plan a journey.",
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`hidden lg:inline-flex items-center gap-2 border px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 ${
+              scrolled
+                ? "border-[#101A2E]/20 text-[#101A2E] hover:bg-[#101A2E] hover:text-white"
+                : "border-white/50 text-white hover:bg-white hover:text-[#101A2E]"
+            }`}
+          >
+            Let's Talk
+            <ArrowUpRight size={14} />
+          </a>
+
+          {/* Mobile Menu Button */}
+          <button
+            type="button"
+            onClick={() => setMobileOpen(true)}
+            className={`relative z-10 flex h-11 w-11 items-center justify-center lg:hidden ${
+              scrolled ? "text-[#101A2E]" : "text-white"
+            }`}
+            aria-label="Open menu"
+          >
+            <Menu size={25} strokeWidth={1.5} />
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed inset-0 z-[60] bg-[#101A2E] text-white transition-all duration-500 lg:hidden ${
+          mobileOpen
+            ? "visible opacity-100"
+            : "invisible opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="flex h-[82px] items-center justify-between px-5 sm:px-8">
+          <div className="relative h-[48px] w-[142px] bg-white">
+            <Image
+              src="/images/logo.jpg"
+              alt={siteConfig.name}
+              fill
+              sizes="142px"
               className="object-contain"
             />
           </div>
+
           <button
-            onClick={() => setMobileMenuOpen(false)}
-            className="p-2 text-white/80 hover:text-white rounded-lg focus:outline-none"
+            type="button"
+            onClick={closeMobile}
+            className="flex h-11 w-11 items-center justify-center"
             aria-label="Close menu"
           >
-            <X className="w-7 h-7" />
+            <X size={27} strokeWidth={1.5} />
           </button>
         </div>
 
-        {/* Links */}
-        <nav className="flex flex-col space-y-6 my-auto text-left">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-serif text-3xl sm:text-4xl text-white/90 hover:text-[#B87543] transition-colors flex items-center justify-between"
-            >
-              <span>{link.name}</span>
-              <span className="text-sm font-sans tracking-widest text-[#B87543]">→</span>
-            </a>
-          ))}
-        </nav>
+        <div className="flex h-[calc(100vh-82px)] flex-col justify-between px-6 pb-8 pt-16 sm:px-10">
+          <nav className="flex flex-col">
+            {navLinks.map((link, index) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={closeMobile}
+                className="group flex items-center justify-between border-b border-white/10 py-6"
+              >
+                <div className="flex items-baseline gap-5">
+                  <span className="font-sans text-[10px] tracking-[0.2em] text-[#B87543]">
+                    0{index + 1}
+                  </span>
 
-        {/* Bottom CTA on mobile drawer */}
-        <div className="pt-6 border-t border-white/10 flex flex-col space-y-4">
-          <a
-            href={getWhatsAppUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full flex items-center justify-center space-x-3 bg-[#9A5B2D] hover:bg-[#B87543] text-white py-3.5 px-6 rounded-full font-sans text-xs uppercase tracking-[0.2em] font-semibold transition-colors shadow-lg"
-          >
-            <MessageCircle className="w-4 h-4" />
-            <span>WhatsApp Us</span>
-          </a>
-          <div className="text-center text-xs text-white/50 tracking-wider">
-            Vadodara, Gujarat • +91 97243 91674
+                  <span className="font-serif text-4xl font-light">
+                    {link.label}
+                  </span>
+                </div>
+
+                <ArrowUpRight
+                  size={21}
+                  className="text-white/50 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
+              </a>
+            ))}
+          </nav>
+
+          <div className="border-t border-white/10 pt-6">
+            <p className="mb-4 font-sans text-[10px] uppercase tracking-[0.2em] text-white/40">
+              Vadodara · India & Worldwide
+            </p>
+
+            <a
+              href={getWhatsAppUrl(
+                "Hello Darsh Dream Tours, I would like to plan a journey.",
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMobile}
+              className="inline-flex items-center gap-3 border border-[#B87543] px-6 py-4 font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-white"
+            >
+              Start a Conversation
+              <ArrowUpRight size={15} />
+            </a>
           </div>
         </div>
       </div>
     </>
   );
-};
-
-export default Navbar;
+}
