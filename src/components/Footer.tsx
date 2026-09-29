@@ -13,150 +13,102 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
   return (
-    <footer id="contact" className="bg-[#050D20] text-white pt-20 pb-12 border-t border-[#1C366B]/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">
+    <footer id="contact" className="bg-[#07101F] text-white pt-20 pb-12 border-t border-white/10">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-14 border-b border-white/10">
           {/* Brand Column (5 cols) */}
           <div className="lg:col-span-5 flex flex-col items-start">
             <Link href="/" className="inline-block mb-6">
-              <div className="relative h-16 w-52">
+              <div className="relative h-[64px] w-[200px] sm:h-[72px] sm:w-[220px]">
                 <Image
                   src="/images/logo.png"
                   alt={siteConfig.name}
                   fill
+                  sizes="220px"
                   className="object-contain object-left drop-shadow-[0_2px_10px_rgba(255,255,255,0.22)] brightness-110"
                 />
               </div>
             </Link>
 
-            <p className="font-serif italic text-lg text-[#D99767] mb-2">
+            <p className="font-serif italic text-lg text-[#E2B18D] mb-3">
               "{siteConfig.tagline}"
             </p>
 
-            <p className="text-sm text-white/60 font-sans font-light max-w-sm leading-relaxed mb-6">
+            <p className="text-xs text-white/50 font-sans font-light max-w-sm leading-relaxed mb-6">
               Bespoke travel curation based in Vadodara, Gujarat. Crafting thoughtful escapes across India and worldwide destinations.
             </p>
+
+            <div className="mb-6">
+              <GoogleTrustBadge variant="pill" />
+            </div>
 
             {onReplayIntro && (
               <button
                 onClick={onReplayIntro}
-                className="inline-flex items-center space-x-2 text-xs font-sans uppercase tracking-widest text-[#B87543] hover:text-[#D99767] transition-colors py-1 mb-2"
+                className="inline-flex items-center space-x-2 text-[10px] font-sans uppercase tracking-[0.2em] text-white/40 hover:text-[#E2B18D] transition-colors py-1"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
-                <span>Replay Opening Flight</span>
+                <span>Replay Journey Intro</span>
               </button>
             )}
-
-            <div className="mt-4">
-              <GoogleTrustBadge variant="pill" />
-            </div>
           </div>
 
-          {/* Partner & Leadership (3 cols) */}
+          {/* Navigation (3 cols) */}
+          <div className="lg:col-span-3 lg:col-start-7">
+            <h4 className="font-sans text-[9px] uppercase tracking-[0.25em] text-white/40 font-semibold mb-5">
+              Explore
+            </h4>
+            <nav className="flex flex-col gap-3 font-sans text-xs">
+              <Link href="/destinations" className="w-fit text-white/70 hover:text-white transition-colors">
+                Destinations
+              </Link>
+              <Link href="/experiences" className="w-fit text-white/70 hover:text-white transition-colors">
+                Experiences
+              </Link>
+              <Link href="/about" className="w-fit text-white/70 hover:text-white transition-colors">
+                About Sakshi
+              </Link>
+              <Link href="/plan" className="w-fit text-white/70 hover:text-white transition-colors">
+                Plan a Journey
+              </Link>
+            </nav>
+          </div>
+
+          {/* Office & Contact (4 cols) */}
           <div className="lg:col-span-3">
-            <h4 className="font-serif text-xl text-white tracking-wide mb-5">
-              Leadership
-            </h4>
-            <div className="space-y-2 text-sm font-sans">
-              <p className="font-medium text-white text-base">
-                {siteConfig.partner.name}
-              </p>
-              <p className="text-xs uppercase tracking-widest text-[#D99767]">
-                {siteConfig.partner.role}
-              </p>
-              <p className="text-xs text-white/60 pt-2 font-light leading-relaxed">
-                Direct personal planning and end-to-end guidance for all your domestic and international travels.
-              </p>
-            </div>
-
-            <div className="mt-6 pt-5 border-t border-white/10">
-              <h5 className="text-xs uppercase tracking-widest text-white/40 font-sans mb-3">
-                Navigation
-              </h5>
-              <ul className="space-y-2 text-xs uppercase tracking-wider font-sans text-white/70">
-                <li>
-                  <a href="#destinations" className="hover:text-[#D99767] transition-colors">
-                    Destinations
-                  </a>
-                </li>
-                <li>
-                  <a href="#categories" className="hover:text-[#D99767] transition-colors">
-                    Experiences
-                  </a>
-                </li>
-                <li>
-                  <a href="#featured" className="hover:text-[#D99767] transition-colors">
-                    Featured Journeys
-                  </a>
-                </li>
-                <li>
-                  <a href="#about" className="hover:text-[#D99767] transition-colors">
-                    About Sakshi
-                  </a>
-                </li>
-                <li>
-                  <a href="#planner" className="hover:text-[#D99767] transition-colors">
-                    Plan Your Journey
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Contact & Location (4 cols) */}
-          <div className="lg:col-span-4">
-            <h4 className="font-serif text-xl text-white tracking-wide mb-5">
-              Office & Contact
+            <h4 className="font-sans text-[9px] uppercase tracking-[0.25em] text-white/40 font-semibold mb-5">
+              Vadodara Office
             </h4>
 
-            <div className="space-y-4 text-xs sm:text-sm font-sans text-white/75">
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-4 h-4 text-[#B87543] shrink-0 mt-1" />
-                <address className="not-italic leading-relaxed">
-                  {siteConfig.contact.address.line1}
-                  <br />
-                  {siteConfig.contact.address.line2}
-                  <br />
-                  {siteConfig.contact.address.city} {siteConfig.contact.address.pincode}
-                  <br />
-                  Gujarat, India
-                </address>
-              </div>
+            <div className="space-y-3 font-sans text-xs text-white/70">
+              <p className="leading-relaxed text-white/50">
+                {siteConfig.contact.address.line1}
+                <br />
+                {siteConfig.contact.address.line2}
+                <br />
+                {siteConfig.contact.address.city}{" "}
+                {siteConfig.contact.address.pincode}
+              </p>
 
-              <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-[#B87543] shrink-0" />
-                <a
-                  href={`tel:${siteConfig.contact.phone}`}
-                  className="hover:text-[#D99767] transition-colors"
-                >
-                  {siteConfig.contact.phoneDisplay}
+              <p className="pt-2">
+                <a href="tel:+919724391674" className="hover:text-[#E2B18D] transition-colors">
+                  +91 97243 91674
                 </a>
-              </div>
+              </p>
 
-              <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-[#B87543] shrink-0" />
-                <a
-                  href={`mailto:${siteConfig.contact.email}`}
-                  className="hover:text-[#D99767] transition-colors break-all"
-                >
-                  {siteConfig.contact.email}
+              <p>
+                <a href="mailto:sakshi@darshdreamtours.com" className="hover:text-[#E2B18D] transition-colors">
+                  sakshi@darshdreamtours.com
                 </a>
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <Globe className="w-4 h-4 text-[#B87543] shrink-0" />
-                <span className="text-white/80">{siteConfig.contact.website}</span>
-              </div>
+              </p>
             </div>
           </div>
         </div>
 
         {/* Bottom Copyright & Attribution */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/40 font-sans tracking-wider gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/40 font-sans tracking-wide gap-4">
           <p>© {new Date().getFullYear()} DARSH DREAM TOURS. All rights reserved.</p>
-          <p className="text-[11px] text-white/30">
-            Crafted for Sakshi Chandiramani • Vadodara
-          </p>
+          <p>Crafted for Sakshi Chandiramani · Vadodara, Gujarat</p>
         </div>
       </div>
     </footer>

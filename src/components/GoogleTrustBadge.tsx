@@ -128,7 +128,7 @@ export const GoogleTrustBadge: React.FC<GoogleTrustBadgeProps> = ({
       href={googleReviewsData.googleShareUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group inline-flex items-center gap-3 border border-white/15 bg-white/[0.04] px-4 py-2.5 backdrop-blur-md transition-all duration-300 hover:border-[#E2B18D]/60 hover:bg-white/[0.08] ${className}`}
+      className={`group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 backdrop-blur-md transition-all duration-300 hover:border-[#E2B18D]/60 hover:bg-white/[0.08] shadow-sm ${className}`}
       aria-label="Darsh Dream Tours 5.0 Google Reviews rating"
     >
       <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-sm shrink-0">

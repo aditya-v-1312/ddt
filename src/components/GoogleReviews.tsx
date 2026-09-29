@@ -22,14 +22,14 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
       className={`relative px-5 py-24 sm:px-8 sm:py-32 lg:px-12 border-t ${
         isDark
           ? "bg-[#07101F] text-white border-white/10"
-          : "bg-[#F7F5F0] text-[#101A2E] border-[#101A2E]/10"
+          : "bg-[#FAF9F5] text-[#101A2E] border-[#101A2E]/10"
       } ${className}`}
     >
       <div className="mx-auto max-w-[1440px]">
         {/* Section Header */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end mb-16 sm:mb-20">
           <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2.5 mb-5 px-3 py-1.5 border border-[#B87543]/30 bg-[#B87543]/10 text-[#B87543] font-sans text-[10px] uppercase tracking-[0.25em]">
+            <div className="inline-flex items-center gap-2.5 mb-5 px-3.5 py-1.5 rounded-full border border-[#B87543]/30 bg-[#B87543]/10 text-[#B87543] font-sans text-[10px] uppercase tracking-[0.25em]">
               <GoogleIcon className="w-3.5 h-3.5" />
               <span>Verified Google Reviews</span>
             </div>
@@ -56,7 +56,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
                 href={googleReviewsData.googleShareUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group inline-flex items-center gap-3 px-6 py-3.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${
+                className={`group inline-flex items-center gap-3 rounded-full px-7 py-3.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] transition-all duration-300 shadow-sm hover:scale-[1.02] ${
                   isDark
                     ? "bg-[#E2B18D] text-[#07101F] hover:bg-white"
                     : "bg-[#101A2E] text-white hover:bg-[#B87543]"
@@ -88,9 +88,9 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
 
         {/* Overall Rating Hero Strip */}
         <div
-          className={`mb-16 border p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 ${
+          className={`mb-16 rounded-2xl border p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 ${
             isDark
-              ? "bg-[#101A2E]/80 border-white/10"
+              ? "bg-white/[0.03] border-white/10 backdrop-blur-md"
               : "bg-white border-[#101A2E]/10 shadow-sm"
           }`}
         >
@@ -121,7 +121,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
 
           <div className="flex items-center gap-3 text-xs font-sans">
             <span
-              className={`inline-flex items-center gap-1.5 px-3 py-1.5 border ${
+              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border ${
                 isDark
                   ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
                   : "border-emerald-600/20 bg-emerald-50 text-emerald-700"
@@ -138,9 +138,9 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
           {googleReviewsData.reviews.map((rev) => (
             <div
               key={rev.id}
-              className={`border p-8 flex flex-col justify-between transition-all duration-300 ${
+              className={`rounded-2xl border p-8 flex flex-col justify-between transition-all duration-300 ${
                 isDark
-                  ? "bg-[#101A2E]/60 border-white/10 hover:border-white/20"
+                  ? "bg-white/[0.03] border-white/10 hover:border-white/20"
                   : "bg-white border-[#101A2E]/10 hover:border-[#101A2E]/25 shadow-sm"
               }`}
             >
@@ -201,7 +201,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
                 </blockquote>
               </div>
 
-              {/* Card Footer: Verified on Google Link */}
+              {/* Card Footer */}
               <div
                 className={`mt-6 pt-4 border-t flex items-center justify-between text-[10px] font-sans ${
                   isDark ? "border-white/10" : "border-[#101A2E]/10"
@@ -226,9 +226,9 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
             </div>
           ))}
 
-          {/* Invitation Card to write a review */}
+          {/* Invitation Card */}
           <div
-            className={`border p-8 flex flex-col justify-between border-dashed ${
+            className={`rounded-2xl border p-8 flex flex-col justify-between border-dashed ${
               isDark
                 ? "bg-white/[0.02] border-white/20 text-white"
                 : "bg-[#F0EDE6]/60 border-[#101A2E]/20 text-[#101A2E]"
@@ -258,7 +258,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
               href={googleReviewsData.googleShareUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 border border-[#B87543] bg-[#B87543]/10 px-5 py-3.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B87543] hover:bg-[#B87543] hover:text-white transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#B87543] bg-[#B87543]/10 px-6 py-3.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B87543] hover:bg-[#B87543] hover:text-white transition-all duration-300"
             >
               <span>Leave a Google Review</span>
               <ArrowUpRight
