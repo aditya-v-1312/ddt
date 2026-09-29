@@ -71,6 +71,9 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
               <Link href="/plan" className="w-fit text-white/70 hover:text-white transition-colors">
                 Plan a Journey
               </Link>
+              <Link href="/sitemap" className="w-fit text-white/70 hover:text-white transition-colors">
+                Sitemap &amp; Directory
+              </Link>
             </nav>
           </div>
 
@@ -109,8 +112,12 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/40 font-sans tracking-wide gap-4">
           <p>© {new Date().getFullYear()} DARSH DREAM TOURS. All rights reserved.</p>
           <div className="flex items-center gap-4">
+            <Link href="/sitemap" className="hover:text-[#E2B18D] transition-colors">
+              Sitemap
+            </Link>
+            <span className="text-white/20">·</span>
             <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-[#E2B18D] transition-colors">
-              Sitemap (XML)
+              XML
             </a>
             <span className="text-white/20">·</span>
             <p>Crafted for Sakshi Chandiramani · Vadodara, Gujarat</p>
