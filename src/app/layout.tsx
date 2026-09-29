@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import Script from "next/script";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
@@ -70,6 +71,18 @@ export default function RootLayout({
         <GoogleAnalytics />
         {children}
       </body>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-XF7FVCBWX2"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XF7FVCBWX2');
+        `}
+      </Script>
     </html>
   );
 }
