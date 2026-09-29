@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const baseUrl = "https://www.darshdreamtours.com";
+  const baseUrl = "https://darshdreamtours.vercel.app";
   const now = new Date().toISOString();
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
