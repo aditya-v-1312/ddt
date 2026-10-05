@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
@@ -70,6 +71,7 @@ export default function RootLayout({
       <body className="antialiased selection:bg-[#9A5B2D] selection:text-white font-sans bg-[#F8F7F3] text-[#17213A]">
         <GoogleAnalytics />
         {children}
+        <SpeedInsights />
       </body>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-XF7FVCBWX2"
