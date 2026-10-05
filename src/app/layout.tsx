@@ -20,7 +20,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://darshdreamtours.vercel.app"),
+  metadataBase: new URL("https://www.darshdreamtours.com"),
   title: "Darsh Dream Tours | Curated Travel Experiences",
   description:
     "Darsh Dream Tours helps you plan memorable journeys across India and international destinations. Thoughtful travel curation, personalized itineraries, and boutique travel care.",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Darsh Dream Tours | Curated Travel Experiences",
     description:
       "Your Journey. Your Dream. Your World. Curated journeys, unforgettable experiences, and travel planned around you.",
-    url: "https://darshdreamtours.vercel.app",
+    url: "https://www.darshdreamtours.com",
     siteName: "Darsh Dream Tours",
     images: [
       {

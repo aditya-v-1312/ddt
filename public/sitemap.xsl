@@ -144,7 +144,7 @@
             <h1>XML Sitemap Index</h1>
             <p class="desc">
               This index helps search engines like Google and Bing discover and index pages across 
-              <a href="https://darshdreamtours.vercel.app">darshdreamtours.vercel.app</a>.
+              <a href="https://www.darshdreamtours.com">darshdreamtours.com</a>.
             </p>
             <div class="stats-bar">
               <div>Total URLs: <span><xsl:value-of select="count(sitemap:urlset/sitemap:url)"/></span></div>

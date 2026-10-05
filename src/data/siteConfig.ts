@@ -48,7 +48,7 @@ export const siteConfig: SiteConfig = {
     phoneDisplay: "+91 97243 91674",
     whatsappNumber: "919724391674",
     email: "info@darshdreamtours.com",
-    website: "darshdreamtours.vercel.app",
+    website: "www.darshdreamtours.com",
     address: {
       line1: "SFI Sun Complex, 1 Abhishek Colony",
       line2: "Gotri Road, Race Course",
