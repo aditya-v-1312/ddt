@@ -111,7 +111,7 @@ export const travelImages = {
     },
   },
 
-  // About Sakshi Section (Authentic atmospheric travel photograph - no fake portrait person)
+  // About Us Section (Authentic atmospheric travel photograph - no fake portrait person)
   aboutSakshi: {
     url: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=85",
     alt: "Traveler standing overlooking an expansive open valley horizon at sunrise",

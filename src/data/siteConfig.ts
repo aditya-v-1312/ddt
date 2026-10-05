@@ -33,13 +33,13 @@ export const siteConfig: SiteConfig = {
   name: "DARSH DREAM TOURS",
   tagline: "YOUR JOURNEY. YOUR DREAM. YOUR WORLD.",
   subTagline:
-    "Curated journeys, unforgettable experiences, and travel planned around you.",
+    "Thoughtfully planned journeys across India and beyond.",
   partner: {
     name: "SAKSHI CHANDIRAMANI",
     role: "Partner",
     phone: "+91 97243 91674",
     whatsappNumber: "919724391674",
-    email: "sakshi@darshdreamtours.com",
+    email: "info@darshdreamtours.com",
     bioIntro:
       "Travel is personal. Every journey begins with understanding where you want to go, how you want to travel, and what you want to experience.",
   },
@@ -47,7 +47,7 @@ export const siteConfig: SiteConfig = {
     phone: "+919724391674",
     phoneDisplay: "+91 97243 91674",
     whatsappNumber: "919724391674",
-    email: "sakshi@darshdreamtours.com",
+    email: "info@darshdreamtours.com",
     website: "darshdreamtours.vercel.app",
     address: {
       line1: "SFI Sun Complex, 1 Abhishek Colony",

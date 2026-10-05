@@ -229,7 +229,7 @@ export default function ExperiencesPage() {
 
             <p className="mt-8 max-w-lg font-sans text-sm sm:text-base font-light leading-7 text-white/60">
               Tell us what you're imagining. The best place to start is a
-              relaxed conversation with Sakshi.
+              relaxed conversation with us.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
@@ -245,7 +245,7 @@ export default function ExperiencesPage() {
               </Link>
 
               <a
-                href={getWhatsAppUrl("Hello Sakshi, I have a custom trip idea in mind.")}
+                href={getWhatsAppUrl("Hello Darsh Dream Tours, I have a custom trip idea in mind.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/25 bg-white/[0.04] px-8 py-5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-[#E2B18D] hover:text-[#E2B18D] backdrop-blur-md"
@@ -269,20 +269,20 @@ export default function ExperiencesPage() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-12 pb-14 border-b border-white/10">
             <div className="md:col-span-5">
               <Link href="/" className="inline-block">
-                <div className="relative h-[64px] w-[200px] sm:h-[72px] sm:w-[220px]">
+                <div className="relative h-[72px] w-[230px] sm:h-[84px] sm:w-[260px]">
                   <Image
-                    src="/images/logo.png"
+                    src="/images/logo-light.png"
                     alt="Darsh Dream Tours"
                     fill
-                    sizes="220px"
-                    className="object-contain object-left drop-shadow-[0_2px_10px_rgba(255,255,255,0.22)] brightness-110"
+                    sizes="260px"
+                    className="object-contain object-left drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]"
                   />
                 </div>
               </Link>
 
               <p className="mt-5 max-w-sm font-sans text-xs leading-6 text-white/50">
                 Thoughtfully planned journeys across India and beyond. Personal
-                planning by Sakshi Chandiramani in Vadodara, Gujarat.
+                planning by Darsh Dream Tours in Vadodara, Gujarat.
               </p>
             </div>
 
@@ -299,7 +299,7 @@ export default function ExperiencesPage() {
                   Experiences
                 </Link>
                 <Link href="/about" className="w-fit text-white/70 hover:text-white transition-colors">
-                  About Sakshi
+                  About Us
                 </Link>
                 <Link href="/plan" className="w-fit text-white/70 hover:text-white transition-colors">
                   Plan a Journey
@@ -324,13 +324,13 @@ export default function ExperiencesPage() {
 
                 <p className="pt-2">
                   <a href="tel:+919724391674" className="hover:text-[#E2B18D] transition-colors">
-                    +91 97243 91674
+                    Office: +91 97243 91674
                   </a>
                 </p>
 
                 <p>
-                  <a href="mailto:sakshi@darshdreamtours.com" className="hover:text-[#E2B18D] transition-colors">
-                    sakshi@darshdreamtours.com
+                  <a href="mailto:info@darshdreamtours.com" className="hover:text-[#E2B18D] transition-colors">
+                    info@darshdreamtours.com
                   </a>
                 </p>
               </div>

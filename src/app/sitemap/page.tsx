@@ -110,7 +110,7 @@ export default function SitemapPage() {
                   href="/about"
                   className="group flex items-center justify-between font-medium text-[#17213A] hover:text-[#9A5B2D] transition-colors"
                 >
-                  <span>About Sakshi Chandiramani</span>
+                  <span>About Us</span>
                   <ArrowUpRight className="w-4 h-4 text-black/30 group-hover:text-[#9A5B2D] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </Link>
                 <p className="text-[11px] text-[#17213A]/50 font-light mt-0.5">
@@ -217,11 +217,11 @@ export default function SitemapPage() {
               <div className="flex flex-wrap gap-4 text-xs font-medium text-[#101A2E]">
                 <a href="tel:+919724391674" className="hover:text-[#9A5B2D] inline-flex items-center gap-1.5">
                   <Phone className="w-3 h-3 text-[#9A5B2D]" />
-                  <span>+91 97243 91674</span>
+                  <span>Office: +91 97243 91674</span>
                 </a>
-                <a href="mailto:sakshi@darshdreamtours.com" className="hover:text-[#9A5B2D] inline-flex items-center gap-1.5">
+                <a href="mailto:info@darshdreamtours.com" className="hover:text-[#9A5B2D] inline-flex items-center gap-1.5">
                   <Mail className="w-3 h-3 text-[#9A5B2D]" />
-                  <span>sakshi@darshdreamtours.com</span>
+                  <span>info@darshdreamtours.com</span>
                 </a>
               </div>
             </div>

@@ -101,8 +101,7 @@ export default function Home() {
 
               {/* Subtitle */}
               <p className="hero-reveal-delay-2 mt-8 max-w-xl font-sans text-sm sm:text-base font-light leading-7 text-white/75">
-                Curated journeys, unforgettable moments, and personalized travel
-                crafted around you by Sakshi Chandiramani.
+                Thoughtfully planned journeys across India and beyond.
               </p>
 
               {/* Dual Action Buttons */}
@@ -122,7 +121,7 @@ export default function Home() {
                   href="/plan"
                   className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/25 bg-white/[0.04] px-7 py-4 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-md transition-all duration-300 hover:border-white/50 hover:bg-white/10"
                 >
-                  <span>Plan With Sakshi</span>
+                  <span>Plan With Us</span>
                   <span className="h-px w-6 bg-white/40 transition-all duration-300 group-hover:w-10 group-hover:bg-[#E2B18D]" />
                 </Link>
               </div>
@@ -178,7 +177,7 @@ export default function Home() {
         <div className="absolute bottom-6 left-5 right-5 z-10 flex items-center justify-between sm:left-8 sm:right-8 lg:left-12 lg:right-12">
           <div className="flex items-center gap-3 text-[10px] font-sans uppercase tracking-[0.25em] text-white/40">
             <MapPin size={12} className="text-[#B87543]" />
-            <span>Vadodara · Gujarat · Worldwide</span>
+            <span>Vadodara · Gujarat · India</span>
           </div>
 
           <a
@@ -815,14 +814,14 @@ export default function Home() {
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
                   href={getWhatsAppUrl(
-                    "Hello Sakshi, I would like to talk with you about planning a journey."
+                    "Hello Darsh Dream Tours, I would like to talk with you about planning a journey."
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#101A2E] px-8 py-4 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-[#B87543] shadow-sm hover:scale-[1.02]"
                 >
                   <MessageCircle size={15} />
-                  <span>Talk to Sakshi</span>
+                  <span>Talk to Us</span>
                   <ArrowUpRight
                     size={14}
                     className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -931,20 +930,20 @@ export default function Home() {
             {/* Brand Column */}
             <div className="md:col-span-5">
               <Link href="/" className="inline-block">
-                <div className="relative h-[64px] w-[200px] sm:h-[72px] sm:w-[220px]">
+                <div className="relative h-[72px] w-[230px] sm:h-[84px] sm:w-[260px]">
                   <Image
-                    src="/images/logo.png"
+                    src="/images/logo-light.png"
                     alt="Darsh Dream Tours"
                     fill
-                    sizes="220px"
-                    className="object-contain object-left drop-shadow-[0_2px_10px_rgba(255,255,255,0.22)] brightness-110"
+                    sizes="260px"
+                    className="object-contain object-left drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]"
                   />
                 </div>
               </Link>
 
               <p className="mt-5 max-w-sm font-sans text-xs leading-6 text-white/50">
                 Thoughtfully planned journeys across India and beyond. Personal
-                planning by Sakshi Chandiramani in Vadodara, Gujarat.
+                planning by Darsh Dream Tours in Vadodara, Gujarat.
               </p>
 
               <div className="mt-6">
@@ -989,7 +988,7 @@ export default function Home() {
                   href="/about"
                   className="w-fit text-white/70 transition-colors hover:text-white"
                 >
-                  About Sakshi
+                  About Us
                 </Link>
                 <Link
                   href="/plan"
@@ -1021,16 +1020,16 @@ export default function Home() {
                     href="tel:+919724391674"
                     className="hover:text-[#E2B18D] transition-colors"
                   >
-                    +91 97243 91674
+                    Office: +91 97243 91674
                   </a>
                 </p>
 
                 <p>
                   <a
-                    href="mailto:sakshi@darshdreamtours.com"
+                    href="mailto:info@darshdreamtours.com"
                     className="hover:text-[#E2B18D] transition-colors"
                   >
-                    sakshi@darshdreamtours.com
+                    info@darshdreamtours.com
                   </a>
                 </p>
               </div>

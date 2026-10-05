@@ -72,10 +72,10 @@ export default function PlanPage() {
               Prefer a Direct Conversation?
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl font-light text-white">
-              Speak directly with Sakshi Chandiramani
+              Speak directly with Darsh Dream Tours
             </h2>
             <p className="mt-2 font-sans text-sm text-white/60">
-              Vadodara, Gujarat · +91 97243 91674
+              Vadodara Office: +91 97243 91674 · info@darshdreamtours.com
             </p>
             <div className="mt-4">
               <GoogleTrustBadge variant="pill" />
@@ -84,7 +84,7 @@ export default function PlanPage() {
 
           <a
             href={getWhatsAppUrl(
-              "Hello Sakshi, I would like to plan a journey with Darsh Dream Tours."
+              "Hello Darsh Dream Tours, I would like to plan a journey with you."
             )}
             target="_blank"
             rel="noopener noreferrer"
@@ -103,20 +103,20 @@ export default function PlanPage() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-12 pb-14 border-b border-white/10">
             <div className="md:col-span-5">
               <Link href="/" className="inline-block">
-                <div className="relative h-[64px] w-[200px] sm:h-[72px] sm:w-[220px]">
+                <div className="relative h-[72px] w-[230px] sm:h-[84px] sm:w-[260px]">
                   <Image
-                    src="/images/logo.png"
+                    src="/images/logo-light.png"
                     alt="Darsh Dream Tours"
                     fill
-                    sizes="220px"
-                    className="object-contain object-left drop-shadow-[0_2px_10px_rgba(255,255,255,0.22)] brightness-110"
+                    sizes="260px"
+                    className="object-contain object-left drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]"
                   />
                 </div>
               </Link>
 
               <p className="mt-5 max-w-sm font-sans text-xs leading-6 text-white/50">
                 Thoughtfully planned journeys across India and beyond. Personal
-                planning by Sakshi Chandiramani in Vadodara, Gujarat.
+                planning by Darsh Dream Tours in Vadodara, Gujarat.
               </p>
             </div>
 
@@ -133,7 +133,7 @@ export default function PlanPage() {
                   Experiences
                 </Link>
                 <Link href="/about" className="w-fit text-white/70 hover:text-white transition-colors">
-                  About Sakshi
+                  About Us
                 </Link>
                 <Link href="/plan" className="w-fit text-white/70 hover:text-white transition-colors">
                   Plan a Journey
@@ -158,13 +158,13 @@ export default function PlanPage() {
 
                 <p className="pt-2">
                   <a href="tel:+919724391674" className="hover:text-[#E2B18D] transition-colors">
-                    +91 97243 91674
+                    Office: +91 97243 91674
                   </a>
                 </p>
 
                 <p>
-                  <a href="mailto:sakshi@darshdreamtours.com" className="hover:text-[#E2B18D] transition-colors">
-                    sakshi@darshdreamtours.com
+                  <a href="mailto:info@darshdreamtours.com" className="hover:text-[#E2B18D] transition-colors">
+                    info@darshdreamtours.com
                   </a>
                 </p>
               </div>

@@ -19,13 +19,13 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
           {/* Brand Column (5 cols) */}
           <div className="lg:col-span-5 flex flex-col items-start">
             <Link href="/" className="inline-block mb-6">
-              <div className="relative h-[64px] w-[200px] sm:h-[72px] sm:w-[220px]">
+              <div className="relative h-[72px] w-[230px] sm:h-[84px] sm:w-[260px]">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo-light.png"
                   alt={siteConfig.name}
                   fill
-                  sizes="220px"
-                  className="object-contain object-left drop-shadow-[0_2px_10px_rgba(255,255,255,0.22)] brightness-110"
+                  sizes="260px"
+                  className="object-contain object-left drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]"
                 />
               </div>
             </Link>
@@ -35,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
             </p>
 
             <p className="text-xs text-white/50 font-sans font-light max-w-sm leading-relaxed mb-6">
-              Bespoke travel curation based in Vadodara, Gujarat. Crafting thoughtful escapes across India and worldwide destinations.
+              Bespoke travel curation based in Vadodara, Gujarat. Thoughtfully planned journeys across India and beyond.
             </p>
 
             <div className="mb-6">
@@ -66,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
                 Experiences
               </Link>
               <Link href="/about" className="w-fit text-white/70 hover:text-white transition-colors">
-                About Sakshi
+                About Us
               </Link>
               <Link href="/plan" className="w-fit text-white/70 hover:text-white transition-colors">
                 Plan a Journey
@@ -95,13 +95,13 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
 
               <p className="pt-2">
                 <a href="tel:+919724391674" className="hover:text-[#E2B18D] transition-colors">
-                  +91 97243 91674
+                  Office: +91 97243 91674
                 </a>
               </p>
 
               <p>
-                <a href="mailto:sakshi@darshdreamtours.com" className="hover:text-[#E2B18D] transition-colors">
-                  sakshi@darshdreamtours.com
+                <a href="mailto:info@darshdreamtours.com" className="hover:text-[#E2B18D] transition-colors">
+                  info@darshdreamtours.com
                 </a>
               </p>
             </div>

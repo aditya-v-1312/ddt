@@ -83,13 +83,13 @@ export const AboutSakshi: React.FC = () => {
             {/* Direct Connect Actions */}
             <div className="pt-6 border-t border-[#E7E4DA] flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <a
-                href={getWhatsAppUrl("Hello Sakshi, I would like to talk with you about planning a trip with Darsh Dream Tours.")}
+                href={getWhatsAppUrl("Hello Darsh Dream Tours, I would like to talk with you about planning a trip.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center space-x-3 px-8 py-4 rounded-full bg-[#08152F] hover:bg-[#9A5B2D] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-md group"
               >
                 <MessageCircle className="w-4 h-4 text-[#D99767] group-hover:text-white transition-colors" />
-                <span>Talk To Sakshi</span>
+                <span>Talk to Us</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
 
@@ -98,7 +98,7 @@ export const AboutSakshi: React.FC = () => {
                 className="inline-flex items-center justify-center space-x-2 px-6 py-4 rounded-full border border-[#E7E4DA] hover:border-[#08152F] text-[#08152F] text-xs uppercase tracking-[0.2em] font-medium transition-colors bg-white"
               >
                 <Phone className="w-3.5 h-3.5 text-[#9A5B2D]" />
-                <span>{siteConfig.contact.phoneDisplay}</span>
+                <span>Office: {siteConfig.contact.phoneDisplay}</span>
               </a>
 
               <a
@@ -106,7 +106,7 @@ export const AboutSakshi: React.FC = () => {
                 className="inline-flex items-center justify-center space-x-2 px-6 py-4 rounded-full border border-[#E7E4DA] hover:border-[#08152F] text-[#08152F] text-xs uppercase tracking-[0.2em] font-medium transition-colors bg-white"
               >
                 <Mail className="w-3.5 h-3.5 text-[#9A5B2D]" />
-                <span>Email Sakshi</span>
+                <span>Email Us</span>
               </a>
             </div>
           </div>

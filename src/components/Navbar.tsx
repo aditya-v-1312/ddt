@@ -10,7 +10,7 @@ import { getWhatsAppUrl, siteConfig } from "@/data/siteConfig";
 const navLinks = [
   { label: "Destinations", href: "/destinations" },
   { label: "Experiences", href: "/experiences" },
-  { label: "About Sakshi", href: "/about" },
+  { label: "About Us", href: "/about" },
   { label: "Plan a Journey", href: "/plan" },
 ];
 
@@ -44,7 +44,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "py-3 bg-[#F7F5F0]/90 backdrop-blur-xl border-b border-[#101A2E]/[0.07] shadow-[0_4px_24px_rgba(0,0,0,0.03)]"
-            : "py-5 sm:py-7 bg-gradient-to-b from-[#07101F]/80 via-[#07101F]/30 to-transparent"
+            : "py-5 sm:py-7 bg-gradient-to-b from-[#07101F]/85 via-[#07101F]/40 to-transparent"
         }`}
       >
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12">
@@ -54,17 +54,17 @@ export default function Navbar() {
             className="group relative z-10 block transition-transform duration-300 hover:scale-[1.02]"
             aria-label="Darsh Dream Tours home"
           >
-            <div className="relative h-[50px] w-[165px] sm:h-[60px] sm:w-[195px] transition-all duration-300">
+            <div className="relative h-[58px] w-[190px] sm:h-[70px] sm:w-[230px] transition-all duration-300">
               <Image
-                src="/images/logo.png"
+                src={scrolled ? "/images/logo.png" : "/images/logo-light.png"}
                 alt={siteConfig.name}
                 fill
                 priority
-                sizes="(max-width: 640px) 165px, 195px"
+                sizes="(max-width: 640px) 190px, 230px"
                 className={`object-contain object-left transition-all duration-300 ${
                   !scrolled
-                    ? "drop-shadow-[0_2px_10px_rgba(255,255,255,0.22)] brightness-110"
-                    : ""
+                    ? "drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)] brightness-105"
+                    : "drop-shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
                 }`}
               />
             </div>
@@ -170,13 +170,13 @@ export default function Navbar() {
         }`}
       >
         <div className="flex h-[82px] items-center justify-between px-5 sm:px-8 border-b border-white/10">
-          <div className="relative h-[48px] w-[150px]">
+          <div className="relative h-[54px] w-[175px]">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-light.png"
               alt={siteConfig.name}
               fill
-              sizes="150px"
-              className="object-contain object-left drop-shadow-[0_2px_8px_rgba(255,255,255,0.25)] brightness-110"
+              sizes="175px"
+              className="object-contain object-left drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]"
             />
           </div>
 
@@ -232,17 +232,20 @@ export default function Navbar() {
                 Direct Consultation
               </p>
               <p className="font-serif text-xl font-light text-white mt-1">
-                Sakshi Chandiramani
+                Darsh Dream Tours
               </p>
               <p className="font-sans text-xs text-white/60">
-                Vadodara, Gujarat · +91 97243 91674
+                Office: +91 97243 91674 · Vadodara
+              </p>
+              <p className="font-sans text-xs text-[#E2B18D] mt-0.5">
+                info@darshdreamtours.com
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-3 pt-2">
               <a
                 href={getWhatsAppUrl(
-                  "Hello Sakshi, I would like to plan a journey with Darsh Dream Tours."
+                  "Hello Darsh Dream Tours, I would like to plan a journey with you."
                 )}
                 target="_blank"
                 rel="noopener noreferrer"

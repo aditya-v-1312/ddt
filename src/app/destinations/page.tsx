@@ -370,12 +370,10 @@ export default function DestinationsPage() {
                   Custom Journeys
                 </span>
                 <h3 className="font-serif text-3xl sm:text-4xl font-light text-[#101A2E] mt-2">
-                  Don't see your intended destination?
+                  Don't see your interested destination?
                 </h3>
                 <p className="mt-3 font-sans text-sm font-light leading-relaxed text-[#697181] max-w-xl">
-                  That's completely fine. We curate custom journeys anywhere in
-                  India or worldwide. Tell Sakshi what you have in mind and we'll
-                  design the entire itinerary from scratch.
+                  Tell us what you have in mind and we'll design the entire itinerary from scratch.
                 </p>
               </div>
 
@@ -388,12 +386,12 @@ export default function DestinationsPage() {
                 </Link>
 
                 <a
-                  href={getWhatsAppUrl("Hello Sakshi, I would like to plan a trip to a destination not listed on your website.")}
+                  href={getWhatsAppUrl("Hello Darsh Dream Tours, I would like to plan a trip to a destination not listed on your website.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#101A2E] hover:text-[#B87543] transition-colors py-3"
                 >
-                  <span>WhatsApp Sakshi →</span>
+                  <span>WhatsApp Us →</span>
                 </a>
               </div>
             </div>
@@ -459,20 +457,20 @@ export default function DestinationsPage() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-12 pb-14 border-b border-white/10">
             <div className="md:col-span-5">
               <Link href="/" className="inline-block">
-                <div className="relative h-[64px] w-[200px] sm:h-[72px] sm:w-[220px]">
+                <div className="relative h-[72px] w-[230px] sm:h-[84px] sm:w-[260px]">
                   <Image
-                    src="/images/logo.png"
+                    src="/images/logo-light.png"
                     alt="Darsh Dream Tours"
                     fill
-                    sizes="220px"
-                    className="object-contain object-left drop-shadow-[0_2px_10px_rgba(255,255,255,0.22)] brightness-110"
+                    sizes="260px"
+                    className="object-contain object-left drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]"
                   />
                 </div>
               </Link>
 
               <p className="mt-5 max-w-sm font-sans text-xs leading-6 text-white/50">
                 Thoughtfully planned journeys across India and beyond. Personal
-                planning by Sakshi Chandiramani in Vadodara, Gujarat.
+                planning by Darsh Dream Tours in Vadodara, Gujarat.
               </p>
             </div>
 
@@ -489,7 +487,7 @@ export default function DestinationsPage() {
                   Experiences
                 </Link>
                 <Link href="/about" className="w-fit text-white/70 hover:text-white transition-colors">
-                  About Sakshi
+                  About Us
                 </Link>
                 <Link href="/plan" className="w-fit text-white/70 hover:text-white transition-colors">
                   Plan a Journey
@@ -514,13 +512,13 @@ export default function DestinationsPage() {
 
                 <p className="pt-2">
                   <a href="tel:+919724391674" className="hover:text-[#E2B18D] transition-colors">
-                    +91 97243 91674
+                    Office: +91 97243 91674
                   </a>
                 </p>
 
                 <p>
-                  <a href="mailto:sakshi@darshdreamtours.com" className="hover:text-[#E2B18D] transition-colors">
-                    sakshi@darshdreamtours.com
+                  <a href="mailto:info@darshdreamtours.com" className="hover:text-[#E2B18D] transition-colors">
+                    info@darshdreamtours.com
                   </a>
                 </p>
               </div>

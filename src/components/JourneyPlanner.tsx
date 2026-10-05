@@ -400,7 +400,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                   <div className="space-y-6">
                     <div>
                       <label className="block font-serif text-3xl sm:text-4xl text-[#07101F] mb-2 font-light">
-                        How should Sakshi reach you?
+                        How should we reach you?
                       </label>
                       <p className="text-sm text-[#697181] font-sans">
                         We value your trust and privacy. Your information is only used to curate your trip.
@@ -510,10 +510,10 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
               <div className="bg-[#FAF9F5] border border-[#101A2E]/10 rounded-2xl p-6 sm:p-8 max-w-md mx-auto mb-8 text-left">
                 <div className="flex items-center space-x-2 text-[10px] uppercase tracking-wider text-[#B87543] font-semibold mb-2">
                   <Sparkles className="w-3.5 h-3.5" />
-                  <span>Send Directly To Sakshi</span>
+                  <span>Send Directly via WhatsApp</span>
                 </div>
                 <p className="text-xs text-[#697181] font-sans leading-relaxed mb-6">
-                  Click below to open WhatsApp with your pre-formatted enquiry details directly sent to Sakshi Chandiramani (+91 97243 91674).
+                  Click below to open WhatsApp with your pre-formatted enquiry details directly sent to Darsh Dream Tours (+91 97243 91674).
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3">
