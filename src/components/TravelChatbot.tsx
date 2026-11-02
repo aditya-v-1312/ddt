@@ -5,6 +5,7 @@ import { useInquiry } from "@/context/InquiryContext";
 import { travelPackages, TravelPackage, getPackagesByDestination } from "@/data/packages";
 import { destinationHotels, getHotelsByDestination } from "@/data/hotels";
 import { siteConfig } from "@/data/siteConfig";
+import { formatSafePhoneNumber } from "@/lib/utils";
 import {
   MessageSquare,
   X,
@@ -412,7 +413,7 @@ export default function TravelChatbot() {
   const handleCountryCodePick = (c: (typeof popularCountryCodes)[0]) => {
     setSelectedCountryCode(c.code);
     addUserMessage(`${c.flag} ${c.code} (${c.name})`);
-    setInputText(`${c.code} `);
+    setInputText(`(${c.code}) `);
     inputRef.current?.focus();
     addBotMessage(
       `Selected ${c.flag} ${c.code}. Please type the remaining digits of your mobile number:`,
@@ -441,13 +442,12 @@ export default function TravelChatbot() {
       let rawVal = text.trim();
       const digitsOnly = rawVal.replace(/[\s-]/g, "");
 
-      // If user typed 10 digits without code, add the selected country code or default +91
+      // Format safely to prevent Google Sheets / Excel #ERROR!
       if (/^[6-9]\d{9}$/.test(digitsOnly)) {
-        rawVal = `${selectedCountryCode || "+91"} ${digitsOnly}`;
-      } else if (!rawVal.startsWith("+") && selectedCountryCode) {
-        rawVal = `${selectedCountryCode} ${rawVal}`;
-      } else if (!rawVal.startsWith("+") && /^\d{7,14}$/.test(digitsOnly)) {
-        rawVal = `+${digitsOnly}`;
+        const code = (selectedCountryCode || "+91").replace("+", "");
+        rawVal = `(+${code}) ${digitsOnly}`;
+      } else {
+        rawVal = formatSafePhoneNumber(rawVal);
       }
 
       setConsultation((prev) => ({ ...prev, phone: rawVal }));
@@ -502,7 +502,7 @@ export default function TravelChatbot() {
   // Dynamic input placeholder based on current step
   const getInputPlaceholder = () => {
     if (conversationalStep === "awaiting_name") return "Type your full name...";
-    if (conversationalStep === "awaiting_phone") return "Select country code or type number (e.g. +91 98765 43210)...";
+    if (conversationalStep === "awaiting_phone") return "Select country code or type number (e.g. (+91) 98765 43210)...";
     if (conversationalStep === "awaiting_email") return "Type your email address (e.g. name@example.com)...";
     if (conversationalStep === "awaiting_notes") return "Any special requests or notes (or tap None)...";
     return "Type a destination, hotel, or question...";

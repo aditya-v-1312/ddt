@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { promises as fs } from "fs";
 import path from "path";
+import { formatSafePhoneNumber } from "@/lib/utils";
 
 export interface EnquiryRecord {
   id: string;
@@ -73,12 +74,9 @@ export async function POST(request: NextRequest) {
     const referenceId = `${prefix}-${todayStr}-${randomSuffix}`;
     const createdAt = new Date().toISOString();
 
-    // Standardize phone number with country code (+91 default if 10-digit Indian number)
-    let cleanPhone = phone.trim();
-    const digitsOnly = cleanPhone.replace(/[\s-]/g, '');
-    if (/^[6-9]\d{9}$/.test(digitsOnly)) {
-      cleanPhone = `+91 ${digitsOnly}`;
-    }
+    // Standardize phone number safely with country code in parentheses e.g. "(+91) 7016841389"
+    // This permanently prevents Google Sheets and Excel formula parse errors (#ERROR!)
+    const cleanPhone = formatSafePhoneNumber(phone);
 
     const record: EnquiryRecord = {
       id: referenceId,

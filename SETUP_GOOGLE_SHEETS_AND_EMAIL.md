@@ -13,19 +13,31 @@ Inquiries are captured and routed as follows:
 
 ## 2. Preventing `#ERROR!` in Google Sheets / Excel on Country Codes
 
-### Why `#ERROR!` Happened:
-In Microsoft Excel and Google Sheets, **any cell starting with `+` (such as `+91 7016841389` or `+971 50 1234567`) is automatically interpreted as a mathematical formula** (`= +91 ...`). Because phone numbers contain spaces or multiple digits, the spreadsheet engine fails to evaluate it as a math expression and prints `#ERROR!`.
+### Why `#ERROR! Formula parse error.` Occurred:
+In Microsoft Excel and Google Sheets, **any cell starting with `+` (such as `+91 7016841389`) is automatically intercepted as an addition formula** (`=+91 7016841389`). Because the country code is followed by a space and 10 digits, the spreadsheet formula engine tries to compute an arithmetic operation, fails, and outputs:
+```
+Error
+Formula parse error. 
++91 7016841389
+```
 
-### How We Fixed It:
-1. **Chatbot Country Code Support:**
-   The chatbot now explicitly prompts for the country code with quick one-tap chips (`🇮🇳 +91`, `🇦🇪 +971`, `🇬🇧 +44`, `🇺🇸 +1`, `🇸🇬 +65`, `🇦🇺 +61`) and formats the number cleanly.
-2. **Google Apps Script Plain Text Formatting:**
-   In [`scripts/google-sheets-script.js`](file:///Users/aditya/Documents/DARSH%20TOURS/scripts/google-sheets-script.js), phone numbers are stored with a leading apostrophe (`' +91 ...`) and column 7 is explicitly formatted as Plain Text (`@`). This forces Excel and Google Sheets to store it as a literal string, completely eliminating `#ERROR!`.
+### How We Permanently Solved It:
+1. **Parentheses Country Code Standardization (`(+91) 7016841389`):**
+   The application (`/api/enquiry` and `TravelChatbot.tsx`) automatically standardizes all phone numbers into the international standard format:
+   `(+91) 7016841389` (or `(+971) 50 1234567`, `(+44) 7911 123456`, `(+1) 415 555 2671`).
+   Because the first character is `(`, Excel and Google Sheets **never** treat it as a mathematical formula operator (`+`, `-`, `=`). It evaluates as 100% pure text without `#ERROR!`.
+2. **Interactive Country Code Selector in Chatbot:**
+   The concierge asks for the client's country code with 1-tap quick buttons (`🇮🇳 +91`, `🇦🇪 +971`, `🇬🇧 +44`, `🇺🇸 +1`, `🇸🇬 +65`, `🇦🇺 +61`, `🇸🇦 +966`, `🇶🇦 +974`), pre-filling `(+91) ` so clients know their country code is registered.
+3. **Google Apps Script Plain Text Format:**
+   [`scripts/google-sheets-script.js`](file:///Users/aditya/Documents/DARSH%20TOURS/scripts/google-sheets-script.js) explicitly formats Column G (Phone) with `.setNumberFormat("@")` and converts any raw `+` prefix into `(+code)` automatically before appending.
+4. **Smart Dialing Preserved:**
+   Phone dialers, iOS, macOS, Android, and `tel:` links automatically strip parentheses, dialing `+917016841389` seamlessly.
 
-### If You Have an Existing Google Sheet with `#ERROR!`:
-1. In your Google Sheet, click the letter **G** at the top to select the entire **Phone** column.
+### If You Have Existing Rows in Google Sheets Showing `#ERROR!`:
+1. In your Google Sheet, click the letter **G** header at the top to select the entire **Phone** column.
 2. In the top menu, click **Format → Number → Plain text**.
-3. In **Extensions → Apps Script**, copy and re-paste the updated code from [`scripts/google-sheets-script.js`](file:///Users/aditya/Documents/DARSH%20TOURS/scripts/google-sheets-script.js), then click **Save** and **Deploy > Manage deployments > Edit > New version > Deploy**.
+3. For any cell currently displaying `#ERROR!`, simply replace the text with `(+91) 7016841389` or type an apostrophe `'` before `+91` (e.g. `'+91 7016841389`).
+4. In **Extensions → Apps Script**, copy and re-paste the updated code from [`scripts/google-sheets-script.js`](file:///Users/aditya/Documents/DARSH%20TOURS/scripts/google-sheets-script.js), then click **Save** and **Deploy > Manage deployments > Edit > New version > Deploy**.
 
 ---
 

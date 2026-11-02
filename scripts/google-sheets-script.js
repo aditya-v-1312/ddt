@@ -61,13 +61,15 @@ function doPost(e) {
     // CRITICAL FIX FOR EXCEL & GOOGLE SHEETS #ERROR! ON PHONE NUMBERS:
     // In Excel & Google Sheets, any value starting with '+' (e.g. '+91 7016841389')
     // is automatically interpreted as an invalid formula, causing #ERROR!
-    // Prepending an apostrophe (') forces Sheets/Excel to treat it as Plain Text
-    // without displaying the apostrophe in the cell.
+    // Formatting as "(+91) 7016841389" begins with '(' which spreadsheets evaluate
+    // as 100% pure text without any formula evaluation error.
     // ========================================================================
     var rawPhone = (data.phone || "").toString().trim();
     var safePhone = rawPhone;
-    if (safePhone && safePhone.charAt(0) !== "'") {
-      safePhone = "'" + safePhone;
+    if (/^\+\d+/.test(safePhone)) {
+      safePhone = safePhone.replace(/^\+(\d{1,4})[\s-]*(.*)$/, "(+$1) $2");
+    } else if (/^[6-9]\d{9}$/.test(safePhone.replace(/\s+/g, ""))) {
+      safePhone = "(+91) " + safePhone.replace(/\s+/g, "");
     }
 
     // 1. APPEND ROW TO GOOGLE SHEET
@@ -98,7 +100,13 @@ function doPost(e) {
     try {
       var recipientEmail = "info@darshdreamtours.com";
 
-      var cleanPhoneDisplay = rawPhone.replace(/^'/, "");
+      var cleanPhoneDisplay = safePhone;
+      var dialNumber = safePhone.replace(/[^\d+]/g, '');
+      if (!dialNumber.startsWith("+") && dialNumber.length === 10) {
+        dialNumber = "+91" + dialNumber;
+      } else if (!dialNumber.startsWith("+") && dialNumber.startsWith("91")) {
+        dialNumber = "+" + dialNumber;
+      }
       var subjectPrefix = isUrgent ? "🚨 [URGENT 24-48 HR HOTEL/FLIGHT] " : "✨ New Travel Consultation ";
       var subject = subjectPrefix + "[" + (data.id || "DDT") + "] - " + (data.name || "Client") + " (" + (data.destination || "Travel") + ")";
 
@@ -121,7 +129,7 @@ function doPost(e) {
         + "    <table style='width: 100%; border-collapse: collapse; font-size: 14px;'>"
         + "      <tr><td style='padding: 8px 0; color: #6B7280; width: 180px;'>Requested Service:</td><td style='font-weight: 600; color: #B87543;'>" + deptName + "</td></tr>"
         + "      <tr><td style='padding: 8px 0; color: #6B7280;'>Customer Name:</td><td style='font-weight: 600;'>" + (data.name || "") + "</td></tr>"
-        + "      <tr><td style='padding: 8px 0; color: #6B7280;'>Phone (With Country Code):</td><td style='font-weight: 600;'><a href='tel:" + cleanPhoneDisplay.replace(/\s+/g, '') + "'>" + cleanPhoneDisplay + "</a></td></tr>"
+        + "      <tr><td style='padding: 8px 0; color: #6B7280;'>Phone (With Country Code):</td><td style='font-weight: 600;'><a href='tel:" + dialNumber + "'>" + cleanPhoneDisplay + "</a></td></tr>"
         + "      <tr><td style='padding: 8px 0; color: #6B7280;'>Email:</td><td><a href='mailto:" + (data.email || "") + "'>" + (data.email || "") + "</a></td></tr>"
         + "      <tr><td style='padding: 8px 0; color: #6B7280;'>Destination:</td><td style='font-weight: 600;'>" + (data.destination || "Not specified") + "</td></tr>"
         + "      <tr><td style='padding: 8px 0; color: #6B7280;'>Curated Package:</td><td>" + (data.packageTitle || "Custom Itinerary") + "</td></tr>"
