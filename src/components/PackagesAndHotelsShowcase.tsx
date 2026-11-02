@@ -256,15 +256,14 @@ export default function PackagesAndHotelsShowcase() {
               <Compass size={14} />
               <span>Start Personal Consultation</span>
             </button>
-            <a
-              href="https://wa.me/917487083499?text=Hello%20Sakshi%2C%20I%20would%20like%20to%20plan%20a%20custom%20holiday%20itinerary%20with%20Darsh%20Dream%20Tours."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white px-6 py-3 text-xs font-bold uppercase tracking-wider transition-all shadow-md"
+            <button
+              type="button"
+              onClick={() => openLastMinuteHotelDesk()}
+              className="inline-flex items-center gap-2 rounded-full border border-red-500/50 bg-red-950/40 hover:bg-red-600 text-red-200 hover:text-white px-6 py-3 text-xs font-bold uppercase tracking-wider transition-all shadow-md"
             >
-              <MessageSquare size={14} />
-              <span>WhatsApp Tours Desk</span>
-            </a>
+              <Zap size={14} />
+              <span>Last-Minute Hotel Desk</span>
+            </button>
           </div>
         </div>
       </div>

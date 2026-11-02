@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import { useInquiry } from "@/context/InquiryContext";
 import { travelPackages, TravelPackage, getPackagesByDestination } from "@/data/packages";
-import { destinationHotels, getHotelsByDestination, HotelOption } from "@/data/hotels";
+import { destinationHotels, getHotelsByDestination } from "@/data/hotels";
 import { siteConfig } from "@/data/siteConfig";
 import {
   MessageSquare,
@@ -15,26 +14,38 @@ import {
   Star,
   Hotel,
   Compass,
-  Calendar,
-  Users,
   CheckCircle2,
-  Phone,
-  Mail,
-  ArrowRight,
   RotateCcw,
   ShieldCheck,
   ChevronRight,
   Clock,
+  MailCheck,
 } from "lucide-react";
 
 interface ChatMessage {
   id: string;
   sender: "bot" | "user";
   text?: string;
-  type?: "text" | "service_select" | "destination_select" | "package_select" | "hotel_select" | "timing_select" | "travelers_select" | "contact_form" | "confirmation";
+  type?:
+    | "text"
+    | "service_select"
+    | "destination_select"
+    | "package_select"
+    | "hotel_select"
+    | "timing_select"
+    | "travelers_select"
+    | "notes_chips"
+    | "confirmation";
   payload?: any;
   timestamp: string;
 }
+
+type ConversationalStep =
+  | "idle"
+  | "awaiting_name"
+  | "awaiting_phone"
+  | "awaiting_email"
+  | "awaiting_notes";
 
 export default function TravelChatbot() {
   const { isOpen, initialData, closeInquiry, openInquiry } = useInquiry();
@@ -43,7 +54,9 @@ export default function TravelChatbot() {
   const [isTyping, setIsTyping] = useState(false);
   const [unreadBadge, setUnreadBadge] = useState(false);
   const [proactiveToast, setProactiveToast] = useState(false);
+  const [conversationalStep, setConversationalStep] = useState<ConversationalStep>("idle");
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   // Accumulated Consultation State
   const [consultation, setConsultation] = useState<{
@@ -60,7 +73,6 @@ export default function TravelChatbot() {
     email?: string;
     message?: string;
     referenceId?: string;
-    assignedDesk?: string;
   }>({});
 
   const scrollToBottom = () => {
@@ -70,6 +82,15 @@ export default function TravelChatbot() {
   useEffect(() => {
     scrollToBottom();
   }, [messages, isTyping]);
+
+  // Focus input when awaiting text response
+  useEffect(() => {
+    if (conversationalStep !== "idle" && isOpen) {
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 100);
+    }
+  }, [conversationalStep, isOpen]);
 
   // Proactive welcome toast after 4 seconds if not opened
   useEffect(() => {
@@ -89,7 +110,6 @@ export default function TravelChatbot() {
     setProactiveToast(false);
     setUnreadBadge(false);
 
-    // If prefilled with specific intent (e.g. Last-Minute Hotel Desk or Package)
     if (initialData.urgentLastMinute || initialData.serviceType === "last_minute_hotel") {
       startLastMinuteFlow(initialData.destination);
     } else if (initialData.destination && initialData.packageTitle) {
@@ -105,7 +125,12 @@ export default function TravelChatbot() {
     return new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   };
 
-  const addBotMessage = (text: string, type: ChatMessage["type"] = "text", payload?: any, delay = 450) => {
+  const addBotMessage = (
+    text: string,
+    type: ChatMessage["type"] = "text",
+    payload?: any,
+    delay = 400
+  ) => {
     setIsTyping(true);
     setTimeout(() => {
       setIsTyping(false);
@@ -138,6 +163,7 @@ export default function TravelChatbot() {
   // --- FLOW INITIALIZERS ---
   const startFreshWelcome = () => {
     setConsultation({});
+    setConversationalStep("idle");
     setMessages([
       {
         id: "msg-welcome-1",
@@ -148,7 +174,7 @@ export default function TravelChatbot() {
       {
         id: "msg-welcome-2",
         sender: "bot",
-        text: "Whether you are looking for a bespoke holiday package, 2★ to 5★ hotel reservations, or urgent last-minute room allocations, I am here to help you get the best wholesale IATA rates. How can our team assist you today?",
+        text: "Whether you're looking for curated holiday packages, 2★ to 5★ hotel reservations, or urgent last-minute room allocations, I am here to guide you. How can our team assist you today?",
         type: "service_select",
         timestamp: getTimeString(),
       },
@@ -162,6 +188,7 @@ export default function TravelChatbot() {
       urgentLastMinute: true,
       destination: dest || "",
     }));
+    setConversationalStep("idle");
     setMessages([
       {
         id: "msg-lm-1",
@@ -172,19 +199,20 @@ export default function TravelChatbot() {
       {
         id: "msg-lm-2",
         sender: "bot",
-        text: "As an IATA Accredited Agent (IATA: 14039896), we have direct GDS & bedbank allocations across 2★, 3★, 4★, and 5★ hotels even when online booking apps show 'Sold Out'.",
+        text: "As an IATA Accredited Agency (IATA: 14039896), our team accesses direct wholesale allocations across 2★, 3★, 4★, and 5★ hotels even when online booking sites show 'Sold Out'.",
         timestamp: getTimeString(),
       },
     ]);
     if (dest) {
-      addBotMessage(`You are looking for urgent accommodations in ${dest}. When do you need to check in?`, "timing_select", { isLastMinute: true }, 600);
+      addBotMessage(`You are looking for urgent accommodations in ${dest}. When do you need to check in?`, "timing_select", { isLastMinute: true }, 500);
     } else {
-      addBotMessage("Which destination or city do you need an urgent hotel for?", "destination_select", { isLastMinute: true }, 600);
+      addBotMessage("Which destination or city do you need an urgent hotel for?", "destination_select", { isLastMinute: true }, 500);
     }
   };
 
   const startDestinationFlow = (dest: string) => {
     setConsultation((prev) => ({ ...prev, destination: dest, serviceType: "holiday" }));
+    setConversationalStep("idle");
     setMessages([
       {
         id: "msg-dest-1",
@@ -193,7 +221,7 @@ export default function TravelChatbot() {
         timestamp: getTimeString(),
       },
     ]);
-    addBotMessage(`Would you like to explore our curated packages for ${dest}, or select a specific hotel category (2★ to 5★)?`, "package_select", { destination: dest }, 600);
+    addBotMessage(`Would you like to explore our curated packages for ${dest}, or select a specific hotel category (2★ to 5★)?`, "package_select", { destination: dest }, 500);
   };
 
   const startPackageFlow = (dest: string, pkgTitle: string, stars?: 2 | 3 | 4 | 5) => {
@@ -204,6 +232,7 @@ export default function TravelChatbot() {
       hotelRating: stars ? `${stars}-Star` : undefined,
       serviceType: "holiday",
     }));
+    setConversationalStep("idle");
     setMessages([
       {
         id: "msg-pkg-1",
@@ -212,10 +241,10 @@ export default function TravelChatbot() {
         timestamp: getTimeString(),
       },
     ]);
-    addBotMessage(`What hotel tier would you prefer for this package in ${dest}? We offer verified 2★, 3★, 4★, and 5★ options.`, "hotel_select", { destination: dest }, 600);
+    addBotMessage(`What hotel category would you prefer for this journey in ${dest}? We partner with verified 2★, 3★, 4★, and 5★ hotels:`, "hotel_select", { destination: dest }, 500);
   };
 
-  // --- INTERACTIVE HANDLERS ---
+  // --- SELECTION HANDLERS ---
   const handleServiceSelect = (serviceKey: string, label: string) => {
     addUserMessage(label);
 
@@ -224,10 +253,10 @@ export default function TravelChatbot() {
       addBotMessage("⚡ Understood! Our Last-Minute Desk operates with priority turnaround. Which city or destination are you traveling to?", "destination_select", { isLastMinute: true });
     } else if (serviceKey === "holiday") {
       setConsultation((prev) => ({ ...prev, serviceType: "holiday", urgentLastMinute: false }));
-      addBotMessage("Exciting! Where are you dreaming of traveling? Choose a popular destination below or tell me your dream location:", "destination_select");
+      addBotMessage("Exciting! Where are you dreaming of traveling? Choose a popular destination below or tell me your destination in chat:", "destination_select");
     } else if (serviceKey === "ticketing") {
       setConsultation((prev) => ({ ...prev, serviceType: "ticketing", urgentLastMinute: false }));
-      addBotMessage("✈️ Our IATA Ticketing Desk handles domestic & international flights, visa assistance, and corporate travel. Where is your departure or destination?", "destination_select", { isTicketing: true });
+      addBotMessage("✈️ Our IATA Ticketing Desk handles flights, visas, and corporate bookings. Where are you flying to?", "destination_select", { isTicketing: true });
     } else {
       setConsultation((prev) => ({ ...prev, serviceType: "hotel_only", urgentLastMinute: false }));
       addBotMessage("🏨 We provide negotiated wholesale rates across 2-star, 3-star, 4-star, and 5-star hotels globally. Which city do you need a stay in?", "destination_select");
@@ -245,7 +274,7 @@ export default function TravelChatbot() {
     } else {
       const availablePackages = getPackagesByDestination(destName);
       if (availablePackages.length > 0) {
-        addBotMessage(`Here are our most popular curated packages for ${destName}. You can pick one or customize your stay:`, "package_select", { destination: destName });
+        addBotMessage(`Here are our most popular curated packages for ${destName}. You can pick one or choose custom:`, "package_select", { destination: destName });
       } else {
         addBotMessage(`What style of accommodation would you prefer in ${destName}? We partner with verified 2★, 3★, 4★, and 5★ hotels:`, "hotel_select", { destination: destName });
       }
@@ -286,7 +315,7 @@ export default function TravelChatbot() {
     setConsultation((prev) => ({ ...prev, travelMonth: timing }));
 
     if (consultation.travelersCount) {
-      askContactDetails();
+      startConversationalContactCapture();
     } else {
       addBotMessage("How many guests will be traveling?", "travelers_select");
     }
@@ -295,81 +324,79 @@ export default function TravelChatbot() {
   const handleTravelersSelect = (count: string) => {
     addUserMessage(count);
     setConsultation((prev) => ({ ...prev, travelersCount: count }));
-    askContactDetails();
+    startConversationalContactCapture();
   };
 
-  const askContactDetails = () => {
-    const isUrgent = consultation.urgentLastMinute;
-    const prompt = isUrgent
-      ? "⚡ Almost done! Please enter your details so our urgent IATA desk can secure your room and call you within 15-30 minutes:"
-      : "Wonderful! Where should our team send your tailored itinerary with our exclusive wholesale rates?";
-
-    addBotMessage(prompt, "contact_form");
+  // --- STEP-BY-STEP CONVERSATIONAL CONTACT INTERVIEW (NO STATIC FORM) ---
+  const startConversationalContactCapture = () => {
+    setConversationalStep("awaiting_name");
+    addBotMessage(
+      "Everything is coming together beautifully! ✨ May I have your full name so our team can address you properly?",
+      "text"
+    );
   };
 
-  const handleFormSubmit = async (formData: { name: string; phone: string; email: string; message: string }) => {
-    addUserMessage(`${formData.name} · ${formData.phone}`);
+  // Automatically submit the form behind the scenes and email info@darshdreamtours.com
+  const executeIndirectSubmission = async (completedData: typeof consultation) => {
     setIsTyping(true);
-
-    const merged = {
-      ...consultation,
-      name: formData.name,
-      phone: formData.phone,
-      email: formData.email,
-      message: formData.message,
-    };
+    addBotMessage("Submitting your request to our central desk...", "text", null, 300);
 
     try {
       const response = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: merged.name,
-          phone: merged.phone,
-          email: merged.email,
-          department: merged.urgentLastMinute ? "ticketing" : "tours",
-          serviceType: merged.serviceType || "holiday",
-          destination: merged.destination || "",
-          packageTitle: merged.packageTitle || "",
-          hotelRating: merged.hotelRating || "",
-          hotelName: merged.hotelName || "",
-          travelMonth: merged.travelMonth || "",
-          travelersCount: merged.travelersCount || "2",
-          urgentLastMinute: !!merged.urgentLastMinute,
-          message: merged.message || "",
+          name: completedData.name,
+          phone: completedData.phone,
+          email: completedData.email,
+          department: completedData.urgentLastMinute ? "ticketing" : "tours",
+          serviceType: completedData.serviceType || "holiday",
+          destination: completedData.destination || "",
+          packageTitle: completedData.packageTitle || "",
+          hotelRating: completedData.hotelRating || "",
+          hotelName: completedData.hotelName || "",
+          travelMonth: completedData.travelMonth || "",
+          travelersCount: completedData.travelersCount || "2",
+          urgentLastMinute: !!completedData.urgentLastMinute,
+          message: completedData.message || "",
         }),
       });
 
       const resData = await response.json();
       setIsTyping(false);
 
-      if (resData.success) {
-        setConsultation((prev) => ({
-          ...prev,
-          ...merged,
-          referenceId: resData.referenceId,
-          assignedDesk: resData.assignedContact,
-        }));
+      const refId = resData.referenceId || `DDT-${Date.now().toString().slice(-6)}`;
 
-        addBotMessage(
-          `Thank you, ${formData.name}! Your request has been registered under Reference ID: ${resData.referenceId}.`,
-          "confirmation",
-          {
-            ...merged,
-            referenceId: resData.referenceId,
-            assignedDesk: resData.assignedContact,
-          }
-        );
-      } else {
-        addBotMessage("We received your request, but an error occurred. Please call our central desk directly at +91 97243 91674.");
-      }
+      setConsultation((prev) => ({
+        ...prev,
+        ...completedData,
+        referenceId: refId,
+      }));
+
+      // Final Confirmation Message: NO WHATSAPP, NO INDIVIDUAL STAFF NAMES
+      addBotMessage(
+        `Thank you, ${completedData.name}! Your travel consultation request has been delivered directly via mail to our central desk at info@darshdreamtours.com.\n\n` +
+          `📋 Reference ID: ${refId}\n\n` +
+          `Our team will review your requirements and reply with your customized itinerary and exclusive wholesale rates to ${completedData.email}.`,
+        "confirmation",
+        {
+          ...completedData,
+          referenceId: refId,
+        },
+        500
+      );
     } catch (err) {
       setIsTyping(false);
-      addBotMessage("Thank you! Your inquiry has been saved. Our team will contact you shortly.");
+      addBotMessage(
+        `Thank you, ${completedData.name}! Your request has been logged. Our team at info@darshdreamtours.com will review it and reply to you shortly.`,
+        "confirmation",
+        completedData,
+        400
+      );
     }
   };
 
-  // Direct Text Input Handler
+  // --- FREE-TEXT INPUT HANDLER (NATURAL CHAT) ---
   const handleTextSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputText.trim()) return;
@@ -378,52 +405,78 @@ export default function TravelChatbot() {
 
     addUserMessage(text);
 
-    // Contextual handling of free-text
-    if (!consultation.destination) {
-      handleDestinationSelect(text);
-    } else if (!consultation.hotelRating) {
-      handleHotelSelect(text);
-    } else if (!consultation.travelMonth) {
-      handleTimingSelect(text);
+    // Conversational Step-by-Step handling
+    if (conversationalStep === "awaiting_name") {
+      setConsultation((prev) => ({ ...prev, name: text }));
+      setConversationalStep("awaiting_phone");
+      addBotMessage(
+        `Pleasure to meet you, ${text}! What is the best mobile or contact number to reach you on?`,
+        "text"
+      );
+    } else if (conversationalStep === "awaiting_phone") {
+      setConsultation((prev) => ({ ...prev, phone: text }));
+      setConversationalStep("awaiting_email");
+      addBotMessage(
+        `Thank you! And what is your email address so our team can send your custom quotation and detailed itinerary?`,
+        "text"
+      );
+    } else if (conversationalStep === "awaiting_email") {
+      setConsultation((prev) => ({ ...prev, email: text }));
+      setConversationalStep("awaiting_notes");
+      addBotMessage(
+        `Almost done! Do you have any special wishes or preferences? (e.g. pure vegetarian food, honeymoon surprise, airport transfer, or type 'None')`,
+        "notes_chips"
+      );
+    } else if (conversationalStep === "awaiting_notes") {
+      const finalConsultation = {
+        ...consultation,
+        message: text.toLowerCase() === "none" ? "" : text,
+      };
+      setConsultation(finalConsultation);
+      setConversationalStep("idle");
+      executeIndirectSubmission(finalConsultation);
     } else {
-      addBotMessage(`Noted: "${text}". Please complete your contact details below to finalize your quote:`, "contact_form");
+      // General Contextual handling
+      if (!consultation.destination) {
+        handleDestinationSelect(text);
+      } else if (!consultation.hotelRating) {
+        handleHotelSelect(text);
+      } else if (!consultation.travelMonth) {
+        handleTimingSelect(text);
+      } else {
+        addBotMessage(`Noted: "${text}". How else can our team assist you?`);
+      }
     }
   };
 
-  // Build WhatsApp URL with clean prefilled message
-  const getWhatsAppLink = (data: typeof consultation) => {
-    let targetPhone = "919724391674"; // Default Office
-    if (data.urgentLastMinute || data.serviceType === "last_minute_hotel" || data.serviceType === "ticketing") {
-      targetPhone = "917048386900"; // Pratik - Ticketing & Urgent Desk
-    } else if (data.serviceType === "holiday" || data.packageTitle) {
-      targetPhone = "917487083499"; // Sakshi - Tours & Packages
-    }
-
-    const lines = [
-      `*Darsh Dream Tours Consultation Request*`,
-      `*Ref ID:* ${data.referenceId || "Pending"}`,
-      `*Name:* ${data.name || "Client"}`,
-      data.destination ? `*Destination:* ${data.destination}` : null,
-      data.packageTitle ? `*Package:* ${data.packageTitle}` : null,
-      data.hotelRating ? `*Hotel Preference:* ${data.hotelRating}${data.hotelName ? ` (${data.hotelName})` : ""}` : null,
-      data.urgentLastMinute ? `⚡ *URGENT LAST-MINUTE BOOKING*` : null,
-      data.travelMonth ? `*Timing:* ${data.travelMonth}` : null,
-      data.travelersCount ? `*Travelers:* ${data.travelersCount}` : null,
-      data.message ? `*Notes:* ${data.message}` : null,
-    ].filter(Boolean);
-
-    return `https://wa.me/${targetPhone}?text=${encodeURIComponent(lines.join("\n"))}`;
+  const handleNotesSkip = () => {
+    addUserMessage("No special requests, please proceed.");
+    const finalConsultation = {
+      ...consultation,
+      message: "",
+    };
+    setConsultation(finalConsultation);
+    setConversationalStep("idle");
+    executeIndirectSubmission(finalConsultation);
   };
 
   const hotelDataForDest = consultation.destination ? getHotelsByDestination(consultation.destination) : null;
   const packagesForDest = consultation.destination ? getPackagesByDestination(consultation.destination) : [];
+
+  // Dynamic input placeholder based on current step
+  const getInputPlaceholder = () => {
+    if (conversationalStep === "awaiting_name") return "Type your full name...";
+    if (conversationalStep === "awaiting_phone") return "Type your phone number (e.g. +91 98765 43210)...";
+    if (conversationalStep === "awaiting_email") return "Type your email address (e.g. name@example.com)...";
+    if (conversationalStep === "awaiting_notes") return "Any special requests or notes (or tap None)...";
+    return "Type a destination, hotel, or question...";
+  };
 
   return (
     <>
       {/* 1. FLOATING PROACTIVE TOAST & CONCIERGE BUTTON (BOTTOM-RIGHT) */}
       {!isOpen && (
         <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 select-none">
-          {/* Proactive Welcome Speech Bubble */}
           {proactiveToast && (
             <div className="relative max-w-xs sm:max-w-sm rounded-2xl bg-[#07101F]/95 border border-[#E2B18D]/40 p-4 shadow-[0_12px_40px_rgba(0,0,0,0.4)] backdrop-blur-xl text-white animate-in fade-in slide-in-from-bottom-3 duration-300">
               <button
@@ -467,7 +520,7 @@ export default function TravelChatbot() {
             </div>
           )}
 
-          {/* Floating Circle Launcher Button */}
+          {/* Floating Launcher Button */}
           <button
             type="button"
             onClick={() => openInquiry()}
@@ -654,7 +707,7 @@ export default function TravelChatbot() {
                           ))}
                         </div>
                         <p className="text-[10px] text-white/50 text-center pt-1">
-                          Or type any custom city or country in the input below ↓
+                          Or type any destination in the chat input below ↓
                         </p>
                       </div>
                     )}
@@ -785,7 +838,6 @@ export default function TravelChatbot() {
                           </button>
                         </div>
 
-                        {/* Display named hotels if available */}
                         {hotelDataForDest && (
                           <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-xs">
                             <span className="text-[10px] uppercase font-mono text-[#E2B18D] block mb-1.5">
@@ -872,7 +924,7 @@ export default function TravelChatbot() {
                             </button>
                             <button
                               type="button"
-                              onClick={() => handleTimingSelect("Diwali / Festive Holidays")}
+                              onClick={() => handleTimingSelect("Festive Season")}
                               className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#07101F] transition-all"
                             >
                               Festive Season
@@ -923,124 +975,58 @@ export default function TravelChatbot() {
                       </div>
                     )}
 
-                    {/* Step: High-Converting Contact Capture Form */}
-                    {msg.type === "contact_form" && (
-                      <form
-                        onSubmit={(e) => {
-                          e.preventDefault();
-                          const target = e.currentTarget as any;
-                          handleFormSubmit({
-                            name: target.clientName.value,
-                            phone: target.clientPhone.value,
-                            email: target.clientEmail.value,
-                            message: target.clientNotes.value,
-                          });
-                        }}
-                        className="mt-3 space-y-2.5"
-                      >
-                        <div>
-                          <label className="text-[10px] uppercase font-mono tracking-wider text-[#E2B18D] block mb-1">
-                            Your Full Name *
-                          </label>
-                          <input
-                            required
-                            name="clientName"
-                            type="text"
-                            placeholder="e.g. Aditya Patel"
-                            defaultValue={consultation.name || ""}
-                            className="w-full rounded-xl border border-white/20 bg-black/50 px-3 py-2 text-xs text-white placeholder-white/30 focus:border-[#E2B18D] focus:outline-none"
-                          />
-                        </div>
-
-                        <div>
-                          <label className="text-[10px] uppercase font-mono tracking-wider text-[#E2B18D] block mb-1">
-                            WhatsApp / Mobile Number *
-                          </label>
-                          <input
-                            required
-                            name="clientPhone"
-                            type="tel"
-                            placeholder="+91 98765 43210"
-                            defaultValue={consultation.phone || "+91 "}
-                            className="w-full rounded-xl border border-white/20 bg-black/50 px-3 py-2 text-xs text-white placeholder-white/30 focus:border-[#E2B18D] focus:outline-none"
-                          />
-                        </div>
-
-                        <div>
-                          <label className="text-[10px] uppercase font-mono tracking-wider text-[#E2B18D] block mb-1">
-                            Email Address *
-                          </label>
-                          <input
-                            required
-                            name="clientEmail"
-                            type="email"
-                            placeholder="aditya@example.com"
-                            defaultValue={consultation.email || ""}
-                            className="w-full rounded-xl border border-white/20 bg-black/50 px-3 py-2 text-xs text-white placeholder-white/30 focus:border-[#E2B18D] focus:outline-none"
-                          />
-                        </div>
-
-                        <div>
-                          <label className="text-[10px] uppercase font-mono tracking-wider text-[#E2B18D] block mb-1">
-                            Special Requests / Notes (Optional)
-                          </label>
-                          <textarea
-                            name="clientNotes"
-                            rows={2}
-                            placeholder="e.g. Pure veg food, honeymoon surprise, airport transfer"
-                            defaultValue={consultation.message || ""}
-                            className="w-full rounded-xl border border-white/20 bg-black/50 px-3 py-2 text-xs text-white placeholder-white/30 focus:border-[#E2B18D] focus:outline-none resize-none"
-                          />
-                        </div>
-
+                    {/* Quick Chip for Notes */}
+                    {msg.type === "notes_chips" && (
+                      <div className="mt-3 flex gap-2">
                         <button
-                          type="submit"
-                          className="w-full mt-2 py-3 px-4 rounded-xl bg-gradient-to-r from-[#B87543] to-[#E2B18D] text-[#07101F] text-xs font-bold uppercase tracking-wider shadow-lg hover:brightness-110 active:scale-[0.99] transition-all flex items-center justify-center gap-2"
+                          type="button"
+                          onClick={handleNotesSkip}
+                          className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-[#E2B18D] hover:text-[#07101F] text-xs font-medium border border-white/20 transition-all"
                         >
-                          <Sparkles size={14} />
-                          <span>Get My Tailored Itinerary & Rates</span>
+                          No special requests, please proceed 👍
                         </button>
-                      </form>
+                      </div>
                     )}
 
-                    {/* Step: Confirmation & WhatsApp Direct Hand-off */}
+                    {/* Step: Professional Confirmation (NO WHATSAPP, NO STAFF NAMES) */}
                     {msg.type === "confirmation" && (
-                      <div className="mt-3 p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/40 space-y-3">
+                      <div className="mt-3 p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/40 space-y-3">
                         <div className="flex items-center gap-2 text-emerald-400">
-                          <CheckCircle2 size={16} />
+                          <MailCheck size={18} />
                           <span className="font-semibold text-xs uppercase tracking-wider">
-                            Consultation Confirmed
+                            Inquiry Sent Directly to Our Central Desk
                           </span>
                         </div>
 
-                        <div className="text-xs text-white/80 space-y-1">
+                        <div className="text-xs text-white/85 space-y-1.5 leading-relaxed">
                           <p>
-                            <strong>Ref ID:</strong>{" "}
-                            <span className="font-mono text-[#E2B18D]">
-                              {msg.payload?.referenceId}
-                            </span>
+                            <strong>Central Mailbox:</strong>{" "}
+                            <span className="font-mono text-[#E2B18D]">info@darshdreamtours.com</span>
                           </p>
                           <p>
-                            <strong>Assigned Desk:</strong> {msg.payload?.assignedDesk}
+                            <strong>Status:</strong> Dispatched & Awaiting Specialist Review
                           </p>
-                          {msg.payload?.urgentLastMinute && (
-                            <p className="text-red-400 font-bold">
-                              ⚡ Priority: Our urgent desk is checking live wholesale inventory now.
-                            </p>
-                          )}
+                          <p className="text-[11px] text-white/70">
+                            Our team has been alerted with your complete requirements. We will review our direct IATA allocations and reply to your email with your custom itinerary and wholesale rates.
+                          </p>
                         </div>
 
-                        {/* Direct WhatsApp Action Button */}
-                        <a
-                          href={getWhatsAppLink(msg.payload || consultation)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] hover:bg-[#20ba59] py-2.5 px-4 text-xs font-bold text-white transition-all shadow-md"
-                        >
-                          <MessageSquare size={14} />
-                          <span>Chat on WhatsApp With This Itinerary</span>
-                          <ArrowRight size={13} />
-                        </a>
+                        <div className="pt-2 flex gap-2">
+                          <button
+                            type="button"
+                            onClick={startFreshWelcome}
+                            className="w-full py-2 px-3 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-semibold text-white/90 border border-white/10 transition-colors"
+                          >
+                            Plan Another Journey
+                          </button>
+                          <button
+                            type="button"
+                            onClick={closeInquiry}
+                            className="w-full py-2 px-3 rounded-lg bg-[#E2B18D] text-[#07101F] text-xs font-bold hover:bg-white transition-colors"
+                          >
+                            Done
+                          </button>
+                        </div>
                       </div>
                     )}
                   </div>
@@ -1064,54 +1050,64 @@ export default function TravelChatbot() {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Bottom Quick-Action Bar */}
-            <div className="px-4 py-2 bg-[#0A162D] border-t border-white/10 flex items-center gap-2 overflow-x-auto no-scrollbar">
-              <button
-                type="button"
-                onClick={() => handleServiceSelect("last_minute_hotel", "⚡ Urgent Hotel Desk")}
-                className="px-2.5 py-1 rounded-full bg-red-900/40 border border-red-500/50 text-red-200 text-[10px] font-semibold whitespace-nowrap hover:bg-red-800 transition-colors flex items-center gap-1"
-              >
-                <span>⚡ Last-Minute Desk</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => handleServiceSelect("holiday", "🌴 Holiday Packages")}
-                className="px-2.5 py-1 rounded-full bg-white/10 border border-white/10 text-white/80 text-[10px] font-semibold whitespace-nowrap hover:bg-white/20 transition-colors"
-              >
-                🌴 Packages
-              </button>
-              <button
-                type="button"
-                onClick={() => handleHotelSelect("5-Star Luxury")}
-                className="px-2.5 py-1 rounded-full bg-amber-900/40 border border-amber-500/40 text-amber-200 text-[10px] font-semibold whitespace-nowrap hover:bg-amber-800 transition-colors"
-              >
-                ⭐️ 5★ Luxury
-              </button>
-              <button
-                type="button"
-                onClick={() => handleHotelSelect("2-Star Budget Smart")}
-                className="px-2.5 py-1 rounded-full bg-purple-900/40 border border-purple-500/40 text-purple-200 text-[10px] font-semibold whitespace-nowrap hover:bg-purple-800 transition-colors"
-              >
-                ⭐️ 2★ Budget Smart
-              </button>
-            </div>
+            {/* Bottom Quick-Action Shortcuts */}
+            {conversationalStep === "idle" && (
+              <div className="px-4 py-2 bg-[#0A162D] border-t border-white/10 flex items-center gap-2 overflow-x-auto no-scrollbar">
+                <button
+                  type="button"
+                  onClick={() => handleServiceSelect("last_minute_hotel", "⚡ Urgent Hotel Desk")}
+                  className="px-2.5 py-1 rounded-full bg-red-900/40 border border-red-500/50 text-red-200 text-[10px] font-semibold whitespace-nowrap hover:bg-red-800 transition-colors flex items-center gap-1"
+                >
+                  <span>⚡ Last-Minute Desk</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleServiceSelect("holiday", "🌴 Holiday Packages")}
+                  className="px-2.5 py-1 rounded-full bg-white/10 border border-white/10 text-white/80 text-[10px] font-semibold whitespace-nowrap hover:bg-white/20 transition-colors"
+                >
+                  🌴 Packages
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleHotelSelect("5-Star Luxury")}
+                  className="px-2.5 py-1 rounded-full bg-amber-900/40 border border-amber-500/40 text-amber-200 text-[10px] font-semibold whitespace-nowrap hover:bg-amber-800 transition-colors"
+                >
+                  ⭐️ 5★ Luxury
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleHotelSelect("2-Star Budget Smart")}
+                  className="px-2.5 py-1 rounded-full bg-purple-900/40 border border-purple-500/40 text-purple-200 text-[10px] font-semibold whitespace-nowrap hover:bg-purple-800 transition-colors"
+                >
+                  ⭐️ 2★ Budget Smart
+                </button>
+              </div>
+            )}
 
-            {/* Bottom Free-Text Chat Input */}
+            {/* Bottom Conversational Chat Input */}
             <form
               onSubmit={handleTextSubmit}
               className="p-3 sm:p-4 bg-[#07101F] border-t border-white/10 flex items-center gap-2"
             >
               <input
-                type="text"
+                ref={inputRef}
+                type={
+                  conversationalStep === "awaiting_email"
+                    ? "email"
+                    : conversationalStep === "awaiting_phone"
+                    ? "tel"
+                    : "text"
+                }
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
-                placeholder="Type a destination, hotel, or question..."
+                placeholder={getInputPlaceholder()}
                 className="flex-1 rounded-full border border-white/20 bg-white/5 px-4 py-2.5 text-xs text-white placeholder-white/40 focus:border-[#E2B18D] focus:outline-none"
               />
               <button
                 type="submit"
                 disabled={!inputText.trim()}
                 className="h-9 w-9 rounded-full bg-[#E2B18D] text-[#07101F] flex items-center justify-center hover:bg-white transition-colors disabled:opacity-40 disabled:hover:bg-[#E2B18D]"
+                aria-label="Send message"
               >
                 <Send size={15} />
               </button>

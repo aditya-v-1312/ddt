@@ -62,17 +62,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // All email alerts go to info@darshdreamtours.com so the central desk can review & route
+    // All email alerts go strictly to info@darshdreamtours.com for central review & delegation
     const targetEmail = "info@darshdreamtours.com";
-    let assignedContact = "Office Desk (+91 97243 91674)";
-
-    if (urgentLastMinute || department === "ticketing" || serviceType === "last_minute_hotel") {
-      assignedContact = "Ticketing & Urgent Desk / Pratik (+91 70483 86900)";
-    } else if (department === "tours") {
-      assignedContact = "Tours & Packages / Sakshi (+91 74870 83499)";
-    } else if (department === "holidays") {
-      assignedContact = "Holidays & Group Desk / Office (+91 97243 91674)";
-    }
+    const assignedContact = "Darsh Dream Tours Central Desk (info@darshdreamtours.com)";
 
     // Generate unique reference ID
     const prefix = urgentLastMinute ? "URG" : "DDT";
