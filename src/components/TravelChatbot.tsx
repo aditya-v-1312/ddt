@@ -34,11 +34,23 @@ interface ChatMessage {
     | "hotel_select"
     | "timing_select"
     | "travelers_select"
+    | "country_code_select"
     | "notes_chips"
     | "confirmation";
   payload?: any;
   timestamp: string;
 }
+
+const popularCountryCodes = [
+  { code: "+91", name: "India", flag: "🇮🇳" },
+  { code: "+971", name: "UAE", flag: "🇦🇪" },
+  { code: "+44", name: "UK", flag: "🇬🇧" },
+  { code: "+1", name: "USA / CAN", flag: "🇺🇸" },
+  { code: "+65", name: "Singapore", flag: "🇸🇬" },
+  { code: "+61", name: "Australia", flag: "🇦🇺" },
+  { code: "+966", name: "Saudi Arabia", flag: "🇸🇦" },
+  { code: "+974", name: "Qatar", flag: "🇶🇦" },
+];
 
 type ConversationalStep =
   | "idle"
@@ -53,6 +65,7 @@ export default function TravelChatbot() {
   const [inputText, setInputText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [unreadBadge, setUnreadBadge] = useState(false);
+  const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
   const [proactiveToast, setProactiveToast] = useState(false);
   const [conversationalStep, setConversationalStep] = useState<ConversationalStep>("idle");
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
@@ -396,6 +409,17 @@ export default function TravelChatbot() {
     }
   };
 
+  const handleCountryCodePick = (c: (typeof popularCountryCodes)[0]) => {
+    setSelectedCountryCode(c.code);
+    addUserMessage(`${c.flag} ${c.code} (${c.name})`);
+    setInputText(`${c.code} `);
+    inputRef.current?.focus();
+    addBotMessage(
+      `Selected ${c.flag} ${c.code}. Please type the remaining digits of your mobile number:`,
+      "text"
+    );
+  };
+
   // --- FREE-TEXT INPUT HANDLER (NATURAL CHAT) ---
   const handleTextSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -410,11 +434,23 @@ export default function TravelChatbot() {
       setConsultation((prev) => ({ ...prev, name: text }));
       setConversationalStep("awaiting_phone");
       addBotMessage(
-        `Pleasure to meet you, ${text}! What is the best mobile or contact number to reach you on?`,
-        "text"
+        `Pleasure to meet you, ${text}! Which country code do you use for your mobile number? Please select below or enter your number with country code:`,
+        "country_code_select"
       );
     } else if (conversationalStep === "awaiting_phone") {
-      setConsultation((prev) => ({ ...prev, phone: text }));
+      let rawVal = text.trim();
+      const digitsOnly = rawVal.replace(/[\s-]/g, "");
+
+      // If user typed 10 digits without code, add the selected country code or default +91
+      if (/^[6-9]\d{9}$/.test(digitsOnly)) {
+        rawVal = `${selectedCountryCode || "+91"} ${digitsOnly}`;
+      } else if (!rawVal.startsWith("+") && selectedCountryCode) {
+        rawVal = `${selectedCountryCode} ${rawVal}`;
+      } else if (!rawVal.startsWith("+") && /^\d{7,14}$/.test(digitsOnly)) {
+        rawVal = `+${digitsOnly}`;
+      }
+
+      setConsultation((prev) => ({ ...prev, phone: rawVal }));
       setConversationalStep("awaiting_email");
       addBotMessage(
         `Thank you! And what is your email address so our team can send your custom quotation and detailed itinerary?`,
@@ -466,7 +502,7 @@ export default function TravelChatbot() {
   // Dynamic input placeholder based on current step
   const getInputPlaceholder = () => {
     if (conversationalStep === "awaiting_name") return "Type your full name...";
-    if (conversationalStep === "awaiting_phone") return "Type your phone number (e.g. +91 98765 43210)...";
+    if (conversationalStep === "awaiting_phone") return "Select country code or type number (e.g. +91 98765 43210)...";
     if (conversationalStep === "awaiting_email") return "Type your email address (e.g. name@example.com)...";
     if (conversationalStep === "awaiting_notes") return "Any special requests or notes (or tap None)...";
     return "Type a destination, hotel, or question...";
@@ -972,6 +1008,31 @@ export default function TravelChatbot() {
                         >
                           👥 Group (5+)
                         </button>
+                      </div>
+                    )}
+
+                    {/* Step: Country Code Selector */}
+                    {msg.type === "country_code_select" && (
+                      <div className="mt-3 space-y-2">
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+                          {popularCountryCodes.map((c) => (
+                            <button
+                              key={c.code}
+                              type="button"
+                              onClick={() => handleCountryCodePick(c)}
+                              className="px-2.5 py-2 rounded-xl border border-white/10 bg-white/5 hover:bg-[#E2B18D] hover:text-[#07101F] text-xs font-medium text-left flex items-center gap-1.5 transition-all truncate group"
+                            >
+                              <span className="text-sm">{c.flag}</span>
+                              <span className="font-mono font-bold text-[11px] text-[#E2B18D] group-hover:text-[#07101F]">
+                                {c.code}
+                              </span>
+                              <span className="text-[10px] opacity-75 truncate">{c.name}</span>
+                            </button>
+                          ))}
+                        </div>
+                        <p className="text-[10px] text-white/50 text-center pt-1">
+                          Select your country code above or enter your number with code below ↓
+                        </p>
                       </div>
                     )}
 

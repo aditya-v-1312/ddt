@@ -1,11 +1,11 @@
 /**
  * ============================================================================
  * DARSH DREAM TOURS - GOOGLE APPS SCRIPT FOR GOOGLE SHEETS & EMAIL ENQUIRIES
- * Supports: Packages, 2★ to 5★ Hotel Preferences, & Urgent Last-Minute Bookings
+ * Handles International Country Codes (+91, +971, +44, +1, etc.) without #ERROR!
  * ============================================================================
  * 
  * Central Email Destination: info@darshdreamtours.com
- * (All alerts route exclusively to info desk for central review & delegation)
+ * (All alerts route exclusively to central info desk for review & delegation)
  * ============================================================================
  */
 
@@ -25,7 +25,7 @@ function doPost(e) {
         "Department",
         "Assigned Desk",
         "Customer Name",
-        "Phone / WhatsApp",
+        "Phone / Mobile (With Country Code)",
         "Email",
         "Destination",
         "Service / Package",
@@ -38,21 +38,36 @@ function doPost(e) {
       ]);
       sheet.getRange(1, 1, 1, 16).setFontWeight("bold").setBackground("#07101F").setFontColor("#FFFFFF");
       sheet.setFrozenRows(1);
+      // Format entire column 7 (Phone) as Plain Text
+      sheet.getRange("G:G").setNumberFormat("@");
     }
 
     var data = JSON.parse(e.postData.contents);
 
     var isUrgent = data.urgentLastMinute || (data.serviceType === "last_minute_hotel");
 
-    // Map department to readable label
+    // Map department to readable central label
     var deptLabels = {
-      ticketing: "Ticketing (Pratik: +91 70483 86900)",
-      tours: "Tours (Sakshi Chandiramani: +91 74870 83499)",
-      holidays: "Holidays (Office: +91 97243 91674)"
+      ticketing: "Ticketing & Flights Desk",
+      tours: "Tours & Curated Packages Desk",
+      holidays: "Holidays & Group Tours Desk"
     };
-    var deptName = deptLabels[data.department] || data.department || "General Enquiry";
+    var deptName = deptLabels[data.department] || data.department || "Central Consultation Desk";
     if (isUrgent) {
-      deptName = "⚡ URGENT LAST-MINUTE DESK (Pratik: +91 70483 86900)";
+      deptName = "⚡ URGENT LAST-MINUTE HOTEL DESK";
+    }
+
+    // ========================================================================
+    // CRITICAL FIX FOR EXCEL & GOOGLE SHEETS #ERROR! ON PHONE NUMBERS:
+    // In Excel & Google Sheets, any value starting with '+' (e.g. '+91 7016841389')
+    // is automatically interpreted as an invalid formula, causing #ERROR!
+    // Prepending an apostrophe (') forces Sheets/Excel to treat it as Plain Text
+    // without displaying the apostrophe in the cell.
+    // ========================================================================
+    var rawPhone = (data.phone || "").toString().trim();
+    var safePhone = rawPhone;
+    if (safePhone && safePhone.charAt(0) !== "'") {
+      safePhone = "'" + safePhone;
     }
 
     // 1. APPEND ROW TO GOOGLE SHEET
@@ -63,7 +78,7 @@ function doPost(e) {
       (data.department || "").toUpperCase(),
       deptName,
       data.name || "",
-      data.phone || "",
+      safePhone,
       data.email || "",
       data.destination || "Not specified",
       data.packageTitle || data.serviceType || "Custom Travel",
@@ -75,10 +90,15 @@ function doPost(e) {
       "New"
     ]);
 
+    // Force the Phone cell in the new row to Plain Text
+    var newRow = sheet.getLastRow();
+    sheet.getRange(newRow, 7).setNumberFormat("@");
+
     // 2. SEND INSTANT EMAIL NOTIFICATION EXCLUSIVELY TO INFO@DARSHDREAMTOURS.COM
     try {
       var recipientEmail = "info@darshdreamtours.com";
 
+      var cleanPhoneDisplay = rawPhone.replace(/^'/, "");
       var subjectPrefix = isUrgent ? "🚨 [URGENT 24-48 HR HOTEL/FLIGHT] " : "✨ New Travel Consultation ";
       var subject = subjectPrefix + "[" + (data.id || "DDT") + "] - " + (data.name || "Client") + " (" + (data.destination || "Travel") + ")";
 
@@ -99,9 +119,9 @@ function doPost(e) {
         + "      <p style='margin: 2px 0 0; font-size: 16px; font-weight: bold; color: #B87543;'>" + (data.id || "") + "</p>"
         + "    </div>"
         + "    <table style='width: 100%; border-collapse: collapse; font-size: 14px;'>"
-        + "      <tr><td style='padding: 8px 0; color: #6B7280; width: 170px;'>Requested Service:</td><td style='font-weight: 600; color: #B87543;'>" + deptName + "</td></tr>"
+        + "      <tr><td style='padding: 8px 0; color: #6B7280; width: 180px;'>Requested Service:</td><td style='font-weight: 600; color: #B87543;'>" + deptName + "</td></tr>"
         + "      <tr><td style='padding: 8px 0; color: #6B7280;'>Customer Name:</td><td style='font-weight: 600;'>" + (data.name || "") + "</td></tr>"
-        + "      <tr><td style='padding: 8px 0; color: #6B7280;'>Phone / WhatsApp:</td><td style='font-weight: 600;'><a href='tel:" + (data.phone || "") + "'>" + (data.phone || "") + "</a></td></tr>"
+        + "      <tr><td style='padding: 8px 0; color: #6B7280;'>Phone (With Country Code):</td><td style='font-weight: 600;'><a href='tel:" + cleanPhoneDisplay.replace(/\s+/g, '') + "'>" + cleanPhoneDisplay + "</a></td></tr>"
         + "      <tr><td style='padding: 8px 0; color: #6B7280;'>Email:</td><td><a href='mailto:" + (data.email || "") + "'>" + (data.email || "") + "</a></td></tr>"
         + "      <tr><td style='padding: 8px 0; color: #6B7280;'>Destination:</td><td style='font-weight: 600;'>" + (data.destination || "Not specified") + "</td></tr>"
         + "      <tr><td style='padding: 8px 0; color: #6B7280;'>Curated Package:</td><td>" + (data.packageTitle || "Custom Itinerary") + "</td></tr>"
@@ -112,7 +132,7 @@ function doPost(e) {
         + "      <tr><td style='padding: 8px 0; color: #6B7280; vertical-align: top;'>Special Requests:</td><td>" + (data.message ? data.message.replace(/\n/g, "<br/>") : "None") + "</td></tr>"
         + "    </table>"
         + "    <div style='margin-top: 24px; padding: 12px; background: #FEF3C7; border-radius: 6px; font-size: 12px; color: #92400E; text-align: center;'>"
-        + "      ℹ️ <strong>Action:</strong> Central desk please review and dispatch to Ticketing (Pratik), Tours (Sakshi), or Holidays (Office)."
+        + "      ℹ️ <strong>Action:</strong> Central desk please review and delegate this lead to the relevant team specialist."
         + "    </div>"
         + "    <div style='margin-top: 20px; padding-top: 16px; border-top: 1px solid #E5E7EB; font-size: 12px; color: #9CA3AF; text-align: center;'>"
         + "      Darsh Dream Tours LLP · IATA: 14039896 · SF-1, Sun Complex, Race Course, Vadodara"

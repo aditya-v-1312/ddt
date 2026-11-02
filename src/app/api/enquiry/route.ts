@@ -73,11 +73,18 @@ export async function POST(request: NextRequest) {
     const referenceId = `${prefix}-${todayStr}-${randomSuffix}`;
     const createdAt = new Date().toISOString();
 
+    // Standardize phone number with country code (+91 default if 10-digit Indian number)
+    let cleanPhone = phone.trim();
+    const digitsOnly = cleanPhone.replace(/[\s-]/g, '');
+    if (/^[6-9]\d{9}$/.test(digitsOnly)) {
+      cleanPhone = `+91 ${digitsOnly}`;
+    }
+
     const record: EnquiryRecord = {
       id: referenceId,
       createdAt,
       name: name.trim(),
-      phone: phone.trim(),
+      phone: cleanPhone,
       email: email.trim(),
       department: department as "ticketing" | "tours" | "holidays",
       targetEmail,
