@@ -3,7 +3,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Script from "next/script";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { InquiryProvider } from "@/context/InquiryContext";
-import InquiryModal from "@/components/InquiryModal";
+import TravelChatbot from "@/components/TravelChatbot";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -73,7 +73,7 @@ export default function RootLayout({
         <InquiryProvider>
           <GoogleAnalytics />
           {children}
-          <InquiryModal />
+          <TravelChatbot />
         </InquiryProvider>
       </body>
       <Script

@@ -11,9 +11,14 @@ export interface EnquiryRecord {
   department: "ticketing" | "tours" | "holidays";
   targetEmail: string;
   assignedContact: string;
+  serviceType?: string;
   destination?: string;
+  packageTitle?: string;
+  hotelRating?: string;
+  hotelName?: string;
   travelMonth?: string;
   travelersCount?: string | number;
+  urgentLastMinute?: boolean;
   message?: string;
   sourceUrl?: string;
   ip?: string;
@@ -37,9 +42,14 @@ export async function POST(request: NextRequest) {
       phone,
       email,
       department = "tours",
+      serviceType = "holiday",
       destination = "",
+      packageTitle = "",
+      hotelRating = "",
+      hotelName = "",
       travelMonth = "",
       travelersCount = "2",
+      urgentLastMinute = false,
       message = "",
       sourceUrl = "",
     } = body;
@@ -56,18 +66,19 @@ export async function POST(request: NextRequest) {
     const targetEmail = "info@darshdreamtours.com";
     let assignedContact = "Office Desk (+91 97243 91674)";
 
-    if (department === "ticketing") {
-      assignedContact = "Ticketing / Pratik (+91 70483 86900)";
+    if (urgentLastMinute || department === "ticketing" || serviceType === "last_minute_hotel") {
+      assignedContact = "Ticketing & Urgent Desk / Pratik (+91 70483 86900)";
     } else if (department === "tours") {
-      assignedContact = "Tours / Sakshi (+91 74870 83499)";
+      assignedContact = "Tours & Packages / Sakshi (+91 74870 83499)";
     } else if (department === "holidays") {
-      assignedContact = "Holidays / Office Desk (+91 97243 91674)";
+      assignedContact = "Holidays & Group Desk / Office (+91 97243 91674)";
     }
 
     // Generate unique reference ID
+    const prefix = urgentLastMinute ? "URG" : "DDT";
     const todayStr = new Date().toISOString().slice(2, 10).replace(/-/g, "");
     const randomSuffix = Math.floor(1000 + Math.random() * 9000);
-    const referenceId = `DDT-${todayStr}-${randomSuffix}`;
+    const referenceId = `${prefix}-${todayStr}-${randomSuffix}`;
     const createdAt = new Date().toISOString();
 
     const record: EnquiryRecord = {
@@ -79,9 +90,14 @@ export async function POST(request: NextRequest) {
       department: department as "ticketing" | "tours" | "holidays",
       targetEmail,
       assignedContact,
+      serviceType,
       destination: destination.trim(),
+      packageTitle: packageTitle.trim(),
+      hotelRating: hotelRating.trim(),
+      hotelName: hotelName.trim(),
       travelMonth: travelMonth.trim(),
       travelersCount,
+      urgentLastMinute: !!urgentLastMinute,
       message: message.trim(),
       sourceUrl,
       ip: request.headers.get("x-forwarded-for") || undefined,
@@ -139,7 +155,10 @@ export async function POST(request: NextRequest) {
       referenceId,
       assignedContact,
       targetEmail,
-      message: "Thank you! Your enquiry has been received securely.",
+      urgentLastMinute: !!urgentLastMinute,
+      message: urgentLastMinute
+        ? "URGENT booking request dispatched to IATA desk. Our team will contact you within 15-30 minutes."
+        : "Thank you! Your travel consultation has been received securely.",
     });
   } catch (error) {
     console.error("Enquiry API Handler Error:", error);
@@ -151,14 +170,13 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  // Allow secure read of recent enquiry count or local test check
   return NextResponse.json({
     status: "online",
-    service: "Darsh Dream Tours Enquiry Gateway",
+    service: "Darsh Dream Tours Enquiry & Chatbot Gateway",
     departments: [
-      { id: "ticketing", contact: "Pratik (+91 70483 86900)", email: "sales@darshdreamtours.com" },
-      { id: "tours", contact: "Sakshi Chandiramani (+91 74870 83499)", email: "sakshi@darshdreamtours.com" },
-      { id: "holidays", contact: "Office Desk (+91 97243 91674)", email: "info@darshdreamtours.com" },
+      { id: "ticketing", contact: "Pratik (+91 70483 86900)", email: "sales@darshdreamtours.com", service: "Flights, Visas & Last-Minute Hotel Desk" },
+      { id: "tours", contact: "Sakshi Chandiramani (+91 74870 83499)", email: "sakshi@darshdreamtours.com", service: "Bespoke Tours, Honeymoon & Packages" },
+      { id: "holidays", contact: "Office Desk (+91 97243 91674)", email: "info@darshdreamtours.com", service: "Group Tours & Luxury Island Holidays" },
     ],
   });
 }

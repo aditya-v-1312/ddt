@@ -10,13 +10,14 @@ import IntroAnimation from "@/components/IntroAnimation";
 import VectorAirplane from "@/components/VectorAirplane";
 import GoogleReviews from "@/components/GoogleReviews";
 import GoogleTrustBadge from "@/components/GoogleTrustBadge";
+import PackagesAndHotelsShowcase from "@/components/PackagesAndHotelsShowcase";
 import { siteConfig } from "@/data/siteConfig";
 import { travelImages } from "@/data/images";
 import { ArrowDown, ArrowUpRight, MessageCircle, Sparkles, MapPin, Compass, ShieldCheck, Phone, Mail } from "lucide-react";
 import { useInquiry } from "@/context/InquiryContext";
 
 export default function Home() {
-  const { openInquiry } = useInquiry();
+  const { openInquiry, openLastMinuteHotelDesk } = useInquiry();
   const [showIntro, setShowIntro] = useState(true);
   const [introKey, setIntroKey] = useState(0);
 
@@ -107,18 +108,28 @@ export default function Home() {
                 Thoughtfully planned journeys across India and beyond.
               </p>
 
-              {/* Single Primary Action: Opens Inquiry Form */}
-              <div className="hero-reveal-delay-3 mt-9 flex flex-col sm:flex-row sm:items-center">
+              {/* Primary Actions: Opens Chatbot Concierge & Last-Minute Desk */}
+              <div className="hero-reveal-delay-3 mt-9 flex flex-wrap items-center gap-3">
                 <button
                   type="button"
                   onClick={() => openInquiry({ department: "tours" })}
                   className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-8 py-4 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[#07101F] shadow-[0_4px_20px_rgba(255,255,255,0.15)] transition-all duration-300 hover:bg-[#E2B18D] hover:shadow-[0_6px_25px_rgba(226,177,141,0.3)] hover:scale-[1.02]"
                 >
+                  <Compass size={15} />
                   <span>Plan With Us</span>
                   <ArrowUpRight
                     size={15}
                     className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => openLastMinuteHotelDesk()}
+                  className="inline-flex items-center gap-2 rounded-full border border-red-500/50 bg-red-950/40 hover:bg-red-600 hover:text-white px-6 py-4 font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-red-200 transition-all backdrop-blur-md shadow-md"
+                >
+                  <span className="h-2 w-2 rounded-full bg-red-400 animate-pulse" />
+                  <span>⚡ Last-Minute Hotel Desk</span>
                 </button>
               </div>
             </div>
@@ -638,6 +649,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* =========================================================
+          05.5 — PACKAGES, 2★ TO 5★ HOTELS & LAST-MINUTE DESK
+      ========================================================= */}
+      <PackagesAndHotelsShowcase />
 
       {/* =========================================================
           06 — QUIET EDITORIAL STATEMENT

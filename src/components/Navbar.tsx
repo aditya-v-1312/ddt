@@ -10,6 +10,7 @@ import { useInquiry } from "@/context/InquiryContext";
 
 const navLinks = [
   { label: "Destinations", href: "/destinations" },
+  { label: "Packages & Stays", href: "/#packages" },
   { label: "Experiences", href: "/experiences" },
   { label: "About Us", href: "/about" },
   { label: "Plan a Journey", href: "/plan" },
@@ -19,7 +20,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { openInquiry } = useInquiry();
+  const { openInquiry, openLastMinuteHotelDesk } = useInquiry();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -113,19 +114,17 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Desktop Right Actions: Concierge Pill & WhatsApp CTA */}
-          <div className="hidden lg:flex items-center gap-4">
-            <div
-              className={`hidden xl:flex items-center gap-2 text-[10px] font-sans uppercase tracking-[0.2em] transition-colors ${
-                scrolled ? "text-[#697181]" : "text-white/50"
-              }`}
+          {/* Desktop Right Actions: Concierge Pill, Last-Minute Desk & Enquire CTA */}
+          <div className="hidden lg:flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => openLastMinuteHotelDesk()}
+              className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 font-sans text-[10px] font-bold uppercase tracking-wider bg-red-600/20 border border-red-500/40 text-red-200 hover:bg-red-600 hover:text-white transition-all shadow-sm"
+              title="Urgent 24-48 Hour Hotel Booking"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span>Vadodara, IN</span>
-            </div>
+              <span className="h-1.5 w-1.5 rounded-full bg-red-400 animate-pulse" />
+              <span>⚡ Last-Minute Desk</span>
+            </button>
 
             <button
               type="button"
@@ -249,7 +248,18 @@ export default function Navbar() {
               </div>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2 space-y-2">
+              <button
+                type="button"
+                onClick={() => {
+                  closeMobile();
+                  openLastMinuteHotelDesk();
+                }}
+                className="w-full inline-flex items-center justify-center gap-2 border border-red-500/50 bg-red-950/40 py-3 px-4 font-sans text-[10px] font-bold uppercase tracking-[0.18em] text-red-200 hover:bg-red-600 hover:text-white transition-all rounded-full"
+              >
+                <span>⚡ Last-Minute Urgent Hotel Desk</span>
+              </button>
+
               <button
                 type="button"
                 onClick={() => {
@@ -259,7 +269,7 @@ export default function Navbar() {
                 className="w-full inline-flex items-center justify-center gap-2 border border-[#B87543] bg-[#B87543] py-3.5 px-4 font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-white hover:bg-white hover:text-[#07101F] transition-all rounded-full"
               >
                 <Compass size={14} />
-                <span>Plan With Us (Enquire)</span>
+                <span>Plan With Us (Concierge Chat)</span>
               </button>
             </div>
           </div>
