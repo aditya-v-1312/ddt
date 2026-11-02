@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowUpRight, Phone, MessageCircle } from "lucide-react";
-import { getWhatsAppUrl, siteConfig } from "@/data/siteConfig";
+import { Menu, X, ArrowUpRight, Phone, Send, Compass } from "lucide-react";
+import { siteConfig } from "@/data/siteConfig";
+import { useInquiry } from "@/context/InquiryContext";
 
 const navLinks = [
   { label: "Destinations", href: "/destinations" },
@@ -18,6 +19,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { openInquiry } = useInquiry();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -125,12 +127,9 @@ export default function Navbar() {
               <span>Vadodara, IN</span>
             </div>
 
-            <a
-              href={getWhatsAppUrl(
-                "Hello Sakshi, I would like to plan a bespoke journey with Darsh Dream Tours."
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => openInquiry({ department: "tours" })}
               className={`group inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${
                 scrolled
                   ? "border border-[#101A2E]/15 bg-[#101A2E] text-white hover:bg-[#B87543] hover:border-[#B87543] shadow-sm"
@@ -142,7 +141,7 @@ export default function Navbar() {
                 size={13}
                 className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -226,44 +225,42 @@ export default function Navbar() {
             })}
           </nav>
 
-          <div className="border-t border-white/10 pt-8 mt-8 space-y-5">
+          <div className="border-t border-white/10 pt-6 mt-6 space-y-4">
             <div>
-              <p className="font-sans text-[9px] uppercase tracking-[0.25em] text-white/40">
-                Direct Consultation
+              <p className="font-sans text-[9px] uppercase tracking-[0.25em] text-[#E2B18D] font-semibold">
+                Direct Desks · Darsh Dream Tours
               </p>
-              <p className="font-serif text-xl font-light text-white mt-1">
-                Darsh Dream Tours
-              </p>
-              <p className="font-sans text-xs text-white/60">
-                Office: +91 97243 91674 · Vadodara
-              </p>
-              <p className="font-sans text-xs text-[#E2B18D] mt-0.5">
-                info@darshdreamtours.com
-              </p>
+              <div className="mt-3 space-y-2.5">
+                {siteConfig.departments.map((dept, idx) => (
+                  <div key={dept.id} className="flex items-center justify-between text-xs font-sans">
+                    <div>
+                      <span className="text-white/40 mr-1.5 font-mono text-[10px]">0{idx + 1}.</span>
+                      <span className="text-white font-medium">{dept.title}</span>
+                      <span className="text-white/50 text-[10px] ml-1">({dept.person.split(" ")[0]})</span>
+                    </div>
+                    <a
+                      href={`tel:${dept.phone}`}
+                      className="font-mono text-[11px] text-[#E2B18D] hover:underline"
+                    >
+                      {dept.phoneDisplay}
+                    </a>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 pt-2">
-              <a
-                href={getWhatsAppUrl(
-                  "Hello Darsh Dream Tours, I would like to plan a journey with you."
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMobile}
-                className="inline-flex items-center justify-center gap-2 border border-[#B87543] bg-[#B87543] py-3.5 px-4 font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-white hover:bg-[#a06233] transition-colors"
+            <div className="pt-2">
+              <button
+                type="button"
+                onClick={() => {
+                  closeMobile();
+                  openInquiry({ department: "tours" });
+                }}
+                className="w-full inline-flex items-center justify-center gap-2 border border-[#B87543] bg-[#B87543] py-3.5 px-4 font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-white hover:bg-white hover:text-[#07101F] transition-all rounded-full"
               >
-                <MessageCircle size={14} />
-                <span>WhatsApp</span>
-              </a>
-
-              <a
-                href="tel:+919724391674"
-                onClick={closeMobile}
-                className="inline-flex items-center justify-center gap-2 border border-white/20 bg-white/5 py-3.5 px-4 font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-white hover:bg-white/10 transition-colors"
-              >
-                <Phone size={13} />
-                <span>Call Us</span>
-              </a>
+                <Compass size={14} />
+                <span>Plan With Us (Enquire)</span>
+              </button>
             </div>
           </div>
         </div>

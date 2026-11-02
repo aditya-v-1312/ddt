@@ -4,16 +4,19 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import IntroAnimation from "@/components/IntroAnimation";
 import VectorAirplane from "@/components/VectorAirplane";
 import GoogleReviews from "@/components/GoogleReviews";
 import GoogleTrustBadge from "@/components/GoogleTrustBadge";
-import { getWhatsAppUrl, siteConfig } from "@/data/siteConfig";
+import { siteConfig } from "@/data/siteConfig";
 import { travelImages } from "@/data/images";
-import { ArrowDown, ArrowUpRight, MessageCircle, Sparkles, MapPin, Compass, ShieldCheck } from "lucide-react";
+import { ArrowDown, ArrowUpRight, MessageCircle, Sparkles, MapPin, Compass, ShieldCheck, Phone, Mail } from "lucide-react";
+import { useInquiry } from "@/context/InquiryContext";
 
 export default function Home() {
+  const { openInquiry } = useInquiry();
   const [showIntro, setShowIntro] = useState(true);
   const [introKey, setIntroKey] = useState(0);
 
@@ -104,26 +107,19 @@ export default function Home() {
                 Thoughtfully planned journeys across India and beyond.
               </p>
 
-              {/* Dual Action Buttons */}
-              <div className="hero-reveal-delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <a
-                  href="#destinations"
+              {/* Single Primary Action: Opens Inquiry Form */}
+              <div className="hero-reveal-delay-3 mt-9 flex flex-col sm:flex-row sm:items-center">
+                <button
+                  type="button"
+                  onClick={() => openInquiry({ department: "tours" })}
                   className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-8 py-4 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[#07101F] shadow-[0_4px_20px_rgba(255,255,255,0.15)] transition-all duration-300 hover:bg-[#E2B18D] hover:shadow-[0_6px_25px_rgba(226,177,141,0.3)] hover:scale-[1.02]"
                 >
-                  <span>Explore Destinations</span>
+                  <span>Plan With Us</span>
                   <ArrowUpRight
                     size={15}
                     className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
-                </a>
-
-                <Link
-                  href="/plan"
-                  className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/25 bg-white/[0.04] px-7 py-4 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-md transition-all duration-300 hover:border-white/50 hover:bg-white/10"
-                >
-                  <span>Plan With Us</span>
-                  <span className="h-px w-6 bg-white/40 transition-all duration-300 group-hover:w-10 group-hover:bg-[#E2B18D]" />
-                </Link>
+                </button>
               </div>
             </div>
 
@@ -154,10 +150,10 @@ export default function Home() {
                     <ShieldCheck className="w-4 h-4 text-[#B87543] shrink-0 mt-0.5" />
                     <div>
                       <p className="font-sans text-xs text-white font-medium">
-                        Direct Partner Care
+                        Personal Planning Care
                       </p>
                       <p className="font-sans text-[10px] text-white/50">
-                        Sakshi Chandiramani
+                        Our Dedicated Team
                       </p>
                     </div>
                   </div>
@@ -516,16 +512,13 @@ export default function Home() {
                     />
                   </Link>
 
-                  <a
-                    href={getWhatsAppUrl(
-                      "Hello Darsh Dream Tours, I would like to enquire about travelling to Dubai."
-                    )}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => openInquiry({ destination: "Dubai", department: "tours" })}
                     className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#101A2E] hover:text-[#B87543] transition-colors py-3"
                   >
                     Quick Enquiry →
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -576,16 +569,13 @@ export default function Home() {
                     />
                   </Link>
 
-                  <a
-                    href={getWhatsAppUrl(
-                      "Hello Darsh Dream Tours, I would like to enquire about travelling to Kashmir."
-                    )}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => openInquiry({ destination: "Kashmir", department: "tours" })}
                     className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#101A2E] hover:text-[#B87543] transition-colors py-3"
                   >
                     Quick Enquiry →
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -635,16 +625,13 @@ export default function Home() {
                     />
                   </Link>
 
-                  <a
-                    href={getWhatsAppUrl(
-                      "Hello Darsh Dream Tours, I would like to enquire about travelling to Maldives."
-                    )}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => openInquiry({ destination: "Maldives", department: "tours" })}
                     className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#101A2E] hover:text-[#B87543] transition-colors py-3"
                   >
                     Quick Enquiry →
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -785,14 +772,14 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col justify-center lg:col-span-6 lg:col-start-7">
-              <p className="eyebrow mb-3">Meet the Person Behind the Journey</p>
+              <p className="eyebrow mb-3">The People Behind the Journey</p>
 
               <h2 className="display-heading text-5xl sm:text-6xl lg:text-[5.5rem] text-[#101A2E] mb-2">
-                Sakshi Chandiramani
+                About Our Team
               </h2>
 
               <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.25em] text-[#B87543] mb-8">
-                Partner · Darsh Dream Tours
+                Darsh Dream Tours · Dedicated Travel Desks
               </p>
 
               <blockquote className="border-l-2 border-[#B87543] pl-6 my-4">
@@ -806,27 +793,24 @@ export default function Home() {
               <p className="mt-6 max-w-xl font-sans text-sm sm:text-base font-light leading-7 text-[#697181]">
                 At Darsh Dream Tours, we believe travel shouldn't feel like
                 navigating automated booking engines. Based in Vadodara,
-                Gujarat, we assist travellers with personalized itineraries,
+                Gujarat, our dedicated team assists travellers with personalized itineraries,
                 genuine care, and reliable arrangements across India and
                 international destinations.
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <a
-                  href={getWhatsAppUrl(
-                    "Hello Darsh Dream Tours, I would like to talk with you about planning a journey."
-                  )}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={() => openInquiry({ department: "tours" })}
                   className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#101A2E] px-8 py-4 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-[#B87543] shadow-sm hover:scale-[1.02]"
                 >
-                  <MessageCircle size={15} />
-                  <span>Talk to Us</span>
+                  <Compass size={15} />
+                  <span>Contact Us</span>
                   <ArrowUpRight
                     size={14}
                     className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
-                </a>
+                </button>
 
                 <Link
                   href="/about"
@@ -901,22 +885,30 @@ export default function Home() {
                 />
               </Link>
 
-              <a
-                href={getWhatsAppUrl(
-                  "Hello Darsh Dream Tours, I would like to plan a journey."
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => openInquiry({ department: "tours" })}
                 className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/25 bg-white/[0.04] px-8 py-5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-[#E2B18D] hover:text-[#E2B18D] backdrop-blur-md"
               >
-                <MessageCircle size={15} />
-                <span>WhatsApp Us</span>
-              </a>
+                <Compass size={15} />
+                <span>Open Inquiry Form</span>
+              </button>
             </div>
 
-            <p className="mt-8 font-sans text-[10px] uppercase tracking-[0.2em] text-white/35">
-              Direct Contact: +91 97243 91674 · Vadodara, Gujarat
-            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-sans text-white/50">
+              <span className="uppercase tracking-[0.2em] text-[#E2B18D] text-[10px] font-semibold">Direct Desks:</span>
+              <a href="tel:+917048386900" className="hover:text-white transition-colors">
+                1. Ticketing: <span className="font-mono text-white/80">+91 70483 86900</span> (Pratik)
+              </a>
+              <span className="text-white/20">·</span>
+              <a href="tel:+917487083499" className="hover:text-white transition-colors">
+                2. Tours: <span className="font-mono text-white/80">+91 74870 83499</span> (Sakshi)
+              </a>
+              <span className="text-white/20">·</span>
+              <a href="tel:+919724391674" className="hover:text-white transition-colors">
+                3. Holidays: <span className="font-mono text-white/80">+91 97243 91674</span> (Office)
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -924,124 +916,7 @@ export default function Home() {
       {/* =========================================================
           11 — FOOTER
       ========================================================= */}
-      <footer className="bg-[#07101F] px-5 pb-12 pt-16 text-white sm:px-8 lg:px-12 border-t border-white/10">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-12 pb-14 border-b border-white/10">
-            {/* Brand Column */}
-            <div className="md:col-span-5">
-              <Link href="/" className="inline-block">
-                <div className="relative h-[72px] w-[230px] sm:h-[84px] sm:w-[260px]">
-                  <Image
-                    src="/images/logo-light.png"
-                    alt="Darsh Dream Tours"
-                    fill
-                    sizes="260px"
-                    className="object-contain object-left drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]"
-                  />
-                </div>
-              </Link>
-
-              <p className="mt-5 max-w-sm font-sans text-xs leading-6 text-white/50">
-                Thoughtfully planned journeys across India and beyond. Personal
-                planning by Darsh Dream Tours in Vadodara, Gujarat.
-              </p>
-
-              <div className="mt-6">
-                <GoogleTrustBadge variant="pill" />
-              </div>
-
-              {/* Replay Intro */}
-              <div className="mt-6">
-                <button
-                  type="button"
-                  onClick={handleReplayIntro}
-                  className="group inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-[0.2em] text-white/40 transition-colors hover:text-[#E2B18D]"
-                >
-                  <span>Replay Journey Intro</span>
-                  <span className="transition-transform group-hover:rotate-180 duration-500 text-[#E2B18D]">
-                    ↺
-                  </span>
-                </button>
-              </div>
-            </div>
-
-            {/* Navigation Column */}
-            <div className="md:col-span-3 md:col-start-7">
-              <p className="mb-5 font-sans text-[9px] uppercase tracking-[0.25em] text-white/40 font-semibold">
-                Explore
-              </p>
-
-              <nav className="flex flex-col gap-3 font-sans text-xs">
-                <Link
-                  href="/destinations"
-                  className="w-fit text-white/70 transition-colors hover:text-white"
-                >
-                  Destinations
-                </Link>
-                <Link
-                  href="/experiences"
-                  className="w-fit text-white/70 transition-colors hover:text-white"
-                >
-                  Experiences
-                </Link>
-                <Link
-                  href="/about"
-                  className="w-fit text-white/70 transition-colors hover:text-white"
-                >
-                  About Us
-                </Link>
-                <Link
-                  href="/plan"
-                  className="w-fit text-white/70 transition-colors hover:text-white"
-                >
-                  Plan a Journey
-                </Link>
-              </nav>
-            </div>
-
-            {/* Contact Column */}
-            <div className="md:col-span-3">
-              <p className="mb-5 font-sans text-[9px] uppercase tracking-[0.25em] text-white/40 font-semibold">
-                Vadodara Office
-              </p>
-
-              <div className="space-y-3 font-sans text-xs text-white/70">
-                <p className="leading-relaxed text-white/50">
-                  {siteConfig.contact.address.line1}
-                  <br />
-                  {siteConfig.contact.address.line2}
-                  <br />
-                  {siteConfig.contact.address.city}{" "}
-                  {siteConfig.contact.address.pincode}
-                </p>
-
-                <p className="pt-2">
-                  <a
-                    href="tel:+919724391674"
-                    className="hover:text-[#E2B18D] transition-colors"
-                  >
-                    Office: +91 97243 91674
-                  </a>
-                </p>
-
-                <p>
-                  <a
-                    href="mailto:info@darshdreamtours.com"
-                    className="hover:text-[#E2B18D] transition-colors"
-                  >
-                    info@darshdreamtours.com
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-sans text-white/40">
-            <p>© {new Date().getFullYear()} DARSH DREAM TOURS. All rights reserved.</p>
-            <p>Crafted for Sakshi Chandiramani · Vadodara, Gujarat</p>
-          </div>
-        </div>
-      </footer>
+      <Footer onReplayIntro={handleReplayIntro} />
 
       <WhatsAppButton />
     </main>

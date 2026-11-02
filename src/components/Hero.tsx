@@ -3,9 +3,10 @@
 import Image from "next/image";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { travelImages } from "@/data/images";
-import { getWhatsAppUrl } from "@/data/siteConfig";
+import { useInquiry } from "@/context/InquiryContext";
 
 export default function Hero() {
+  const { openInquiry } = useInquiry();
   return (
     <section
       id="top"
@@ -62,26 +63,19 @@ export default function Hero() {
               Curated journeys, unforgettable experiences, and travel planned around you.
             </p>
 
-            {/* Actions */}
-            <div className="hero-reveal-delay-3 mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href="#destinations"
-                className="group inline-flex w-fit items-center gap-4 bg-white px-7 py-4 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#101A2E] transition-all duration-300 hover:bg-[#E2B18D]"
+            {/* Single Primary Action: Opens Inquiry Form */}
+            <div className="hero-reveal-delay-3 mt-9 flex flex-col sm:flex-row sm:items-center">
+              <button
+                type="button"
+                onClick={() => openInquiry({ department: "tours" })}
+                className="group inline-flex w-fit items-center gap-4 bg-white px-8 py-4 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#101A2E] transition-all duration-300 hover:bg-[#E2B18D] rounded-full shadow-lg"
               >
-                Explore Destinations
+                Plan With Us
                 <ArrowUpRight
                   size={16}
                   className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
                 />
-              </a>
-
-              <a
-                href="/plan"
-                className="group inline-flex w-fit items-center gap-3 px-6 py-4 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition-colors duration-300 hover:text-[#E2B18D]"
-              >
-                Plan My Journey
-                <span className="h-px w-8 bg-white/50 transition-all duration-300 group-hover:w-12 group-hover:bg-[#E2B18D]" />
-              </a>
+              </button>
             </div>
           </div>
 

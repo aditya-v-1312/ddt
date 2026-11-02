@@ -1,0 +1,18 @@
+[
+  {
+    "id": "DDT-261102-3986",
+    "createdAt": "2026-11-02T11:55:50.091Z",
+    "name": "Aditya",
+    "phone": "7016841389",
+    "email": "aditya.vijay1312@gmail.com",
+    "department": "tours",
+    "targetEmail": "sakshi@darshdreamtours.com",
+    "assignedContact": "Sakshi Chandiramani (+91 74870 83499)",
+    "destination": "dubai",
+    "travelMonth": "Next 30 Days",
+    "travelersCount": "2",
+    "message": "",
+    "sourceUrl": "http://localhost:3000/",
+    "ip": "::1"
+  }
+]

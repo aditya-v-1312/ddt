@@ -1,65 +1,36 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { siteConfig } from "@/data/siteConfig";
+import WorldGlobeScene from "./WorldGlobeScene";
+import GlobeCard from "./GlobeCard";
+import { locations, originLocation, Location } from "@/data/countries";
+import { ArrowUpRight, Compass, Sparkles, Navigation, RotateCcw } from "lucide-react";
 
 interface IntroAnimationProps {
   onComplete: () => void;
 }
 
-interface DestinationNode {
-  name: string;
-  sub: string;
-  progress: number; // 0 to 1 along curve
-  x: number;
-  y: number;
-}
-
 export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) => {
-  const [phase, setPhase] = useState<"logo" | "flight" | "out" | "done">("logo");
-  const [activeNodes, setActiveNodes] = useState<string[]>([]);
-  const pathRef = useRef<SVGPathElement | null>(null);
-  const planeRef = useRef<SVGGElement | null>(null);
-  const animFrameRef = useRef<number | null>(null);
-  const triggeredNodesRef = useRef<Set<string>>(new Set());
-
-  // Responsive SVG curved path coordinates (viewBox 0 0 900 500)
-  // Sweeping, elegant flight arc from lower-left (origin India) through transit (Dubai) to top-right (Europe)
-  const pathD = "M 100 400 C 240 400, 340 310, 450 250 C 560 190, 660 120, 800 110";
-
-  const destinationNodes: DestinationNode[] = [
-    { name: "INDIA", sub: "ORIGIN", progress: 0.08, x: 160, y: 385 },
-    { name: "DUBAI", sub: "TRANSIT", progress: 0.48, x: 450, y: 250 },
-    { name: "EUROPE", sub: "DESTINATION", progress: 0.88, x: 740, y: 120 },
-  ];
+  const [phase, setPhase] = useState<"active" | "out" | "done">("active");
+  const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
+  const [progress, setProgress] = useState(0);
 
   const handleFinish = () => {
     try {
       sessionStorage.setItem("darsh_intro_seen", "true");
     } catch {
-      // ignore in restricted iframe/browser environments
+      // ignore
     }
     setPhase("out");
     setTimeout(() => {
       setPhase("done");
       onComplete();
-    }, 600);
-  };
-
-  const handleSkip = () => {
-    if (animFrameRef.current) {
-      cancelAnimationFrame(animFrameRef.current);
-    }
-    handleFinish();
+    }, 550);
   };
 
   useEffect(() => {
-    // 1. Prevent background scrolling on mobile while intro is active
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    // 2. Check sessionStorage & prefers-reduced-motion
     try {
       const hasSeen = sessionStorage.getItem("darsh_intro_seen");
       const prefersReduced =
@@ -67,8 +38,6 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) =>
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       if (hasSeen === "true" || prefersReduced) {
-        document.body.style.overflow = originalOverflow;
-        setPhase("done");
         onComplete();
         return;
       }
@@ -76,313 +45,167 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) =>
       // ignore
     }
 
-    // Phase 1: 0 - 1100ms Logo introduction, then start flight
-    const logoTimer = setTimeout(() => {
-      setPhase("flight");
-      startFlightAnimation();
-    }, 1150);
+    // Lock body scroll during intro
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
 
-    // Safety timeout: ensure intro never gets stuck on mobile low-power or slow devices
-    const safetyTimer = setTimeout(() => {
-      handleFinish();
-    }, 5500);
+    // Progress timer over ~8.5 seconds
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          handleFinish();
+          return 100;
+        }
+        return prev + 1.2;
+      });
+    }, 100);
 
     return () => {
+      clearInterval(interval);
       document.body.style.overflow = originalOverflow;
-      clearTimeout(logoTimer);
-      clearTimeout(safetyTimer);
-      if (animFrameRef.current) {
-        cancelAnimationFrame(animFrameRef.current);
-      }
     };
   }, []);
 
-  const startFlightAnimation = () => {
-    const path = pathRef.current;
-    const plane = planeRef.current;
+  if (phase === "done") return null;
 
-    if (!path || !plane) {
-      setTimeout(handleFinish, 1800);
-      return;
-    }
-
-    let totalLength = 0;
-    try {
-      totalLength = path.getTotalLength();
-    } catch {
-      totalLength = 850;
-    }
-
-    if (!totalLength || isNaN(totalLength) || totalLength <= 0) {
-      totalLength = 850;
-    }
-
-    path.style.strokeDasharray = `${totalLength}`;
-    path.style.strokeDashoffset = `${totalLength}`;
-
-    const duration = 2800; // ms for the flight sequence
-    let startTime: number | null = null;
-
-    const animateFlight = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-      const progress = Math.min(1, elapsed / duration);
-
-      // Smooth easeInOutQuad easing
-      const easedProgress =
-        progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-
-      // Update path drawing
-      path.style.strokeDashoffset = `${totalLength * (1 - easedProgress)}`;
-
-      // Calculate airplane position & orientation along the SVG path
-      const currentDist = totalLength * easedProgress;
-      let pt = { x: 100, y: 400 };
-      let ptAhead = { x: 104, y: 398 };
-
-      try {
-        pt = path.getPointAtLength(currentDist);
-        const aheadDist = Math.min(totalLength, currentDist + 4);
-        ptAhead = path.getPointAtLength(aheadDist);
-      } catch {
-        // Fallback calculation
-        pt = { x: 100 + 700 * easedProgress, y: 400 - 290 * easedProgress };
-        ptAhead = { x: pt.x + 4, y: pt.y - 1.5 };
-      }
-
-      // Calculate tangent angle.
-      // Vector airplane graphic points straight UP (along -Y), so add 90 deg to align with travel vector.
-      const angleRad = Math.atan2(ptAhead.y - pt.y, ptAhead.x - pt.x);
-      const angleDeg = (angleRad * 180) / Math.PI + 90;
-
-      plane.setAttribute(
-        "transform",
-        `translate(${pt.x.toFixed(2)}, ${pt.y.toFixed(2)}) rotate(${angleDeg.toFixed(2)})`
-      );
-
-      // Trigger destination nodes without causing continuous React re-renders
-      destinationNodes.forEach((node) => {
-        if (easedProgress >= node.progress && !triggeredNodesRef.current.has(node.name)) {
-          triggeredNodesRef.current.add(node.name);
-          setActiveNodes((prev) => (prev.includes(node.name) ? prev : [...prev, node.name]));
-        }
-      });
-
-      if (progress < 1) {
-        animFrameRef.current = requestAnimationFrame(animateFlight);
-      } else {
-        // Flight completed, hold briefly then transition out
-        setTimeout(() => {
-          handleFinish();
-        }, 550);
-      }
-    };
-
-    animFrameRef.current = requestAnimationFrame(animateFlight);
-  };
-
-  if (phase === "done") {
-    return null;
-  }
+  // Popular quick-selection corridors for instant exploration
+  const keyDestinations = [
+    originLocation,
+    ...locations.slice(0, 6), // Dubai, Swiss Alps, Paris, London, Maldives, Bali
+  ];
 
   return (
-    <aside
-      role="dialog"
-      aria-modal="true"
-      aria-label="Welcome to Darsh Dream Tours"
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-[#F7F5F0] overflow-hidden select-none transition-opacity duration-700 pointer-events-auto ${
+    <div
+      className={`fixed inset-0 z-[100] flex flex-col justify-between overflow-hidden bg-[#050D1C] text-white transition-opacity duration-500 select-none ${
         phase === "out" ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
-      style={{
-        height: "100dvh",
-        minHeight: "-webkit-fill-available",
-      }}
     >
-      {/* Background Subtle Compass Rings (Responsive scale) */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-        <div className="w-[340px] h-[340px] sm:w-[540px] sm:h-[540px] md:w-[720px] md:h-[720px] rounded-full border border-[#B87543]/30 border-dashed" />
-        <div className="absolute w-[240px] h-[240px] sm:w-[380px] sm:h-[380px] md:w-[500px] md:h-[500px] rounded-full border border-[#101A2E]/15" />
+      {/* Background Starlight Ambience */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#2F80FF]/15 rounded-full blur-[140px]" />
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#B87543]/15 rounded-full blur-[140px]" />
       </div>
 
-      {/* Main Center Stage */}
-      <div className="relative w-full max-w-4xl h-[420px] sm:h-[500px] md:h-[560px] px-3 sm:px-6 flex flex-col items-center justify-center">
-        {/* Logo Introduction (Fades gently when flight starts) */}
-        <div
-          className={`flex flex-col items-center text-center transition-all duration-1000 ${
-            phase === "logo"
-              ? "opacity-100 scale-100 translate-y-0"
-              : "opacity-15 scale-90 -translate-y-4"
-          }`}
-        >
-          <div className="relative w-56 h-36 sm:w-72 sm:h-44 md:w-80 md:h-48 mb-3">
+      {/* Top Header Strip */}
+      <header className="relative z-20 flex items-center justify-between px-6 py-4 sm:px-10 border-b border-white/10 backdrop-blur-md bg-[#050D1C]/70">
+        <div className="flex items-center gap-4">
+          <div className="relative h-10 w-36 sm:h-11 sm:w-44">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-light.png"
               alt={siteConfig.name}
               fill
               priority
-              sizes="(max-width: 640px) 224px, 320px"
-              className="object-contain"
+              sizes="180px"
+              className="object-contain object-left drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)]"
             />
           </div>
-          <p className="font-serif italic text-xs sm:text-sm text-[#B87543] tracking-[0.25em] uppercase">
-            A Journey Begins With A Dream
-          </p>
+
+          <div className="hidden sm:flex items-center gap-2 pl-4 border-l border-white/15">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E2B18D] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#B87543]"></span>
+            </span>
+            <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-white/60">
+              Vadodara Hub · Worldwide Flight Network
+            </span>
+          </div>
         </div>
 
-        {/* Flight SVG Canvas (Locked 1:1 in SVG user coordinates for mobile, tablet, and desktop) */}
-        <div
-          className={`absolute inset-0 w-full h-full pointer-events-none transition-opacity duration-600 ${
-            phase === "flight" || phase === "out" ? "opacity-100" : "opacity-0"
-          }`}
+        {/* Enter Website Button */}
+        <button
+          type="button"
+          onClick={handleFinish}
+          className="group inline-flex items-center gap-2 rounded-full border border-[#E2B18D]/40 bg-white/10 hover:bg-[#E2B18D] hover:text-[#07101F] px-5 py-2 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-md shadow-md"
         >
-          <svg
-            viewBox="0 0 900 500"
-            className="w-full h-full overflow-visible"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <defs>
-              <linearGradient id="introFlightGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#101A2E" stopOpacity="0.4" />
-                <stop offset="50%" stopColor="#B87543" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="#E2B18D" stopOpacity="1" />
-              </linearGradient>
+          <span>Enter Website</span>
+          <ArrowUpRight
+            size={13}
+            className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
+        </button>
+      </header>
 
-              <filter id="introGlow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="2.5" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
+      {/* Center 3D Interactive World Globe Stage */}
+      <div className="relative z-10 flex-1 flex items-center justify-center min-h-0 w-full overflow-hidden">
+        <div className="relative w-full h-full max-w-6xl max-h-[75vh] mx-auto flex items-center justify-center">
+          <WorldGlobeScene
+            selected={selectedLocation}
+            onSelect={(loc) => setSelectedLocation(loc)}
+          />
 
-            {/* Static Faint Guide Path */}
-            <path
-              d={pathD}
-              fill="none"
-              stroke="#E2DDD5"
-              strokeWidth="1.5"
-              strokeDasharray="4 6"
-            />
+          {/* Floating Waypoint Detail Card */}
+          <GlobeCard
+            location={selectedLocation}
+            onClose={() => setSelectedLocation(null)}
+          />
 
-            {/* Dynamic Drawn Flight Path */}
-            <path
-              ref={pathRef}
-              d={pathD}
-              fill="none"
-              stroke="url(#introFlightGrad)"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              filter="url(#introGlow)"
-            />
-
-            {/* Destination Waypoint Nodes */}
-            {destinationNodes.map((node) => {
-              const isActive = activeNodes.includes(node.name);
-              return (
-                <g
-                  key={node.name}
-                  transform={`translate(${node.x}, ${node.y})`}
-                  className="transition-all duration-700"
-                  style={{
-                    opacity: isActive ? 1 : 0,
-                    transform: `translate(${node.x}px, ${isActive ? node.y : node.y + 6}px)`,
-                    transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
-                  }}
-                >
-                  {/* Outer Ripple */}
-                  {isActive && (
-                    <circle
-                      r="16"
-                      fill="none"
-                      stroke="#B87543"
-                      strokeWidth="1.2"
-                      className="animate-ping opacity-45"
-                    />
-                  )}
-
-                  {/* Outer delicate ring */}
-                  <circle r="7" fill="none" stroke="#B87543" strokeWidth="1" opacity="0.35" />
-
-                  {/* Copper Pin Dot */}
-                  <circle r="4" fill="#B87543" stroke="#FFFFFF" strokeWidth="1.5" />
-
-                  {/* Node Label Text (Scales with SVG viewBox on all devices) */}
-                  <text
-                    x="0"
-                    y="-15"
-                    textAnchor="middle"
-                    fill="#101A2E"
-                    fontSize="13"
-                    fontWeight="600"
-                    letterSpacing="2.5"
-                    fontFamily="var(--font-manrope), system-ui, sans-serif"
-                  >
-                    {node.name}
-                  </text>
-                  <text
-                    x="0"
-                    y="22"
-                    textAnchor="middle"
-                    fill="#B87543"
-                    fontSize="9.5"
-                    fontWeight="500"
-                    letterSpacing="2"
-                    fontFamily="var(--font-manrope), system-ui, sans-serif"
-                  >
-                    {node.sub}
-                  </text>
-                </g>
-              );
-            })}
-
-            {/* Gliding Airplane (SVG Element — 100% synchronized with the flight path on all screens) */}
-            <g
-              ref={planeRef}
-              transform="translate(100, 400) rotate(45)"
-              className="will-change-transform filter drop-shadow-md"
-            >
-              {/* Subtle ambient flight halo */}
-              <circle r="20" fill="#B87543" fillOpacity="0.08" />
-              <circle r="9" fill="#B87543" fillOpacity="0.18" />
-
-              {/* Vector Airplane Icon centered at (0, 0) */}
-              <g transform="translate(-18, -17) scale(0.75)">
-                <path
-                  d="M24 4C24 4 27.5 12 28.5 18L44 26L42 29L28.5 24.5L28 35L33 39V41L24 38.5L15 41V39L20 35L19.5 24.5L6 29L4 26L19.5 18C20.5 12 24 4 24 4Z"
-                  fill="#101A2E"
-                  stroke="#E2B18D"
-                  strokeWidth="1.2"
-                />
-              </g>
-            </g>
-          </svg>
+          {/* Interactive Drag Cue Badge */}
+          <div className="absolute top-3 inset-x-0 flex justify-center pointer-events-none">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#050D1C]/80 px-4 py-1 text-[9px] font-sans uppercase tracking-[0.22em] text-white/60 backdrop-blur-md">
+              <Compass size={11} className="text-[#E2B18D]" />
+              <span>Drag to rotate globe · Click any destination or corridor</span>
+            </span>
+          </div>
         </div>
       </div>
 
-      {/* Accessible Skip Intro Button (Formatted for touchscreens, mobile Safari, and desktop) */}
-      <button
-        onClick={handleSkip}
-        type="button"
-        className="absolute bottom-6 right-5 sm:bottom-8 sm:right-8 z-30 group flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/90 hover:bg-white text-[#101A2E] text-[11px] font-sans font-semibold uppercase tracking-[0.2em] shadow-sm border border-[#101A2E]/10 transition-all duration-300 hover:border-[#B87543] active:scale-95 cursor-pointer"
-        style={{
-          marginBottom: "max(0.25rem, env(safe-area-inset-bottom))",
-          marginRight: "max(0.25rem, env(safe-area-inset-right))",
-        }}
-        aria-label="Skip introduction animation"
-      >
-        <span>Skip Intro</span>
-        <span className="inline-block transition-transform duration-300 group-hover:translate-x-0.5 text-[#B87543]">
-          →
-        </span>
-      </button>
-
-      {/* Bottom Progress Indicator */}
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#E7E2D8]">
-        <div
-          className={`h-full bg-[#B87543] transition-all duration-[3600ms] ease-out ${
-            phase !== "logo" ? "w-full" : "w-0"
-          }`}
-        />
+      {/* Corridor Quick Selector Strip */}
+      <div className="relative z-20 px-4 py-2 bg-[#050D1C]/60 backdrop-blur-md border-t border-white/5 flex items-center justify-center overflow-x-auto no-scrollbar">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <span className="text-[9px] font-mono uppercase tracking-widest text-[#E2B18D]/70 hidden md:inline mr-2">
+            Explore Routes:
+          </span>
+          {keyDestinations.map((loc) => {
+            const isOrigin = loc.id === "vadodara";
+            const isActive = selectedLocation?.id === loc.id;
+            return (
+              <button
+                key={loc.id}
+                type="button"
+                onClick={() => setSelectedLocation(loc)}
+                className={`px-3 py-1 rounded-full text-[9px] font-sans uppercase tracking-wider transition-all duration-200 whitespace-nowrap flex items-center gap-1.5 border ${
+                  isActive
+                    ? "bg-[#E2B18D] text-[#07101F] border-[#E2B18D] font-bold shadow-md"
+                    : isOrigin
+                    ? "bg-white/10 text-white border-[#E2B18D]/50 hover:bg-white/20"
+                    : "bg-white/5 text-white/70 border-white/10 hover:border-white/30 hover:text-white"
+                }`}
+              >
+                {isOrigin && <span className="h-1.5 w-1.5 rounded-full bg-[#E2B18D] animate-ping" />}
+                <span>{isOrigin ? "🇮🇳 India (Hub)" : loc.city}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
-    </aside>
+
+      {/* Bottom Progress Bar & Flight Corridor Counter */}
+      <footer className="relative z-20 px-6 py-3.5 sm:px-10 border-t border-white/10 backdrop-blur-md bg-[#050D1C]/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="flex items-center gap-4 text-[10px] font-sans uppercase tracking-[0.2em] text-white/50">
+          <span className="text-[#E2B18D] font-semibold">12+ Global Flight Corridors</span>
+          <span className="hidden md:inline text-white/20">|</span>
+          <span className="hidden md:inline">Departing Vadodara to Europe, Middle East, Asia & Americas</span>
+        </div>
+
+        {/* Progress Bar indicator */}
+        <div className="flex items-center gap-4 w-full sm:w-auto">
+          <div className="flex-1 sm:w-36 h-1 rounded-full bg-white/10 overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-[#B87543] to-[#E2B18D] transition-all duration-150 ease-out"
+              style={{ width: `${Math.min(100, progress)}%` }}
+            />
+          </div>
+          <button
+            type="button"
+            onClick={handleFinish}
+            className="text-[10px] font-sans uppercase tracking-widest text-white/40 hover:text-white transition-colors whitespace-nowrap"
+          >
+            Skip Intro →
+          </button>
+        </div>
+      </footer>
+    </div>
   );
 };
 

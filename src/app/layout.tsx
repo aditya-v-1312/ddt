@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Script from "next/script";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { InquiryProvider } from "@/context/InquiryContext";
+import InquiryModal from "@/components/InquiryModal";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -68,8 +70,11 @@ export default function RootLayout({
       className={`${cormorant.variable} ${manrope.variable} scroll-smooth`}
     >
       <body className="antialiased selection:bg-[#9A5B2D] selection:text-white font-sans bg-[#F8F7F3] text-[#17213A]">
-        <GoogleAnalytics />
-        {children}
+        <InquiryProvider>
+          <GoogleAnalytics />
+          {children}
+          <InquiryModal />
+        </InquiryProvider>
       </body>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-XF7FVCBWX2"

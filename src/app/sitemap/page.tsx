@@ -209,20 +209,22 @@ export default function SitemapPage() {
             {/* Direct Contact Card */}
             <div className="mt-8 pt-6 border-t border-black/5">
               <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] font-semibold text-[#9A5B2D] mb-2">
-                Vadodara Office
+                Dedicated Department Desks
               </h4>
               <p className="font-sans text-xs text-[#17213A]/70 leading-relaxed mb-3">
-                {siteConfig.contact.address.line1}, {siteConfig.contact.address.city}
+                {siteConfig.contact.address.full} · IATA Accredited No: {siteConfig.legal.iataAccreditedNo}
               </p>
-              <div className="flex flex-wrap gap-4 text-xs font-medium text-[#101A2E]">
-                <a href="tel:+919724391674" className="hover:text-[#9A5B2D] inline-flex items-center gap-1.5">
-                  <Phone className="w-3 h-3 text-[#9A5B2D]" />
-                  <span>Office: +91 97243 91674</span>
-                </a>
-                <a href="mailto:info@darshdreamtours.com" className="hover:text-[#9A5B2D] inline-flex items-center gap-1.5">
-                  <Mail className="w-3 h-3 text-[#9A5B2D]" />
-                  <span>info@darshdreamtours.com</span>
-                </a>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-medium text-[#101A2E]">
+                {siteConfig.departments.map((dept, idx) => (
+                  <div key={dept.id} className="p-2.5 rounded-lg bg-black/[0.02] border border-black/5">
+                    <p className="text-[10px] font-mono text-[#9A5B2D] uppercase tracking-wider">0{idx + 1}. {dept.title}</p>
+                    <p className="text-[11px] text-[#17213A]/70">{dept.person}</p>
+                    <a href={`tel:${dept.phone}`} className="hover:text-[#9A5B2D] inline-flex items-center gap-1.5 font-mono text-xs mt-1">
+                      <Phone className="w-3 h-3 text-[#9A5B2D]" />
+                      <span>{dept.phoneDisplay}</span>
+                    </a>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

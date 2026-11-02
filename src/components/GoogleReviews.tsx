@@ -48,7 +48,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
               }`}
             >
               Every journey we plan is personal. See what our travelers say on
-              Google, or leave a review if Sakshi has curated a trip for you.
+              Google, or leave a review if our team has curated a trip for you.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -240,7 +240,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
               </div>
 
               <h3 className="font-serif text-2xl font-light mb-2">
-                Travelled with Sakshi?
+                Travelled with Us?
               </h3>
 
               <p

@@ -18,7 +18,7 @@ export interface TestimonialItem {
  * and set `ENABLE_TESTIMONIALS = true`.
  */
 export const realTestimonials: TestimonialItem[] = [
-  // Ready to receive verified traveler reviews from Sakshi's clients.
+  // Ready to receive verified traveler reviews from clients.
 ];
 
 export const ENABLE_TESTIMONIALS = realTestimonials.length > 0;

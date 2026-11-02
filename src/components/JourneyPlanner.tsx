@@ -13,6 +13,9 @@ import {
   ArrowRight,
   ArrowLeft,
   Sparkles,
+  Phone,
+  ShieldCheck,
+  Loader2,
 } from "lucide-react";
 import { trackPlannerSubmission } from "@/lib/gtag";
 
@@ -34,6 +37,9 @@ export interface EnquiryData {
 export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestination }) => {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [submitting, setSubmitting] = useState<boolean>(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [referenceId, setReferenceId] = useState<string>("");
 
   const [formData, setFormData] = useState<EnquiryData>({
     destination: "",
@@ -89,10 +95,41 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
     if (currentStep > 1) setCurrentStep(currentStep - 1);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    trackPlannerSubmission(formData.destination, formData.travelMonth);
-    setSubmitted(true);
+    setSubmitError(null);
+    setSubmitting(true);
+
+    try {
+      const response = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          department: "tours",
+          destination: formData.destination,
+          travelMonth: formData.travelMonth,
+          travelersCount: formData.travelersCount,
+          message: `Style: ${formData.travelType}. Note: ${formData.message || ""}`,
+          sourceUrl: typeof window !== "undefined" ? window.location.href : "",
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok || data.error) {
+        throw new Error(data.error || "Submission failed. Please try again.");
+      }
+
+      setReferenceId(data.referenceId || "DDT-CONFIRMED");
+      trackPlannerSubmission(formData.destination, formData.travelMonth);
+      setSubmitted(true);
+    } catch (err: any) {
+      setSubmitError(err.message || "Failed to submit enquiry. Please check your network and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const generatedWhatsAppText = `*Travel Enquiry - Darsh Dream Tours*
@@ -463,10 +500,17 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       />
                     </div>
 
+                    {submitError && (
+                      <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-600 text-xs font-sans">
+                        {submitError}
+                      </div>
+                    )}
+
                     <div className="pt-6 flex items-center justify-between">
                       <button
                         type="button"
                         onClick={handleBack}
+                        disabled={submitting}
                         className="inline-flex items-center space-x-2 text-[10px] uppercase tracking-widest text-[#697181] hover:text-[#07101F] font-sans transition-colors"
                       >
                         <ArrowLeft className="w-4 h-4" />
@@ -475,12 +519,26 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
 
                       <button
                         type="submit"
-                        disabled={!formData.name || !formData.phone}
+                        disabled={!formData.name || !formData.phone || submitting}
                         className="inline-flex items-center space-x-2 px-9 py-4 rounded-full bg-[#07101F] hover:bg-[#B87543] disabled:opacity-40 text-white text-[10px] uppercase tracking-[0.2em] font-semibold transition-all shadow-md hover:scale-[1.02]"
                       >
-                        <Send className="w-4 h-4" />
-                        <span>Start Planning →</span>
+                        {submitting ? (
+                          <>
+                            <Loader2 className="w-4 h-4 animate-spin" />
+                            <span>Submitting Enquiry...</span>
+                          </>
+                        ) : (
+                          <>
+                            <Send className="w-4 h-4" />
+                            <span>Submit Enquiry Directly →</span>
+                          </>
+                        )}
                       </button>
+                    </div>
+
+                    <div className="mt-3 flex items-center justify-center gap-2 text-[11px] text-[#697181] font-sans">
+                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                      <span>Encrypted direct submission to Darsh Dream Tours · No third-party data sharing</span>
                     </div>
                   </div>
                 )}
@@ -489,51 +547,54 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
           ) : (
             /* CONFIRMATION STATE */
             <div className="py-8 text-center animate-in fade-in duration-500">
-              <div className="w-16 h-16 rounded-full bg-[#B87543]/10 text-[#B87543] mx-auto flex items-center justify-center mb-6 border border-[#B87543]/20">
-                <CheckCircle2 className="w-8 h-8 text-[#B87543]" />
+              <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-600 mx-auto flex items-center justify-center mb-6 border border-emerald-500/20">
+                <CheckCircle2 className="w-8 h-8 text-emerald-600" />
               </div>
 
               <span className="text-[10px] uppercase tracking-[0.25em] text-[#B87543] font-sans font-semibold">
-                Itinerary Request Ready
+                Enquiry Logged Securely
               </span>
 
-              <h3 className="font-serif text-3xl sm:text-4xl text-[#07101F] mt-2 mb-4 font-light">
+              <h3 className="font-serif text-3xl sm:text-4xl text-[#07101F] mt-2 mb-2 font-light">
                 Thank You, {formData.name}
               </h3>
 
-              <p className="text-sm sm:text-base text-[#697181] font-sans max-w-lg mx-auto leading-relaxed mb-8">
-                Your journey request for <strong className="text-[#07101F] font-medium">{formData.destination}</strong> in{" "}
-                <strong className="text-[#07101F] font-medium">{formData.travelMonth}</strong> ({formData.travelType}, {formData.travelersCount} guests) has been formatted.
+              <p className="font-mono text-sm text-[#B87543] font-bold mb-4">
+                Reference ID: {referenceId}
               </p>
 
-              {/* Instant WhatsApp Dispatch Card */}
-              <div className="bg-[#FAF9F5] border border-[#101A2E]/10 rounded-2xl p-6 sm:p-8 max-w-md mx-auto mb-8 text-left">
-                <div className="flex items-center space-x-2 text-[10px] uppercase tracking-wider text-[#B87543] font-semibold mb-2">
+              <p className="text-sm sm:text-base text-[#697181] font-sans max-w-lg mx-auto leading-relaxed mb-8">
+                Your journey request for <strong className="text-[#07101F] font-medium">{formData.destination || "Flexible"}</strong> in{" "}
+                <strong className="text-[#07101F] font-medium">{formData.travelMonth}</strong> ({formData.travelType}, {formData.travelersCount} guests) has been received. Our team will review your requirements and reach out by phone or email shortly.
+              </p>
+
+              {/* Direct Desks Card */}
+              <div className="bg-[#FAF9F5] border border-[#101A2E]/10 rounded-2xl p-6 sm:p-8 max-w-lg mx-auto mb-8 text-left">
+                <div className="flex items-center space-x-2 text-[10px] uppercase tracking-wider text-[#B87543] font-semibold mb-3">
                   <Sparkles className="w-3.5 h-3.5" />
-                  <span>Send Directly via WhatsApp</span>
+                  <span>Immediate Assistance · Direct Desks</span>
                 </div>
-                <p className="text-xs text-[#697181] font-sans leading-relaxed mb-6">
-                  Click below to open WhatsApp with your pre-formatted enquiry details directly sent to Darsh Dream Tours (+91 97243 91674).
+                <p className="text-xs text-[#697181] font-sans leading-relaxed mb-5">
+                  Need to speak with us right away regarding flight options, custom itinerary ideas, or dates? Feel free to call our dedicated desks:
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={getWhatsAppUrl(generatedWhatsAppText)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center space-x-2 py-3.5 px-5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-[10px] uppercase tracking-wider font-semibold shadow-md transition-all"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    <span>Send via WhatsApp</span>
-                  </a>
-
-                  <a
-                    href={generatedMailtoUrl}
-                    className="inline-flex items-center justify-center space-x-2 py-3.5 px-5 rounded-full bg-white hover:bg-gray-50 text-[#07101F] text-[10px] uppercase tracking-wider font-medium border border-[#101A2E]/15 transition-all"
-                  >
-                    <Mail className="w-4 h-4 text-[#B87543]" />
-                    <span>Email</span>
-                  </a>
+                <div className="space-y-3">
+                  {siteConfig.departments.map((dept, idx) => (
+                    <div key={dept.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-xl bg-white border border-[#101A2E]/5 gap-2">
+                      <div>
+                        <span className="text-[10px] font-mono text-[#B87543] mr-1.5 font-semibold">0{idx + 1}.</span>
+                        <span className="font-sans text-xs font-semibold text-[#07101F]">{dept.title}</span>
+                        <span className="font-sans text-[11px] text-[#697181] ml-1.5">({dept.person})</span>
+                      </div>
+                      <a
+                        href={`tel:${dept.phone}`}
+                        className="inline-flex items-center gap-1.5 font-mono text-xs font-medium text-[#B87543] hover:underline"
+                      >
+                        <Phone className="w-3 h-3" />
+                        <span>{dept.phoneDisplay}</span>
+                      </a>
+                    </div>
+                  ))}
                 </div>
               </div>
 

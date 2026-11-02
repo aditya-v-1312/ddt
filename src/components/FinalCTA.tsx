@@ -1,11 +1,13 @@
 "use client";
 
 import React from "react";
-import { siteConfig, getWhatsAppUrl } from "@/data/siteConfig";
+import { siteConfig } from "@/data/siteConfig";
 import VectorAirplane from "./VectorAirplane";
-import { MessageCircle, Compass, ArrowRight } from "lucide-react";
+import { Compass, ArrowRight, Phone } from "lucide-react";
+import { useInquiry } from "@/context/InquiryContext";
 
 export const FinalCTA: React.FC = () => {
+  const { openInquiry } = useInquiry();
   return (
     <section className="relative py-32 sm:py-44 bg-[#08152F] text-white overflow-hidden">
       {/* Background Animated Flight Path Arc */}
@@ -56,23 +58,28 @@ export const FinalCTA: React.FC = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-md sm:max-w-none">
-          <a
-            href="#planner"
+          <button
+            type="button"
+            onClick={() => openInquiry({ department: "tours" })}
             className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full bg-[#9A5B2D] hover:bg-[#B87543] text-white font-sans text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(154,91,45,0.4)] transform hover:-translate-y-0.5 group"
           >
             <span>Plan My Journey</span>
             <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+          </button>
+        </div>
 
-          <a
-            href={getWhatsAppUrl("Hello Darsh Dream Tours, I would like to plan my next adventure.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 px-9 py-4 rounded-full border border-white/20 hover:border-white text-white hover:bg-white/10 font-sans text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 backdrop-blur-sm"
-          >
-            <MessageCircle className="w-4 h-4 text-[#25D366]" />
-            <span>WhatsApp Us</span>
-          </a>
+        {/* 3 Department Desks */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-sans text-white/60">
+          <span className="uppercase tracking-wider text-[#E2B18D] text-[10px] font-semibold">Direct Desks:</span>
+          {siteConfig.departments.map((dept, idx) => (
+            <a
+              key={dept.id}
+              href={`tel:${dept.phone}`}
+              className="hover:text-white transition-colors"
+            >
+              {idx + 1}. {dept.title}: <span className="text-[#E2B18D] font-mono">{dept.phoneDisplay}</span> ({dept.person.split(" ")[0]})
+            </a>
+          ))}
         </div>
       </div>
     </section>

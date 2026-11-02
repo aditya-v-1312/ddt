@@ -2,11 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
-import { siteConfig, getWhatsAppUrl } from "@/data/siteConfig";
+import { siteConfig } from "@/data/siteConfig";
 import { travelImages } from "@/data/images";
-import { MessageCircle, MapPin, Sparkles, Phone, Mail, ArrowRight } from "lucide-react";
+import { MapPin, Sparkles, Phone, Mail, ArrowRight, Compass } from "lucide-react";
+import { useInquiry } from "@/context/InquiryContext";
 
 export const AboutSakshi: React.FC = () => {
+  const { openInquiry } = useInquiry();
   return (
     <section id="about" className="py-28 sm:py-36 bg-[#F8F7F3] text-[#17213A] relative border-t border-[#E7E4DA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,47 +60,46 @@ export const AboutSakshi: React.FC = () => {
             </div>
 
             <h2 className="font-serif text-4xl sm:text-6xl text-[#08152F] tracking-tight leading-[1.08] mb-2">
-              MEET SAKSHI
+              ABOUT OUR TEAM
             </h2>
 
             <p className="font-serif text-lg sm:text-xl text-[#9A5B2D] tracking-wide mb-6">
-              {siteConfig.partner.name} • {siteConfig.partner.role}
+              Thoughtful Curation • Personal Planning Care
             </p>
 
             <blockquote className="border-l-2 border-[#9A5B2D] pl-6 my-4">
               <p className="font-serif italic text-xl sm:text-2xl text-[#08152F] leading-snug">
-                "{siteConfig.partner.bioIntro}"
+                "Travel is personal. Every journey begins with understanding where you want to go, how you want to travel, and what you want to experience."
               </p>
             </blockquote>
 
             <div className="space-y-4 text-base text-[#687080] font-sans font-light leading-relaxed my-6">
               <p>
-                At Darsh Dream Tours, travel is never treated as a transactional commodity. Whether you are mapping out your first overseas voyage, a romantic honeymoon in the Swiss Alps, or a tranquil family retreat through the waterways of Kerala, Sakshi is personally involved in designing an itinerary tailored to your rhythm.
+                At Darsh Dream Tours, travel is never treated as a transactional booking. Whether you are mapping out your first overseas voyage, a romantic honeymoon in the Swiss Alps, or a tranquil family retreat through the waterways of Kerala, our team is personally involved in designing an itinerary tailored to your rhythm.
               </p>
               <p>
-                From coordinating comfortable flight connections and verified boutique hotels to sharing practical tips on weather and local etiquette, you have a caring travel advisor just a WhatsApp message or phone call away.
+                From coordinating seamless flight ticketing and handpicked boutique accommodations to sharing insider tips on weather and cultural etiquette, you have our caring travel desk just a phone call or enquiry away.
               </p>
             </div>
 
             {/* Direct Connect Actions */}
             <div className="pt-6 border-t border-[#E7E4DA] flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <a
-                href={getWhatsAppUrl("Hello Darsh Dream Tours, I would like to talk with you about planning a trip.")}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => openInquiry({ department: "tours" })}
                 className="inline-flex items-center justify-center space-x-3 px-8 py-4 rounded-full bg-[#08152F] hover:bg-[#9A5B2D] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-md group"
               >
-                <MessageCircle className="w-4 h-4 text-[#D99767] group-hover:text-white transition-colors" />
-                <span>Talk to Us</span>
+                <Compass className="w-4 h-4 text-[#D99767] group-hover:text-white transition-colors" />
+                <span>Contact Us</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              </button>
 
               <a
-                href={`tel:${siteConfig.contact.phone}`}
+                href={`tel:${siteConfig.departments[1].phone}`}
                 className="inline-flex items-center justify-center space-x-2 px-6 py-4 rounded-full border border-[#E7E4DA] hover:border-[#08152F] text-[#08152F] text-xs uppercase tracking-[0.2em] font-medium transition-colors bg-white"
               >
                 <Phone className="w-3.5 h-3.5 text-[#9A5B2D]" />
-                <span>Office: {siteConfig.contact.phoneDisplay}</span>
+                <span>Tours: {siteConfig.departments[1].phoneDisplay}</span>
               </a>
 
               <a

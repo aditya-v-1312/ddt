@@ -3,14 +3,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { getWhatsAppUrl, siteConfig } from "@/data/siteConfig";
+import { siteConfig } from "@/data/siteConfig";
 import { travelImages } from "@/data/images";
-import { ArrowDown, ArrowUpRight, MessageCircle, Phone, Mail, MapPin, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowDown, ArrowUpRight, MessageCircle, Phone, Mail, MapPin, Sparkles, CheckCircle2, Compass } from "lucide-react";
 import GoogleReviews from "@/components/GoogleReviews";
 import GoogleTrustBadge from "@/components/GoogleTrustBadge";
+import { useInquiry } from "@/context/InquiryContext";
 
 export default function AboutPage() {
+  const { openInquiry } = useInquiry();
   return (
     <main className="min-h-screen bg-[#F7F5F0] text-[#101A2E] selection:bg-[#B87543] selection:text-white">
       <Navbar />
@@ -120,39 +123,38 @@ export default function AboutPage() {
                 begins.
               </p>
 
-              {/* Partner introduction */}
+              {/* Team introduction */}
               <div className="mt-10 border-t border-[#101A2E]/10 pt-8">
                 <p className="font-serif text-3xl sm:text-4xl font-light text-[#101A2E]">
-                  Sakshi Chandiramani
+                  Our Dedicated Team
                 </p>
 
                 <p className="mt-1 font-sans text-[10px] font-semibold uppercase tracking-[0.25em] text-[#B87543]">
-                  Partner · Darsh Dream Tours
+                  Darsh Dream Tours · Vadodara Desks
                 </p>
 
                 <p className="mt-4 max-w-lg font-sans text-sm font-light leading-6 text-[#697181]">
-                  Based in Vadodara, Gujarat, working closely with travellers to
+                  Based in Vadodara, Gujarat, our team works closely with travellers to
                   shape trips that feel personal, unhurried, and memorable.
                 </p>
 
-                <div className="mt-8 flex flex-wrap items-center gap-4">
-                  <a
-                    href={getWhatsAppUrl("Hello Darsh Dream Tours, I would like to talk with you about planning a trip.")}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                  <button
+                    type="button"
+                    onClick={() => openInquiry({ department: "tours" })}
                     className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#101A2E] px-8 py-4 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white hover:bg-[#B87543] transition-all duration-300 shadow-sm hover:scale-[1.02]"
                   >
-                    <MessageCircle size={15} />
-                    <span>Talk to Us</span>
+                    <Compass size={15} />
+                    <span>Contact Us</span>
                     <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
+                  </button>
 
                   <a
-                    href="tel:+919724391674"
+                    href="tel:+917487083499"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-[#101A2E]/20 px-6 py-4 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#101A2E] hover:border-[#101A2E] transition-colors"
                   >
                     <Phone size={13} className="text-[#B87543]" />
-                    <span>Office: +91 97243 91674</span>
+                    <span>Tours Desk: +91 74870 83499</span>
                   </a>
                 </div>
               </div>
@@ -206,7 +208,7 @@ export default function AboutPage() {
                 num: "03",
                 title: "We Stay In Touch",
                 subtitle: "Support before and throughout.",
-                desc: "From the moment you confirm your journey until you return home, Sakshi is reachable. If plans shift or questions come up, you speak to someone who knows your itinerary personally.",
+                desc: "From the moment you confirm your journey until you return home, our team is reachable. If plans shift or questions come up, you speak to someone who knows your itinerary personally.",
               },
             ].map((step) => (
               <div
@@ -267,31 +269,35 @@ export default function AboutPage() {
                       Office Address
                     </h3>
                     <p className="mt-2 font-sans text-sm text-[#697181] leading-relaxed">
-                      SFI Sun Complex, 1 Abhishek Colony,
+                      {siteConfig.contact.address.line1},
                       <br />
-                      Gotri Road, Race Course,
+                      {siteConfig.contact.address.line2},
                       <br />
-                      Vadodara 390007, Gujarat
+                      {siteConfig.contact.address.city} {siteConfig.contact.address.pincode}
                     </p>
+                    <div className="mt-3 text-[11px] font-sans text-[#697181] space-y-0.5">
+                      <p><span className="font-semibold text-[#101A2E]">{siteConfig.legal.entityName}</span></p>
+                      <p>IATA Accredited No: <span className="font-mono text-[#101A2E]">{siteConfig.legal.iataAccreditedNo}</span></p>
+                      <p>GSTIN: <span className="font-mono text-[#101A2E]">{siteConfig.legal.gstin}</span> · PAN: <span className="font-mono text-[#101A2E]">{siteConfig.legal.pan}</span></p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-[#101A2E]/10 flex flex-col sm:flex-row gap-4 text-xs font-sans">
-                  <a
-                    href="tel:+919724391674"
-                    className="inline-flex items-center gap-2 text-[#101A2E] hover:text-[#B87543] transition-colors"
-                  >
-                    <Phone size={13} className="text-[#B87543]" />
-                    <span>Office: +91 97243 91674</span>
-                  </a>
-
-                  <a
-                    href="mailto:info@darshdreamtours.com"
-                    className="inline-flex items-center gap-2 text-[#101A2E] hover:text-[#B87543] transition-colors"
-                  >
-                    <Mail size={13} className="text-[#B87543]" />
-                    <span>info@darshdreamtours.com</span>
-                  </a>
+                <div className="mt-6 pt-6 border-t border-[#101A2E]/10 space-y-2 text-xs font-sans">
+                  <p className="font-sans text-[10px] uppercase tracking-wider text-[#B87543] font-semibold">
+                    Dedicated Department Desks:
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
+                    {siteConfig.departments.map((dept, idx) => (
+                      <div key={dept.id} className="p-2 rounded-lg bg-[#FAF9F5] border border-[#101A2E]/5">
+                        <p className="text-[10px] text-[#B87543] font-mono font-semibold">0{idx + 1}. {dept.title}</p>
+                        <p className="text-[#101A2E] font-medium text-[11px] truncate">{dept.person}</p>
+                        <a href={`tel:${dept.phone}`} className="font-mono text-[11px] text-[#B87543] hover:underline block mt-0.5">
+                          {dept.phoneDisplay}
+                        </a>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -414,20 +420,30 @@ export default function AboutPage() {
                 />
               </Link>
 
-              <a
-                href={getWhatsAppUrl("Hello Darsh Dream Tours, I would like to plan a journey.")}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => openInquiry({ department: "tours" })}
                 className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/25 bg-white/[0.04] px-8 py-5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-[#E2B18D] hover:text-[#E2B18D] backdrop-blur-md"
               >
-                <MessageCircle size={15} />
-                <span>WhatsApp Us</span>
-              </a>
+                <Compass size={15} />
+                <span>Open Inquiry Form</span>
+              </button>
             </div>
 
-            <p className="mt-8 font-sans text-[10px] uppercase tracking-[0.18em] text-white/35">
-              Direct Contact: +91 97243 91674 · Vadodara, Gujarat
-            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-sans text-white/50">
+              <span className="uppercase tracking-[0.2em] text-[#E2B18D] text-[10px] font-semibold">Direct Desks:</span>
+              <a href="tel:+917048386900" className="hover:text-white transition-colors">
+                1. Ticketing: <span className="font-mono text-white/80">+91 70483 86900</span> (Pratik)
+              </a>
+              <span className="text-white/20">·</span>
+              <a href="tel:+917487083499" className="hover:text-white transition-colors">
+                2. Tours: <span className="font-mono text-white/80">+91 74870 83499</span> (Sakshi)
+              </a>
+              <span className="text-white/20">·</span>
+              <a href="tel:+919724391674" className="hover:text-white transition-colors">
+                3. Holidays: <span className="font-mono text-white/80">+91 97243 91674</span> (Office)
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -435,89 +451,7 @@ export default function AboutPage() {
       {/* =========================================================
           08 — FOOTER
       ========================================================= */}
-      <footer className="bg-[#07101F] px-5 pb-12 pt-16 text-white sm:px-8 lg:px-12 border-t border-white/10">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-12 pb-14 border-b border-white/10">
-            <div className="md:col-span-5">
-              <Link href="/" className="inline-block">
-                <div className="relative h-[72px] w-[230px] sm:h-[84px] sm:w-[260px]">
-                  <Image
-                    src="/images/logo-light.png"
-                    alt="Darsh Dream Tours"
-                    fill
-                    sizes="260px"
-                    className="object-contain object-left drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]"
-                  />
-                </div>
-              </Link>
-
-              <p className="mt-5 max-w-sm font-sans text-xs leading-6 text-white/50">
-                Thoughtfully planned journeys across India and beyond. Personal
-                planning by Darsh Dream Tours in Vadodara, Gujarat.
-              </p>
-
-              <div className="mt-6">
-                <GoogleTrustBadge variant="pill" />
-              </div>
-            </div>
-
-            <div className="md:col-span-3 md:col-start-7">
-              <p className="mb-5 font-sans text-[9px] uppercase tracking-[0.25em] text-white/40 font-semibold">
-                Explore
-              </p>
-
-              <nav className="flex flex-col gap-3 font-sans text-xs">
-                <Link href="/destinations" className="w-fit text-white/70 hover:text-white transition-colors">
-                  Destinations
-                </Link>
-                <Link href="/experiences" className="w-fit text-white/70 hover:text-white transition-colors">
-                  Experiences
-                </Link>
-                <Link href="/about" className="w-fit text-white/70 hover:text-white transition-colors">
-                  About Us
-                </Link>
-                <Link href="/plan" className="w-fit text-white/70 hover:text-white transition-colors">
-                  Plan a Journey
-                </Link>
-              </nav>
-            </div>
-
-            <div className="md:col-span-3">
-              <p className="mb-5 font-sans text-[9px] uppercase tracking-[0.25em] text-white/40 font-semibold">
-                Vadodara Office
-              </p>
-
-              <div className="space-y-3 font-sans text-xs text-white/70">
-                <p className="leading-relaxed text-white/50">
-                  {siteConfig.contact.address.line1}
-                  <br />
-                  {siteConfig.contact.address.line2}
-                  <br />
-                  {siteConfig.contact.address.city}{" "}
-                  {siteConfig.contact.address.pincode}
-                </p>
-
-                <p className="pt-2">
-                  <a href="tel:+919724391674" className="hover:text-[#E2B18D] transition-colors">
-                    Office: +91 97243 91674
-                  </a>
-                </p>
-
-                <p>
-                  <a href="mailto:info@darshdreamtours.com" className="hover:text-[#E2B18D] transition-colors">
-                    info@darshdreamtours.com
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-sans text-white/40">
-            <p>© {new Date().getFullYear()} DARSH DREAM TOURS. All rights reserved.</p>
-            <p>Crafted for Sakshi Chandiramani · Vadodara, Gujarat</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <WhatsAppButton />
     </main>
