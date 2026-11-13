@@ -79,7 +79,7 @@ export default function AboutPage() {
       </section>
 
       {/* =========================================================
-          02 — SAKSHI / THE PERSON BEHIND THE BRAND
+          02 — ABOUT OUR TEAM / BOUTIQUE HOSPITALITY
       ========================================================= */}
       <section id="story" className="bg-[#F7F5F0] px-5 py-28 sm:px-8 sm:py-36 lg:px-12">
         <div className="mx-auto max-w-[1440px]">
@@ -277,8 +277,21 @@ export default function AboutPage() {
                     </p>
                     <div className="mt-3 text-[11px] font-sans text-[#697181] space-y-0.5">
                       <p><span className="font-semibold text-[#101A2E]">{siteConfig.legal.entityName}</span></p>
-                      <p>IATA Accredited No: <span className="font-mono text-[#101A2E]">{siteConfig.legal.iataAccreditedNo}</span></p>
                       <p>GSTIN: <span className="font-mono text-[#101A2E]">{siteConfig.legal.gstin}</span> · PAN: <span className="font-mono text-[#101A2E]">{siteConfig.legal.pan}</span></p>
+                    </div>
+
+                    {/* Official Bank Details */}
+                    <div className="mt-4 pt-4 border-t border-[#101A2E]/10 text-xs font-sans">
+                      <p className="text-[10px] uppercase font-mono tracking-wider text-[#B87543] font-semibold mb-1.5">
+                        Official Bank Transfer Details (RTGS / NEFT):
+                      </p>
+                      <div className="bg-white p-3 rounded-xl border border-[#101A2E]/5 space-y-1 text-[11px] text-[#697181]">
+                        <p>Beneficiary: <span className="font-semibold text-[#101A2E]">{siteConfig.bank.accountName}</span></p>
+                        <p>Bank: <span className="text-[#101A2E] font-medium">{siteConfig.bank.bankName}</span> ({siteConfig.bank.accountType})</p>
+                        <p>Account No: <span className="font-mono font-semibold text-[#101A2E]">{siteConfig.bank.accountNumber}</span></p>
+                        <p>IFSC Code: <span className="font-mono font-semibold text-[#B87543]">{siteConfig.bank.ifscCode}</span></p>
+                        <p>Branch: <span className="text-[#101A2E]">{siteConfig.bank.branch}</span></p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -289,10 +302,10 @@ export default function AboutPage() {
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
                     {siteConfig.departments.map((dept, idx) => (
-                      <div key={dept.id} className="p-2 rounded-lg bg-[#FAF9F5] border border-[#101A2E]/5">
+                      <div key={dept.id} className="p-2.5 rounded-lg bg-[#FAF9F5] border border-[#101A2E]/5">
                         <p className="text-[10px] text-[#B87543] font-mono font-semibold">0{idx + 1}. {dept.title}</p>
-                        <p className="text-[#101A2E] font-medium text-[11px] truncate">{dept.person}</p>
-                        <a href={`tel:${dept.phone}`} className="font-mono text-[11px] text-[#B87543] hover:underline block mt-0.5">
+                        <p className="text-[#101A2E] text-[10px] truncate opacity-75">{dept.badge}</p>
+                        <a href={`tel:${dept.phone}`} className="font-mono text-[11px] text-[#B87543] hover:underline block mt-1">
                           {dept.phoneDisplay}
                         </a>
                       </div>
@@ -433,15 +446,15 @@ export default function AboutPage() {
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-sans text-white/50">
               <span className="uppercase tracking-[0.2em] text-[#E2B18D] text-[10px] font-semibold">Direct Desks:</span>
               <a href="tel:+917048386900" className="hover:text-white transition-colors">
-                1. Ticketing: <span className="font-mono text-white/80">+91 70483 86900</span> (Pratik)
+                1. Ticketing: <span className="font-mono text-white/80">+91 70483 86900</span>
               </a>
               <span className="text-white/20">·</span>
               <a href="tel:+917487083499" className="hover:text-white transition-colors">
-                2. Tours: <span className="font-mono text-white/80">+91 74870 83499</span> (Sakshi)
+                2. Tours: <span className="font-mono text-white/80">+91 74870 83499</span>
               </a>
               <span className="text-white/20">·</span>
               <a href="tel:+919724391674" className="hover:text-white transition-colors">
-                3. Holidays: <span className="font-mono text-white/80">+91 97243 91674</span> (Office)
+                3. Holidays: <span className="font-mono text-white/80">+91 97243 91674</span>
               </a>
             </div>
           </div>

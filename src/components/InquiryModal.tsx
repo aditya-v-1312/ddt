@@ -274,7 +274,7 @@ export default function InquiryModal() {
                             {dept.title}
                           </p>
                           <p className="font-sans text-[10px] text-white/50 mt-0.5 truncate">
-                            {dept.person}
+                            {dept.badge}
                           </p>
                           <p className="font-mono text-[10px] text-[#E2B18D]/80 mt-1">
                             {dept.phoneDisplay}

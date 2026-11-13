@@ -213,7 +213,7 @@ export default function TravelChatbot() {
       {
         id: "msg-lm-2",
         sender: "bot",
-        text: "As an IATA Accredited Agency (IATA: 14039896), our team accesses direct wholesale allocations across 2★, 3★, 4★, and 5★ hotels even when online booking sites show 'Sold Out'.",
+        text: "Our dedicated travel desks access direct wholesale allocations across 2★, 3★, 4★, and 5★ hotels even when online booking sites show 'Sold Out'.",
         timestamp: getTimeString(),
       },
     ]);
@@ -270,7 +270,7 @@ export default function TravelChatbot() {
       addBotMessage("Exciting! Where are you dreaming of traveling? Choose a popular destination below or tell me your destination in chat:", "destination_select");
     } else if (serviceKey === "ticketing") {
       setConsultation((prev) => ({ ...prev, serviceType: "ticketing", urgentLastMinute: false }));
-      addBotMessage("✈️ Our IATA Ticketing Desk handles flights, visas, and corporate bookings. Where are you flying to?", "destination_select", { isTicketing: true });
+      addBotMessage("✈️ Our Ticketing Desk handles domestic & international flights, visas, and corporate travel. Where are you flying to?", "destination_select", { isTicketing: true });
     } else {
       setConsultation((prev) => ({ ...prev, serviceType: "hotel_only", urgentLastMinute: false }));
       addBotMessage("🏨 We provide negotiated wholesale rates across 2-star, 3-star, 4-star, and 5-star hotels globally. Which city do you need a stay in?", "destination_select");
@@ -472,6 +472,20 @@ export default function TravelChatbot() {
       setConversationalStep("idle");
       executeIndirectSubmission(finalConsultation);
     } else {
+      // Check if user is asking about bank details / account / payment
+      if (/bank|account|ifsc|payment|neft|rtgs|how to pay/i.test(text)) {
+        addBotMessage(
+          `🏦 Official Bank Details for DARSH DREAM TOURS LLP:\n\n` +
+          `• Beneficiary: ${siteConfig.bank.accountName}\n` +
+          `• Bank: ${siteConfig.bank.bankName} (${siteConfig.bank.accountType})\n` +
+          `• Account No: ${siteConfig.bank.accountNumber}\n` +
+          `• IFSC Code: ${siteConfig.bank.ifscCode}\n` +
+          `• Branch: ${siteConfig.bank.branch}\n\n` +
+          `Feel free to share your payment confirmation or receipt to info@darshdreamtours.com.`
+        );
+        return;
+      }
+
       // General Contextual handling
       if (!consultation.destination) {
         handleDestinationSelect(text);
@@ -533,7 +547,7 @@ export default function TravelChatbot() {
                     Darsh AI Travel Concierge
                   </p>
                   <p className="text-xs text-white/90 font-sans leading-relaxed">
-                    Planning a trip or need an <strong>urgent last-minute hotel</strong>? Chat with our team for direct wholesale IATA rates.
+                    Planning a trip or need an <strong>urgent last-minute hotel</strong>? Chat with our team for direct wholesale rates.
                   </p>
                   <div className="pt-1.5 flex gap-2">
                     <button
@@ -608,11 +622,11 @@ export default function TravelChatbot() {
                       Darsh Travel Concierge
                     </h3>
                     <span className="rounded bg-[#E2B18D]/20 px-1.5 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#E2B18D]">
-                      IATA Live
+                      Online Desk
                     </span>
                   </div>
                   <p className="text-[11px] font-sans text-white/60">
-                    Online · Curated Packages & Wholesale Stays
+                    Direct Wholesale Stays & Curated Packages
                   </p>
                 </div>
               </div>
@@ -641,7 +655,7 @@ export default function TravelChatbot() {
             <div className="px-5 py-2 bg-[#0E1C38] border-b border-white/5 flex items-center justify-between text-[10px] font-sans text-white/60">
               <span className="flex items-center gap-1.5 text-[#E2B18D]">
                 <ShieldCheck size={12} />
-                <span>IATA Accredited: 14039896</span>
+                <span>Verified Travel Agency</span>
               </span>
               <span>2★ · 3★ · 4★ · 5★ Hotel Inventories</span>
               <span className="text-red-400 font-medium">⚡ Last-Minute Desk</span>
@@ -869,7 +883,7 @@ export default function TravelChatbot() {
                             </div>
                             <h5 className="font-semibold text-xs text-white mt-1">2-Star Value Smart</h5>
                             <p className="text-[10px] text-white/60 mt-0.5 line-clamp-2">
-                              {hotelDataForDest?.hotels.star2[0]?.name || "Spotless, IATA-vetted budget lodgings for smart corporate/leisure travelers"}
+                              {hotelDataForDest?.hotels.star2[0]?.name || "Spotless, vetted budget lodgings for smart corporate/leisure travelers"}
                             </p>
                           </button>
                         </div>
@@ -1068,7 +1082,7 @@ export default function TravelChatbot() {
                             <strong>Status:</strong> Dispatched & Awaiting Specialist Review
                           </p>
                           <p className="text-[11px] text-white/70">
-                            Our team has been alerted with your complete requirements. We will review our direct IATA allocations and reply to your email with your custom itinerary and wholesale rates.
+                            Our team has been alerted with your complete requirements. We will review our direct inventory allocations and reply to your email with your custom itinerary and wholesale rates.
                           </p>
                         </div>
 

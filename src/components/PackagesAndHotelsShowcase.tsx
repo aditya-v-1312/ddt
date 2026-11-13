@@ -2,41 +2,54 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { travelPackages, TravelPackage } from "@/data/packages";
-import { destinationHotels, getHotelsByDestination } from "@/data/hotels";
+import { travelPackages, TravelPackage, ItineraryDay } from "@/data/packages";
+import { getHotelsByDestination } from "@/data/hotels";
 import { useInquiry } from "@/context/InquiryContext";
 import {
   Sparkles,
   Zap,
-  Star,
   Hotel,
   Compass,
   Clock,
-  ShieldCheck,
   Check,
   ArrowRight,
   PhoneCall,
   MessageSquare,
+  Calendar,
+  MapPin,
+  X,
+  ChevronRight,
+  Layers,
 } from "lucide-react";
 
 export default function PackagesAndHotelsShowcase() {
   const { openInquiry, openLastMinuteHotelDesk, openPackageInquiry } = useInquiry();
   const [activeTab, setActiveTab] = useState<string>("all");
+  const [selectedPackageForModal, setSelectedPackageForModal] = useState<TravelPackage | null>(null);
+  const [activeDayIndex, setActiveDayIndex] = useState<number>(0);
 
+  // Generate dynamic tabs based on uploaded authentic packages
   const tabs = [
-    { id: "all", label: "All Curated Journeys" },
-    { id: "dubai", label: "Dubai 🇦🇪" },
-    { id: "europe", label: "Switzerland & Europe 🇨🇭" },
-    { id: "maldives", label: "Maldives 🇲🇻" },
-    { id: "bali", label: "Bali 🇮🇩" },
-    { id: "kashmir", label: "Kashmir 🏔️" },
-    { id: "singapore", label: "Singapore 🇸🇬" },
+    { id: "all", label: `All Curated Packages (${travelPackages.length})` },
+    ...travelPackages.map((pkg) => ({
+      id: pkg.destinationId,
+      label: pkg.destinationName,
+    })),
   ];
 
   const filteredPackages =
     activeTab === "all"
-      ? travelPackages.slice(0, 6)
+      ? travelPackages
       : travelPackages.filter((pkg) => pkg.destinationId === activeTab);
+
+  const openItineraryModal = (pkg: TravelPackage) => {
+    setSelectedPackageForModal(pkg);
+    setActiveDayIndex(0);
+  };
+
+  const closeItineraryModal = () => {
+    setSelectedPackageForModal(null);
+  };
 
   return (
     <section id="packages" className="relative py-24 sm:py-32 bg-[#050D1C] text-white overflow-hidden">
@@ -55,7 +68,7 @@ export default function PackagesAndHotelsShowcase() {
             <div className="space-y-4 max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-red-500/50 bg-red-950/50 px-3.5 py-1 text-[11px] font-mono uppercase tracking-widest text-red-300">
                 <Zap size={13} className="text-red-400 animate-pulse" />
-                <span>Urgent 24–48 Hour Travel Desk · Direct IATA Allocation</span>
+                <span>Urgent 24–48 Hour Travel Desk · Direct Wholesale Inventory</span>
               </div>
 
               <h3 className="font-serif text-2xl sm:text-4xl text-white font-light tracking-tight">
@@ -63,7 +76,7 @@ export default function PackagesAndHotelsShowcase() {
               </h3>
 
               <p className="text-sm sm:text-base text-white/70 font-sans font-light leading-relaxed">
-                Facing “Sold Out” notices on public booking apps? As an <strong>IATA Accredited Agency (IATA: 14039896)</strong>, our direct wholesale inventory desks access unpublished room allocations across <strong>2★, 3★, 4★, and 5★ hotels worldwide</strong> with instant confirmation.
+                Facing “Sold Out” notices on public booking apps? Our direct wholesale inventory desks access unpublished room allocations across <strong>2★, 3★, 4★, and 5★ hotels worldwide</strong> with instant confirmation.
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs font-sans">
@@ -112,15 +125,15 @@ export default function PackagesAndHotelsShowcase() {
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
           <div className="inline-flex items-center gap-2 text-[#E2B18D] text-xs font-mono uppercase tracking-[0.25em]">
             <Sparkles size={14} />
-            <span>Curated Journeys & Hotel Tiers</span>
+            <span>Official Curated Itineraries</span>
           </div>
 
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-light tracking-tight">
-            Tailored Packages with 2★ to 5★ Hotel Choices
+            Featured Tour Packages
           </h2>
 
           <p className="text-base text-white/70 font-sans font-light">
-            Every traveler has a distinct rhythm. Every package is completely customizable across <strong>2★ Budget Smart, 3★ Comfort, 4★ Premium Boutique, and 5★ Ultra Luxury</strong> stays.
+            Each journey is meticulously planned with day-by-day schedules, private transfers, iconic sightseeing, and adaptable stays across <strong>2★ Budget Smart, 3★ Comfort, 4★ Premium Boutique, and 5★ Ultra Luxury</strong> tiers.
           </p>
 
           {/* Destination Filter Tabs */}
@@ -130,7 +143,7 @@ export default function PackagesAndHotelsShowcase() {
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 rounded-full text-xs font-sans uppercase tracking-wider transition-all ${
+                className={`px-5 py-2.5 rounded-full text-xs font-sans uppercase tracking-wider transition-all ${
                   activeTab === tab.id
                     ? "bg-[#E2B18D] text-[#07101F] font-bold shadow-md"
                     : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10"
@@ -143,9 +156,9 @@ export default function PackagesAndHotelsShowcase() {
         </div>
 
         {/* 3. PACKAGES GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {filteredPackages.map((pkg) => {
-            const hotels = getHotelsByDestination(pkg.destinationId);
+            const destinationHotelsData = getHotelsByDestination(pkg.destinationId);
 
             return (
               <div
@@ -155,35 +168,50 @@ export default function PackagesAndHotelsShowcase() {
                 {/* Golden Top Edge Accent */}
                 <div className="h-1 bg-gradient-to-r from-transparent via-[#E2B18D] to-transparent opacity-40 group-hover:opacity-100 transition-opacity" />
 
-                <div className="p-7 space-y-5 flex-1">
-                  {/* Category & Duration */}
-                  <div className="flex items-center justify-between text-xs font-mono">
-                    <span className="text-[#E2B18D] uppercase tracking-wider font-semibold">
-                      {pkg.type}
-                    </span>
-                    <span className="flex items-center gap-1.5 text-white/60">
-                      <Clock size={13} />
-                      <span>{pkg.duration}</span>
-                    </span>
-                  </div>
+                {/* Package Cover Image */}
+                {pkg.coverImage && (
+                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#0a162d]">
+                    <Image
+                      src={pkg.coverImage}
+                      alt={pkg.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#07101F] via-[#07101F]/40 to-transparent" />
 
-                  {/* Title & Tagline */}
-                  <div>
-                    <h3 className="font-serif text-2xl font-light text-white group-hover:text-[#E2B18D] transition-colors leading-snug">
-                      {pkg.title}
-                    </h3>
-                    <p className="mt-2 text-xs text-white/60 font-sans line-clamp-2">
-                      {pkg.tagline}
-                    </p>
+                    <div className="absolute top-4 left-4 flex items-center gap-2">
+                      <span className="px-3 py-1 rounded-full bg-[#07101F]/80 backdrop-blur-md border border-white/15 text-[#E2B18D] font-mono text-[11px] font-semibold uppercase tracking-wider">
+                        {pkg.type}
+                      </span>
+                      <span className="px-3 py-1 rounded-full bg-[#07101F]/80 backdrop-blur-md border border-white/15 text-white font-mono text-[11px] flex items-center gap-1.5">
+                        <Clock size={12} className="text-[#E2B18D]" />
+                        <span>{pkg.duration}</span>
+                      </span>
+                    </div>
+
+                    <div className="absolute bottom-4 left-6 right-6">
+                      <p className="font-mono text-xs uppercase tracking-widest text-[#E2B18D]">
+                        {pkg.destinationName}
+                      </p>
+                      <h3 className="font-serif text-2xl sm:text-3xl text-white font-light mt-1">
+                        {pkg.title}
+                      </h3>
+                    </div>
                   </div>
+                )}
+
+                <div className="p-7 space-y-5 flex-1">
+                  <p className="text-xs sm:text-sm text-white/70 font-sans leading-relaxed">
+                    {pkg.description}
+                  </p>
 
                   {/* Highlights / Inclusions */}
                   <div className="space-y-2 pt-2 border-t border-white/10">
                     <p className="text-[10px] uppercase font-mono tracking-wider text-white/50">
-                      Signature Inclusions:
+                      Key Highlights & Inclusions:
                     </p>
                     <ul className="space-y-1.5 text-xs text-white/80 font-sans">
-                      {pkg.inclusions.slice(0, 3).map((inc, i) => (
+                      {pkg.inclusions.slice(0, 4).map((inc, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <Check size={14} className="text-[#E2B18D] flex-shrink-0 mt-0.5" />
                           <span className="line-clamp-1">{inc}</span>
@@ -192,26 +220,59 @@ export default function PackagesAndHotelsShowcase() {
                     </ul>
                   </div>
 
+                  {/* Day-by-Day Preview Bar */}
+                  {pkg.itinerary && pkg.itinerary.length > 0 && (
+                    <div className="pt-3 border-t border-white/10">
+                      <div className="flex items-center justify-between mb-2">
+                        <p className="text-[10px] uppercase font-mono tracking-wider text-[#E2B18D] flex items-center gap-1.5">
+                          <Calendar size={13} />
+                          <span>Full {pkg.itinerary.length}-Day Itinerary</span>
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() => openItineraryModal(pkg)}
+                          className="text-[11px] text-[#E2B18D] hover:underline inline-flex items-center gap-1 font-sans"
+                        >
+                          <span>View Day-by-Day</span>
+                          <ChevronRight size={12} />
+                        </button>
+                      </div>
+
+                      <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+                        {pkg.itinerary.map((day) => (
+                          <button
+                            key={day.day}
+                            type="button"
+                            onClick={() => openItineraryModal(pkg)}
+                            className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] font-mono text-white/70 whitespace-nowrap text-left transition-colors"
+                          >
+                            <span className="text-[#E2B18D] font-bold">D{day.day}:</span> {day.location.split(",")[0]}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Hotel Star Options Selector Bar */}
                   <div className="pt-3 border-t border-white/10 space-y-2">
-                    <p className="text-[10px] uppercase font-mono tracking-wider text-[#E2B18D] flex items-center gap-1.5">
-                      <Hotel size={13} />
+                    <p className="text-[10px] uppercase font-mono tracking-wider text-white/50 flex items-center gap-1.5">
+                      <Hotel size={13} className="text-[#E2B18D]" />
                       <span>Available Hotel Tiers (2★ to 5★):</span>
                     </p>
-                    <div className="grid grid-cols-4 gap-1 text-center">
-                      <div className="p-1.5 rounded-lg bg-purple-950/30 border border-purple-500/30 text-[10px] text-purple-200">
+                    <div className="grid grid-cols-4 gap-1.5 text-center">
+                      <div className="p-2 rounded-xl bg-purple-950/30 border border-purple-500/30 text-[11px] text-purple-200">
                         <span className="font-bold block">2★</span>
                         <span className="text-[8px] opacity-75">Smart</span>
                       </div>
-                      <div className="p-1.5 rounded-lg bg-emerald-950/30 border border-emerald-500/30 text-[10px] text-emerald-200">
+                      <div className="p-2 rounded-xl bg-emerald-950/30 border border-emerald-500/30 text-[11px] text-emerald-200">
                         <span className="font-bold block">3★</span>
                         <span className="text-[8px] opacity-75">Comfort</span>
                       </div>
-                      <div className="p-1.5 rounded-lg bg-blue-950/30 border border-blue-500/30 text-[10px] text-blue-200">
+                      <div className="p-2 rounded-xl bg-blue-950/30 border border-blue-500/30 text-[11px] text-blue-200">
                         <span className="font-bold block">4★</span>
                         <span className="text-[8px] opacity-75">Boutique</span>
                       </div>
-                      <div className="p-1.5 rounded-lg bg-amber-950/30 border border-amber-500/30 text-[10px] text-amber-200">
+                      <div className="p-2 rounded-xl bg-amber-950/30 border border-amber-500/30 text-[11px] text-amber-200">
                         <span className="font-bold block">5★</span>
                         <span className="text-[8px] opacity-75">Luxury</span>
                       </div>
@@ -220,14 +281,23 @@ export default function PackagesAndHotelsShowcase() {
                 </div>
 
                 {/* Bottom Action Footer */}
-                <div className="p-6 pt-0">
+                <div className="p-6 pt-0 flex flex-col sm:flex-row gap-3">
+                  <button
+                    type="button"
+                    onClick={() => openItineraryModal(pkg)}
+                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/5 hover:bg-white/15 py-3.5 px-4 text-xs font-semibold uppercase tracking-wider text-white transition-all duration-300"
+                  >
+                    <Layers size={14} className="text-[#E2B18D]" />
+                    <span>View Itinerary</span>
+                  </button>
+
                   <button
                     type="button"
                     onClick={() => openPackageInquiry(pkg.title, pkg.destinationName, pkg.startingStar)}
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-white/10 hover:bg-[#E2B18D] hover:text-[#07101F] py-3.5 px-4 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 group-hover:bg-[#E2B18D] group-hover:text-[#07101F]"
+                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-[#E2B18D] text-[#07101F] hover:bg-white py-3.5 px-4 text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-md"
                   >
                     <MessageSquare size={14} />
-                    <span>Personalize in Chatbot</span>
+                    <span>Personalize & Book</span>
                     <ArrowRight size={14} />
                   </button>
                 </div>
@@ -240,10 +310,10 @@ export default function PackagesAndHotelsShowcase() {
         <div className="mt-16 p-8 rounded-3xl border border-white/15 bg-white/[0.03] backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="space-y-1">
             <h4 className="font-serif text-xl sm:text-2xl text-white font-light">
-              Looking for a custom multi-country itinerary or specific hotel?
+              Looking for a custom multi-country itinerary or specific dates?
             </h4>
             <p className="text-xs sm:text-sm text-white/60 font-sans">
-              Speak with our senior advisors. We craft multi-city flight routes, private villa bookings, and corporate group conferences.
+              Speak with our senior travel desks. We arrange tailored itineraries, flight ticketing, hotel reservations, and expedited visa documentation.
             </p>
           </div>
 
@@ -267,6 +337,183 @@ export default function PackagesAndHotelsShowcase() {
           </div>
         </div>
       </div>
+
+      {/* =========================================================
+          DAY-BY-DAY ITINERARY MODAL
+      ========================================================= */}
+      {selectedPackageForModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 sm:p-6 overflow-y-auto">
+          <div className="relative w-full max-w-4xl rounded-3xl border border-white/20 bg-[#07101F] text-white shadow-2xl overflow-hidden my-auto max-h-[90vh] flex flex-col">
+            {/* Modal Header */}
+            <div className="p-6 border-b border-white/10 flex items-center justify-between bg-[#0A162D]">
+              <div>
+                <span className="text-[11px] font-mono text-[#E2B18D] uppercase tracking-widest font-semibold">
+                  {selectedPackageForModal.destinationName} · {selectedPackageForModal.duration}
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl font-light text-white mt-1">
+                  {selectedPackageForModal.title}
+                </h3>
+              </div>
+              <button
+                type="button"
+                onClick={closeItineraryModal}
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+                aria-label="Close Itinerary Modal"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* Day Selector Pills */}
+            <div className="p-4 border-b border-white/10 bg-[#050D1C] overflow-x-auto flex gap-2 scrollbar-none">
+              {selectedPackageForModal.itinerary.map((day, idx) => (
+                <button
+                  key={day.day}
+                  type="button"
+                  onClick={() => setActiveDayIndex(idx)}
+                  className={`px-4 py-2 rounded-xl text-xs font-mono uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-2 ${
+                    activeDayIndex === idx
+                      ? "bg-[#E2B18D] text-[#07101F] font-bold shadow-md"
+                      : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10"
+                  }`}
+                >
+                  <span>Day {day.day}</span>
+                  <span className="text-[10px] opacity-75">· {day.location.split(",")[0]}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Modal Content for Active Day */}
+            {selectedPackageForModal.itinerary[activeDayIndex] && (
+              <div className="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1">
+                {(() => {
+                  const currentDay = selectedPackageForModal.itinerary[activeDayIndex];
+                  return (
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                      {/* Photo for that Day (5 cols) */}
+                      <div className="md:col-span-5 space-y-3">
+                        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/15 bg-[#0a162d] shadow-lg">
+                          <Image
+                            src={currentDay.image}
+                            alt={currentDay.title}
+                            fill
+                            className="object-cover"
+                          />
+                          <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[11px] font-mono font-semibold text-[#E2B18D]">
+                            Day 0{currentDay.day}
+                          </div>
+                        </div>
+                        <p className="text-[11px] text-white/50 font-sans flex items-center gap-1.5">
+                          <MapPin size={12} className="text-[#E2B18D]" />
+                          <span>{currentDay.location}</span>
+                        </p>
+                      </div>
+
+                      {/* Day Breakdown Narrative (7 cols) */}
+                      <div className="md:col-span-7 space-y-4">
+                        <div>
+                          <h4 className="font-serif text-2xl text-white font-light">
+                            {currentDay.title}
+                          </h4>
+                          <p className="text-xs text-[#E2B18D] font-mono mt-0.5">
+                            {currentDay.location}
+                          </p>
+                        </div>
+
+                        {/* Morning / Noon / Evening Tags */}
+                        <div className="space-y-2 pt-2">
+                          {currentDay.fullDay && (
+                            <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs font-sans">
+                              <span className="text-[#E2B18D] font-mono text-[10px] uppercase font-bold block mb-0.5">
+                                Full Day Schedule:
+                              </span>
+                              <span className="text-white/90">{currentDay.fullDay}</span>
+                            </div>
+                          )}
+
+                          {currentDay.morning && (
+                            <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs font-sans">
+                              <span className="text-[#E2B18D] font-mono text-[10px] uppercase font-bold block mb-0.5">
+                                Morning:
+                              </span>
+                              <span className="text-white/90">{currentDay.morning}</span>
+                            </div>
+                          )}
+
+                          {currentDay.noonToEvening && (
+                            <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs font-sans">
+                              <span className="text-[#E2B18D] font-mono text-[10px] uppercase font-bold block mb-0.5">
+                                Noon to Evening:
+                              </span>
+                              <span className="text-white/90">{currentDay.noonToEvening}</span>
+                            </div>
+                          )}
+
+                          {currentDay.evening && (
+                            <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs font-sans">
+                              <span className="text-[#E2B18D] font-mono text-[10px] uppercase font-bold block mb-0.5">
+                                Evening & Overnight:
+                              </span>
+                              <span className="text-white/90">{currentDay.evening}</span>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Full Detailed Description */}
+                        <div className="pt-2">
+                          <p className="text-xs sm:text-sm text-white/80 font-sans font-light leading-relaxed">
+                            {currentDay.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
+            {/* Modal Bottom Action Footer */}
+            <div className="p-6 border-t border-white/10 bg-[#0A162D] flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  disabled={activeDayIndex === 0}
+                  onClick={() => setActiveDayIndex((prev) => Math.max(0, prev - 1))}
+                  className="px-4 py-2 rounded-xl border border-white/20 bg-white/5 hover:bg-white/15 text-xs font-mono uppercase disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                >
+                  ← Prev Day
+                </button>
+                <button
+                  type="button"
+                  disabled={activeDayIndex === selectedPackageForModal.itinerary.length - 1}
+                  onClick={() => setActiveDayIndex((prev) => Math.min(selectedPackageForModal.itinerary.length - 1, prev + 1))}
+                  className="px-4 py-2 rounded-xl border border-white/20 bg-white/5 hover:bg-white/15 text-xs font-mono uppercase disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                >
+                  Next Day →
+                </button>
+              </div>
+
+              <div className="flex items-center gap-3 w-full sm:w-auto">
+                <button
+                  type="button"
+                  onClick={() => {
+                    closeItineraryModal();
+                    openPackageInquiry(
+                      selectedPackageForModal.title,
+                      selectedPackageForModal.destinationName,
+                      selectedPackageForModal.startingStar
+                    );
+                  }}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#E2B18D] text-[#07101F] hover:bg-white text-xs font-bold uppercase tracking-wider transition-colors shadow-md"
+                >
+                  <MessageSquare size={14} />
+                  <span>Personalize This Package</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

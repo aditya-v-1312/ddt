@@ -77,7 +77,7 @@ export const FinalCTA: React.FC = () => {
               href={`tel:${dept.phone}`}
               className="hover:text-white transition-colors"
             >
-              {idx + 1}. {dept.title}: <span className="text-[#E2B18D] font-mono">{dept.phoneDisplay}</span> ({dept.person.split(" ")[0]})
+              {idx + 1}. {dept.title}: <span className="text-[#E2B18D] font-mono">{dept.phoneDisplay}</span>
             </a>
           ))}
         </div>

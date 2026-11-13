@@ -584,7 +584,6 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       <div>
                         <span className="text-[10px] font-mono text-[#B87543] mr-1.5 font-semibold">0{idx + 1}.</span>
                         <span className="font-sans text-xs font-semibold text-[#07101F]">{dept.title}</span>
-                        <span className="font-sans text-[11px] text-[#697181] ml-1.5">({dept.person})</span>
                       </div>
                       <a
                         href={`tel:${dept.phone}`}

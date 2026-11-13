@@ -154,7 +154,7 @@ export async function POST(request: NextRequest) {
       targetEmail,
       urgentLastMinute: !!urgentLastMinute,
       message: urgentLastMinute
-        ? "URGENT booking request dispatched to IATA desk. Our team will contact you within 15-30 minutes."
+        ? "URGENT booking request dispatched to priority travel desk. Our team will contact you within 15-30 minutes."
         : "Thank you! Your travel consultation has been received securely.",
     });
   } catch (error) {
@@ -171,9 +171,9 @@ export async function GET() {
     status: "online",
     service: "Darsh Dream Tours Enquiry & Chatbot Gateway",
     departments: [
-      { id: "ticketing", contact: "Pratik (+91 70483 86900)", email: "sales@darshdreamtours.com", service: "Flights, Visas & Last-Minute Hotel Desk" },
-      { id: "tours", contact: "Sakshi Chandiramani (+91 74870 83499)", email: "sakshi@darshdreamtours.com", service: "Bespoke Tours, Honeymoon & Packages" },
-      { id: "holidays", contact: "Office Desk (+91 97243 91674)", email: "info@darshdreamtours.com", service: "Group Tours & Luxury Island Holidays" },
+      { id: "ticketing", contact: "Ticketing Desk (+91 70483 86900)", email: "sales@darshdreamtours.com", service: "Flights, Visas & Last-Minute Hotel Desk" },
+      { id: "tours", contact: "Tours Desk (+91 74870 83499)", email: "sakshi@darshdreamtours.com", service: "Bespoke Tours, Honeymoon & Packages" },
+      { id: "holidays", contact: "Holidays Desk (+91 97243 91674)", email: "info@darshdreamtours.com", service: "Group Tours & Luxury Island Holidays" },
     ],
   });
 }

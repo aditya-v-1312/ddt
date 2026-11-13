@@ -212,19 +212,27 @@ export default function SitemapPage() {
                 Dedicated Department Desks
               </h4>
               <p className="font-sans text-xs text-[#17213A]/70 leading-relaxed mb-3">
-                {siteConfig.contact.address.full} · IATA Accredited No: {siteConfig.legal.iataAccreditedNo}
+                {siteConfig.contact.address.full}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-medium text-[#101A2E]">
                 {siteConfig.departments.map((dept, idx) => (
                   <div key={dept.id} className="p-2.5 rounded-lg bg-black/[0.02] border border-black/5">
                     <p className="text-[10px] font-mono text-[#9A5B2D] uppercase tracking-wider">0{idx + 1}. {dept.title}</p>
-                    <p className="text-[11px] text-[#17213A]/70">{dept.person}</p>
+                    <p className="text-[11px] text-[#17213A]/70">{dept.badge}</p>
                     <a href={`tel:${dept.phone}`} className="hover:text-[#9A5B2D] inline-flex items-center gap-1.5 font-mono text-xs mt-1">
                       <Phone className="w-3 h-3 text-[#9A5B2D]" />
                       <span>{dept.phoneDisplay}</span>
                     </a>
                   </div>
                 ))}
+              </div>
+
+              {/* Official Bank Transfer Details */}
+              <div className="mt-4 p-3 rounded-lg bg-black/[0.02] border border-black/5 text-xs text-[#17213A]/70">
+                <p className="font-mono text-[10px] uppercase tracking-wider font-semibold text-[#9A5B2D] mb-1">
+                  Official Bank Details (RTGS/NEFT):
+                </p>
+                <p>{siteConfig.bank.accountName} · {siteConfig.bank.bankName} ({siteConfig.bank.accountType}) · A/c No: <span className="font-mono font-medium text-[#101A2E]">{siteConfig.bank.accountNumber}</span> · IFSC: <span className="font-mono font-medium text-[#9A5B2D]">{siteConfig.bank.ifscCode}</span> · {siteConfig.bank.branch}</p>
               </div>
             </div>
           </div>

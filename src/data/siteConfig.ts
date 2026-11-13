@@ -2,11 +2,21 @@ export interface DepartmentContact {
   id: "ticketing" | "tours" | "holidays";
   title: string;
   badge: string;
-  person: string;
   phone: string;
   phoneDisplay: string;
   email: string;
   description: string;
+}
+
+export interface BankDetails {
+  accountName: string;
+  bankName: string;
+  accountNumber: string;
+  ifscCode: string;
+  branch: string;
+  branchAddress: string;
+  accountType: string;
+  micrCode?: string;
 }
 
 export interface SiteConfig {
@@ -17,8 +27,8 @@ export interface SiteConfig {
     entityName: string;
     gstin: string;
     pan: string;
-    iataAccreditedNo: string;
   };
+  bank: BankDetails;
   departments: DepartmentContact[];
   partner: {
     name: string;
@@ -56,46 +66,56 @@ export const siteConfig: SiteConfig = {
     entityName: "DARSH DREAM TOURS LLP",
     gstin: "24AAZFD6999A1ZU",
     pan: "AAZFD6999A",
-    iataAccreditedNo: "14039896",
+  },
+  bank: {
+    accountName: "DARSH DREAM TOURS LLP",
+    bankName: "HDFC Bank",
+    accountNumber: "50200120747307",
+    ifscCode: "HDFC0000275",
+    branch: "Manjalpur, Vadodara",
+    branchAddress:
+      "Survi Prive, GF 1 to 3, Opp Bankers Heart Hospital, Tulsidham Road, Manjalpur, Vadodara, Gujarat 390011",
+    accountType: "Current Account",
+    micrCode: "390240004",
   },
   departments: [
     {
       id: "ticketing",
-      title: "Ticketing",
+      title: "Ticketing Desk",
       badge: "Flights · Rail · Visas",
-      person: "Pratik",
       phone: "+917048386900",
       phoneDisplay: "+91 70483 86900",
       email: "sales@darshdreamtours.com",
-      description: "Domestic & international flight bookings, train ticketing & expedited visa processing.",
+      description:
+        "Domestic & international flight bookings, train ticketing & expedited visa processing.",
     },
     {
       id: "tours",
-      title: "Tours",
+      title: "Tours Desk",
       badge: "Curated · Bespoke Itineraries",
-      person: "Sakshi Chandiramani (Co-Founder)",
       phone: "+917487083499",
       phoneDisplay: "+91 74870 83499",
       email: "sakshi@darshdreamtours.com",
-      description: "Custom luxury travel, bespoke India & global itineraries planned personally around you.",
+      description:
+        "Custom luxury travel, bespoke India & global itineraries planned personally around you.",
     },
     {
       id: "holidays",
-      title: "Holidays",
-      badge: "Vacations · Honeymoons · Office Desk",
-      person: "Office Desk",
+      title: "Holidays Desk",
+      badge: "Vacations · Honeymoons",
       phone: "+919724391674",
       phoneDisplay: "+91 97243 91674",
       email: "info@darshdreamtours.com",
-      description: "All-inclusive holiday escapes, honeymoon packages & comprehensive travel assistance.",
+      description:
+        "All-inclusive holiday escapes, honeymoon packages & comprehensive travel assistance.",
     },
   ],
   partner: {
-    name: "SAKSHI CHANDIRAMANI",
-    role: "Co-Founder",
+    name: "DARSH DREAM TOURS",
+    role: "Boutique Travel Specialists",
     phone: "+91 74870 83499",
     whatsappNumber: "917487083499",
-    email: "sakshi@darshdreamtours.com",
+    email: "info@darshdreamtours.com",
     bioIntro:
       "Travel is personal. Every journey begins with understanding where you want to go, how you want to travel, and what you want to experience.",
   },

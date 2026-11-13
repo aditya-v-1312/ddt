@@ -23,7 +23,7 @@ export const originLocation: Location = {
   color: "#E2B18D",
   description:
     "Our boutique headquarters in Sun Complex, Race Course, Vadodara. The starting point for every bespoke itinerary across India and the globe.",
-  highlights: ["Official IATA Accredited Hub", "Ticketing & Visa Desk", "Private Tour Curation"],
+  highlights: ["Official Travel Headquarters", "Ticketing & Visa Desk", "Private Tour Curation"],
   department: "tours",
 };
 

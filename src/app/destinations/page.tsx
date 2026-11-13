@@ -447,15 +447,15 @@ export default function DestinationsPage() {
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-sans text-white/50">
               <span className="uppercase tracking-[0.2em] text-[#E2B18D] text-[10px] font-semibold">Direct Desks:</span>
               <a href="tel:+917048386900" className="hover:text-white transition-colors">
-                1. Ticketing: <span className="font-mono text-white/80">+91 70483 86900</span> (Pratik)
+                1. Ticketing: <span className="font-mono text-white/80">+91 70483 86900</span>
               </a>
               <span className="text-white/20">·</span>
               <a href="tel:+917487083499" className="hover:text-white transition-colors">
-                2. Tours: <span className="font-mono text-white/80">+91 74870 83499</span> (Sakshi)
+                2. Tours: <span className="font-mono text-white/80">+91 74870 83499</span>
               </a>
               <span className="text-white/20">·</span>
               <a href="tel:+919724391674" className="hover:text-white transition-colors">
-                3. Holidays: <span className="font-mono text-white/80">+91 97243 91674</span> (Office)
+                3. Holidays: <span className="font-mono text-white/80">+91 97243 91674</span>
               </a>
             </div>
 

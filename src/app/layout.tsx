@@ -28,15 +28,13 @@ export const metadata: Metadata = {
     "Darsh Dream Tours helps you plan memorable journeys across India and international destinations. Thoughtful travel curation, personalized itineraries, and boutique travel care.",
   keywords: [
     "Darsh Dream Tours",
-    "Sakshi Chandiramani",
     "Vadodara travel agency",
     "curated travel itineraries",
-    "Dubai travel",
-    "Kashmir journey",
-    "Switzerland tour",
+    "Hong Kong Macau tour",
+    "Central Europe tour",
     "boutique travel planner",
   ],
-  authors: [{ name: "Darsh Dream Tours" }, { name: "Sakshi Chandiramani" }],
+  authors: [{ name: "Darsh Dream Tours" }],
   openGraph: {
     title: "Darsh Dream Tours | Curated Travel Experiences",
     description:

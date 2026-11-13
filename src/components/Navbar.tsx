@@ -235,7 +235,6 @@ export default function Navbar() {
                     <div>
                       <span className="text-white/40 mr-1.5 font-mono text-[10px]">0{idx + 1}.</span>
                       <span className="text-white font-medium">{dept.title}</span>
-                      <span className="text-white/50 text-[10px] ml-1">({dept.person.split(" ")[0]})</span>
                     </div>
                     <a
                       href={`tel:${dept.phone}`}

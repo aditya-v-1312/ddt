@@ -79,16 +79,29 @@ export default function PlanPage() {
             </h2>
             <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-sans text-white/70">
               <a href="tel:+917048386900" className="hover:text-white transition-colors">
-                1. Ticketing: <span className="text-[#E2B18D] font-mono">+91 70483 86900</span> (Pratik)
+                1. Ticketing: <span className="text-[#E2B18D] font-mono">+91 70483 86900</span>
               </a>
               <span className="text-white/20">·</span>
               <a href="tel:+917487083499" className="hover:text-white transition-colors">
-                2. Tours: <span className="text-[#E2B18D] font-mono">+91 74870 83499</span> (Sakshi)
+                2. Tours: <span className="text-[#E2B18D] font-mono">+91 74870 83499</span>
               </a>
               <span className="text-white/20">·</span>
               <a href="tel:+919724391674" className="hover:text-white transition-colors">
-                3. Holidays: <span className="text-[#E2B18D] font-mono">+91 97243 91674</span> (Office)
+                3. Holidays: <span className="text-[#E2B18D] font-mono">+91 97243 91674</span>
               </a>
+            </div>
+
+            {/* Official Bank Details */}
+            <div className="mt-6 p-4 rounded-2xl bg-white/[0.04] border border-white/10 max-w-xl text-xs font-sans">
+              <p className="text-[10px] font-mono uppercase tracking-widest text-[#E2B18D] font-semibold mb-1.5">
+                Official Company Bank Account (RTGS / NEFT):
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-white/80 text-[11px]">
+                <div>Beneficiary: <span className="text-white font-medium">{siteConfig.bank.accountName}</span></div>
+                <div>Bank: <span className="text-white font-medium">{siteConfig.bank.bankName}</span></div>
+                <div>A/c No: <span className="font-mono text-white font-medium">{siteConfig.bank.accountNumber}</span></div>
+                <div>IFSC: <span className="font-mono text-[#E2B18D] font-medium">{siteConfig.bank.ifscCode}</span></div>
+              </div>
             </div>
             <div className="mt-4">
               <GoogleTrustBadge variant="pill" />

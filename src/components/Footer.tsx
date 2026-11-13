@@ -102,9 +102,8 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
             <div className="space-y-4 font-sans text-xs">
               {siteConfig.departments.map((dept, idx) => (
                 <div key={dept.id} className="border-l-2 border-[#B87543]/40 pl-3">
-                  <div className="flex items-center gap-1.5 font-semibold text-white">
+                  <div className="font-semibold text-white">
                     <span>{idx + 1}. {dept.title}</span>
-                    <span className="text-white/40 text-[10px] font-normal">({dept.person})</span>
                   </div>
                   <div className="mt-1 space-y-0.5 text-white/70">
                     <p>
@@ -126,7 +125,7 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
           {/* Office Address & Registered Details (3 cols) */}
           <div className="lg:col-span-3">
             <h4 className="font-sans text-[9px] uppercase tracking-[0.25em] text-white/40 font-semibold mb-5">
-              Vadodara Office
+              Vadodara Office & Bank Details
             </h4>
 
             <div className="space-y-3 font-sans text-xs text-white/70">
@@ -140,12 +139,22 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
               </p>
 
               <div className="pt-2 border-t border-white/10 text-[11px] space-y-1.5 text-white/45">
-                <p className="font-medium text-white/70">
+                <p className="font-medium text-white/80">
                   {siteConfig.legal.entityName}
                 </p>
-                <p>IATA Accredited No: <span className="text-white/80 font-mono">{siteConfig.legal.iataAccreditedNo}</span></p>
                 <p>GSTIN: <span className="text-white/80 font-mono">{siteConfig.legal.gstin}</span></p>
                 <p>PAN: <span className="text-white/80 font-mono">{siteConfig.legal.pan}</span></p>
+              </div>
+
+              {/* Official Bank Transfer Details */}
+              <div className="pt-2.5 border-t border-white/10 text-[10px] space-y-1 text-white/50 font-sans">
+                <p className="text-[#E2B18D] font-mono uppercase tracking-wider font-semibold">
+                  Official Bank Details (RTGS/NEFT):
+                </p>
+                <p>Bank: <span className="text-white/80">{siteConfig.bank.bankName}</span> ({siteConfig.bank.accountType})</p>
+                <p>A/c No: <span className="text-white/90 font-mono font-medium">{siteConfig.bank.accountNumber}</span></p>
+                <p>IFSC: <span className="text-white/90 font-mono font-medium">{siteConfig.bank.ifscCode}</span></p>
+                <p>Branch: <span className="text-white/70">{siteConfig.bank.branch}</span></p>
               </div>
             </div>
           </div>
@@ -163,7 +172,7 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
               XML
             </a>
             <span className="text-white/20">·</span>
-            <p>IATA Accredited Travel Agency · Vadodara, Gujarat</p>
+            <p>Registered Travel Agency · Vadodara, Gujarat</p>
           </div>
         </div>
       </div>

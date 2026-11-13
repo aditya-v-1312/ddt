@@ -1,3 +1,15 @@
+export interface ItineraryDay {
+  day: number;
+  title: string;
+  location: string;
+  morning?: string;
+  noonToEvening?: string;
+  evening?: string;
+  fullDay?: string;
+  description: string;
+  image: string;
+}
+
 export interface TravelPackage {
   id: string;
   destinationId: string;
@@ -11,288 +23,229 @@ export interface TravelPackage {
   startingStar: 2 | 3 | 4 | 5;
   priceNote: string;
   popular?: boolean;
+  coverImage?: string;
+  itinerary: ItineraryDay[];
 }
 
 export const travelPackages: TravelPackage[] = [
-  // DUBAI
+  // 1. HONG KONG & MACAU
   {
-    id: "dubai-signature-5n",
-    destinationId: "dubai",
-    destinationName: "Dubai",
-    title: "Dubai Signature City & Desert Dunes",
-    duration: "5 Nights / 6 Days",
-    type: "Luxury",
-    tagline: "Burj Khalifa VIP, private desert sunset safari & marina yacht cruise",
-    description:
-      "A quintessential Arabian luxury escape combining high-fashion downtown, VIP observation decks, Arabian desert dining under starlight, and private marina cruising.",
-    inclusions: [
-      "5 Nights luxury hotel stay (2★, 3★, 4★, or 5★)",
-      "Daily international breakfast",
-      "Private airport transfers (luxury sedan)",
-      "Burj Khalifa 124th/125th floor non-peak entry tickets",
-      "Private 4x4 desert safari with BBQ dinner & live shows",
-      "Dubai Marina sunset luxury yacht cruise",
-      "Dubai Frame & Miracle Garden tours",
-      "UAE tourist visa assistance",
-    ],
-    startingStar: 3,
-    priceNote: "IATA Wholesale Package Rates Available",
-    popular: true,
-  },
-  {
-    id: "dubai-honeymoon-4n",
-    destinationId: "dubai",
-    destinationName: "Dubai",
-    title: "Dubai Romantic Palm & Desert Mirage",
-    duration: "4 Nights / 5 Days",
-    type: "Honeymoon",
-    tagline: "Romantic Palm Jumeirah resort, private sandbank dinner & helicopter skyline flight",
-    description:
-      "Tailored exclusively for couples seeking romance, bespoke dining, beachside cabanas, and private chauffeur-driven luxury.",
-    inclusions: [
-      "4 Nights in romantic 4★ or 5★ beachfront resort",
-      "Honeymoon room decor, cake & sparkling beverage",
-      "Private candlelit dunes dinner with personal butler",
-      "Helicopter tour over Palm Jumeirah & Burj Al Arab",
-      "Private luxury transfers throughout",
-    ],
-    startingStar: 4,
-    priceNote: "Customized with 4★ or 5★ Palm Resorts",
-    popular: true,
-  },
-  {
-    id: "dubai-last-minute-express",
-    destinationId: "dubai",
-    destinationName: "Dubai",
-    title: "Dubai Express Transit & Business Stay",
-    duration: "3 Nights / 4 Days",
-    type: "Last-Minute Special",
-    tagline: "Urgent 24-48 hr booking desk with instant confirmation at 2★ to 5★ hotels",
-    description:
-      "Need to fly to Dubai on short notice for business, shopping, or transit? Our IATA desk guarantees room allocation and airport transfers immediately.",
-    inclusions: [
-      "Immediate hotel room allocation (2★, 3★, 4★, or 5★)",
-      "Instant 24-hr UAE express visa care",
-      "Airport pick & drop coordination",
-      "Flexible check-in / late check-out support",
-    ],
-    startingStar: 2,
-    priceNote: "Instant 2-hour confirmation guarantee",
-  },
-
-  // SWITZERLAND & EUROPE
-  {
-    id: "swiss-alps-7n",
-    destinationId: "europe",
-    destinationName: "Switzerland & Europe",
-    title: "Swiss Alpine Glacier & Lakes Odyssey",
-    duration: "7 Nights / 8 Days",
-    type: "Luxury",
-    tagline: "Glacier Express, Jungfraujoch Top of Europe, Lucerne & Zermatt",
-    description:
-      "Journey through Europe's grandest alpine vistas with first-class scenic Swiss rail passes, fairy-tale mountain towns, and pristine glacial lakes.",
-    inclusions: [
-      "7 Nights stay across Zurich, Lucerne & Interlaken (2★ to 5★)",
-      "Daily Swiss alpine breakfast",
-      "8-Day Swiss Travel Rail Pass (unlimited trains, boats & buses)",
-      "Jungfraujoch – Top of Europe mountain cogwheel excursion",
-      "Mount Titlis revolving cable car (Rotair) & Ice Cliff Walk",
-      "Lake Lucerne panoramic paddle steamer cruise",
-      "Schengen visa document curation & appointment care",
-    ],
-    startingStar: 3,
-    priceNote: "Available in 2★ Budget Smart to 5★ Luxury Palace Tiers",
-    popular: true,
-  },
-  {
-    id: "paris-swiss-romantic-8n",
-    destinationId: "europe",
-    destinationName: "Switzerland & Europe",
-    title: "Paris Lights & Swiss Alpine Splendour",
-    duration: "8 Nights / 9 Days",
-    type: "Honeymoon",
-    tagline: "3 Nights Paris romance + 5 Nights scenic Swiss alpine chalet retreat",
-    description:
-      "The ultimate romantic European duo: private Seine river champagne cruise and Louvre access, followed by high-speed TGV rail into the heart of Switzerland.",
-    inclusions: [
-      "3 Nights Paris + 5 Nights Swiss boutique lodging",
-      "High-speed TGV Lyria train ticket (Paris → Switzerland)",
-      "Private Eiffel Tower & Seine evening illumination cruise",
-      "Swiss mountain excursions (Mt. Pilatus / Titlis)",
-      "Full Schengen visa documentation guidance",
-    ],
-    startingStar: 4,
-    priceNote: "Handcrafted boutique honeymoon itinerary",
-    popular: true,
-  },
-
-  // MALDIVES
-  {
-    id: "maldives-overwater-4n",
-    destinationId: "maldives",
-    destinationName: "Maldives",
-    title: "Maldivian Overwater Villa Sanctuary",
-    duration: "4 Nights / 5 Days",
-    type: "Honeymoon",
-    tagline: "Private water villa with direct turquoise lagoon access & all-inclusive dining",
-    description:
-      "Wake to crystalline waters right beneath your floorboards. Unwind with private overwater sun decks, sunset dolphin cruises, and restorative island spas.",
-    inclusions: [
-      "4 Nights in private overwater villa (or 2N Beach + 2N Water)",
-      "All-Inclusive meal plan (Breakfast, Lunch, Dinner & Drinks)",
-      "Combined return Speedboat or Seaplane transfers",
-      "Sunset dolphin cruise excursion",
-      "Complimentary snorkeling gear & non-motorized watersports",
-      "Honeymoon floral bed decoration & fruit basket",
-    ],
-    startingStar: 4,
-    priceNote: "Choice of 3★, 4★, or 5★ private island resorts",
-    popular: true,
-  },
-  {
-    id: "maldives-budget-smart-3n",
-    destinationId: "maldives",
-    destinationName: "Maldives",
-    title: "Maldives Smart Island Explorer",
-    duration: "3 Nights / 4 Days",
+    id: "hong-kong-macau-7d",
+    destinationId: "hong-kong-macau",
+    destinationName: "Hong Kong & Macau",
+    title: "Hong Kong & Macau Signature Highlights",
+    duration: "7 Days / 6 Nights",
     type: "Explorer",
-    tagline: "Experience real turquoise Maldivian atolls on local islands at accessible rates",
+    tagline:
+      "Victoria Harbour, Ngong Ping 360 Big Buddha, Hong Kong Disneyland, Ocean Park & Historic Macau",
     description:
-      "Enjoy the exact same crystal-clear waters and coral reefs with vetted 2★ or 3★ beachfront hotels on Maafushi or Hulhumale, with daily boat trips to sandbanks.",
+      "A complete 7-day dual-destination journey combining vibrant Victoria Harbour skyline, the majestic Tian Tan Buddha, world-class theme parks (Disneyland & Ocean Park), and the rich Portuguese-Chinese heritage, mega-resorts, and entertainment of Macau.",
     inclusions: [
-      "3 Nights beachfront stay (2★ or 3★)",
-      "Daily breakfast",
-      "Return speedboat from Malé International Airport",
-      "Guided coral reef snorkeling & sandbank lunch tour",
-      "Nurse shark & stingray photo excursion",
-    ],
-    startingStar: 2,
-    priceNote: "Incredible value starting from accessible budget rates",
-  },
-
-  // BALI
-  {
-    id: "bali-temples-villas-6n",
-    destinationId: "bali",
-    destinationName: "Bali",
-    title: "Bali Sacred Temples & Private Pool Villas",
-    duration: "6 Nights / 7 Days",
-    type: "Luxury",
-    tagline: "3 Nights Ubud jungle villa + 3 Nights Seminyak/Uluwatu beach resort",
-    description:
-      "Lush terraced rice paddies, sacred water temples, famous Bali swings, and sunset seafood dinners atop dramatic Uluwatu ocean cliffs.",
-    inclusions: [
-      "3 Nights Ubud private pool villa + 3 Nights beachfront resort",
-      "Daily floating breakfast in private pool (Ubud)",
-      "Private air-conditioned car & dedicated English-speaking driver",
-      "Kintamani volcano, Tegalalang rice terrace & jungle swing tour",
-      "Uluwatu sunset cliff temple & Kecak fire dance tickets",
-      "Nusa Penida island day trip with speedboat transfers",
-      "Watersports package at Tanjung Benoa (Banana boat, Jet Ski)",
+      "4 Nights accommodation in Hong Kong (choice of 2★, 3★, 4★, or 5★)",
+      "2 Nights accommodation in Macau (choice of 2★, 3★, 4★, or 5★)",
+      "Daily international breakfast at hotels",
+      "Arrival meet & greet with SIC (Seat in Coach) scheduled airport transfers",
+      "Scenic Ngong Ping 360 Cable Car, Big Buddha & Po Lin Monastery excursion (shared transfers)",
+      "Hong Kong by Night Tour: One-Way Peak Tram to Victoria Peak, Madame Tussauds wax museum & iconic Star Ferry harbour cruise",
+      "Magical full-day excursion to Hong Kong Disneyland with shared return transfers",
+      "Full-day excursion to Ocean Park Hong Kong with shared return transfers",
+      "High-speed ferry transfer from Hong Kong to Macau",
+      "Half-day Macau city sightseeing tour: Ruins of St. Paul's, Senado Square, A-Ma Temple & Macau Tower photo stop",
+      "Return ferry transfer from Macau to Hong Kong International Airport (direct check-in)",
     ],
     startingStar: 3,
-    priceNote: "Available in 2★ budget lodges to 5★ private pool estates",
+    priceNote: "Customizable across 2★ Budget Smart to 5★ Luxury Palace tiers",
     popular: true,
-  },
-
-  // KASHMIR
-  {
-    id: "kashmir-paradise-5n",
-    destinationId: "kashmir",
-    destinationName: "Kashmir",
-    title: "Kashmir Heavenly Valley & Shikara Serenade",
-    duration: "5 Nights / 6 Days",
-    type: "Family",
-    tagline: "Dal Lake luxury cedar houseboat, Gulmarg snow gondola & Pahalgam pine valley",
-    description:
-      "Known as heaven on earth: drift gently on Dal Lake at sunrise, ride the world's highest gondola up snowy peaks, and stroll pine-scented valleys.",
-    inclusions: [
-      "1 Night Deluxe Houseboat on Dal Lake + 4 Nights scenic mountain hotels",
-      "Daily Kashmiri breakfast & dinner (Wazwan / Indian)",
-      "Private dedicated heating in rooms & vehicle",
-      "Shikara cruise on Dal Lake with floating market visit",
-      "Gulmarg Gondola Phase 1 & 2 ticket coordination",
-      "Pahalgam Betaab Valley & Aru Valley excursion",
-      "Dedicated local driver-guide throughout",
+    coverImage: "/images/packages/hong-kong-macau/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Hong Kong & Leisure",
+        location: "Hong Kong City",
+        morning: "Arrive in Hong Kong & transfer to the hotel",
+        noonToEvening: "Check-in and relax",
+        evening: "Free at leisure and Overnight in Hong Kong",
+        description:
+          "Arrive at Hong Kong International Airport. Our representative will meet & greet you at arrivals and transfer you to your hotel in Hong Kong using SIC scheduled transfers. Hong Kong is a vibrant metropolis and a major gateway to Mainland China. Located at the south-eastern tip of China, Hong Kong covers Hong Kong Island, Lantau Island, the Kowloon Peninsula, and the New Territories, including 261 outlying islands. Between Hong Kong Island and the Kowloon Peninsula lies Victoria Harbour, one of the world's most renowned deep-water harbours. On arrival, check-in at your hotel in Hong Kong & rest of the evening is at leisure to explore this vibrant city on your own.",
+        image: "/images/packages/hong-kong-macau/image1.jpeg",
+      },
+      {
+        day: 2,
+        title: "Ngong Ping 360, Big Buddha & Hong Kong by Night",
+        location: "Hong Kong City & Lantau Island",
+        morning: "Breakfast. Visit Ngong Ping 360, Big Buddha & Po Lin Monastery",
+        noonToEvening: "Explore Lantau Island",
+        evening:
+          "Peak Tram, Madame Tussauds, Star Ferry & Night Market and Overnight in Hong Kong",
+        description:
+          "Enjoy breakfast at hotel. Today we embark on a scenic excursion to Ngong Ping 360 with shared transfers. Enjoy a breathtaking cable car ride offering panoramic views of lush mountains, the South China Sea, and Hong Kong International Airport. Upon arrival, explore the charming Ngong Ping Village, visit the serene Po Lin Monastery, and admire the majestic Tian Tan Buddha (Big Buddha), one of Hong Kong's most iconic landmarks. Later in the evening we have the opportunity to explore the vibrant and lively atmosphere of Hong Kong at night on our Hong Kong by Night Tour. The tour starts with an excursion to The Peak via the historic One-Way Peak Tram funicular railway, offering breathtaking panoramic night views of Hong Kong's skyline and Victoria Harbour. Next, proceed to Madame Tussauds wax museum to interact with lifelike celebrity figures. Conclude with a ride on the iconic Star Ferry cruising along Victoria Harbour, taking in Hong Kong's dazzling illuminated skyline.",
+        image: "/images/packages/hong-kong-macau/image2.jpeg",
+      },
+      {
+        day: 3,
+        title: "Hong Kong Disneyland Full-Day Magic",
+        location: "Hong Kong City",
+        morning: "Breakfast & transfer to Disneyland",
+        noonToEvening: "Enjoy rides, shows & attractions",
+        evening: "Return to the hotel and Overnight in Hong Kong",
+        description:
+          "Enjoy breakfast at hotel. Today morning we embark on a magical full-day excursion to Hong Kong Disneyland with shared return transfers. Experience enchanting themed lands, thrilling attractions, spectacular live entertainment, beloved Disney characters, and dazzling parades. Create unforgettable memories as you immerse yourself in the magic of Disney before returning to your hotel for an overnight stay.",
+        image: "/images/packages/hong-kong-macau/image3.jpeg",
+      },
+      {
+        day: 4,
+        title: "Ocean Park Hong Kong Full-Day Adventure",
+        location: "Hong Kong City",
+        morning: "Breakfast & transfer to Ocean Park",
+        noonToEvening: "Enjoy rides, marine life & shows",
+        evening: "Return to the hotel and Overnight in Hong Kong",
+        description:
+          "Enjoy a sumptuous breakfast at hotel. Enjoy a full-day excursion to Ocean Park Hong Kong with shared return transfers. Explore one of Hong Kong's most popular attractions, featuring thrilling rides, fascinating marine life exhibits, wildlife encounters, and exciting live shows. Take in breathtaking views from the scenic cable car and immerse yourself in a day filled with adventure and entertainment.",
+        image: "/images/packages/hong-kong-macau/image4.jpeg",
+      },
+      {
+        day: 5,
+        title: "Ferry Transfer to Macau & Leisure",
+        location: "Macau",
+        morning: "Breakfast, check out & ferry to Macau",
+        noonToEvening: "Check-in & free at leisure",
+        evening: "Explore Macau on your own and Overnight in Macau",
+        description:
+          "After breakfast, check out from our hotel and proceed to the ferry terminal for your high-speed ferry transfer to Macau. Upon arrival, transfer to your hotel and complete check-in formalities. Spend the remainder of the day at leisure exploring the vibrant streets of Macau or relaxing at your hotel. Macau is a Special Administrative Region of China across the Pearl River Delta from Hong Kong. Known as the 'Las Vegas of Asia,' it is globally renowned for its mega-casinos, high-end entertainment, and rich fusion of Portuguese colonial heritage with traditional Chinese culture.",
+        image: "/images/packages/hong-kong-macau/image5.jpeg",
+      },
+      {
+        day: 6,
+        title: "Macau Half-Day City Sightseeing Tour",
+        location: "Macau",
+        morning: "Breakfast & half-day city tour",
+        noonToEvening:
+          "Visit St. Paul's Ruins, Senado Square, A-Ma Temple & Macau Tower (photo stop)",
+        evening: "Free at leisure and Overnight in Macau",
+        description:
+          "After breakfast, embark on a half-day sightseeing tour of Macau. Discover the city's rich Portuguese heritage as you visit the iconic Ruins of St. Paul's, stroll through the historic Senado Square, and explore the revered A-Ma Temple. Enjoy a photo stop at the towering Macau Tower before returning to your hotel. The remainder of the day is at leisure to experience Macau's dining and world-class resort promenades.",
+        image: "/images/packages/hong-kong-macau/image6.jpeg",
+      },
+      {
+        day: 7,
+        title: "Macau to Hong Kong Airport & Departure",
+        location: "Macau / Hong Kong Airport",
+        morning:
+          "Breakfast, check out & ferry to Hong Kong Airport and Departure",
+        noonToEvening: "Board flight to onward destination",
+        evening: "Journey concludes with wonderful memories",
+        description:
+          "After breakfast, check out from your hotel and proceed to the ferry terminal for your return ferry directly to Hong Kong International Airport. Upon arrival, proceed to international departures for your flight to your onward destination.",
+        image: "/images/packages/hong-kong-macau/image7.jpeg",
+      },
     ],
-    startingStar: 3,
-    priceNote: "Available in 2★, 3★, 4★, and 5★ Khyber Luxury options",
-    popular: true,
   },
 
-  // KERALA
+  // 2. CENTRAL EUROPE
   {
-    id: "kerala-backwaters-5n",
-    destinationId: "kerala",
-    destinationName: "Kerala",
-    title: "Kerala Backwaters & Mist-Veiled Munnar",
-    duration: "5 Nights / 6 Days",
-    type: "Family",
-    tagline: "Munnar tea plantations, Thekkady spice wildlife & private AC houseboat cruise",
-    description:
-      "Restorative, lush greenery and slow rhythms: crisp mountain mist across tea hills, wild elephant boat safaris in Periyar, and private backwater cruising.",
-    inclusions: [
-      "2N Munnar + 1N Thekkady + 1N Alleppey Houseboat + 1N Kochi",
-      "Private air-conditioned houseboat with private chef onboard",
-      "Daily breakfast and all meals on houseboat",
-      "Private air-conditioned sedan with chauffeur throughout",
-      "Eravikulam National Park (Nilgiri Tahr) visit",
-      "Periyar Lake spice plantation walk",
-      "Fort Kochi heritage & Chinese fishing net tour",
-    ],
-    startingStar: 2,
-    priceNote: "Available across all hotel star categories",
-    popular: true,
-  },
-
-  // SINGAPORE
-  {
-    id: "singapore-wonders-4n",
-    destinationId: "singapore",
-    destinationName: "Singapore",
-    title: "Singapore Garden City & Sentosa Thrills",
-    duration: "4 Nights / 5 Days",
-    type: "Family",
-    tagline: "Universal Studios, Gardens by the Bay Supertrees & Night Safari",
-    description:
-      "A thrilling cosmopolitan escape for families and travelers: futuristic biodomes, island cable cars, and premier shopping along Orchard Road.",
-    inclusions: [
-      "4 Nights hotel in central Singapore (2★, 3★, 4★, or 5★ MBS)",
-      "Daily buffet breakfast",
-      "Return Changi Airport private transfers",
-      "Gardens by the Bay (Flower Dome + Cloud Forest) tickets",
-      "Sentosa Cable Car + Universal Studios Singapore Day Pass",
-      "Singapore Night Safari with tram ride",
-      "Singapore tourist visa assistance",
-    ],
-    startingStar: 3,
-    priceNote: "Direct wholesale rates with optional Marina Bay Sands stay",
-    popular: true,
-  },
-
-  // THAILAND
-  {
-    id: "thailand-combo-5n",
-    destinationId: "thailand",
-    destinationName: "Thailand",
-    title: "Thailand Island Vibes & Bangkok City Lights",
-    duration: "5 Nights / 6 Days",
+    id: "central-europe-7d",
+    destinationId: "central-europe",
+    destinationName: "Central Europe",
+    title: "Central European Grand Discovery",
+    duration: "7 Days / 6 Nights",
     type: "Explorer",
-    tagline: "3 Nights Phuket beach resort + 2 Nights Bangkok shopping & temples",
+    tagline:
+      "Vienna Imperial Sights, Budapest Danube Cruise, Bratislava Old Town, Prague Castle & Romantic Road to Frankfurt",
     description:
-      "Tropical crystal beaches, Phi Phi island speedboat tours, vibrant night markets, and world-class retail in Bangkok.",
+      "A quintessential multi-country European journey across 5 countries and legendary capitals: Austria's imperial palaces, Hungary's Danube riverbanks, Slovakia's medieval gates, the Czech Republic's Baroque jewel Prague, and Germany's fairy-tale Romantic Road leading to Frankfurt.",
     inclusions: [
-      "3 Nights Phuket + 2 Nights Bangkok hotel (2★ to 5★)",
-      "Daily breakfast buffet",
-      "Phi Phi Island full-day tour with speedboat & buffet lunch",
-      "Phuket City & Big Buddha viewpoint tour",
-      "Bangkok Chao Phraya evening dinner cruise",
-      "Bangkok city temple tour (Wat Arun & Wat Traimit)",
-      "All airport and domestic flight transfers",
+      "2 Nights hotel accommodation in Vienna (Austria)",
+      "1 Night hotel accommodation in Budapest (Hungary)",
+      "2 Nights hotel accommodation in Prague (Czech Republic)",
+      "1 Night hotel accommodation in Frankfurt (Germany)",
+      "Daily European buffet breakfast at all hotels",
+      "Executive coach transfers between all cities & countries",
+      "Arrival airport transfer at Vienna International Airport",
+      "Guided panoramic tour of Vienna (Ringstrasse, State Opera, Hofburg Palace, St. Stephen's)",
+      "Evening transfer to Vienna's historic Grinzing wine tavern district",
+      "Scenic panoramic boat cruise on the Danube River in Budapest",
+      "Budapest panoramic city tour (Heroes' Square, Buda Castle, Hungarian Parliament)",
+      "Stopover in Bratislava, Slovakia: Danube banks, Old Town & Michael's Gate",
+      "Guided Prague city tour with Prague Castle entrance included & Charles Bridge",
+      "Scenic boat cruise on the Vltava River in Prague (included)",
+      "Excursion to Pilsen (Bohemia) & Rothenburg ob der Tauber on Germany's Romantic Road",
+      "Frankfurt Römer Square historic center visit",
     ],
-    startingStar: 2,
-    priceNote: "Highly customizable from backpacker budget to 5★ pool villas",
+    startingStar: 3,
+    priceNote: "Customizable across 2★ Budget Smart to 5★ Luxury Palace tiers",
     popular: true,
+    coverImage: "/images/packages/central-europe/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Vienna & Leisure",
+        location: "Vienna, Austria",
+        fullDay: "Arrival in Vienna and explore on your own",
+        evening: "Overnight in Vienna",
+        description:
+          "Upon arrival at Vienna International Airport, you'll be transferred to your hotel. Spend the rest of the day relaxing or exploring this elegant imperial city on your own. In the afternoon and evening, enjoy the refined Austrian cafe culture and overnight in Vienna.",
+        image: "/images/packages/central-europe/image1.jpeg",
+      },
+      {
+        day: 2,
+        title: "Vienna City Tour & Grinzing Village",
+        location: "Vienna, Austria",
+        fullDay: "Vienna City Tour & Grinzing Village",
+        evening: "Overnight in Vienna",
+        description:
+          "After breakfast, we begin a guided panoramic tour of Vienna – a city famous for its imperial heritage, music, and architectural elegance. Explore the majestic Ringstrasse, State Opera, Hofburg Palace, Parliament, St. Stephen's Cathedral, and more. The afternoon is free for shopping or visiting museums and cafes. In the evening, enjoy a transfer to the charming Grinzing district, known for its traditional wine taverns and vibrant local dining. Overnight in Vienna.",
+        image: "/images/packages/central-europe/image2.jpeg",
+      },
+      {
+        day: 3,
+        title: "Transfer to Budapest & Danube Boat Cruise",
+        location: "Budapest, Hungary",
+        fullDay: "Transfer to Budapest & Explore with lunch",
+        evening: "Overnight in Budapest",
+        description:
+          "After breakfast, we drive to Budapest, the enchanting capital of Hungary. Upon arrival, enjoy free time for lunch in the lively Váci Utca area – the heart of shopping and culture. Later, experience a scenic boat cruise on the Danube River, offering stunning views of both Buda and Pest. We continue with a panoramic city tour, visiting landmarks like Heroes' Square, Buda Castle, and the Parliament Building. In the evening, you can opt to join a traditional Magyar folklore show with dinner (optional). Overnight in Budapest.",
+        image: "/images/packages/central-europe/image3.jpeg",
+      },
+      {
+        day: 4,
+        title: "Bratislava & Transfer to Prague",
+        location: "Bratislava, Slovakia & Prague, Czech Republic",
+        fullDay: "Explore Bratislava & Prague",
+        evening: "Overnight in Prague",
+        description:
+          "Today, we depart early for Bratislava, the charming capital of Slovakia, located on the banks of the Danube. Enjoy time to stroll through its Old Town, admire Michael's Gate, and have lunch at a local restaurant. Later, we continue our journey to Prague, the capital of the Czech Republic. Upon arrival in the evening, we'll enjoy a transfer to the Old Town Square, surrounded by cafes and restaurants offering global cuisines. Overnight in Prague.",
+        image: "/images/packages/central-europe/image4.jpeg",
+      },
+      {
+        day: 5,
+        title: "Prague City Tour & Vltava River Cruise",
+        location: "Prague, Czech Republic",
+        fullDay: "Prague City Tour & Vltava River Cruise",
+        evening: "Overnight in Prague",
+        description:
+          "After breakfast, enjoy a guided city tour of Prague – often called the Baroque Jewel of Europe. Visit Prague Castle (entrance included), St. Vitus Cathedral, Charles Bridge, and the Old Town Square with its famous Astronomical Clock. Later, enjoy a relaxing boat ride on the Vltava River (included), admiring the city's stunning skyline from the water. The afternoon is free to explore Prague's cobblestone streets, local boutiques, and cafes. Overnight in Prague.",
+        image: "/images/packages/central-europe/image5.jpeg",
+      },
+      {
+        day: 6,
+        title: "Pilsen, Romantic Road (Rothenburg) & Frankfurt",
+        location: "Pilsen (Czech Republic) & Frankfurt (Germany)",
+        fullDay: "Transfer to Frankfurt & Explore Pilsen, Rothenburg",
+        evening: "Overnight in Frankfurt",
+        description:
+          "After breakfast, depart for Pilsen, a picturesque Bohemian city known for its world-famous beer. Explore its Old Town Square, Cathedral, and Town Hall. Continue along the scenic Romantic Road of Germany to Rothenburg ob der Tauber, a fairy-tale medieval walled town with half-timbered houses and cobbled lanes. Afterward, drive to Frankfurt, Germany's financial capital. Spend the evening exploring the historic Römer Square or dining at one of the many international restaurants. Overnight in Frankfurt.",
+        image: "/images/packages/central-europe/image6.jpeg",
+      },
+      {
+        day: 7,
+        title: "Frankfurt Departure",
+        location: "Frankfurt, Germany",
+        morning: "Departure from Frankfurt",
+        description:
+          "After breakfast, check out of your hotel. Your memorable Central European journey ends today with wonderful memories to take back home. End of Tour.",
+        image: "/images/packages/central-europe/image7.jpeg",
+      },
+    ],
   },
 ];
 
