@@ -449,7 +449,7 @@ export default function InquiryModal() {
                 <div className="mt-3.5 flex items-center justify-center gap-2 text-[10px] font-sans text-white/45">
                   <ShieldCheck size={13} className="text-emerald-400" />
                   <span>
-                    Direct to {currentDeptInfo?.title} Desk ({currentDeptInfo?.person}) · Contact info kept strictly confidential
+                    Direct to {currentDeptInfo?.title} · Contact info kept strictly confidential
                   </span>
                 </div>
               </div>
