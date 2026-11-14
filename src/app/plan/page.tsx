@@ -71,39 +71,39 @@ export default function PlanPage() {
       <section className="bg-[#07101F] px-5 py-20 text-white sm:px-8 lg:px-12 border-t border-white/10">
         <div className="mx-auto max-w-[1440px] flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <div>
-            <p className="eyebrow mb-3 !text-[#E2B18D]">
+            <p className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#E2B18D] font-bold mb-2">
               Prefer a Direct Conversation?
             </p>
-            <h2 className="font-serif text-3xl sm:text-4xl font-light text-white">
+            <h2 className="font-serif text-3xl sm:text-5xl font-light text-white leading-tight">
               Speak directly with our dedicated desks
             </h2>
-            <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-sans text-white/70">
-              <a href="tel:+917048386900" className="hover:text-white transition-colors">
-                1. Ticketing: <span className="text-[#E2B18D] font-mono">+91 70483 86900</span>
+            <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm sm:text-base font-sans text-white/85">
+              <a href="tel:+917048386900" className="hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+                1. Ticketing: <span className="text-[#E2B18D] font-mono font-bold text-sm sm:text-base">+91 70483 86900</span>
               </a>
-              <span className="text-white/20">·</span>
-              <a href="tel:+917487083499" className="hover:text-white transition-colors">
-                2. Tours: <span className="text-[#E2B18D] font-mono">+91 74870 83499</span>
+              <span className="text-white/30 hidden sm:inline">·</span>
+              <a href="tel:+917487083499" className="hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+                2. Tours: <span className="text-[#E2B18D] font-mono font-bold text-sm sm:text-base">+91 74870 83499</span>
               </a>
-              <span className="text-white/20">·</span>
-              <a href="tel:+919724391674" className="hover:text-white transition-colors">
-                3. Holidays: <span className="text-[#E2B18D] font-mono">+91 97243 91674</span>
+              <span className="text-white/30 hidden sm:inline">·</span>
+              <a href="tel:+919724391674" className="hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+                3. Holidays: <span className="text-[#E2B18D] font-mono font-bold text-sm sm:text-base">+91 97243 91674</span>
               </a>
             </div>
 
             {/* Official Bank Details */}
-            <div className="mt-6 p-4 rounded-2xl bg-white/[0.04] border border-white/10 max-w-xl text-xs font-sans">
-              <p className="text-[10px] font-mono uppercase tracking-widest text-[#E2B18D] font-semibold mb-1.5">
+            <div className="mt-6 p-5 rounded-2xl bg-white/[0.06] border border-white/15 max-w-2xl text-sm font-sans shadow-md">
+              <p className="text-xs sm:text-sm font-mono uppercase tracking-wider text-[#E2B18D] font-bold mb-2.5">
                 Official Company Bank Account (RTGS / NEFT):
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-white/80 text-[11px]">
-                <div>Beneficiary: <span className="text-white font-medium">{siteConfig.bank.accountName}</span></div>
-                <div>Bank: <span className="text-white font-medium">{siteConfig.bank.bankName}</span></div>
-                <div>A/c No: <span className="font-mono text-white font-medium">{siteConfig.bank.accountNumber}</span></div>
-                <div>IFSC: <span className="font-mono text-[#E2B18D] font-medium">{siteConfig.bank.ifscCode}</span></div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-white/90 text-xs sm:text-sm leading-relaxed">
+                <div>Beneficiary: <span className="text-white font-semibold">{siteConfig.bank.accountName}</span></div>
+                <div>Bank: <span className="text-white font-semibold">{siteConfig.bank.bankName}</span></div>
+                <div>A/c No: <span className="font-mono text-white font-bold text-sm sm:text-base">{siteConfig.bank.accountNumber}</span></div>
+                <div>IFSC: <span className="font-mono text-[#E2B18D] font-bold text-sm sm:text-base">{siteConfig.bank.ifscCode}</span></div>
               </div>
             </div>
-            <div className="mt-4">
+            <div className="mt-5">
               <GoogleTrustBadge variant="pill" />
             </div>
           </div>
@@ -111,11 +111,11 @@ export default function PlanPage() {
           <button
             type="button"
             onClick={() => openInquiry({ department: "tours" })}
-            className="inline-flex items-center gap-3 rounded-full border border-[#B87543] bg-[#B87543] px-8 py-4 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-[#07101F] transition-all duration-300 shadow-md"
+            className="inline-flex items-center gap-3 rounded-full border border-[#B87543] bg-[#B87543] px-9 py-4 font-sans text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-[#07101F] transition-all duration-300 shadow-lg hover:scale-105"
           >
-            <Compass size={16} />
+            <Compass size={18} />
             <span>Open Fast Inquiry Form</span>
-            <ArrowUpRight size={14} />
+            <ArrowUpRight size={16} />
           </button>
         </div>
       </section>

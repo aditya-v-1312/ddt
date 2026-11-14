@@ -69,15 +69,16 @@ export const FinalCTA: React.FC = () => {
         </div>
 
         {/* 3 Department Desks */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-sans text-white/60">
-          <span className="uppercase tracking-wider text-[#E2B18D] text-[10px] font-semibold">Direct Desks:</span>
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm sm:text-base font-sans text-white/85">
+          <span className="uppercase tracking-wider text-[#E2B18D] text-xs font-bold">Direct Desks:</span>
           {siteConfig.departments.map((dept, idx) => (
             <a
               key={dept.id}
               href={`tel:${dept.phone}`}
-              className="hover:text-white transition-colors"
+              className="hover:text-white transition-colors flex items-center gap-1.5"
             >
-              {idx + 1}. {dept.title}: <span className="text-[#E2B18D] font-mono">{dept.phoneDisplay}</span>
+              <span className="text-white/70">{idx + 1}. {dept.title}:</span>{" "}
+              <span className="text-[#E2B18D] font-mono font-bold text-sm sm:text-base">{dept.phoneDisplay}</span>
             </a>
           ))}
         </div>

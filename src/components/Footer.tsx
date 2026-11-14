@@ -39,20 +39,20 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
               </div>
             </Link>
 
-            <p className="font-serif italic text-lg text-[#E2B18D] mb-3">
+            <p className="font-serif italic text-xl sm:text-2xl text-[#E2B18D] mb-3">
               "{siteConfig.tagline}"
             </p>
 
-            <p className="text-xs text-white/50 font-sans font-light max-w-sm leading-relaxed mb-6">
+            <p className="text-sm sm:text-base text-white/80 font-sans font-light max-w-sm leading-relaxed mb-6">
               Bespoke travel curation based in Vadodara, Gujarat. Thoughtfully planned journeys across India and beyond.
             </p>
 
-            <div className="mb-6 flex flex-col gap-3">
+            <div className="mb-6 flex flex-col gap-3.5">
               <GoogleTrustBadge variant="pill" />
               <button
                 type="button"
                 onClick={() => openInquiry({ department: "tours" })}
-                className="w-fit inline-flex items-center gap-2 rounded-full border border-[#B87543] bg-[#B87543]/20 hover:bg-[#B87543] px-5 py-2.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition-all shadow-sm"
+                className="w-fit inline-flex items-center gap-2 rounded-full border border-[#B87543] bg-[#B87543] hover:bg-white hover:text-[#07101F] px-6 py-3 font-sans text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-white transition-all shadow-md"
               >
                 <span>Submit Travel Enquiry</span>
               </button>
@@ -61,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
             {onReplayIntro && (
               <button
                 onClick={onReplayIntro}
-                className="inline-flex items-center space-x-2 text-[10px] font-sans uppercase tracking-[0.2em] text-white/40 hover:text-[#E2B18D] transition-colors py-1"
+                className="inline-flex items-center space-x-2 text-xs font-sans uppercase tracking-[0.2em] text-white/50 hover:text-[#E2B18D] transition-colors py-1"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Replay Journey Intro</span>
@@ -71,23 +71,23 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
 
           {/* Navigation (2 cols) */}
           <div className="lg:col-span-2">
-            <h4 className="font-sans text-[9px] uppercase tracking-[0.25em] text-white/40 font-semibold mb-5">
+            <h4 className="font-sans text-xs sm:text-sm uppercase tracking-[0.25em] text-[#E2B18D] font-bold mb-5">
               Explore
             </h4>
-            <nav className="flex flex-col gap-3 font-sans text-xs">
-              <Link href="/destinations" className="w-fit text-white/70 hover:text-white transition-colors">
+            <nav className="flex flex-col gap-3.5 font-sans text-sm sm:text-base">
+              <Link href="/destinations" className="w-fit text-white/80 hover:text-white transition-colors">
                 Destinations
               </Link>
-              <Link href="/experiences" className="w-fit text-white/70 hover:text-white transition-colors">
+              <Link href="/experiences" className="w-fit text-white/80 hover:text-white transition-colors">
                 Experiences
               </Link>
-              <Link href="/about" className="w-fit text-white/70 hover:text-white transition-colors">
+              <Link href="/about" className="w-fit text-white/80 hover:text-white transition-colors">
                 About Us
               </Link>
-              <Link href="/plan" className="w-fit text-white/70 hover:text-white transition-colors">
+              <Link href="/plan" className="w-fit text-white/80 hover:text-white transition-colors">
                 Plan a Journey
               </Link>
-              <Link href="/sitemap" className="w-fit text-white/70 hover:text-white transition-colors">
+              <Link href="/sitemap" className="w-fit text-white/80 hover:text-white transition-colors">
                 Sitemap
               </Link>
             </nav>
@@ -95,24 +95,24 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
 
           {/* 3 Dedicated Desks (3 cols) */}
           <div className="lg:col-span-3">
-            <h4 className="font-sans text-[9px] uppercase tracking-[0.25em] text-[#E2B18D] font-semibold mb-5">
+            <h4 className="font-sans text-xs sm:text-sm uppercase tracking-[0.25em] text-[#E2B18D] font-bold mb-5">
               Dedicated Desks
             </h4>
 
-            <div className="space-y-4 font-sans text-xs">
+            <div className="space-y-5 font-sans text-sm">
               {siteConfig.departments.map((dept, idx) => (
-                <div key={dept.id} className="border-l-2 border-[#B87543]/40 pl-3">
-                  <div className="font-semibold text-white">
+                <div key={dept.id} className="border-l-2 border-[#B87543] pl-3.5">
+                  <div className="font-bold text-sm sm:text-base text-white">
                     <span>{idx + 1}. {dept.title}</span>
                   </div>
-                  <div className="mt-1 space-y-0.5 text-white/70">
+                  <div className="mt-1.5 space-y-1 text-white/85">
                     <p>
-                      <a href={`tel:${dept.phone}`} className="font-mono text-[#E2B18D] hover:underline">
+                      <a href={`tel:${dept.phone}`} className="font-mono text-sm sm:text-base text-[#E2B18D] font-bold hover:underline">
                         {dept.phoneDisplay}
                       </a>
                     </p>
                     <p>
-                      <a href={`mailto:${dept.email}`} className="text-white/50 hover:text-white text-[11px] transition-colors">
+                      <a href={`mailto:${dept.email}`} className="text-white/65 hover:text-white text-xs sm:text-sm transition-colors">
                         {dept.email}
                       </a>
                     </p>
@@ -124,12 +124,12 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
 
           {/* Office Address & Registered Details (3 cols) */}
           <div className="lg:col-span-3">
-            <h4 className="font-sans text-[9px] uppercase tracking-[0.25em] text-white/40 font-semibold mb-5">
+            <h4 className="font-sans text-xs sm:text-sm uppercase tracking-[0.25em] text-[#E2B18D] font-bold mb-5">
               Vadodara Office & Bank Details
             </h4>
 
-            <div className="space-y-3 font-sans text-xs text-white/70">
-              <p className="leading-relaxed text-white/50">
+            <div className="space-y-4 font-sans text-xs sm:text-sm text-white/85">
+              <p className="leading-relaxed text-white/70">
                 {siteConfig.contact.address.line1}
                 <br />
                 {siteConfig.contact.address.line2}
@@ -138,29 +138,34 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
                 {siteConfig.contact.address.pincode}
               </p>
 
-              <div className="pt-2 border-t border-white/10 text-[11px] space-y-1.5 text-white/45">
-                <p className="font-medium text-white/80">
+              <div className="pt-3 border-t border-white/15 text-xs sm:text-sm space-y-2 text-white/80">
+                <p className="font-bold text-white text-sm">
                   {siteConfig.legal.entityName}
                 </p>
-                <p>GSTIN: <span className="text-white/80 font-mono">{siteConfig.legal.gstin}</span></p>
+                <p>
+                  GSTIN:{" "}
+                  <span className="text-white font-mono font-bold bg-white/10 px-2 py-0.5 rounded text-xs sm:text-sm">
+                    {siteConfig.legal.gstin}
+                  </span>
+                </p>
               </div>
 
               {/* Official Bank Transfer Details */}
-              <div className="pt-2.5 border-t border-white/10 text-[10px] space-y-1 text-white/50 font-sans">
-                <p className="text-[#E2B18D] font-mono uppercase tracking-wider font-semibold">
+              <div className="pt-3.5 border-t border-white/15 text-xs sm:text-sm space-y-1.5 text-white/80 font-sans">
+                <p className="text-[#E2B18D] font-mono uppercase tracking-wider font-bold mb-1">
                   Official Bank Details (RTGS/NEFT):
                 </p>
-                <p>Bank: <span className="text-white/80">{siteConfig.bank.bankName}</span> ({siteConfig.bank.accountType})</p>
-                <p>A/c No: <span className="text-white/90 font-mono font-medium">{siteConfig.bank.accountNumber}</span></p>
-                <p>IFSC: <span className="text-white/90 font-mono font-medium">{siteConfig.bank.ifscCode}</span></p>
-                <p>Branch: <span className="text-white/70">{siteConfig.bank.branch}</span></p>
+                <p>Bank: <span className="text-white font-medium">{siteConfig.bank.bankName}</span> ({siteConfig.bank.accountType})</p>
+                <p>A/c No: <span className="text-white font-mono font-bold text-xs sm:text-sm">{siteConfig.bank.accountNumber}</span></p>
+                <p>IFSC: <span className="text-[#E2B18D] font-mono font-bold text-xs sm:text-sm">{siteConfig.bank.ifscCode}</span></p>
+                <p>Branch: <span className="text-white/85">{siteConfig.bank.branch}</span></p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Copyright & Attribution */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/40 font-sans tracking-wide gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-white/60 font-sans tracking-wide gap-4">
           <p>© {new Date().getFullYear()} DARSH DREAM TOURS LLP. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="/sitemap" className="hover:text-[#E2B18D] transition-colors">
