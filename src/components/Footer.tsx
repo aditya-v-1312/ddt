@@ -143,7 +143,6 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
                   {siteConfig.legal.entityName}
                 </p>
                 <p>GSTIN: <span className="text-white/80 font-mono">{siteConfig.legal.gstin}</span></p>
-                <p>PAN: <span className="text-white/80 font-mono">{siteConfig.legal.pan}</span></p>
               </div>
 
               {/* Official Bank Transfer Details */}

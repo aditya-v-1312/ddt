@@ -277,7 +277,7 @@ export default function AboutPage() {
                     </p>
                     <div className="mt-3 text-[11px] font-sans text-[#697181] space-y-0.5">
                       <p><span className="font-semibold text-[#101A2E]">{siteConfig.legal.entityName}</span></p>
-                      <p>GSTIN: <span className="font-mono text-[#101A2E]">{siteConfig.legal.gstin}</span> · PAN: <span className="font-mono text-[#101A2E]">{siteConfig.legal.pan}</span></p>
+                      <p>GSTIN: <span className="font-mono text-[#101A2E]">{siteConfig.legal.gstin}</span></p>
                     </div>
 
                     {/* Official Bank Details */}

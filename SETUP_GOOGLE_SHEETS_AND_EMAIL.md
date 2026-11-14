@@ -44,17 +44,20 @@ Formula parse error.
 ## 3. Dedicated Department Contact Desks
 The 3 dedicated numbers and contact details are organized in the exact order requested:
 
-| Order | Department | Contact Person | Phone Number | Direct Email | Specialization |
-|---|---|---|---|---|---|
-| **1st** | **Ticketing** | Pratik | `+91 70483 86900` | `sales@darshdreamtours.com` | Flights, visas, express rail & Urgent Last-Minute Hotel Desk |
-| **2nd** | **Tours** | Sakshi Chandiramani | `+91 74870 83499` | `sakshi@darshdreamtours.com` | Custom luxury itineraries, private bespoke tours across India & worldwide |
-| **3rd** | **Holidays** | Office Desk | `+91 97243 91674` | `info@darshdreamtours.com` | Curated vacation packages, family holidays & honeymoon retreats |
+| Order | Department | Phone Number | Direct Email | Specialization |
+|---|---|---|---|---|
+| **1st** | **Ticketing** | `+91 70483 86900` | `sales@darshdreamtours.com` | Flights, visas, express rail & Urgent Last-Minute Hotel Desk |
+| **2nd** | **Tours** | `+91 74870 83499` | `sakshi@darshdreamtours.com` | Custom luxury itineraries, private bespoke tours across India & worldwide |
+| **3rd** | **Holidays** | `+91 97243 91674` | `info@darshdreamtours.com` | Curated vacation packages, family holidays & honeymoon retreats |
 
-### Official Accreditation & Legal Details:
+### Official Legal & Bank Transfer Details:
 - **Entity Name:** DARSH DREAM TOURS LLP
-- **IATA Accredited No:** 14039896
 - **GSTIN:** 24AAZFD6999A1ZU
-- **PAN:** AAZFD6999A
+- **Bank:** HDFC Bank, Race Course Road Branch, Vadodara
+- **Account Name:** DARSH DREAM TOURS LLP
+- **Account Number:** 50200120747307
+- **IFSC Code:** HDFC0000275
+- **Account Type:** Current Account
 - **Address:** SF-1, Sun Complex, 1 Abhishek Colony, Gotri Road, Race Course, Vadodara, Gujarat 390007
 
 ---

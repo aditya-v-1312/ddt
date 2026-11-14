@@ -26,7 +26,6 @@ export interface SiteConfig {
   legal: {
     entityName: string;
     gstin: string;
-    pan: string;
   };
   bank: BankDetails;
   departments: DepartmentContact[];
@@ -65,7 +64,6 @@ export const siteConfig: SiteConfig = {
   legal: {
     entityName: "DARSH DREAM TOURS LLP",
     gstin: "24AAZFD6999A1ZU",
-    pan: "AAZFD6999A",
   },
   bank: {
     accountName: "DARSH DREAM TOURS LLP",
