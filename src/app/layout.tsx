@@ -67,6 +67,10 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${manrope.variable} scroll-smooth`}
     >
+      <head>
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+      </head>
       <body className="antialiased selection:bg-[#9A5B2D] selection:text-white font-sans bg-[#F8F7F3] text-[#17213A]">
         <InquiryProvider>
           <GoogleAnalytics />
