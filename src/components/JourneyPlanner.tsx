@@ -157,6 +157,47 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
     });
   };
 
+  const handleTravelStyleSelect = (styleLabel: string) => {
+    setFormData((prev) => {
+      let nextCount = prev.travelersCount;
+      if (styleLabel === "Solo Explorer") {
+        nextCount = 1;
+      } else if (styleLabel === "Couple / Honeymoon") {
+        nextCount = 2;
+      } else if (styleLabel === "Family with Kids" && prev.travelersCount < 3) {
+        nextCount = 3;
+      } else if (styleLabel === "Corporate / Private Group" && prev.travelersCount < 5) {
+        nextCount = 6;
+      } else if (styleLabel === "Friends & Adventure" && prev.travelersCount < 2) {
+        nextCount = 3;
+      }
+      return {
+        ...prev,
+        travelStyle: styleLabel,
+        travelersCount: nextCount,
+      };
+    });
+  };
+
+  const handleTravelersCountChange = (delta: number) => {
+    setFormData((prev) => {
+      const nextCount = Math.max(1, prev.travelersCount + delta);
+      let nextStyle = prev.travelStyle;
+      if (nextCount === 1 && prev.travelStyle === "Couple / Honeymoon") {
+        nextStyle = "Solo Explorer";
+      } else if (nextCount === 2 && prev.travelStyle === "Solo Explorer") {
+        nextStyle = "Couple / Honeymoon";
+      } else if (nextCount > 2 && prev.travelStyle === "Solo Explorer") {
+        nextStyle = "Friends & Adventure";
+      }
+      return {
+        ...prev,
+        travelersCount: nextCount,
+        travelStyle: nextStyle,
+      };
+    });
+  };
+
   const handleNext = () => {
     if (currentStep < 4) setCurrentStep((prev) => prev + 1);
   };
@@ -229,7 +270,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
       `• Travel Month: ${formData.travelMonth}\n` +
       `• Duration: ${formData.duration}\n` +
       `• Hotel Tier: ${formData.hotelTier}-Star Accommodations\n` +
-      `• Travel Style: ${formData.travelStyle} (${formData.travelersCount} Guests)\n` +
+      `• Travel Style: ${formData.travelStyle} (${formData.travelersCount} ${formData.travelersCount === 1 ? "Guest" : "Guests"})\n` +
       `• Inclusions Requested: ${formData.specialRequests.join(", ") || "Standard"}\n` +
       `• Name: ${formData.name || "Guest"}\n` +
       `• Phone: ${formData.phone || "Not specified"}\n` +
@@ -550,10 +591,10 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                             <button
                               key={style.label}
                               type="button"
-                              onClick={() => setFormData({ ...formData, travelStyle: style.label })}
+                              onClick={() => handleTravelStyleSelect(style.label)}
                               className={`p-3.5 rounded-2xl border text-xs sm:text-sm font-sans transition-all flex items-center gap-2.5 ${
                                 isSel
-                                  ? "bg-[#B87543] text-white border-[#B87543] font-bold shadow-md"
+                                  ? "bg-[#B87543] text-white border-[#B87543] font-bold shadow-md scale-[1.01]"
                                   : "bg-[#F7F5F0] border-[#101A2E]/15 text-[#101A2E] hover:border-[#B87543] hover:bg-white"
                               }`}
                             >
@@ -573,13 +614,9 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       <div className="flex items-center gap-3">
                         <button
                           type="button"
-                          onClick={() =>
-                            setFormData((prev) => ({
-                              ...prev,
-                              travelersCount: Math.max(1, prev.travelersCount - 1),
-                            }))
-                          }
-                          className="w-11 h-11 rounded-2xl border border-[#101A2E]/20 bg-[#F7F5F0] hover:bg-white text-[#101A2E] flex items-center justify-center font-bold"
+                          onClick={() => handleTravelersCountChange(-1)}
+                          disabled={formData.travelersCount <= 1}
+                          className="w-11 h-11 rounded-2xl border border-[#101A2E]/20 bg-[#F7F5F0] hover:bg-white disabled:opacity-40 text-[#101A2E] flex items-center justify-center font-bold transition-all shadow-sm"
                           aria-label="Decrease Travelers"
                         >
                           <Minus size={16} />
@@ -589,19 +626,14 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                         </span>
                         <button
                           type="button"
-                          onClick={() =>
-                            setFormData((prev) => ({
-                              ...prev,
-                              travelersCount: prev.travelersCount + 1,
-                            }))
-                          }
-                          className="w-11 h-11 rounded-2xl border border-[#101A2E]/20 bg-[#F7F5F0] hover:bg-white text-[#101A2E] flex items-center justify-center font-bold"
+                          onClick={() => handleTravelersCountChange(1)}
+                          className="w-11 h-11 rounded-2xl border border-[#101A2E]/20 bg-[#F7F5F0] hover:bg-white text-[#101A2E] flex items-center justify-center font-bold transition-all shadow-sm"
                           aria-label="Increase Travelers"
                         >
                           <Plus size={16} />
                         </button>
-                        <span className="text-xs text-[#697181] font-sans ml-2">
-                          {formData.travelersCount === 1 ? "Solo Passenger" : "Total Guests"}
+                        <span className="text-xs text-[#697181] font-sans ml-2 font-medium">
+                          {formData.travelersCount === 1 ? "Solo Passenger (1 Guest)" : `${formData.travelersCount} Total Guests`}
                         </span>
                       </div>
                     </div>
@@ -680,7 +712,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                         {formData.destination || "Custom Itinerary"} · {formData.duration}
                       </h4>
                       <p className="text-xs sm:text-sm text-white/70 font-sans">
-                        Timing: <strong>{formData.travelMonth}</strong> · Style: <strong>{formData.travelStyle}</strong> ({formData.travelersCount} Guests)
+                        Timing: <strong>{formData.travelMonth}</strong> · Style: <strong>{formData.travelStyle}</strong> ({formData.travelersCount} {formData.travelersCount === 1 ? "Guest" : "Guests"})
                       </p>
                       {formData.specialRequests.length > 0 && (
                         <div className="flex flex-wrap gap-1 pt-1">
@@ -871,7 +903,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                 </div>
                 <div className="flex justify-between font-medium">
                   <span className="text-[#697181]">Travelers:</span>
-                  <span>{formData.travelersCount} Guests ({formData.travelStyle})</span>
+                  <span>{formData.travelersCount} {formData.travelersCount === 1 ? "Guest" : "Guests"} ({formData.travelStyle})</span>
                 </div>
               </div>
 
