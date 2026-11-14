@@ -218,8 +218,8 @@ export default function PackagesAndHotelsShowcase() {
 
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div className="space-y-4 max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-red-400 bg-red-950/80 px-4 py-1.5 text-xs font-mono uppercase tracking-widest text-red-200 shadow-md">
-                <Zap size={14} className="text-red-400 animate-pulse" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-red-500 bg-red-600 px-4 py-1.5 text-xs font-mono uppercase tracking-widest text-white font-bold shadow-md">
+                <Zap size={14} className="text-white animate-pulse" />
                 <span>Urgent 24–48 Hour Travel Desk · Direct Wholesale Allocations</span>
               </div>
 

@@ -561,7 +561,7 @@ export default function TravelChatbot() {
                     <button
                       type="button"
                       onClick={() => openInquiry({ serviceType: "last_minute_hotel", urgentLastMinute: true })}
-                      className="px-2.5 py-1 rounded-full bg-red-600/30 border border-red-500/50 text-red-200 text-[10px] font-semibold hover:bg-red-600 hover:text-white transition-colors"
+                      className="px-2.5 py-1 rounded-full bg-red-600 hover:bg-red-700 text-white border border-red-500 text-[10px] font-bold transition-colors shadow-sm"
                     >
                       ⚡ Last-Minute Desk
                     </button>
@@ -697,13 +697,13 @@ export default function TravelChatbot() {
                         <button
                           type="button"
                           onClick={() => handleServiceSelect("last_minute_hotel", "⚡ Urgent Last-Minute Hotel Desk")}
-                          className="flex items-center justify-between p-2.5 rounded-xl border border-red-500/40 bg-red-950/30 hover:bg-red-600 hover:text-white transition-all text-left text-xs font-semibold text-red-200 group"
+                          className="flex items-center justify-between p-2.5 rounded-xl border border-red-500 bg-red-600 hover:bg-red-700 text-white transition-all text-left text-xs font-bold group shadow-md"
                         >
                           <span className="flex items-center gap-2">
                             <span className="animate-pulse">⚡</span>
                             <span>Last-Minute Hotel Desk (Next 24-72h)</span>
                           </span>
-                          <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-red-600/40 text-white">Priority</span>
+                          <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-black/30 text-white font-bold">Priority</span>
                         </button>
 
                         <button
@@ -924,14 +924,14 @@ export default function TravelChatbot() {
                             <button
                               type="button"
                               onClick={() => handleTimingSelect("Tonight (Urgent Check-in)")}
-                              className="px-3 py-1.5 rounded-lg bg-red-600/30 border border-red-500 text-xs font-semibold text-red-200 hover:bg-red-600 hover:text-white transition-all"
+                              className="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white border border-red-500 text-xs font-bold transition-all shadow-sm"
                             >
                               ⚡ Tonight (Immediate)
                             </button>
                             <button
                               type="button"
                               onClick={() => handleTimingSelect("Tomorrow")}
-                              className="px-3 py-1.5 rounded-lg bg-red-600/20 border border-red-500/40 text-xs font-semibold text-red-200 hover:bg-red-600 hover:text-white transition-all"
+                              className="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white border border-red-500 text-xs font-bold transition-all shadow-sm"
                             >
                               ⚡ Tomorrow
                             </button>
@@ -1132,7 +1132,7 @@ export default function TravelChatbot() {
                 <button
                   type="button"
                   onClick={() => handleServiceSelect("last_minute_hotel", "⚡ Urgent Hotel Desk")}
-                  className="px-2.5 py-1 rounded-full bg-red-900/40 border border-red-500/50 text-red-200 text-[10px] font-semibold whitespace-nowrap hover:bg-red-800 transition-colors flex items-center gap-1"
+                  className="px-3 py-1 rounded-full bg-red-600 hover:bg-red-700 text-white border border-red-500 text-[10px] font-bold whitespace-nowrap transition-colors flex items-center gap-1 shadow-sm"
                 >
                   <span>⚡ Last-Minute Desk</span>
                 </button>

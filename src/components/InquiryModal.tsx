@@ -430,8 +430,8 @@ export default function InquiryModal() {
 
               {/* Error Banner */}
               {error && (
-                <div className="flex items-center gap-2 p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-300 text-xs font-sans">
-                  <AlertCircle size={15} className="shrink-0" />
+                <div className="flex items-center gap-2 p-3.5 rounded-xl bg-red-950/80 border border-red-500 text-white text-xs font-sans font-medium shadow-md">
+                  <AlertCircle size={15} className="shrink-0 text-red-400" />
                   <span>{error}</span>
                 </div>
               )}

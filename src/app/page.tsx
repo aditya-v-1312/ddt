@@ -126,9 +126,9 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => openLastMinuteHotelDesk()}
-                  className="inline-flex items-center gap-2 rounded-full border border-red-500/50 bg-red-950/40 hover:bg-red-600 hover:text-white px-6 py-4 font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-red-200 transition-all backdrop-blur-md shadow-md"
+                  className="inline-flex items-center gap-2 rounded-full border border-red-500 bg-red-600 hover:bg-red-700 hover:text-white px-6 py-4 font-sans text-xs font-bold uppercase tracking-[0.2em] text-white transition-all shadow-lg hover:scale-105"
                 >
-                  <span className="h-2 w-2 rounded-full bg-red-400 animate-pulse" />
+                  <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
                   <span>⚡ Last-Minute Hotel Desk</span>
                 </button>
               </div>

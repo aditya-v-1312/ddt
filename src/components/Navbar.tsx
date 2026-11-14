@@ -119,10 +119,10 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => openLastMinuteHotelDesk()}
-              className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 font-sans text-[10px] font-bold uppercase tracking-wider bg-red-600/20 border border-red-500/40 text-red-200 hover:bg-red-600 hover:text-white transition-all shadow-sm"
+              className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 font-sans text-[11px] font-bold uppercase tracking-wider bg-red-600 hover:bg-red-700 text-white border border-red-500 shadow-md hover:scale-105 transition-all"
               title="Urgent 24-48 Hour Hotel Booking"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-red-400 animate-pulse" />
+              <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
               <span>⚡ Last-Minute Desk</span>
             </button>
 
@@ -254,7 +254,7 @@ export default function Navbar() {
                   closeMobile();
                   openLastMinuteHotelDesk();
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 border border-red-500/50 bg-red-950/40 py-3 px-4 font-sans text-[10px] font-bold uppercase tracking-[0.18em] text-red-200 hover:bg-red-600 hover:text-white transition-all rounded-full"
+                className="w-full inline-flex items-center justify-center gap-2 border border-red-500 bg-red-600 hover:bg-red-700 py-3.5 px-4 font-sans text-xs font-bold uppercase tracking-[0.18em] text-white transition-all rounded-full shadow-md"
               >
                 <span>⚡ Last-Minute Urgent Hotel Desk</span>
               </button>
