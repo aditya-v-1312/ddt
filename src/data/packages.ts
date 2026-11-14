@@ -1298,6 +1298,1519 @@ export const travelPackages: TravelPackage[] = [
       },
     ],
   },
+  // 13. MOROCCO
+  {
+    id: "morocco-imperial-cities-9d",
+    destinationId: "morocco",
+    destinationName: "Morocco",
+    title: "Morocco Imperial Cities & Blue Pearl",
+    duration: "9 Days / 8 Nights",
+    type: "Explorer",
+    tagline: "Casablanca, Tangier Kasbah, Chefchaouen Blue Pearl, Fes El Bali, Rabat & Marrakech Souks",
+    description: "An immersive imperial journey across Morocco: from Casablanca's grand Hassan II Mosque and the coastal art haven of Asilah, to Tangier's Kasbah, the enchanting cobalt-blue alleys of Chefchaouen, UNESCO Fes El Bali medina, Rabat's royal monuments, and vibrant Marrakech with its Majorelle Garden and legendary Jemaa el-Fnaa square.",
+    inclusions: [
+      "1 Night accommodation in Casablanca (Campanile Hotel or similar)",
+      "1 Night accommodation in Tangier (MIA Urban Detroit Hotel or similar)",
+      "1 Night accommodation in Chefchaouen (Dar Annasr Hotel or similar)",
+      "2 Nights accommodation in Fes (Zahrat Al Jabal Hotel or similar)",
+      "1 Night accommodation in Rabat (Malak Hotel or similar)",
+      "2 Nights accommodation in Marrakech (LeCaspien Hotel or similar)",
+      "Daily breakfast at all hotels",
+      "Private air-conditioned vehicle transfers throughout with professional chauffeur",
+      "Guided tour of Casablanca: Hassan II Mosque exterior, The Corniche & Mohammed V Square",
+      "Asilah coastal art town & Atlantic ramparts promenade",
+      "Tangier Kasbah district, Grand Socco & Cape Spartel where the Mediterranean meets Atlantic",
+      "Chefchaouen walking tour: Place Outa el Hammam, Kasbah & Spanish Mosque panoramic view",
+      "Full-day guided tour of UNESCO Fes El Bali: Bab Bou Jeloud Blue Gate, Chouara Tannery & Al-Qarawiyyin",
+      "Meknes Imperial City, Bab Mansour Gate & Volubilis Roman ruins UNESCO site",
+      "Rabat sightseeing: Royal Palace exterior, Kasbah of the Udayas & Hassan Tower",
+      "Full-day guided tour of Marrakech: Menara Gardens, Bahia Palace, Majorelle Garden & Jemaa el-Fnaa",
+      "Airport arrival and departure transfers"
+    ],
+    startingStar: 3,
+    priceNote: "Customizable across 2★, 3★, 4★, and 5★ luxury riad tiers",
+    popular: true,
+    coverImage: "/images/packages/morocco/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Casablanca Arrival & Corniche Promenade",
+        location: "Casablanca, Morocco",
+        morning: "Meet & greet at Mohammed V International Airport, private transfer to hotel",
+        noonToEvening: "Check-in at Campanile Hotel, leisure stroll along the Atlantic Corniche",
+        evening: "Visit Morocco Mall and Aqua Dream aquarium, welcome Moroccan mint tea",
+        description: "Welcome to Morocco! Arrive at Casablanca Mohammed V Airport, meet your private chauffeur, and transfer to your hotel. Spend the afternoon strolling along the lively Atlantic beachfront Corniche.",
+        image: "/images/packages/morocco/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Casablanca Highlights to Tangier via Artistic Asilah",
+        location: "Tangier, Morocco",
+        morning: "Breakfast at hotel, visit iconic oceanfront Hassan II Mosque (exterior)",
+        noonToEvening: "Drive to seaside art town Asilah; admire whitewashed houses, vibrant murals & ramparts",
+        evening: "Arrive in Tangier, gateway between Europe and Africa, check-in at MIA Urban Detroit",
+        description: "Admire Casablanca's monumental Hassan II Mosque perched over the Atlantic. Continue along the scenic coastline to Asilah, renowned for artistic murals and ocean views, before reaching Tangier.",
+        image: "/images/packages/morocco/image2.png"
+      },
+      {
+        day: 3,
+        title: "Tangier Kasbah & Scenic Rif Mountains to Chefchaouen",
+        location: "Chefchaouen, Morocco",
+        morning: "Explore Tangier Kasbah, Old Medina, Grand Socco & dramatic Cape Spartel lighthouse",
+        noonToEvening: "Scenic drive through the green peaks of the Rif Mountains",
+        evening: "Arrive in Chefchaouen, the 'Blue Pearl of Morocco', check-in at Dar Annasr Hotel",
+        description: "Discover Tangier where the Mediterranean meets the Atlantic, then ascend through the Rif Mountains to magical Chefchaouen, nestled under dramatic mountain peaks.",
+        image: "/images/packages/morocco/image3.jpeg"
+      },
+      {
+        day: 4,
+        title: "Chefchaouen Blue Pearl Discovery to Imperial Fes",
+        location: "Fes, Morocco",
+        morning: "Guided walking tour through picturesque cobalt-blue alleys & Place Outa el Hammam",
+        noonToEvening: "Hike up to the historic Spanish Mosque for panoramic views over the blue valley",
+        evening: "Depart for Fes, Morocco's spiritual and culinary capital, check-in at Zahrat Al Jabal",
+        description: "Spend a magical morning photographing Chefchaouen's world-famous blue stairs and doorways. Take in the valley vista from the Spanish Mosque before driving to imperial Fes.",
+        image: "/images/packages/morocco/image4.jpeg"
+      },
+      {
+        day: 5,
+        title: "UNESCO Fes El Bali Medina, Chouara Tannery & Royal Gates",
+        location: "Fes, Morocco",
+        morning: "Full-day guided walking tour through UNESCO-listed Fes El Bali (9,000 alleys)",
+        noonToEvening: "Bab Bou Jeloud (Blue Gate), Attarine Madrasa, ancient Chouara Tannery & Al-Qarawiyyin",
+        evening: "Visit Royal Palace 7 bronze gates and Borj Sud fortress for sunset skyline views",
+        description: "Step back into the Middle Ages in the world's largest car-free urban area. Marvel at intricate tilework, fragrant spice souks, leather tanneries, and historic madrasas.",
+        image: "/images/packages/morocco/image5.png"
+      },
+      {
+        day: 6,
+        title: "Meknes Imperial Gates & Volubilis Roman Ruins to Rabat",
+        location: "Rabat, Morocco",
+        morning: "Breakfast, drive to Meknes; explore Bab Mansour Gate & Heri es-Souani royal stables",
+        noonToEvening: "Explore ancient Roman UNESCO city of Volubilis: triumphal arches & mosaic floors",
+        evening: "Scenic drive to Morocco's coastal capital Rabat, check-in at Malak Hotel",
+        description: "Discover the colossal 17th-century ramparts of Meknes and walk among the preserved Roman columns and mosaic courtyards of Volubilis, then continue to graceful Rabat.",
+        image: "/images/packages/morocco/image6.jpeg"
+      },
+      {
+        day: 7,
+        title: "Rabat Royal Landmarks to Marrakech 'Red City'",
+        location: "Marrakech, Morocco",
+        morning: "Rabat sightseeing: Royal Palace, Kasbah of the Udayas ocean cliffs & Hassan Tower",
+        noonToEvening: "Scenic drive through central Moroccan plains toward Marrakech",
+        evening: "Arrive in Marrakech, check-in at LeCaspien Hotel, evening at leisure",
+        description: "Tour Rabat's serene Andalusian Gardens and the 12th-century Hassan Tower, then travel south to legendary Marrakech, the historic oasis of caravans.",
+        image: "/images/packages/morocco/image7.jpeg"
+      },
+      {
+        day: 8,
+        title: "Marrakech Guided Exploration: Majorelle Garden & Jemaa el-Fnaa",
+        location: "Marrakech, Morocco",
+        morning: "Guided tour of serene Menara Gardens, Bahia Palace & cobalt-blue Majorelle Garden",
+        noonToEvening: "Admire Koutoubia Mosque minaret and wander the bustling artisan souks",
+        evening: "Experience the carnival energy of Jemaa el-Fnaa Square with storytellers & musicians",
+        description: "Immerse in the sensory magic of Marrakech: Yves Saint Laurent's Majorelle Garden, palace courtyards, aromatic spice markets, and the legendary open-air theater of Jemaa el-Fnaa.",
+        image: "/images/packages/morocco/image8.jpeg"
+      },
+      {
+        day: 9,
+        title: "Marrakech Departure / Airport Transfer",
+        location: "Marrakech, Morocco",
+        morning: "Breakfast at hotel, leisure morning for last-minute souvenir shopping in the Medina",
+        noonToEvening: "Private transfer to Marrakech Menara Airport (or Casablanca) for your return flight",
+        description: "Savor a final Moroccan breakfast and mint tea before your private car escorts you to the airport, concluding an unforgettable 9-day imperial Moroccan odyssey.",
+        image: "/images/packages/morocco/image9.jpeg"
+      }
+    ]
+  },
+
+  // 14. PHUKET & KRABI
+  {
+    id: "thailand-phuket-krabi-5d",
+    destinationId: "phuket-krabi",
+    destinationName: "Phuket & Krabi",
+    title: "Tropical Thailand: Phuket & Krabi Island Escapes",
+    duration: "5 Days / 4 Nights",
+    type: "Honeymoon",
+    tagline: "Patong Beach, Phi Phi Islands Speedboat, Krabi 4-Island Tour & Emerald Lagoons",
+    description: "The quintessential southern Thai island escape: unwind along Phuket's Patong coastline, cruise across turquoise Andaman waters to the iconic limestone cliffs of Phi Phi Islands, and explore Krabi's famous 4-Island archipelago (Koh Poda, Chicken Island, Tup Island, Phra Nang Cave Beach).",
+    inclusions: [
+      "2 Nights accommodation in Phuket (Best Western Patong or similar)",
+      "2 Nights accommodation in Krabi (Anda Sea Tales Resort or similar)",
+      "Daily buffet breakfast at hotels + 2 Island tour buffet lunches",
+      "Phuket airport pickup and scenic transfer to Krabi",
+      "Full-day Krabi 4-Island speedboat tour (Koh Poda, Chicken Island, Tup Island & Pranang Cave)",
+      "Full-day Phi Phi Islands & Maya Bay excursion by speedboat with snorkeling equipment",
+      "All inter-city transfers and airport departure transfers"
+    ],
+    startingStar: 3,
+    priceNote: "Customizable across 3★, 4★, and 5★ beachfront resort tiers",
+    popular: true,
+    coverImage: "/images/packages/phuket-krabi/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival Phuket & Scenic Transfer to Krabi",
+        location: "Krabi, Thailand",
+        morning: "Arrival at Phuket International Airport, meet driver",
+        noonToEvening: "Scenic coastal drive past Phang Nga karst cliffs to Ao Nang, Krabi",
+        evening: "Check-in at Anda Sea Tales Resort, leisure evening by the Andaman beach",
+        description: "Arrive in tropical Thailand and enjoy a scenic cross-province drive to Krabi's majestic limestone coastline. Settle into your resort and watch the sunset over Ao Nang bay.",
+        image: "/images/packages/phuket-krabi/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Krabi 4-Island Speedboat Tour with Picnic Lunch",
+        location: "Krabi, Thailand",
+        morning: "Speedboat pickup to explore Koh Poda, Tup Island sandbar & Chicken Island",
+        noonToEvening: "Snorkeling among tropical fish, visit sacred Phra Nang Cave Beach, picnic lunch",
+        evening: "Return to resort, evening seafood dining along Ao Nang walking street",
+        description: "Set sail across Krabi's emerald waters: walk on the natural sandbank connecting Tup and Mor Islands, snorkel vibrant coral reefs, and relax under the limestone cliffs of Phra Nang.",
+        image: "/images/packages/phuket-krabi/image2.png"
+      },
+      {
+        day: 3,
+        title: "Krabi to Phuket Transfer & Patong Beach Sunset",
+        location: "Phuket, Thailand",
+        morning: "Breakfast at resort, check-out and private transfer back to Phuket",
+        noonToEvening: "Check-in at Best Western Patong, afternoon relaxation or shopping at Jungceylon",
+        evening: "Experience the vibrant energy and street food of Bangla Road and Patong Beach",
+        description: "Journey back across the bridge to Phuket, Thailand's largest tropical island. Spend the evening enjoying golden sands, sunset cocktails, and lively night markets in Patong.",
+        image: "/images/packages/phuket-krabi/image3.jpeg"
+      },
+      {
+        day: 4,
+        title: "Full-Day Phi Phi Island & Maya Bay Tour with Lunch",
+        location: "Phi Phi Islands, Thailand",
+        morning: "Speedboat excursion to Phi Phi Don and Phi Phi Leh; cruise past Maya Bay",
+        noonToEvening: "Swim in emerald Pileh Lagoon, visit Viking Cave and Monkey Beach, buffet lunch",
+        evening: "Return to Phuket pier and transfer back to hotel for your final evening",
+        description: "Experience the Andaman Sea's crown jewels: dramatic soaring limestone peaks, crystal-clear turquoise waters in Pileh Lagoon, and world-class snorkeling around Phi Phi Islands.",
+        image: "/images/packages/phuket-krabi/image4.jpeg"
+      },
+      {
+        day: 5,
+        title: "Phuket Leisure & Airport Departure",
+        location: "Phuket, Thailand",
+        morning: "Breakfast at hotel, free time for beach stroll or souvenir shopping",
+        noonToEvening: "Private transfer to Phuket International Airport for flight back home",
+        description: "Enjoy a final morning by the Andaman Sea before checking out and transferring to Phuket International Airport with bags full of memories.",
+        image: "/images/packages/phuket-krabi/image5.jpeg"
+      }
+    ]
+  },
+
+  // 15. RUSSIA
+  {
+    id: "russia-imperial-capitals-7d",
+    destinationId: "russia",
+    destinationName: "Russia",
+    title: "Russia: Moscow & St. Petersburg Imperial Splendors",
+    duration: "7 Days / 6 Nights",
+    type: "Luxury",
+    tagline: "Moscow Red Square, Kremlin, Hermitage Museum & Sapsan High-Speed Express to St. Petersburg",
+    description: "A majestic journey through Russia's two great imperial capitals: Moscow's iconic Red Square, Saint Basil's Cathedral, Kremlin palaces, and opulent metro stations, followed by the lightning-fast Sapsan bullet train to St. Petersburg for the State Hermitage Museum, Peterhof fountain cascades, and Neva River canals.",
+    inclusions: [
+      "3 Nights accommodation in Moscow (Holiday Inn Suchevsky / Lesnaya or similar)",
+      "3 Nights accommodation in St. Petersburg (Holiday Inn Vorota / Park Inn Pribaltiiskaya or similar)",
+      "Daily international buffet breakfast at hotels",
+      "One-way Sapsan high-speed express train ticket (Moscow to St. Petersburg)",
+      "Guided Moscow city tour: Red Square, St. Basil's, GUM, Alexander Garden & Christ the Saviour",
+      "Moscow Kremlin territory & historic Cathedrals tour",
+      "Famous Moscow Metro architecture & Arbat Street walking tour",
+      "St. Petersburg Grand City Tour: Peter & Paul Fortress, St. Isaac's & Church on Spilled Blood",
+      "Guided tour of the State Hermitage Museum (Winter Palace)",
+      "Peterhof Grand Palace and lower fountain gardens excursion",
+      "All private airport and railway station transfers"
+    ],
+    startingStar: 4,
+    priceNote: "Customizable across 3★, 4★, and 5★ imperial palace tiers",
+    popular: true,
+    coverImage: "/images/packages/russia/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Welcome to Moscow / Transfer to Hotel",
+        location: "Moscow, Russia",
+        morning: "Arrival at Moscow International Airport, meet your private guide & driver",
+        noonToEvening: "Private transfer to Holiday Inn Suchevsky, check-in and refresh",
+        evening: "Evening orientation stroll along the vibrant pedestrian Arbat Street",
+        description: "Welcome to the capital of Russia! Meet your chauffeur upon arrival and transfer to your hotel. Begin your adventure with an evening walk along historic Arbat Street.",
+        image: "/images/packages/russia/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Moscow Red Square, St. Basil's & Kremlin Territory",
+        location: "Moscow, Russia",
+        morning: "Guided walking tour of Red Square: Saint Basil's Cathedral, Lenin's Mausoleum & GUM",
+        noonToEvening: "Tour the historic Moscow Kremlin territory, Tsar Bell, Tsar Cannon & Cathedrals",
+        evening: "Visit Cathedral of Christ the Saviour and enjoy panoramic views from Patriarch Bridge",
+        description: "Discover Russia's political and spiritual epicenter. Walk cobblestone Red Square, gaze at St. Basil's vibrant onion domes, and enter the Kremlin's medieval cathedral square.",
+        image: "/images/packages/russia/image2.png"
+      },
+      {
+        day: 3,
+        title: "Moscow Metro Palaces & Sapsan Bullet Train to St. Petersburg",
+        location: "St. Petersburg, Russia",
+        morning: "Tour the famous Moscow Underground 'Palaces for the People' with stained glass & chandeliers",
+        noonToEvening: "Board the high-speed Sapsan train whisking through Russian countryside in 3.5 hours",
+        evening: "Arrive at Moskovsky Station in St. Petersburg, transfer to Holiday Inn Vorota",
+        description: "Marvel at Moscow's museum-like metro stations before boarding the cutting-edge Sapsan bullet train to Peter the Great's grand northern Venice on the Baltic Sea.",
+        image: "/images/packages/russia/image3.jpeg"
+      },
+      {
+        day: 4,
+        title: "St. Petersburg Imperial Highlights & Peter & Paul Fortress",
+        location: "St. Petersburg, Russia",
+        morning: "Grand city tour: Nevsky Prospekt, Kazan Cathedral, St. Isaac's Cathedral & Bronze Horseman",
+        noonToEvening: "Explore Peter and Paul Fortress, birthplace of the city and Romanov burial site",
+        evening: "Admire the intricate mosaic domes of the Church of the Savior on Spilled Blood",
+        description: "Immerse in the breathtaking baroque and neoclassical splendor of St. Petersburg along the Neva River, surrounded by grand palaces, bridges, and gilded cathedral domes.",
+        image: "/images/packages/russia/image4.png"
+      },
+      {
+        day: 5,
+        title: "State Hermitage Museum Winter Palace Discovery",
+        location: "St. Petersburg, Russia",
+        morning: "Guided tour through the opulent state rooms of the Winter Palace",
+        noonToEvening: "View masterworks by Leonardo da Vinci, Rembrandt, Raphael, and Impressionist masters",
+        evening: "Leisure evening on Palace Square or optional Neva River canal cruise",
+        description: "Explore one of the world's greatest art museums, housed inside the gilded former winter residence of Russian Tsars containing over 3 million masterpieces.",
+        image: "/images/packages/russia/image5.jpeg"
+      },
+      {
+        day: 6,
+        title: "Peterhof Grand Palace & Fountain Gardens Excursion",
+        location: "Peterhof, Russia",
+        morning: "Excursion to the seaside Peterhof Palace, known as the 'Russian Versailles'",
+        noonToEvening: "Marvel at the Grand Cascade fountains powered entirely by natural water pressure",
+        evening: "Return to St. Petersburg for a farewell Russian imperial dinner",
+        description: "Travel to the Gulf of Finland to witness the dazzling gold statues and water cascades of Peterhof, celebrating Peter the Great's naval triumphs.",
+        image: "/images/packages/russia/image6.jpeg"
+      },
+      {
+        day: 7,
+        title: "St. Petersburg Canal Stroll & Airport Departure",
+        location: "St. Petersburg, Russia",
+        morning: "Breakfast at hotel, morning stroll along the Moika and Fontanka canal bridges",
+        noonToEvening: "Transfer to Pulkovo International Airport for your flight back home",
+        description: "Enjoy a final morning taking in the grand vistas of the Neva River before your private transfer to Pulkovo Airport for your departure flight.",
+        image: "/images/packages/russia/image7.jpeg"
+      }
+    ]
+  },
+
+  // 16. SINGAPORE & MALAYSIA (7N/8D)
+  {
+    id: "singapore-malaysia-twin-8d",
+    destinationId: "singapore-malaysia",
+    destinationName: "Singapore & Malaysia",
+    title: "Singapore & Malaysia Twin Nation Odyssey",
+    duration: "8 Days / 7 Nights",
+    type: "Family",
+    tagline: "Singapore Marina Bay, Universal Studios, Genting Cable Car & Kuala Lumpur Petronas Towers",
+    description: "A comprehensive 8-day dual-nation holiday: 4 nights in futuristic Singapore experiencing Sentosa Island, Universal Studios, and Gardens by the Bay, combined with 3 nights in vibrant Kuala Lumpur exploring the iconic Petronas Twin Towers, Batu Caves, and misty Genting Highlands.",
+    inclusions: [
+      "4 Nights in Singapore (Ibis Budget Imperial / J8 Hotel or similar)",
+      "3 Nights in Kuala Lumpur (Cosmo Hotel / Furama Bukit Bintang or similar)",
+      "Daily breakfast at all hotels",
+      "Singapore Half-Day City Tour (Merlion Park, Chinatown, Little India)",
+      "Universal Studios Singapore full-day pass (7 themed zones)",
+      "Sentosa Island tour with Cable Car Sky Network & S.E.A. Aquarium",
+      "Gardens by the Bay (Flower Dome & Cloud Forest cooled conservatories)",
+      "Cross-border deluxe coach transfer from Singapore to Kuala Lumpur",
+      "Kuala Lumpur Half-Day City Tour: Petronas Towers photo stop, King's Palace, National Mosque",
+      "Full-day Genting Highlands tour with Batu Caves photo stop and 2-way Awana SkyWay cable car",
+      "Return airport transfers in Singapore and Kuala Lumpur"
+    ],
+    startingStar: 3,
+    priceNote: "Customizable across 3★, 4★, and 5★ dual-country hotel tiers",
+    popular: true,
+    coverImage: "/images/packages/singapore-malaysia/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival Singapore & Evening Night Safari",
+        location: "Singapore",
+        morning: "Arrival at Singapore Changi Airport, meet driver and transfer to hotel",
+        noonToEvening: "Check-in at Ibis Budget Imperial, afternoon refresh",
+        evening: "Evening excursion to the world-first Singapore Night Safari with guided tram ride",
+        description: "Welcome to the Lion City! Arrive at world-renowned Changi Airport and transfer to your hotel. In the evening, journey into the Mandai rainforest for the famous Night Safari.",
+        image: "/images/packages/singapore-malaysia/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Full-Day Universal Studios Singapore Adventure",
+        location: "Sentosa, Singapore",
+        morning: "Transfer to Resorts World Sentosa for Universal Studios Singapore",
+        noonToEvening: "Experience cutting-edge rides: Battlestar Galactica, Transformers 3D, Jurassic Park",
+        evening: "Explore Hollywood and New York themed zones, return to hotel in evening",
+        description: "Spend a full day immersed in cinematic magic at Southeast Asia's only Universal Studios theme park featuring 24 exhilarating rides, shows, and attractions.",
+        image: "/images/packages/singapore-malaysia/image2.png"
+      },
+      {
+        day: 3,
+        title: "Sentosa Island Cable Car, S.E.A. Aquarium & Wings of Time",
+        location: "Sentosa, Singapore",
+        morning: "Scenic ride on the Singapore Cable Car Sky Network from Mount Faber to Sentosa",
+        noonToEvening: "Explore S.E.A. Aquarium / Oceanarium with 100,000+ marine creatures, Skyline Luge",
+        evening: "Spectacular Wings of Time multimedia laser & fireworks show on Siloso Beach",
+        description: "Soar above the harbour on the cable car to Sentosa Island. Discover the wonders of the deep at S.E.A. Aquarium and zoom down the Skyline Luge tracks before the evening fireworks.",
+        image: "/images/packages/singapore-malaysia/image3.png"
+      },
+      {
+        day: 4,
+        title: "Singapore City Tour & Gardens by the Bay",
+        location: "Singapore",
+        morning: "City orientation: Merlion Park, Padang, historic Parliament House & Chinatown",
+        noonToEvening: "Visit Gardens by the Bay: explore the cooled Flower Dome & misty Cloud Forest waterfall",
+        evening: "Marvel at the Supertree Grove Light and Sound Show (Garden Rhapsody)",
+        description: "Photograph the iconic Merlion spouting water into Marina Bay, explore vibrant heritage enclaves, and enter the futuristic glass biomes of Gardens by the Bay.",
+        image: "/images/packages/singapore-malaysia/image4.jpeg"
+      },
+      {
+        day: 5,
+        title: "Scenic Coach Transfer to Kuala Lumpur",
+        location: "Kuala Lumpur, Malaysia",
+        morning: "Breakfast at hotel, check-out and board deluxe executive cross-border coach",
+        noonToEvening: "Scenic journey through southern Peninsular Malaysia, cross border into Kuala Lumpur",
+        evening: "Check-in at Cosmo Hotel Kuala Lumpur, evening exploration of Jalan Alor street food",
+        description: "Cross the Johor Strait into Malaysia and travel through lush tropical landscapes to Kuala Lumpur. Settle in and sample satay and dim sum at bustling Jalan Alor.",
+        image: "/images/packages/singapore-malaysia/image5.png"
+      },
+      {
+        day: 6,
+        title: "Kuala Lumpur City Tour & Petronas Twin Towers",
+        location: "Kuala Lumpur, Malaysia",
+        morning: "City tour: photo stop at iconic 88-storey Petronas Twin Towers & King's Palace",
+        noonToEvening: "Visit National Monument, National Mosque & Independence Square (Dataran Merdeka)",
+        evening: "Shopping at Suria KLCC or Bukit Bintang fashion malls",
+        description: "Discover Malaysia's dynamic capital: gaze up at the gleaming stainless-steel spires of the Petronas Towers and explore rich Moorish colonial architecture.",
+        image: "/images/packages/singapore-malaysia/image6.png"
+      },
+      {
+        day: 7,
+        title: "Batu Caves & Genting Highlands Awana SkyWay Cable Car",
+        location: "Genting Highlands, Malaysia",
+        morning: "Drive to sacred Batu Caves: climb the 272 colourful stairs past the golden Lord Murugan",
+        noonToEvening: "Board the Awana SkyWay cable car gliding above 130-million-year-old rainforest to Genting",
+        evening: "Explore SkyAvenue casino, indoor theme parks, and return to Kuala Lumpur",
+        description: "Ascend to the limestone caverns of Batu Caves, then ride high into the misty Titiwangsa mountains on the Awana SkyWay cable car for entertainment at Resorts World Genting.",
+        image: "/images/packages/singapore-malaysia/image7.jpeg"
+      },
+      {
+        day: 8,
+        title: "Kuala Lumpur Shopping & Airport Departure",
+        location: "Kuala Lumpur, Malaysia",
+        morning: "Breakfast at hotel, free time for last-minute shopping at Central Market",
+        noonToEvening: "Private transfer to Kuala Lumpur International Airport (KLIA) for return flight",
+        description: "Enjoy a leisurely morning picking up pewterware and batik souvenirs before your private transfer to KLIA, concluding a memorable dual-country Asian journey.",
+        image: "/images/packages/singapore-malaysia/image8.jpeg"
+      }
+    ]
+  },
+
+  // 17. SINGAPORE FULLY LOADED (4N/5D)
+  {
+    id: "singapore-fully-loaded-5d",
+    destinationId: "singapore",
+    destinationName: "Singapore",
+    title: "Singapore Fully Loaded Family & Adventure Escape",
+    duration: "5 Days / 4 Nights",
+    type: "Family",
+    tagline: "Night Safari, Universal Studios, Sentosa Skyline Luge, Cable Car & Gardens by the Bay",
+    description: "The definitive 5-day Singapore family and adventure package: experience the nocturnal wonders of Night Safari in Mandai, immerse in blockbuster thrills at Universal Studios, soar across Sentosa on the Singapore Cable Car, zoom down the Skyline Luge tracks, and marvel at Gardens by the Bay's Cloud Forest.",
+    inclusions: [
+      "4 Nights in Singapore (J8 Hotel / Ibis Budget Imperial / Ibis Budget Selegie or similar)",
+      "Daily breakfast at hotel",
+      "Singapore Night Safari with tram ride (or Bird Paradise)",
+      "Universal Studios Singapore 1-Day Pass (all 7 themed zones)",
+      "Sentosa Island pass: Singapore Cable Car Sky Network from Mount Faber",
+      "Singapore Oceanarium / S.E.A. Aquarium admission",
+      "Skyline Luge & Skyride (3 rides combo)",
+      "Wings of Time laser & fireworks multimedia night show",
+      "Half-day Singapore city tour: Merlion Park, Padang, Chinatown, Little India",
+      "Gardens by the Bay double conservatories (Flower Dome & Cloud Forest)",
+      "Return airport transfers in private / shared AC coach"
+    ],
+    startingStar: 3,
+    priceNote: "Customizable across 2★ Smart Budget to 5★ Marina Bay Sands luxury",
+    popular: true,
+    coverImage: "/images/packages/singapore/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival Singapore & World-First Night Safari",
+        location: "Singapore",
+        morning: "Arrival at Changi Airport, meet chauffeur and transfer to hotel",
+        noonToEvening: "Check-in at J8 Hotel / Ibis Budget, afternoon leisure to unpack",
+        evening: "Evening excursion to the Mandai Night Safari, exploring nocturnal wildlife via tram",
+        description: "Welcome to Singapore! Arrive at Changi Airport and transfer to your hotel. In the evening, journey into the lush Mandai rainforest to witness over 2,500 animals in their nocturnal habitats.",
+        image: "/images/packages/singapore/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Full-Day Universal Studios Singapore Adventure",
+        location: "Sentosa, Singapore",
+        morning: "Transfer to Resorts World Sentosa for Universal Studios Singapore",
+        noonToEvening: "Experience high-adrenaline rides: Battlestar Galactica, Transformers 3D, Jurassic Rapids",
+        evening: "Explore Far Far Away castle, meet beloved characters, return to hotel",
+        description: "Enjoy an action-packed full day at Southeast Asia's premier theme park with 7 immersive zones based on blockbuster Hollywood films and television series.",
+        image: "/images/packages/singapore/image2.png"
+      },
+      {
+        day: 3,
+        title: "Sentosa Cable Car, Oceanarium, Skyline Luge & Wings of Time",
+        location: "Sentosa, Singapore",
+        morning: "Soar over the harbour on the Singapore Cable Car Sky Network from Faber Peak",
+        noonToEvening: "Explore S.E.A. Aquarium's 22 themed zones, race down 4 Skyline Luge tracks",
+        evening: "Witness the award-winning Wings of Time water, laser, and fire multimedia spectacle",
+        description: "A complete day of Sentosa magic: aerial cable car views, walking through shark tunnels at the Oceanarium, downhill luge gravity racing, and an outdoor beach fireworks finale.",
+        image: "/images/packages/singapore/image3.png"
+      },
+      {
+        day: 4,
+        title: "Singapore City Tour & Gardens by the Bay Domes",
+        location: "Singapore",
+        morning: "City sightseeing: Merlion Park, Fountain of Wealth, Chinatown, Little India, City Hall",
+        noonToEvening: "Visit Gardens by the Bay: walk beneath the 35m indoor waterfall in Cloud Forest & Flower Dome",
+        evening: "Watch the Supertrees light up during the dazzling Garden Rhapsody evening show",
+        description: "Capture classic photos with the Merlion overlooking Marina Bay Sands, explore multicultural heritage enclaves, and enter the climate-controlled conservatories of Gardens by the Bay.",
+        image: "/images/packages/singapore/image4.jpeg"
+      },
+      {
+        day: 5,
+        title: "Orchard Road Shopping & Changi Jewel Airport Departure",
+        location: "Singapore",
+        morning: "Breakfast at hotel, free time for shopping on Orchard Road or Bugis Junction",
+        noonToEvening: "Transfer to Changi Airport; visit Jewel Changi's indoor Rain Vortex before departure",
+        description: "Spend your final hours shopping before transferring to Changi Airport. Gaze at the world's tallest indoor waterfall at Jewel before boarding your flight back home.",
+        image: "/images/packages/singapore/image5.png"
+      }
+    ]
+  },
+
+  // 18. GRAND ASIA PANORAMA (10N/11D)
+  {
+    id: "grand-asia-panorama-11d",
+    destinationId: "grand-asia",
+    destinationName: "Grand Asia",
+    title: "Grand Asia Panorama: Singapore, Malaysia & Thailand",
+    duration: "11 Days / 10 Nights",
+    type: "Explorer",
+    tagline: "Singapore Night Safari, Genting Highlands, KL Towers, Pattaya Coral Island & Bangkok Temples",
+    description: "The ultimate 11-day multi-country Southeast Asian adventure covering 3 legendary countries: Singapore's futuristic skyline and Night Safari, Malaysia's buzzing Kuala Lumpur and misty Genting Highlands, and Thailand's sun-soaked Pattaya beaches and bustling Bangkok temples.",
+    inclusions: [
+      "2 Nights in Singapore (Value Hotel Thomson / Ibis Budget or similar)",
+      "2 Nights in Kuala Lumpur (Cosmo Hotel / Furama or similar)",
+      "1 Night in Genting Highlands (First World Hotel or similar)",
+      "2 Nights in Pattaya (Sunbeam Hotel / Golden Beach or similar)",
+      "3 Nights in Bangkok (Ecotel Bangkok / Gusto Pratunam or similar)",
+      "Daily breakfast at all hotels",
+      "Singapore Night Safari & Singapore Half-Day City Tour",
+      "Cross-border transfer from Singapore to Kuala Lumpur",
+      "Kuala Lumpur city tour + Batu Caves excursion",
+      "Genting Highlands cable car ride (Awana SkyWay)",
+      "Flight / Transfer from Malaysia to Thailand",
+      "Pattaya Coral Island speedboat excursion with Indian buffet lunch",
+      "Alcazar Cabaret Show VIP admission",
+      "Bangkok city and temple tour: Golden Buddha (Wat Traimit) & Marble Temple",
+      "Chao Phraya River Princess dinner cruise",
+      "All airport, ferry, and intercity coach transfers"
+    ],
+    startingStar: 3,
+    priceNote: "Customizable across 3★, 4★, and 5★ multi-nation tiers",
+    popular: true,
+    coverImage: "/images/packages/grand-asia/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Welcome to Singapore & Evening Night Safari",
+        location: "Singapore",
+        morning: "Arrival at Singapore Changi Airport, private transfer to hotel",
+        noonToEvening: "Check-in at Value Hotel Thomson, relax and unpack",
+        evening: "Evening transfer to Mandai Night Safari with guided tram tour",
+        description: "Begin your grand tri-nation odyssey in Singapore. Transfer to your hotel and spend the evening discovering the world's first nocturnal zoo in the Mandai rainforest.",
+        image: "/images/packages/grand-asia/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Singapore City Highlights & Sentosa Island",
+        location: "Singapore",
+        morning: "City tour: Merlion Park, Padang, historic City Hall, Chinatown & Little India",
+        noonToEvening: "Afternoon at Sentosa Island: Cable car ride, S.E.A. Aquarium & Siloso Beach",
+        evening: "Spectacular Wings of Time night show, return to hotel",
+        description: "Explore the vibrant cultural quarters of Singapore and spend an exhilarating afternoon on resort island Sentosa enjoying world-class marine life and evening pyrotechnics.",
+        image: "/images/packages/grand-asia/image2.png"
+      },
+      {
+        day: 3,
+        title: "Scenic Transfer to Kuala Lumpur / Evening Bukit Bintang",
+        location: "Kuala Lumpur, Malaysia",
+        morning: "Breakfast, check-out and board deluxe coach to Kuala Lumpur",
+        noonToEvening: "Cross the international causeway, scenic drive through rubber & palm plantations",
+        evening: "Arrive in Kuala Lumpur, check-in at Cosmo Hotel, evening dining in Bukit Bintang",
+        description: "Cross into Malaysia and journey through scenic tropical country to capital Kuala Lumpur. Spend the evening exploring the golden triangle shopping and dining precinct.",
+        image: "/images/packages/grand-asia/image3.jpeg"
+      },
+      {
+        day: 4,
+        title: "Kuala Lumpur City Tour & Petronas Twin Towers",
+        location: "Kuala Lumpur, Malaysia",
+        morning: "City highlights: Petronas Towers photo stop, King's Palace & National Monument",
+        noonToEvening: "Independence Square (Dataran Merdeka), National Mosque & Cocoa Boutique",
+        evening: "Leisure evening at Suria KLCC and Lake Symphony water fountains",
+        description: "Discover the architectural wonders of Kuala Lumpur, from colonial heritage squares to the futuristic stainless-steel spires of the Petronas Twin Towers.",
+        image: "/images/packages/grand-asia/image4.jpeg"
+      },
+      {
+        day: 5,
+        title: "Batu Caves & Skyway Cable Car to Genting Highlands",
+        location: "Genting Highlands, Malaysia",
+        morning: "Drive to sacred Batu Caves: climb 272 steps past the giant golden Murugan statue",
+        noonToEvening: "Ride the Awana SkyWay gondola above prehistoric rainforest to Genting",
+        evening: "Check-in at First World Hotel, enjoy high-altitude casinos, malls & indoor theme parks",
+        description: "Climb the colorful temple steps of Batu Caves, then soar into the cool mountain air of Genting Highlands for a fun-filled night of entertainment above the clouds.",
+        image: "/images/packages/grand-asia/image5.png"
+      },
+      {
+        day: 6,
+        title: "Fly to Bangkok & Coastal Drive to Pattaya",
+        location: "Pattaya, Thailand",
+        morning: "Transfer to Kuala Lumpur Airport (KLIA) for short flight to Bangkok",
+        noonToEvening: "Arrive at Suvarnabhumi Airport, meet Thai chauffeur and drive directly to Pattaya",
+        evening: "Check-in at Sunbeam Hotel Pattaya, evening stroll along the lively Pattaya Beach Road",
+        description: "Fly to Thailand and enjoy a comfortable highway drive to the seaside resort city of Pattaya. Settle in and enjoy warm Gulf of Thailand sea breezes.",
+        image: "/images/packages/grand-asia/image6.png"
+      },
+      {
+        day: 7,
+        title: "Pattaya Coral Island Speedboat & Alcazar Cabaret Show",
+        location: "Pattaya, Thailand",
+        morning: "Speedboat ride to Coral Island (Koh Larn): parasailing, sea walking & banana boat",
+        noonToEvening: "Relax on white sandy beaches, Indian buffet lunch, return to Pattaya pier",
+        evening: "VIP admission to the world-famous Alcazar Cabaret theatrical show",
+        description: "Speed across turquoise waters to Coral Island for thrilling watersports and pristine beaches, then enjoy an evening of dazzling glamour at the legendary Alcazar Cabaret.",
+        image: "/images/packages/grand-asia/image7.jpeg"
+      },
+      {
+        day: 8,
+        title: "Pattaya to Bangkok Transfer & Gems Gallery",
+        location: "Bangkok, Thailand",
+        morning: "Breakfast at hotel, check-out and visit World's Biggest Gems Gallery with dark ride",
+        noonToEvening: "Scenic drive to Bangkok, check-in at Ecotel Bangkok / Gusto Pratunam",
+        evening: "Evening shopping at Pratunam wholesale garment market or Platinum Fashion Mall",
+        description: "Journey from the coast to Thailand's vibrant royal capital, Bangkok. Enjoy world-class shopping in Pratunam and savor mouth-watering Thai street food.",
+        image: "/images/packages/grand-asia/image8.jpeg"
+      },
+      {
+        day: 9,
+        title: "Bangkok City & Ancient Temples Tour",
+        location: "Bangkok, Thailand",
+        morning: "Guided temple tour: Wat Traimit (Golden Buddha) & Wat Benchamabophit (Marble Temple)",
+        noonToEvening: "Drive past Chinatown, Flower Market, Democracy Monument & Royal Grand Palace",
+        evening: "Chao Phraya River Princess dinner cruise with live international band",
+        description: "Marvel at Bangkok's sacred golden temples and glide along the Chao Phraya River on a luxury dinner cruise past illuminated monuments like Wat Arun.",
+        image: "/images/packages/grand-asia/image9.jpeg"
+      },
+      {
+        day: 10,
+        title: "Safari World & Marine Park Excursion with Buffet Lunch",
+        location: "Bangkok, Thailand",
+        morning: "Drive-through open Safari Park: lions, tigers, zebras, giraffes & rhinos roaming free",
+        noonToEvening: "Marine Park stunt shows: Dolphin Show, Sea Lion Show, Spy War & buffet lunch",
+        evening: "Return to hotel, final evening for souvenir shopping at Asiatique The Riverfront",
+        description: "An unforgettable full day at Thailand's greatest open zoo and marine park featuring heart-stopping animal stunts, live action shows, and close wildlife encounters.",
+        image: "/images/packages/grand-asia/image10.png"
+      },
+      {
+        day: 11,
+        title: "Bangkok Shopping & Suvarnabhumi Airport Departure",
+        location: "Bangkok, Thailand",
+        morning: "Breakfast at hotel, check-out, free time for last-minute shopping at MBK or CentralWorld",
+        noonToEvening: "Private transfer to Suvarnabhumi International Airport for return flight",
+        description: "Savor your final Thai delicacies before your private car escorts you to the airport, concluding a monumental 11-day multi-country Grand Asia odyssey.",
+        image: "/images/packages/grand-asia/image11.jpeg"
+      }
+    ]
+  },
+
+  // 19. SOUTH KOREA (7N/8D)
+  {
+    id: "south-korea-cultural-odyssey-8d",
+    destinationId: "south-korea",
+    destinationName: "South Korea",
+    title: "South Korea Cultural Odyssey & Coastal Vistas",
+    duration: "8 Days / 7 Nights",
+    type: "Explorer",
+    tagline: "Seoul Gyeongbokgung Palace, Jeonju Hanok Village, Yeosu Coastal Cable Car & Busan Haeundae",
+    description: "A rich cultural journey from South Korea's high-tech capital to its ancient heritage and stunning southern coast: explore Seoul's royal Joseon palaces, experience traditional timber Hanok living in Jeonju, take in panoramic ocean vistas on the Yeosu marine cable car, and unwind along Busan's coastal temples and vibrant Jagalchi seafood markets.",
+    inclusions: [
+      "3 Nights in Seoul (Swiss Grand Hotel Seoul / Four Points by Sheraton or similar)",
+      "1 Night in Jeonju (Jeonju Lahan Hotel or similar)",
+      "1 Night in Yeosu (Yeosu Ramada Plaza or similar)",
+      "2 Nights in Busan (Signiel Busan / Grand Josun or similar)",
+      "Daily breakfast at all hotels",
+      "Seoul City Tour: Gyeongbokgung Palace, Blue House, Insadong antique street & N Seoul Tower",
+      "Jeonju Hanok Village guided cultural walking tour with Hanbok rental experience",
+      "Yeosu Coastal Marine Cable Car & Odongdo Island camellia forest",
+      "Busan Highlights: Haeundae Beach, Haedong Yonggungsa seaside temple & Gamcheon Culture Village",
+      "KTX Bullet Train / Deluxe express coach transfers throughout",
+      "Airport arrival and departure transfers"
+    ],
+    startingStar: 4,
+    priceNote: "Customizable across 3★, 4★, and 5★ Korean luxury tiers",
+    popular: true,
+    coverImage: "/images/packages/south-korea/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival Seoul & Incheon Airport Welcome",
+        location: "Seoul, South Korea",
+        morning: "Arrival at Incheon International Airport, meet English-speaking guide",
+        noonToEvening: "Private transfer to Swiss Grand Hotel Seoul, check-in and refresh",
+        evening: "Evening orientation walk in Hongdae youth culture and street art district",
+        description: "Welcome to South Korea! Meet your chauffeur at Incheon and transfer to your hotel. Soak in the trendy café culture and vibrant street performances in Hongdae.",
+        image: "/images/packages/south-korea/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Royal Seoul: Gyeongbokgung Palace & Insadong Alleyways",
+        location: "Seoul, South Korea",
+        morning: "Witness Royal Guard Changing Ceremony at Gyeongbokgung Palace; visit National Folk Museum",
+        noonToEvening: "Pass the Blue House, explore Bukchon Hanok Village traditional tiled roofs",
+        evening: "Stroll Insadong antique art street and ascend N Seoul Tower for 360-degree night views",
+        description: "Step into the Joseon dynasty at Seoul's grandest royal palace. Wander preservation alleys of Bukchon and take in the sparkling sea of city lights from N Seoul Tower.",
+        image: "/images/packages/south-korea/image2.png"
+      },
+      {
+        day: 3,
+        title: "Scenic Drive to Jeonju & Historic Hanok Village Living",
+        location: "Jeonju, South Korea",
+        morning: "Scenic highway transfer to Jeonju, the UNESCO City of Gastronomy",
+        noonToEvening: "Check-in at Jeonju Lahan Hotel, don traditional Hanbok attire for photos",
+        evening: "Savor authentic Jeonju Bibimbap, explore over 800 preserved timber Hanok houses",
+        description: "Journey south to Jeonju, celebrated for traditional Korean food and heritage architecture. Walk the cobblestone lanes of the historic Hanok Village in silk Hanbok.",
+        image: "/images/packages/south-korea/image3.jpeg"
+      },
+      {
+        day: 4,
+        title: "Coastal Drive to Yeosu & Ocean Marine Cable Car",
+        location: "Yeosu, South Korea",
+        morning: "Drive to the southern coastal port city of Yeosu",
+        noonToEvening: "Check-in at Yeosu Ramada, ride the Yeosu Ocean Cable Car gliding above the harbour",
+        evening: "Stroll across Odongdo Island lighthouse trail, evening Big-O show or oceanfront seafood",
+        description: "Travel to beautiful Yeosu on the southern sea. Glide over turquoise waters on the marine cable car and walk among the ancient camellia forests of Odongdo Island.",
+        image: "/images/packages/south-korea/image4.jpeg"
+      },
+      {
+        day: 5,
+        title: "Yeosu to Coastal Busan & Haeundae Beach Sunset",
+        location: "Busan, South Korea",
+        morning: "Scenic coastal transfer to Busan, South Korea's vibrant second metropolis",
+        noonToEvening: "Check-in at Signiel Busan / Grand Josun, stroll along pristine Haeundae Beach",
+        evening: "Walk across the curving Songdo Cloud Trails skywalk over crashing ocean waves",
+        description: "Arrive in Busan, famed for dynamic beaches, coastal bridges, and mountains. Relax on Haeundae's soft sand and enjoy an evening stroll along the illuminated waterfront.",
+        image: "/images/packages/south-korea/image5.jpeg"
+      },
+      {
+        day: 6,
+        title: "Busan Cultural Wonders: Gamcheon Village & Haedong Temple",
+        location: "Busan, South Korea",
+        morning: "Visit cliffside Haedong Yonggungsa Temple, rare Buddhist sanctuary facing the open sea",
+        noonToEvening: "Explore colourful hillside Gamcheon Culture Village ('Santorini of the East')",
+        evening: "Visit Jagalchi Fish Market, South Korea's largest seafood market, and BIFF Square",
+        description: "Experience the unique contrast of ancient Buddhist sea temples and vibrant rainbow houses in Gamcheon, followed by fresh seafood dining at bustling Jagalchi Market.",
+        image: "/images/packages/south-korea/image6.png"
+      },
+      {
+        day: 7,
+        title: "KTX High-Speed Train Back to Seoul & Myeongdong Shopping",
+        location: "Seoul, South Korea",
+        morning: "Board the KTX bullet train traveling up to 305 km/h back to Seoul in under 2.5 hours",
+        noonToEvening: "Check-in at Swiss Grand Hotel, afternoon shopping in Myeongdong cosmetics haven",
+        evening: "Farewell Korean BBQ dinner and night shopping at Dongdaemun Design Plaza (DDP)",
+        description: "Speed across the length of South Korea on the ultra-smooth KTX bullet train. Spend your final evening indulging in K-beauty shopping and world-famous Korean BBQ.",
+        image: "/images/packages/south-korea/image7.jpeg"
+      },
+      {
+        day: 8,
+        title: "Seoul Farewell & Incheon Airport Transfer",
+        location: "Seoul, South Korea",
+        morning: "Breakfast at hotel, check-out, free time for last-minute supermarket snack shopping",
+        noonToEvening: "Private transfer to Incheon International Airport for departure flight",
+        description: "Bid farewell to the Land of the Morning Calm before your private transfer to Incheon Airport, concluding an enriching 8-day Korean adventure.",
+        image: "/images/packages/south-korea/image8.jpeg"
+      }
+    ]
+  },
+
+  // 20. SRI LANKA (3N/4D)
+  {
+    id: "sri-lanka-short-break-4d",
+    destinationId: "sri-lanka",
+    destinationName: "Sri Lanka",
+    title: "Sri Lanka Island Serenity: Kandy, Tea Hills & Bentota Beach",
+    duration: "4 Days / 3 Nights",
+    type: "Explorer",
+    tagline: "Pinnawala Elephant Sanctuary, Sacred Kandy Temple, Nuwara Eliya Tea Hills & Bentota Beach",
+    description: "An enchanting tropical break in Sri Lanka: witness orphaned elephants bathing in Pinnawala, pay homage at the Temple of the Sacred Tooth Relic in misty Kandy, wander the verdant tea plantations of Nuwara Eliya, and unwind along Bentota's palm-fringed golden beaches with water sports.",
+    inclusions: [
+      "1 Night in Kandy (Royal Classic Hotel or similar)",
+      "1 Night in Nuwara Eliya (Single Tree Mount or similar)",
+      "1 Night in Bentota (Hibiscus Beach Hotel or similar)",
+      "Daily breakfast at all hotels",
+      "Pinnawala Elephant Orphanage visit en route to Kandy",
+      "Kandy Temple of the Sacred Tooth Relic & Kandy Lake drive",
+      "Scenic drive through tea plantations, visit to working Ceylon Tea Factory & Ramboda Falls",
+      "Bentota Beach & Madu River boat safari with cinnamon island stop",
+      "Colombo city orientation & shopping tour en route to airport",
+      "Private air-conditioned car with English-speaking chauffeur guide throughout"
+    ],
+    startingStar: 3,
+    priceNote: "Customizable across 3★, 4★, and 5★ colonial tea estate tiers",
+    popular: true,
+    coverImage: "/images/packages/sri-lanka/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Colombo Airport to Kandy via Pinnawala Elephant Sanctuary",
+        location: "Kandy, Sri Lanka",
+        morning: "Meet chauffeur at Bandaranaike International Airport, drive toward Kandy",
+        noonToEvening: "Stop at Pinnawala Elephant Orphanage to watch elephants bathing in the river",
+        evening: "Arrive in hill capital Kandy, check-in at Royal Classic Hotel, cultural dance show",
+        description: "Arrive in Sri Lanka and travel into the lush central highlands. Watch dozens of elephants splashing in the river at Pinnawala before reaching royal hill capital Kandy.",
+        image: "/images/packages/sri-lanka/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Kandy Tooth Relic Temple to Misty Nuwara Eliya Tea Country",
+        location: "Nuwara Eliya, Sri Lanka",
+        morning: "Visit sacred Temple of the Tooth Relic (Sri Dalada Maligawa) & Kandy Lake",
+        noonToEvening: "Scenic mountain drive past Ramboda Falls; tour a working Ceylon tea factory",
+        evening: "Check-in at Single Tree Mount Nuwara Eliya ('Little England'), Gregory Lake walk",
+        description: "Pay respects at Buddhism's most revered shrine in Kandy, then wind through emerald mountain passes blanketed in world-renowned Ceylon tea bushes to cool Nuwara Eliya.",
+        image: "/images/packages/sri-lanka/image2.png"
+      },
+      {
+        day: 3,
+        title: "Nuwara Eliya Waterfalls to Tropical Bentota Coast",
+        location: "Bentota, Sri Lanka",
+        morning: "Scenic descent from the central highlands to the southwestern coastline",
+        noonToEvening: "Check-in at Hibiscus Beach Hotel Bentota, relax on golden palm-lined beaches",
+        evening: "Sunset walk along Bentota beach, fresh seafood dinner by the Indian Ocean",
+        description: "Descend from the misty highlands to Sri Lanka's sun-drenched golden coast. Unwind on the wide sandy beaches of Bentota with soothing ocean breezes.",
+        image: "/images/packages/sri-lanka/image3.jpeg"
+      },
+      {
+        day: 4,
+        title: "Madu River Safari, Colombo Highlights & Airport Departure",
+        location: "Colombo, Sri Lanka",
+        morning: "Boat safari through mangrove tunnels on Madu River; visit cinnamon plantation",
+        noonToEvening: "Drive to Colombo: Gangaramaya Temple, Galle Face Green & Odel shopping",
+        evening: "Transfer to Bandaranaike International Airport for your departure flight",
+        description: "Glide through the mangrove eco-system of Madu River, take in the colonial architecture and seaside promenade of Colombo, and transfer to the airport with sweet island memories.",
+        image: "/images/packages/sri-lanka/image4.jpeg"
+      }
+    ]
+  },
+
+  // 21. THAILAND: BANGKOK & PATTAYA (4N/5D)
+  {
+    id: "thailand-bangkok-pattaya-5d",
+    destinationId: "thailand",
+    destinationName: "Thailand",
+    title: "Thailand Splendors: Bangkok & Pattaya Beach Escape",
+    duration: "5 Days / 4 Nights",
+    type: "Explorer",
+    tagline: "Pattaya Coral Island Speedboat, Alcazar Show, Safari World & Grand Bangkok Temples",
+    description: "The classic, action-packed holiday in the Land of Smiles: 2 nights in beachside Pattaya enjoying speedboats to Coral Island and glamorous cabaret entertainment, paired with 2 nights in Bangkok discovering ancient gilded temples, Safari World wildlife adventures, and world-class retail markets.",
+    inclusions: [
+      "2 Nights in Pattaya (Sunbeam Hotel / Golden Beach or similar)",
+      "2 Nights in Bangkok (Ecotel Bangkok / Gusto Pratunam / Anya Hotel or similar)",
+      "Daily breakfast at hotels + 2 Special buffet lunches",
+      "Bangkok Suvarnabhumi / Don Mueang Airport to Pattaya private transfer",
+      "Full-Day Coral Island (Koh Larn) speedboat tour with watersports & Indian lunch",
+      "Alcazar Cabaret Show standard / VIP admission",
+      "Bangkok City & Temple Tour: Wat Traimit (Golden Buddha) & Wat Benchamabophit",
+      "Safari World & Marine Park full-day tour with international buffet lunch",
+      "Bangkok hotel to airport departure transfer"
+    ],
+    startingStar: 3,
+    priceNote: "Customizable across 3★, 4★, and 5★ luxury hotel tiers",
+    popular: true,
+    coverImage: "/images/packages/thailand/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival Bangkok, Drive to Pattaya & Alcazar Cabaret Show",
+        location: "Pattaya, Thailand",
+        morning: "Arrival at Bangkok Airport, meet private driver and transfer directly to Pattaya",
+        noonToEvening: "Check-in at Pattaya hotel, afternoon relaxation by the pool",
+        evening: "Evening VIP admission to the world-famous Alcazar Cabaret theatrical show",
+        description: "Arrive in Thailand and travel down the eastern gulf coast to vibrant Pattaya. Settle into your hotel and enjoy an evening of music, dance, and glamour at the Alcazar show.",
+        image: "/images/packages/thailand/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Pattaya Coral Island Speedboat Excursion with Lunch",
+        location: "Pattaya, Thailand",
+        morning: "Speedboat across turquoise Gulf of Thailand waters to Coral Island (Koh Larn)",
+        noonToEvening: "Enjoy parasailing, underwater sea walking, swimming, Indian buffet lunch",
+        evening: "Return to Pattaya pier, free evening for nightlife and Walking Street",
+        description: "Speed across the bay to pristine Coral Island. Relax on powdery white sands, participate in watersports, and enjoy a delicious hot Indian buffet lunch.",
+        image: "/images/packages/thailand/image2.png"
+      },
+      {
+        day: 3,
+        title: "Scenic Transfer to Bangkok & Gems Gallery",
+        location: "Bangkok, Thailand",
+        morning: "Breakfast, check-out and visit World's Biggest Gems Gallery with theme park dark ride",
+        noonToEvening: "Scenic drive to Bangkok, check-in at Ecotel Bangkok / Gusto Pratunam",
+        evening: "Evening at leisure for shopping in Pratunam wholesale markets or Platinum Mall",
+        description: "Journey back to Thailand's buzzing royal metropolis. Explore the master gem cutters at Gems Gallery and check in to your central Bangkok hotel.",
+        image: "/images/packages/thailand/image3.jpeg"
+      },
+      {
+        day: 4,
+        title: "Full-Day Safari World & Marine Park Adventure with Lunch",
+        location: "Bangkok, Thailand",
+        morning: "Drive through open Safari Park: see lions, tigers, giraffes and zebras in wild habitat",
+        noonToEvening: "Marine Park stunt shows: Dolphin show, Hollywood Cowboy Stunt, Spy War & buffet lunch",
+        evening: "Return to hotel, evening street food tour or optional Chao Phraya dinner cruise",
+        description: "Experience Thailand's greatest open zoo and entertainment park. Feed towering giraffes, watch world-class dolphin acrobatics, and enjoy an international buffet lunch.",
+        image: "/images/packages/thailand/image4.jpeg"
+      },
+      {
+        day: 5,
+        title: "Bangkok Temples, Pratunam Shopping & Airport Transfer",
+        location: "Bangkok, Thailand",
+        morning: "City & temple tour: Wat Traimit (Solid Gold Buddha) & Wat Benchamabophit (Marble Temple)",
+        noonToEvening: "Last-minute souvenir shopping before private transfer to airport for departure",
+        description: "Marvel at Bangkok's revered golden temples before completing your shopping and transferring to Bangkok Airport with happy memories and bags full of souvenirs.",
+        image: "/images/packages/thailand/image5.jpeg"
+      }
+    ]
+  },
+
+  // 22. UNITED KINGDOM (7N/8D)
+  {
+    id: "united-kingdom-royal-britain-8d",
+    destinationId: "united-kingdom",
+    destinationName: "United Kingdom",
+    title: "United Kingdom: Historic England & Scenic Scotland",
+    duration: "8 Days / 7 Nights",
+    type: "Explorer",
+    tagline: "London Big Ben & Thames, Historic Durham Castle, Royal Edinburgh & Scottish Highlands Glasgow",
+    description: "A quintessential British odyssey linking England's royal heritage with Scotland's dramatic lochs and castles: explore London's Tower Bridge and Buckingham Palace, journey north through the medieval cathedral city of Durham, walk Edinburgh's Royal Mile and castle rock, and conclude in vibrant Glasgow.",
+    inclusions: [
+      "3 Nights in London (Ibis London Earls Court / Novotel or similar)",
+      "1 Night in Durham (Radisson Blu Durham or similar)",
+      "2 Nights in Edinburgh (Moxy Edinburgh Airport / Holiday Inn or similar)",
+      "1 Night in Glasgow (Novotel Glasgow Centre or similar)",
+      "Daily English breakfast at all hotels",
+      "Hop-on Hop-off London city tour: Big Ben, London Eye, Tower of London, St. Paul's Cathedral",
+      "Thames River cruise pass",
+      "Guided orientation tour of UNESCO Durham Cathedral and Castle",
+      "Edinburgh Castle admission & Royal Mile walking tour",
+      "Excursion to Loch Lomond & the Trossachs National Park",
+      "High-speed rail ticket or executive coach transport across Britain",
+      "All airport and railway station transfers"
+    ],
+    startingStar: 4,
+    priceNote: "Customizable across 3★, 4★, and 5★ British luxury tiers",
+    popular: true,
+    coverImage: "/images/packages/united-kingdom/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Welcome to London & Thames River Sunset",
+        location: "London, England",
+        morning: "Arrival at London Heathrow Airport, meet driver and transfer to hotel",
+        noonToEvening: "Check-in at Ibis London Earls Court, unpack and refresh",
+        evening: "Evening stroll along South Bank overlooking the illuminated London Eye & Big Ben",
+        description: "Welcome to the capital of the United Kingdom! Transfer to your hotel and spend your first evening taking in iconic views along the River Thames.",
+        image: "/images/packages/united-kingdom/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "London Royal Heritage: Buckingham Palace, Big Ben & Westminster",
+        location: "London, England",
+        morning: "Witness Changing of the Guard at Buckingham Palace, stroll St. James's Park",
+        noonToEvening: "View Westminster Abbey, Houses of Parliament, Big Ben & ride the London Eye",
+        evening: "Thames River sightseeing cruise gliding beneath Tower Bridge",
+        description: "Experience London's most famous royal and political monuments, from Buckingham Palace to the historic clock tower of Big Ben and grand Westminster Abbey.",
+        image: "/images/packages/united-kingdom/image2.png"
+      },
+      {
+        day: 3,
+        title: "Tower of London, Covent Garden & Evening West End",
+        location: "London, England",
+        morning: "Explore the historic Tower of London and gaze upon the priceless Crown Jewels",
+        noonToEvening: "Stroll vibrant Covent Garden market, street performers, and British Museum",
+        evening: "Experience London's world-famous West End theater district",
+        description: "Step into centuries of royal history at the Tower of London, guarded by Yeoman Warders, and soak in the cultural buzz of Covent Garden and theaterland.",
+        image: "/images/packages/united-kingdom/image3.jpeg"
+      },
+      {
+        day: 4,
+        title: "Scenic Rail Journey to Medieval Durham & Cathedral Tour",
+        location: "Durham, England",
+        morning: "Board high-speed train traveling north through the English countryside to Durham",
+        noonToEvening: "Check-in at Radisson Blu Durham, explore UNESCO Durham Cathedral & Norman Castle",
+        evening: "Walk along the picturesque River Wear and cobblestone market place",
+        description: "Travel north to one of Britain's most spectacular medieval cities. Gaze in awe at the Romanesque rib vaults of 11th-century Durham Cathedral perched above the river.",
+        image: "/images/packages/united-kingdom/image4.jpeg"
+      },
+      {
+        day: 5,
+        title: "Cross the Scottish Border to Historic Edinburgh & Royal Mile",
+        location: "Edinburgh, Scotland",
+        morning: "Train / coach journey crossing the dramatic Scottish border into Edinburgh",
+        noonToEvening: "Check-in at Moxy Edinburgh, walk down the historic cobblestones of the Royal Mile",
+        evening: "Take in the sunset skyline view from Calton Hill over the Firth of Forth",
+        description: "Enter Scotland and arrive in its breathtaking capital, Edinburgh. Walk past medieval closes and wynds along the Royal Mile connecting the castle to Holyroodhouse.",
+        image: "/images/packages/united-kingdom/image5.jpeg"
+      },
+      {
+        day: 6,
+        title: "Edinburgh Castle Discovery & Excursion to Holyroodhouse",
+        location: "Edinburgh, Scotland",
+        morning: "Tour Edinburgh Castle perched atop Castle Rock, view the Scottish Crown Jewels",
+        noonToEvening: "Visit Palace of Holyroodhouse (King's official Scottish residence) & Arthur's Seat",
+        evening: "Traditional Scottish dining with bagpipes and Scotch whisky tasting",
+        description: "Explore the ancient fortress of Edinburgh Castle holding the Stone of Destiny and Mons Meg cannon, followed by royal palace grounds and volcanic crags.",
+        image: "/images/packages/united-kingdom/image6.jpeg"
+      },
+      {
+        day: 7,
+        title: "Scottish Highlands & Loch Lomond Excursion to Glasgow",
+        location: "Glasgow, Scotland",
+        morning: "Scenic coach excursion into the Trossachs National Park & shores of Loch Lomond",
+        noonToEvening: "Drive to Glasgow, check-in at Novotel Glasgow Centre, George Square walking tour",
+        evening: "Explore Glasgow's vibrant live music scene, Victorian architecture, and Buchanan Street",
+        description: "Experience the romance of the Scottish Highlands around legendary Loch Lomond before arriving in Scotland's cultural and design powerhouse, Glasgow.",
+        image: "/images/packages/united-kingdom/image7.jpeg"
+      },
+      {
+        day: 8,
+        title: "Glasgow Architectural Stroll & Airport Departure",
+        location: "Glasgow, Scotland",
+        morning: "Breakfast at hotel, visit Glasgow Cathedral or Kelvingrove Art Gallery",
+        noonToEvening: "Private transfer to Glasgow Airport (or Edinburgh Airport) for departure flight",
+        description: "Enjoy a final morning admiring Charles Rennie Mackintosh architecture before transferring to the airport for your return flight home.",
+        image: "/images/packages/united-kingdom/image8.jpeg"
+      }
+    ]
+  },
+
+  // 23. UTTARAKHAND (7N/8D)
+  {
+    id: "uttarakhand-himalayan-retreat-8d",
+    destinationId: "uttarakhand",
+    destinationName: "Uttarakhand",
+    title: "Uttarakhand Himalayan Foothills & Wildlife Retreat",
+    duration: "8 Days / 7 Nights",
+    type: "Explorer",
+    tagline: "Har Ki Pauri Maha Aarti, Rishikesh Ganga Ghats, Mussoorie Hills, Jim Corbett Safari & Nainital Lakes",
+    description: "The ultimate Himalayan foothill journey through Devbhoomi Uttarakhand: witness the celestial evening Ganga Aarti at Haridwar's Har Ki Pauri, explore yoga ashrams and iconic suspension bridges in Rishikesh, enjoy cool mountain breezes and Kempty Falls in Mussoorie, embark on wildlife safaris in Jim Corbett, and boat on emerald Naini Lake.",
+    inclusions: [
+      "1 Night in Haridwar (Hotel Blue Pine or similar)",
+      "1 Night in Rishikesh (Hotel NV Rishikesh or similar)",
+      "2 Nights in Mussoorie (Value & Spa Mussoorie or similar)",
+      "1 Night in Jim Corbett (Hotel Blue Pine Resort or similar)",
+      "2 Nights in Nainital (Vaapi Comfort Inn Naukuchiatal or similar)",
+      "Daily breakfast and dinner (MAP plan) at all hotels",
+      "Private air-conditioned vehicle from New Delhi to New Delhi",
+      "Haridwar sightseeing: Har Ki Pauri Ganga Aarti, Mansa Devi & Chandi Devi ropeway",
+      "Rishikesh sightseeing: Ram Jhula, Laxman Jhula, Triveni Ghat, Parmarth Niketan",
+      "Mussoorie sightseeing: Kempty Falls, Bhatta Falls, Mussoorie Lake, Lal Tibba, Mall Road",
+      "Jim Corbett National Park visit: Corbett Museum, Garjia Devi Temple & Corbett Falls",
+      "Nainital Lake tour: Naini Lake boating, Naina Devi Temple, Snow View Point, Eco Cave Garden"
+    ],
+    startingStar: 3,
+    priceNote: "Customizable across 3★, 4★, and 5★ Himalayan resort tiers",
+    popular: true,
+    coverImage: "/images/packages/uttarakhand/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "New Delhi to Holy Haridwar & Har Ki Pauri Evening Aarti",
+        location: "Haridwar, Uttarakhand",
+        morning: "Morning pickup from New Delhi Airport / Railway Station, scenic drive to Haridwar",
+        noonToEvening: "Check-in at Hotel Blue Pine Haridwar, visit Mansa Devi & Chandi Devi temples",
+        evening: "Experience the spellbinding evening Maha Ganga Aarti at sacred Har Ki Pauri",
+        description: "Depart Delhi for holy Haridwar on the sacred banks of the Ganges. In the evening, witness thousands of floating leaf lamps and chiming temple bells during the magnificent Ganga Aarti.",
+        image: "/images/packages/uttarakhand/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Haridwar to Rishikesh: Ashrams, Ghats & Jhula Bridges",
+        location: "Rishikesh, Uttarakhand",
+        morning: "Scenic drive from Haridwar to Rishikesh, the world capital of Yoga",
+        noonToEvening: "Check-in at Hotel NV Rishikesh; walk across Ram Jhula, Laxman Jhula & Janki Jhula",
+        evening: "Visit Gita Bhawan, Parmarth Niketan Ashram and attend Triveni Ghat evening aarti",
+        description: "Travel to peaceful Rishikesh where the holy Ganga emerges from the Shivalik hills. Explore historic spiritual ashrams and suspension bridges with panoramic river vistas.",
+        image: "/images/packages/uttarakhand/image2.png"
+      },
+      {
+        day: 3,
+        title: "Rishikesh to Mussoorie 'Queen of the Hills' & Mall Road",
+        location: "Mussoorie, Uttarakhand",
+        morning: "Breakfast at hotel, ascend through winding mountain pine forests to Mussoorie",
+        noonToEvening: "Check-in at Value & Spa Mussoorie, drive up to Lal Tibba highest viewpoint",
+        evening: "Enjoy a scenic evening stroll along vibrant Mall Road and Kulri Bazaar",
+        description: "Climb into the crisp mountain air of Mussoorie, perched along a 15km horseshoe ridge. Gaze upon distant snow peaks from Lal Tibba and shop for wooden crafts on Mall Road.",
+        image: "/images/packages/uttarakhand/image3.png"
+      },
+      {
+        day: 4,
+        title: "Mussoorie Cascades: Kempty Fall, Bhatta Fall & Himalayan Views",
+        location: "Mussoorie, Uttarakhand",
+        morning: "Excursion to the thundering cascades of Kempty Falls with pool swim / ropeway",
+        noonToEvening: "Visit peaceful Bhatta Falls, Mussoorie Lake, and Gun Hill viewpoint",
+        evening: "Return to hotel for a warm buffet dinner overlooking the twinkling Doon Valley",
+        description: "Spend a full day exploring Mussoorie's famous mountain waterfalls and scenic spots, taking in panoramic vistas of the Himalayan snowline and forested ridges.",
+        image: "/images/packages/uttarakhand/image4.png"
+      },
+      {
+        day: 5,
+        title: "Scenic Mountain Drive to Jim Corbett Wildlife Sanctuary",
+        location: "Jim Corbett, Uttarakhand",
+        morning: "Breakfast at hotel, drive down into the forested foothills of Corbett",
+        noonToEvening: "Check-in at Hotel Blue Pine Resort Jim Corbett, relax in jungle resort gardens",
+        evening: "Visit Corbett Falls, historic Corbett Museum, and riverside Garjia Devi Temple",
+        description: "Travel to India's oldest and most prestigious national park. Pay homage at Garjia Devi Temple situated on a colossal rock in the Kosi River surrounded by sal forests.",
+        image: "/images/packages/uttarakhand/image5.png"
+      },
+      {
+        day: 6,
+        title: "Jim Corbett Safari & Transfer to Nainital Lake District",
+        location: "Nainital, Uttarakhand",
+        morning: "Optional early morning open Jeep Safari into Corbett Tiger Reserve (Bijrani/Jhirna)",
+        noonToEvening: "Breakfast at resort, check-out and scenic mountain drive to Nainital lake district",
+        evening: "Check-in at Vaapi Comfort Inn Naukuchiatal, peaceful lake walk",
+        description: "Spot spotted deer, wild elephants, and elusive Bengal tigers in Corbett's sal forests before ascending to the tranquil emerald lakes of Nainital.",
+        image: "/images/packages/uttarakhand/image6.png"
+      },
+      {
+        day: 7,
+        title: "Full-Day Nainital Sightseeing: Naini Lake, Snow View & Eco Caves",
+        location: "Nainital, Uttarakhand",
+        morning: "Boating on crescent-shaped Naini Lake, visit historic Naina Devi Temple",
+        noonToEvening: "Bara Pathar horse trail, Tiffin Top, Snow View Point ropeway & Eco Cave Gardens",
+        evening: "Stroll along Mall Road, visit Nainital High Altitude Zoo, evening lake dinner",
+        description: "Discover the jewel of Kumaon: glide on vibrant wooden boats on Naini Lake, crawl through natural rock caves, and gaze out at Trishul and Nanda Devi peaks from Snow View.",
+        image: "/images/packages/uttarakhand/image7.jpeg"
+      },
+      {
+        day: 8,
+        title: "Nainital to New Delhi Drop / Tour Concludes",
+        location: "New Delhi, India",
+        morning: "Breakfast at hotel, check-out and commence return drive to New Delhi",
+        noonToEvening: "Comfortable drive through plains, drop at New Delhi Airport / Railway Station",
+        description: "Descend from the Kumaon hills and travel back to New Delhi where you are dropped off with cherished memories of the Himalayan valleys and lakes.",
+        image: "/images/packages/uttarakhand/image8.jpeg"
+      }
+    ]
+  },
+
+  // 24. VAISHNO DEVI & KASHMIR (7N/8D)
+  {
+    id: "kashmir-vaishnodevi-paradise-8d",
+    destinationId: "kashmir",
+    destinationName: "Vaishno Devi & Kashmir",
+    title: "Vaishno Devi Holy Shrine & Kashmir Paradise",
+    duration: "8 Days / 7 Nights",
+    type: "Family",
+    tagline: "Mata Vaishno Devi Bhawan, Dal Lake Luxury Houseboat, Gulmarg Gondola & Pahalgam Valleys",
+    description: "A spiritually fulfilling and scenic holiday combining holy darshan at Shri Mata Vaishno Devi Shrine in Katra with the alpine wonders of Kashmir: glide across Dal Lake in a traditional shikara, stay in a heritage cedar-wood houseboat, ride the world-famous Gulmarg Gondola to snowcapped peaks, and stroll through Pahalgam's Betaab Valley.",
+    inclusions: [
+      "1 Night in Katra (Hotel Durga Residency / Royal Tirath or similar)",
+      "4 Nights in Srinagar (New Classic Luxury Resort / North Land Residency or similar)",
+      "2 Nights on Dal Lake (Marcopolo Group of Deluxe Houseboats or similar)",
+      "Daily breakfast and dinner at all hotels and houseboat",
+      "Pickup from Jammu Railway Station / Airport & drop at Srinagar Airport",
+      "Vaishno Devi Yatra assistance (helicopter / battery car guidance)",
+      "1-Hour complimentary Shikara boat ride on world-famous Dal Lake",
+      "Srinagar Mughal Gardens tour: Nishat Bagh, Shalimar Bagh & Chashme Shahi",
+      "Full-day excursion to Sonamarg 'Meadow of Gold' & Thajiwas Glacier",
+      "Full-day excursion to Gulmarg with Gondola cable car ride assistance",
+      "Full-day excursion to Pahalgam: Saffron fields, Awantipura ruins & Betaab Valley",
+      "Private vehicle for all transfers and sightseeing throughout"
+    ],
+    startingStar: 3,
+    priceNote: "Customizable across 3★, 4★, and 5★ luxury houseboat tiers",
+    popular: true,
+    coverImage: "/images/packages/kashmir/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival Jammu / Katra & Check-in",
+        location: "Katra, Jammu & Kashmir",
+        morning: "Meet representative at Jammu Tawi Railway Station / Airport, transfer to Katra",
+        noonToEvening: "Check-in at Hotel Durga Residency / Royal Tirath, rest and prepare for yatra",
+        evening: "Collect Yatra Parchi / RFID card, evening preparation for holy trek",
+        description: "Arrive at the gateway to the sacred Trikuta mountains. Settle into your hotel in Katra and prepare for the holy pilgrimage to the shrine of Mata Vaishno Devi.",
+        image: "/images/packages/kashmir/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Shri Mata Vaishno Devi Darshan & Evening Transfer to Srinagar",
+        location: "Srinagar, Kashmir",
+        morning: "Early morning trek / helicopter / battery car to Vaishno Devi Bhawan for sacred Darshan",
+        noonToEvening: "Descend back to Katra, board vehicle for scenic drive to Srinagar through Banihal tunnel",
+        evening: "Arrive in Srinagar, check-in at New Classic Luxury Resort, warm dinner",
+        description: "Receive the divine blessings of Mata Vaishno Devi at the Holy Bhawan, then travel north across the Pir Panjal mountain range to the paradise valley of Srinagar.",
+        image: "/images/packages/kashmir/image2.png"
+      },
+      {
+        day: 3,
+        title: "Heritage Srinagar Mughal Gardens & Dal Lake Shikara Ride",
+        location: "Srinagar, Kashmir",
+        morning: "Check-in to Marcopolo Deluxe Houseboat on Dal Lake, welcome Kahwa tea",
+        noonToEvening: "Tour royal Mughal Gardens: Shalimar Bagh, Nishat Bagh 'Garden of Bliss', Chashme Shahi",
+        evening: "Sunset Shikara ride on Dal Lake, visiting floating gardens and Nehru Park",
+        description: "Check into a carved cedar-wood luxury houseboat on Dal Lake. Stroll beneath terraced fountains and chinar trees in the Mughal Gardens before a tranquil sunset shikara ride.",
+        image: "/images/packages/kashmir/image3.png"
+      },
+      {
+        day: 4,
+        title: "Srinagar Local Sights & Shankaracharya Hilltop Temple",
+        location: "Srinagar, Kashmir",
+        morning: "Ascend Shankaracharya Hill to the ancient 9th-century Shiva temple for valley vistas",
+        noonToEvening: "Visit Jamia Masjid, Hazratbal Shrine on Dal Lake, and old downtown markets",
+        evening: "Explore Kashmiri handicraft workshops: pashmina shawls, walnut wood carving, carpets",
+        description: "Take in the panoramic 360-degree view of Srinagar city from Shankaracharya Temple and immerse in centuries of Kashmiri artisan craft in the historic bazaar.",
+        image: "/images/packages/kashmir/image4.png"
+      },
+      {
+        day: 5,
+        title: "Full-Day Alpine Excursion to Sonamarg 'Meadow of Gold'",
+        location: "Sonamarg, Kashmir",
+        morning: "Scenic 3-hour drive along the Sindh River flanked by towering mountain crags to Sonamarg",
+        noonToEvening: "Pony ride / local union cab to snowclad Thajiwas Glacier, Zero Point at Zojila Pass",
+        evening: "Return to Srinagar for a warm traditional Kashmiri dinner at your hotel",
+        description: "Travel to Sonamarg at 2,740m altitude, the gateway to Ladakh. Play in year-round snow at the foot of Thajiwas Glacier surrounded by pine-covered peaks.",
+        image: "/images/packages/kashmir/image5.png"
+      },
+      {
+        day: 6,
+        title: "Gulmarg Day Tour: Gondola Ride & Snowcapped Khilanmarg",
+        location: "Gulmarg, Kashmir",
+        morning: "Drive through apple orchards and sheep pastures to Gulmarg 'Meadow of Flowers'",
+        noonToEvening: "Ride the world's 2nd-highest cable car (Gondola Phase 1 & 2) up to 13,780 ft at Apharwat Peak",
+        evening: "Visit historic Maharani Shiv Temple, return to Srinagar hotel for dinner",
+        description: "Ascend to premier ski resort Gulmarg. Ride the famous cable car above the clouds to Apharwat Peak for breathtaking vistas of Nanga Parbat and Pir Panjal glaciers.",
+        image: "/images/packages/kashmir/image6.png"
+      },
+      {
+        day: 7,
+        title: "Pahalgam Valley of Shepherds: Saffron Fields & Betaab Valley",
+        location: "Pahalgam, Kashmir",
+        morning: "Scenic drive along Lidder River; stop at purple saffron fields of Pampore & Awantipura ruins",
+        noonToEvening: "Explore Pahalgam 'Valley of Shepherds': excursion to Betaab Valley, Aru Valley & Chandanwari",
+        evening: "Return to Srinagar hotel for farewell dinner and packing",
+        description: "Visit fragrant saffron fields and 1,100-year-old temple ruins en route to Pahalgam. Wander through lush alpine meadows along the gushing Lidder River.",
+        image: "/images/packages/kashmir/image7.jpeg"
+      },
+      {
+        day: 8,
+        title: "Srinagar Morning Breakfast & Airport Departure",
+        location: "Srinagar, Kashmir",
+        morning: "Breakfast at hotel, leisure morning for last-minute Kashmiri dry fruits & saffron shopping",
+        noonToEvening: "Transfer to Srinagar International Airport for departure flight",
+        description: "Bid farewell to the heavenly valley of Kashmir before your private transfer to Srinagar Airport for your return flight home.",
+        image: "/images/packages/kashmir/image8.jpeg"
+      }
+    ]
+  },
+
+  // 25. GRAND EUROPEAN EXPLORER (8N/9D)
+  {
+    id: "grand-europe-5-capitals-9d",
+    destinationId: "grand-europe",
+    destinationName: "Grand Europe",
+    title: "Grand European Explorer: 5 Iconic Capitals",
+    duration: "9 Days / 8 Nights",
+    type: "Explorer",
+    tagline: "Vienna Hofburg, Budapest Danube, Prague Astronomical Clock, Frankfurt & Amsterdam Canals",
+    description: "An epic grand rail and coach journey connecting 5 of Europe's greatest cultural capitals: imperial Vienna, radiant Budapest on the Danube, fairy-tale Prague, financial powerhouse Frankfurt on the Main, and the world-famous canal-ringed city of Amsterdam.",
+    inclusions: [
+      "2 Nights in Vienna (Moxy Vienna City East or similar)",
+      "2 Nights in Budapest (Mercure Budapest Castle Hill or similar)",
+      "2 Nights in Prague (Panorama Hotel Prague or similar)",
+      "1 Night in Frankfurt (Ibis Frankfurt City Messe or similar)",
+      "1 Night in Amsterdam (Ibis Amsterdam City West or similar)",
+      "Daily European buffet breakfast at all hotels",
+      "Guided city tours of Vienna, Budapest, and Prague",
+      "Danube River panoramic cruise in Budapest",
+      "Vltava River cruise in Prague",
+      "Scenic drive along the Rhine River Valley with Frankfurt orientation",
+      "Amsterdam 1-Hour glass-topped Canal Cruise & Zaanse Schans windmill tour",
+      "All luxury intercity coach transfers and airport transfers"
+    ],
+    startingStar: 3,
+    priceNote: "Customizable across 3★, 4★, and 5★ European grand hotel tiers",
+    popular: true,
+    coverImage: "/images/packages/grand-europe/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Welcome to Vienna / Transfer to Hotel",
+        location: "Vienna, Austria",
+        morning: "Arrival at Vienna International Airport, meet driver and transfer to hotel",
+        noonToEvening: "Check-in at Moxy Vienna City East, unpack and refresh",
+        evening: "Evening orientation stroll along Kärntner Strasse to St. Stephen's Cathedral",
+        description: "Welcome to Austria's imperial capital. Transfer to your hotel and spend your first evening soaking in Vienna's classical coffeehouse elegance and Gothic cathedral plazas.",
+        image: "/images/packages/grand-europe/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Vienna Imperial Ringstrasse, Schönbrunn & Grinzing",
+        location: "Vienna, Austria",
+        morning: "Guided panoramic tour along the Ringstrasse: State Opera, Hofburg Palace & Parliament",
+        noonToEvening: "Visit Schönbrunn Palace gardens, summer imperial residence of the Habsburgs",
+        evening: "Transfer to traditional wine-tavern district Grinzing for local dining",
+        description: "Discover Vienna's imperial majesty, from grand boulevard monuments to the opulent baroque gardens of Empress Maria Theresa at Schönbrunn.",
+        image: "/images/packages/grand-europe/image2.png"
+      },
+      {
+        day: 3,
+        title: "Scenic Drive to Budapest & Danube Evening River Cruise",
+        location: "Budapest, Hungary",
+        morning: "Scenic highway transfer across the Hungarian plains to radiant Budapest",
+        noonToEvening: "Check-in at Mercure Budapest Castle Hill, walk along the Danube promenade",
+        evening: "Illuminated Danube River evening cruise past the glowing Hungarian Parliament Building",
+        description: "Travel east along the Danube to the 'Pearl of the Danube'. Watch Budapest's monumental bridges and neo-Gothic Parliament light up during a romantic evening cruise.",
+        image: "/images/packages/grand-europe/image3.jpeg"
+      },
+      {
+        day: 4,
+        title: "Budapest Castle Hill, Parliament & Transfer to Prague",
+        location: "Prague, Czech Republic",
+        morning: "Guided tour of Buda Castle, Fisherman's Bastion & Matthias Church with river panoramas",
+        noonToEvening: "Heroes' Square and St. Stephen's Basilica, cross Slovakia to the Czech Republic",
+        evening: "Arrive in Prague 'City of a Hundred Spires', check-in at Panorama Hotel Prague",
+        description: "Take in the fairy-tale turrets of Fisherman's Bastion before traveling across Central Europe to the Gothic and Baroque wonderland of Prague.",
+        image: "/images/packages/grand-europe/image4.jpeg"
+      },
+      {
+        day: 5,
+        title: "Prague Fairy-Tale Discovery: Old Town Square & Charles Bridge",
+        location: "Prague, Czech Republic",
+        morning: "Walking tour through Old Town Square: watch the 600-year-old Astronomical Clock chime",
+        noonToEvening: "Stroll across statue-lined Charles Bridge over the Vltava River, explore Jewish Quarter",
+        evening: "Vltava River cruise with dinner views of illuminated Prague Castle on the hill",
+        description: "Immerse in Prague's magical medieval heart. Cross iconic Charles Bridge, wander cobblestone alleyways, and admire gothic spires rising over the river.",
+        image: "/images/packages/grand-europe/image5.jpeg"
+      },
+      {
+        day: 6,
+        title: "Prague Castle Stroll & Cross Germany to Frankfurt",
+        location: "Frankfurt, Germany",
+        morning: "Visit colossal Prague Castle complex and St. Vitus Cathedral",
+        noonToEvening: "Cross the German border, scenic drive through Bavaria into Hesse to Frankfurt",
+        evening: "Check-in at Ibis Frankfurt City Messe, evening stroll along the River Main skyline",
+        description: "Explore the ancient stronghold of Bohemian kings at Prague Castle before traveling into Germany to Frankfurt, Europe's dynamic financial and cultural gateway.",
+        image: "/images/packages/grand-europe/image6.jpeg"
+      },
+      {
+        day: 7,
+        title: "Frankfurt Roemerberg Plaza to Amsterdam Dutch Canals",
+        location: "Amsterdam, Netherlands",
+        morning: "Morning walking tour of historic Frankfurt: half-timbered Roemerberg square & cathedral",
+        noonToEvening: "Scenic coach journey following the Rhine valley north across the Dutch border",
+        evening: "Arrive in Amsterdam, check-in at Ibis Amsterdam City West, evening canal stroll",
+        description: "Discover Frankfurt's restored medieval town hall before driving through lush river landscapes into the Netherlands to the charming canal-lined capital of Amsterdam.",
+        image: "/images/packages/grand-europe/image7.jpeg"
+      },
+      {
+        day: 8,
+        title: "Amsterdam Glass-Topped Canal Cruise & Dam Square",
+        location: "Amsterdam, Netherlands",
+        morning: "1-Hour classic glass-topped Canal Cruise through UNESCO Golden Age waterways",
+        noonToEvening: "Explore historic Dam Square, Royal Palace, flower market & Museumplein (Rijksmuseum)",
+        evening: "Farewell Dutch dinner, evening stroll along the illuminated Jordaan bridges",
+        description: "Experience Amsterdam from its iconic waterways, gliding past 17th-century merchant mansions, stone humpback bridges, houseboats, and lively market plazas.",
+        image: "/images/packages/grand-europe/image8.jpeg"
+      },
+      {
+        day: 9,
+        title: "Amsterdam Schiphol Airport Departure / Tour Concludes",
+        location: "Amsterdam, Netherlands",
+        morning: "Breakfast at hotel, leisure morning for last-minute Dutch cheese and tulip bulb shopping",
+        noonToEvening: "Transfer to Amsterdam Schiphol Airport for your flight back home",
+        description: "Savor your final Dutch pastries before your private coach transfer to Schiphol Airport, concluding an epic multi-capital grand European journey.",
+        image: "/images/packages/grand-europe/image9.jpeg"
+      }
+    ]
+  },
+
+  // 26. VIETNAM NORTH TO SOUTH (5N/6D)
+  {
+    id: "vietnam-north-to-south-6d",
+    destinationId: "vietnam",
+    destinationName: "Vietnam",
+    title: "Vietnam North to South Heritage & Dynamic Metropolis",
+    duration: "6 Days / 5 Nights",
+    type: "Explorer",
+    tagline: "Hanoi French Quarter, Halong Bay Overnight Cruise, Saigon Cu Chi Tunnels & Mekong Delta",
+    description: "From Hanoi's ancient merchant guilds and the emerald waters of Halong Bay to the buzzing boulevards of Ho Chi Minh City: cruise among limestone karst towers aboard a luxury junk boat, explore the historic Cu Chi guerrilla tunnels, and navigate the floating coconut waterways of the Mekong Delta.",
+    inclusions: [
+      "1 Night in Hanoi (Moonview Hotel or similar)",
+      "1 Night aboard Luxury Halong Bay Cruise (La Regina Classic Cruise with private balcony cabin)",
+      "3 Nights in Ho Chi Minh City (White Lotus Hotel or similar)",
+      "Daily breakfast + 3 Special Vietnamese lunches + 1 Seafood cruise dinner",
+      "Full Halong Bay cruise itinerary: kayaking, Sung Sot Cave & sunset cooking class",
+      "Domestic flight ticket from Hanoi to Ho Chi Minh City",
+      "Cu Chi Tunnels half-day guided underground tour",
+      "Full-Day Mekong Delta excursion (My Tho, Ben Tre & sampan boat ride)",
+      "All airport and harbor transfers in private AC vehicle"
+    ],
+    startingStar: 4,
+    priceNote: "Customizable across 3★, 4★, and 5★ colonial heritage tiers",
+    popular: true,
+    coverImage: "/images/packages/vietnam/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Welcome to Hanoi & Old Quarter Cyclo Ride",
+        location: "Hanoi, Vietnam",
+        morning: "Arrival at Noi Bai International Airport, meet English-speaking guide and transfer",
+        noonToEvening: "Check-in at Moonview Hotel Hanoi, rest after your flight",
+        evening: "1-Hour traditional cyclo ride through the bustling 36 Streets of Hanoi Old Quarter",
+        description: "Welcome to Vietnam! Settle into your hotel and embark on a quintessential cyclo ride through the ancient guild streets of Hanoi's vibrant Old Quarter around Hoan Kiem Lake.",
+        image: "/images/packages/vietnam/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Scenic Drive to Halong Bay & Overnight Luxury Cruise",
+        location: "Halong Bay, Vietnam",
+        morning: "Scenic drive through the Red River Delta to Tuan Chau Marina, Halong Bay",
+        noonToEvening: "Board La Regina Classic Cruise, welcome drink, seafood buffet lunch while cruising",
+        evening: "Kayaking through karst grottos, swim at Ti Top beach, sunset cooking demonstration & gala dinner",
+        description: "Sail into the UNESCO World Heritage wonderland of Halong Bay among thousands of towering limestone pillars. Kayak through hidden sea grottos and sleep under the stars aboard your luxury cruiser.",
+        image: "/images/packages/vietnam/image2.png"
+      },
+      {
+        day: 3,
+        title: "Halong Dawn Tai Chi, Fly to Ho Chi Minh City",
+        location: "Ho Chi Minh City, Vietnam",
+        morning: "Sunrise Tai Chi on sundeck, explore Sung Sot (Surprise) Cave's colossal chambers",
+        noonToEvening: "Brunch while cruising back to port, transfer to Hanoi airport for flight to Saigon",
+        evening: "Arrive in Ho Chi Minh City, check-in at White Lotus Hotel, evening stroll along Dong Khoi",
+        description: "Greet the dawn over misty karst peaks with Tai Chi before exploring Surprise Cave. Fly south to dynamic Ho Chi Minh City (Saigon) and discover its French-colonial boulevards.",
+        image: "/images/packages/vietnam/image3.jpeg"
+      },
+      {
+        day: 4,
+        title: "Historic Cu Chi Tunnels & Saigon City Tour",
+        location: "Ho Chi Minh City, Vietnam",
+        morning: "Guided underground excursion to the famous 250km network of Cu Chi Tunnels",
+        noonToEvening: "Return to Saigon: visit War Remnants Museum, Reunification Palace, Notre Dame Cathedral",
+        evening: "Photograph the French-designed Central Post Office and Opera House, local dinner",
+        description: "Crawl into the legendary wartime guerrilla tunnel network of Cu Chi, then return to central Saigon to marvel at historic colonial architecture and moving wartime exhibitions.",
+        image: "/images/packages/vietnam/image4.png"
+      },
+      {
+        day: 5,
+        title: "Full-Day Mekong Delta River Safari with Lunch",
+        location: "Mekong Delta, Vietnam",
+        morning: "Scenic drive to My Tho in the fertile heart of the Mekong Delta river basin",
+        noonToEvening: "Cruise the Mekong River, take a hand-rowed wooden sampan through shaded palm canals",
+        evening: "Visit coconut candy workshops, enjoy tropical fruit tasting, traditional folk music & lunch",
+        description: "Experience the vibrant river life of the Mekong Delta. Drift beneath water coconut palms in a traditional wooden sampan, visit honeybee farms, and savor elephant-ear fish.",
+        image: "/images/packages/vietnam/image5.jpeg"
+      },
+      {
+        day: 6,
+        title: "Ben Thanh Market Souvenirs & Airport Transfer",
+        location: "Ho Chi Minh City, Vietnam",
+        morning: "Breakfast at hotel, shopping for Vietnamese coffee, silk, and ceramics at Ben Thanh Market",
+        noonToEvening: "Check-out and private transfer to Tan Son Nhat International Airport for flight home",
+        description: "Enjoy a final Vietnamese iced coffee (Ca Phe Sua Da) and pick up handcraft souvenirs before your private transfer to the airport concludes an incredible journey.",
+        image: "/images/packages/vietnam/image6.png"
+      }
+    ]
+  },
+
+  // 27. VIETNAM: HANOI & HALONG BAY (4N/5D)
+  {
+    id: "vietnam-hanoi-halong-bay-5d",
+    destinationId: "vietnam-hanoi-halong",
+    destinationName: "Vietnam - Hanoi & Halong",
+    title: "Hanoi Highlights & Halong Bay Luxury Cruise",
+    duration: "5 Days / 4 Nights",
+    type: "Luxury",
+    tagline: "Hanoi French Boulevards, Ninh Binh Trang An Waterways & 5-Star Halong Cruise",
+    description: "The premier northern Vietnam getaway: immerse in the street food and French-colonial charm of Hanoi's 36 Old Quarter streets, row through the dramatic river caves of Ninh Binh Trang An (the 'Inland Halong Bay'), and spend a magical night cruising emerald Halong Bay aboard a 5-star ship.",
+    inclusions: [
+      "3 Nights in Hanoi (Moonview Hotel / The Ann Hanoi or similar)",
+      "1 Night aboard Luxury Halong Bay Cruise (La Regina Classic Cruise)",
+      "Daily breakfast + 3 authentic Vietnamese lunches + 1 Gala cruise dinner",
+      "Hanoi city tour: Ho Chi Minh Mausoleum, One Pillar Pagoda & Temple of Literature",
+      "Full-day Ninh Binh Trang An boat tour & Hang Mua Dragon Peak climb",
+      "Overnight Halong Bay Cruise: Ti Top Island beach, kayaking & pearl farm visit",
+      "Round-trip luxury limousine coach transfers between Hanoi and Halong Bay",
+      "Noi Bai Hanoi Airport round-trip transfers"
+    ],
+    startingStar: 4,
+    priceNote: "Customizable across 3★, 4★, and 5★ boutique luxury tiers",
+    popular: true,
+    coverImage: "/images/packages/vietnam-hanoi-halong/image1.jpeg",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival Hanoi & Hoan Kiem Lake Stroll",
+        location: "Hanoi, Vietnam",
+        morning: "Arrival at Noi Bai Airport, welcome by local guide and transfer to hotel",
+        noonToEvening: "Check-in at Moonview Hotel, leisure afternoon around Hoan Kiem Lake & Ngoc Son Temple",
+        evening: "Evening street food tasting tour through the bustling Old Quarter alleyways",
+        description: "Welcome to thousand-year-old Hanoi. Walk around serene Sword Lake, cross the red wooden Huc Bridge to Ngoc Son Temple, and savor steaming bowls of authentic pho.",
+        image: "/images/packages/vietnam-hanoi-halong/image1.jpeg"
+      },
+      {
+        day: 2,
+        title: "Full-Day Ninh Binh Trang An River Caves & Hang Mua Peak",
+        location: "Ninh Binh, Vietnam",
+        morning: "Scenic drive south to UNESCO-listed Trang An eco-tourism complex",
+        noonToEvening: "Rowed bamboo boat through mystical river water caves, climb Hang Mua Dragon Peak",
+        evening: "Enjoy panoramic views over Tam Coc valleys, return to Hanoi for dinner",
+        description: "Discover the breathtaking limestone landscape of 'Inland Halong Bay'. Drift on quiet emerald rivers through cavernous tunnels and ascend 500 stone steps for epic mountain views.",
+        image: "/images/packages/vietnam-hanoi-halong/image2.png"
+      },
+      {
+        day: 3,
+        title: "Journey to Halong Bay & Luxury Overnight Cruise",
+        location: "Halong Bay, Vietnam",
+        morning: "Luxury limousine transfer through rural rice paddies to Halong Bay marina",
+        noonToEvening: "Board La Regina Cruise, enjoy welcome drink and gourmet lunch cruising among karst islands",
+        evening: "Kayaking around Luon Cave, beach time on Ti Top Island, sunset party & seafood dinner",
+        description: "Board an opulent cruise vessel and glide across tranquil emerald waters surrounded by thousands of limestone formations. Kayak under sea arches and swim off sandy island shores.",
+        image: "/images/packages/vietnam-hanoi-halong/image3.png"
+      },
+      {
+        day: 4,
+        title: "Morning Tai Chi, Sung Sot Cave & Return to Hanoi",
+        location: "Hanoi, Vietnam",
+        morning: "Sundeck Tai Chi class at sunrise, explore colossal stalactites of Sung Sot (Surprise) Cave",
+        noonToEvening: "Brunch while sailing past Fighting Cocks islet, disembark and limousine transfer to Hanoi",
+        evening: "Check-in at Moonview Hotel, evening shopping at Dong Xuan Night Market",
+        description: "Marvel at cathedral-sized chambers inside Sung Sot Cave before sailing back to harbor. Relax in comfort on the express highway return to your Hanoi hotel.",
+        image: "/images/packages/vietnam-hanoi-halong/image4.png"
+      },
+      {
+        day: 5,
+        title: "Hanoi French Quarter Highlights & Airport Departure",
+        location: "Hanoi, Vietnam",
+        morning: "Visit Ho Chi Minh Mausoleum complex, One Pillar Pagoda & Temple of Literature",
+        noonToEvening: "Stroll tree-lined French Quarter boulevards before private transfer to airport",
+        description: "Tour Vietnam's first imperial university (Temple of Literature) and royal pagodas before your private transfer to Noi Bai Airport completes an unforgettable getaway.",
+        image: "/images/packages/vietnam-hanoi-halong/image5.png"
+      }
+    ]
+  }
 ];
 
 export function getPackagesByDestination(destIdOrName: string): TravelPackage[] {

@@ -28,12 +28,19 @@ export default function PackagesAndHotelsShowcase() {
   const [selectedPackageForModal, setSelectedPackageForModal] = useState<TravelPackage | null>(null);
   const [activeDayIndex, setActiveDayIndex] = useState<number>(0);
 
-  // Generate dynamic tabs based on uploaded authentic packages
+  // Generate dynamic tabs based on uploaded authentic packages (deduplicating destinations)
+  const uniqueTabsMap = new Map<string, string>();
+  travelPackages.forEach((pkg) => {
+    if (!uniqueTabsMap.has(pkg.destinationId)) {
+      uniqueTabsMap.set(pkg.destinationId, pkg.destinationName);
+    }
+  });
+
   const tabs = [
     { id: "all", label: `All Curated Packages (${travelPackages.length})` },
-    ...travelPackages.map((pkg) => ({
-      id: pkg.destinationId,
-      label: pkg.destinationName,
+    ...Array.from(uniqueTabsMap.entries()).map(([id, label]) => ({
+      id,
+      label,
     })),
   ];
 

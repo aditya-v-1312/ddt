@@ -1450,6 +1450,682 @@ export const destinationHotels: DestinationHotels[] = [
       ],
     },
   },
+  {
+    destinationId: "morocco",
+    destinationName: "Morocco",
+    country: "Morocco",
+    hotels: {
+      star5: [
+        {
+          name: "La Mamounia & Royal Mansour Marrakech",
+          stars: 5,
+          location: "Marrakech & Casablanca",
+          tagline: "World-renowned royal palace hotel with legendary Moorish gardens, luxury hammams, and Michelin dining",
+          features: ["Historic Royal Palace", "Michelin Dining", "Sublime Moorish Hammam", "Private Luxury Riads"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "Fes Marriott Hotel Jnan Palace",
+          stars: 5,
+          location: "Fes Ville Nouvelle",
+          tagline: "Five-star palatial garden resort with Olympic swimming pool, luxury spa, and proximity to UNESCO Medina",
+          features: ["Olympic Outdoor Pool", "Lush Botanical Gardens", "Moroccan Fine Dining", "Luxury Spa"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star4: [
+        {
+          name: "Zahrat Al Jabal Fes & Malak Hotel Rabat",
+          stars: 4,
+          location: "Fes & Rabat",
+          tagline: "Traditional Moroccan architectural charm, rooftop views of the Medina, and warm Maghrebi hospitality",
+          features: ["Rooftop City Views", "Authentic Zellij Tilework", "Traditional Mint Tea Lounge", "Walking Distance to Sights"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "LeCaspien Hotel Marrakech",
+          stars: 4,
+          location: "Gueliz, Marrakech",
+          tagline: "Charming boutique hotel with two swimming pools and authentic Moroccan artisan courtyards in central Gueliz",
+          features: ["2 Outdoor Pools", "Gueliz Plaza 3min", "Majorelle Garden Walk", "Traditional Cuisine"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star3: [
+        {
+          name: "Campanile Casablanca & MIA Urban Detroit Tangier",
+          stars: 3,
+          location: "Casablanca & Tangier",
+          tagline: "Modern, spotless comfort near major transport hubs with express breakfast and reliable amenities",
+          features: ["Casablanca Port 5min", "High-speed Wi-Fi", "Air Conditioning", "Airport Transfer Desk"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "Dar Annasr Hotel Chefchaouen",
+          stars: 3,
+          location: "Chefchaouen Medina",
+          tagline: "Authentic blue-washed mountain guesthouse offering breathtaking sunrise panoramas of the Rif mountains",
+          features: ["Rif Mountain Panoramas", "Blue Medina Location", "Traditional Moroccan Breakfast", "Rooftop Terrace"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star2: [
+        {
+          name: "Hotel Central Casablanca",
+          stars: 2,
+          location: "Old Medina, Casablanca",
+          tagline: "Historic, clean budget hotel overlooking the harbor and ancient medina walls",
+          features: ["Harbour Views", "Old Medina Walk", "24/7 Front Desk", "Free Wi-Fi"],
+          lastMinuteAvailable: true,
+        },
+      ],
+    },
+  },
+  {
+    destinationId: "phuket-krabi",
+    destinationName: "Phuket & Krabi",
+    country: "Thailand",
+    hotels: {
+      star5: [
+        {
+          name: "Banyan Tree Phuket & Rayavadee Krabi",
+          stars: 5,
+          location: "Bang Tao Bay Phuket & Railay Beach Krabi",
+          tagline: "Ultimate private pool villa luxury in Phuket and dramatic limestone cliff sea pavilion elegance in Krabi",
+          features: ["Private Lagoon Pool Villas", "Railay Cliff Ocean Pavilion", "World-Class Spas", "Private Speedboat Transfers"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star4: [
+        {
+          name: "Anda Sea Tales Resort Krabi & Best Western Patong",
+          stars: 4,
+          location: "Ao Nang Krabi & Patong Beach Phuket",
+          tagline: "Rooftop infinity pools, Andaman sea views, and premier locations moments from the sand and nightlife",
+          features: ["Rooftop Sea-View Pool", "Patong Beach 5min", "Kids & Family Suites", "Andaman Tour Desk"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "Centara Grand Beach Resort Phuket",
+          stars: 4,
+          location: "Karon Beach, Phuket",
+          tagline: "Direct beachfront waterpark resort nestled against verdant hills overlooking turquoise waters",
+          features: ["Direct Beach Access", "Lazy River Waterpark", "Multiple Restaurants", "Private Balconies"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star3: [
+        {
+          name: "Ibis Phuket Patong & Sugar Marina Resort Krabi",
+          stars: 3,
+          location: "Patong Phuket & Ao Nang Krabi",
+          tagline: "Dependable international-standard beach stays with outdoor swimming pools and friendly service",
+          features: ["Walking Distance to Beach", "Swimming Pool", "Daily Buffet Breakfast", "Free High-Speed Wi-Fi"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star2: [
+        {
+          name: "Sleep Owl Patong Phuket",
+          stars: 2,
+          location: "Patong, Phuket",
+          tagline: "Spotless, modern budget rooms with air conditioning and easy access to Patong Beach and Bangla Road",
+          features: ["Patong Beach 7min", "Air Conditioning", "Keycard Security", "24hr Reception"],
+          lastMinuteAvailable: true,
+        },
+      ],
+    },
+  },
+  {
+    destinationId: "russia",
+    destinationName: "Russia",
+    country: "Russia",
+    hotels: {
+      star5: [
+        {
+          name: "Four Seasons Hotel Moscow & Belmond Grand Hotel Europe St. Petersburg",
+          stars: 5,
+          location: "Red Square Moscow & Nevsky Prospekt St. Petersburg",
+          tagline: "Legendary Russian imperial palace luxury overlooking the Kremlin spires and St. Petersburg grand avenues",
+          features: ["Direct Red Square Views", "Imperial Caviar Dining", "Romanov Era Suites", "Luxury Spas"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star4: [
+        {
+          name: "Holiday Inn Moscow Suchevsky & Holiday Inn St. Petersburg Vorota",
+          stars: 4,
+          location: "Central Moscow & Moskovsky Prospekt St. Petersburg",
+          tagline: "Modern European comfort with generous international breakfast buffets and immediate metro station connections",
+          features: ["Direct Metro Proximity", "International Breakfast", "Fitness Centers", "Spacious King Rooms"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "Park Inn by Radisson Pribaltiiskaya",
+          stars: 4,
+          location: "Gulf of Finland, St. Petersburg",
+          tagline: "Grand seaside hotel overlooking the Baltic Sea with comprehensive spa and conference facilities",
+          features: ["Baltic Sea Views", "Roman Aqua Spa", "Express Train Transfers", "Multiple Restaurants"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star3: [
+        {
+          name: "Ibis Moscow Centre Bakhrushina",
+          stars: 3,
+          location: "Zamoskvorechye, Moscow",
+          tagline: "Stylish, dependable French hospitality minutes from the Tretyakov Gallery and Paveletsky Station",
+          features: ["Metro 5min Walk", "Sweet Bed by Ibis", "24/7 Bar & Snacks", "Free High-Speed Wi-Fi"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star2: [
+        {
+          name: "Netizen Moscow Rimskaya",
+          stars: 2,
+          location: "Tagansky, Moscow",
+          tagline: "Award-winning designer hybrid hotel with clean private ensuite rooms and friendly multilingual staff",
+          features: ["Private Ensuite Rooms", "Co-working Cafe", "Subway 2min", "Luggage Storage"],
+          lastMinuteAvailable: true,
+        },
+      ],
+    },
+  },
+  {
+    destinationId: "singapore-malaysia",
+    destinationName: "Singapore & Malaysia",
+    country: "Singapore & Malaysia",
+    hotels: {
+      star5: [
+        {
+          name: "Marina Bay Sands & Pavilion Hotel Kuala Lumpur",
+          stars: 5,
+          location: "Marina Bay Singapore & Bukit Bintang KL",
+          tagline: "Iconic 57th-floor infinity pool luxury in Singapore paired with luxury shopping arcade suites in Kuala Lumpur",
+          features: ["Sands SkyPark Infinity Pool", "Bukit Bintang Sky Pool", "Celebrity Chef Restaurants", "Club Privileges"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star4: [
+        {
+          name: "Furama RiverFront Singapore & Furama Bukit Bintang KL",
+          stars: 4,
+          location: "Clarke Quay Singapore & Bukit Bintang KL",
+          tagline: "Premier leisure and business hotels with swimming pools, executive lounges, and central locations",
+          features: ["City Skyline Pools", "Executive Club Lounges", "Family Duplex Rooms", "Complimentary Shuttles"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "Cosmo Hotel Kuala Lumpur",
+          stars: 4,
+          location: "Central Market / Chinatown, KL",
+          tagline: "Contemporary city hotel overlooking historic Merdeka Square and Masjid Jamek LRT interchange",
+          features: ["LRT Station 2min", "Petaling Street 5min", "Cosmo Cafe", "Fitness Center"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star3: [
+        {
+          name: "Ibis Budget Imperial Singapore & First World Hotel Genting",
+          stars: 3,
+          location: "Lavender Singapore & Genting Highlands",
+          tagline: "Smart traveler combo: convenient Singapore MRT connection paired with mountain casino entertainment",
+          features: ["Lavender MRT 3min", "SkyAvenue Mall Access", "Outdoor Pool", "Comfortable Beds"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star2: [
+        {
+          name: "Hotel 81 Premier Star Singapore & Hotel Transit KL",
+          stars: 2,
+          location: "Geylang Singapore & Pudu KL",
+          tagline: "Clean, budget-conscious air-conditioned accommodations with excellent public transit links",
+          features: ["MRT/LRT Links", "Air Conditioning", "Free Wi-Fi", "24/7 Front Desk"],
+          lastMinuteAvailable: true,
+        },
+      ],
+    },
+  },
+  {
+    destinationId: "grand-asia",
+    destinationName: "Grand Asia",
+    country: "Singapore, Malaysia & Thailand",
+    hotels: {
+      star5: [
+        {
+          name: "Grand Hyatt Singapore, Shangri-La KL & The Peninsula Bangkok",
+          stars: 5,
+          location: "Orchard Singapore, KLCC & Chao Phraya Bangkok",
+          tagline: "Five-star royal luxury across Southeast Asia with riverside dining, tropical resort pools, and butler care",
+          features: ["Chao Phraya River Front", "Iconic Lagoon Pools", "Michelin Dining", "Private Boat Transfers"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star4: [
+        {
+          name: "Value Hotel Thomson, Cosmo KL & Ecotel Bangkok",
+          stars: 4,
+          location: "Singapore, Kuala Lumpur, Genting & Bangkok",
+          tagline: "Selected comfortable city hotels featuring swimming pools, hot breakfasts, and central shopping access",
+          features: ["Pratunam Shopping 5min", "Swimming Pools", "International Breakfast", "Direct Transport Links"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "Sunbeam Hotel Pattaya",
+          stars: 4,
+          location: "Pattaya Beachfront Precinct",
+          tagline: "Spacious coastal resort with freeform outdoor swimming pool and Jacuzzi, 5 minutes from Pattaya beach",
+          features: ["Freeform Pool & Jacuzzi", "Pattaya Beach 5min", "Siam Bistro", "Family Rooms"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star3: [
+        {
+          name: "First World Hotel Genting & Gusto Pratunam Bangkok",
+          stars: 3,
+          location: "Genting Highlands & Pratunam Bangkok",
+          tagline: "High-value traveler hotels in the epicenter of mountain amusement and wholesale fashion shopping",
+          features: ["SkyAvenue Direct Link", "Pratunam Market 3min", "Free High-Speed Wi-Fi", "Clean Private Rooms"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star2: [
+        {
+          name: "Ibis Budget Singapore & Lub d Bangkok",
+          stars: 2,
+          location: "Singapore & Bangkok",
+          tagline: "Trendy, immaculate budget stays with air-conditioned ensuite rooms and immediate mass transit access",
+          features: ["BTS / MRT Access", "Spotless Pods & Rooms", "Free Wi-Fi", "Tour Desks"],
+          lastMinuteAvailable: true,
+        },
+      ],
+    },
+  },
+  {
+    destinationId: "south-korea",
+    destinationName: "South Korea",
+    country: "South Korea",
+    hotels: {
+      star5: [
+        {
+          name: "Signiel Seoul & Signiel Busan",
+          stars: 5,
+          location: "Lotte World Tower Seoul & Haeundae Beach Busan",
+          tagline: "Ultra-luxury sky-high suites in the 123-storey Lotte World Tower and panoramic Haeundae oceanfront suites",
+          features: ["76th-101st Floor Sky Panoramas", "Haeundae Infinity Pool", "Evian Spa", "Michelin Dining"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "Swiss Grand Hotel Seoul",
+          stars: 5,
+          location: "Seodaemun, Seoul",
+          tagline: "Spacious 5-star mountain-side sanctuary surrounded by lotus hills with indoor pool and grand ballroom",
+          features: ["Indoor Heated Pool", "Lush Mountain Setting", "Multiple International Restaurants", "Executive Lounge"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star4: [
+        {
+          name: "Lahan Hotel Jeonju & Yeosu Ramada Plaza",
+          stars: 4,
+          location: "Jeonju Hanok Village & Yeosu Oceanfront",
+          tagline: "Rooftop infinity pool overlooking hundreds of traditional Hanok roofs and Yeosu ocean views",
+          features: ["Hanok Village Overlook", "Ocean View Balconies", "Rooftop Glamping & Pool", "Traditional Teahouse"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "Four Points by Sheraton Josun Seoul Station",
+          stars: 4,
+          location: "Seoul Station",
+          tagline: "Directly connected to Seoul Station via underground passage for seamless KTX bullet train travel",
+          features: ["Connected to KTX Bullet Train", "Panoramic City Views", "Modern Fitness Center", "All-Day Dining"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star3: [
+        {
+          name: "Hotel Skypark Myeongdong Seoul",
+          stars: 3,
+          location: "Myeongdong, Seoul",
+          tagline: "Premier shopping location right inside the famous Myeongdong cosmetic and street-food district",
+          features: ["Myeongdong Subway 2min", "Complimentary Shuttles", "Free Wi-Fi", "Luggage Lockers"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star2: [
+        {
+          name: "Step Inn Myeongdong",
+          stars: 2,
+          location: "Myeongdong, Seoul",
+          tagline: "Immaculate, highly-rated boutique budget hostel with comfortable private rooms overlooking Myeongdong Cathedral",
+          features: ["Myeongdong Cathedral View", "Free Breakfast Bar", "Spotless Ensuites", "Subway 3min"],
+          lastMinuteAvailable: true,
+        },
+      ],
+    },
+  },
+  {
+    destinationId: "sri-lanka",
+    destinationName: "Sri Lanka",
+    country: "Sri Lanka",
+    hotels: {
+      star5: [
+        {
+          name: "Cinnamon Grand Colombo & Heritance Tea Factory",
+          stars: 5,
+          location: "Colombo Waterfront & Nuwara Eliya Tea Hills",
+          tagline: "Opulent city grandeur on Galle Face Green paired with a luxury converted colonial tea factory above the clouds",
+          features: ["Converted Historic Tea Factory", "Tea Plucking Experiences", "Ayurvedic Spa Treatments", "Fine Dining"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star4: [
+        {
+          name: "Royal Classic Hotel Kandy & Hibiscus Beach Hotel",
+          stars: 4,
+          location: "Kandy Hill Country & Bentota Golden Beach",
+          tagline: "Panoramic mountain valley views in Kandy and beachfront coconut palms overlooking the Indian Ocean",
+          features: ["Oceanfront Pool", "Kandy Mountain Views", "Ayurvedic Wellness Spa", "Fresh Seafood Dining"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "Single Tree Mount Hotel Nuwara Eliya",
+          stars: 4,
+          location: "Nuwara Eliya Hill Station",
+          tagline: "Cozy colonial-style mountain lodge overlooking Gregory Lake and misty emerald Ceylon tea estates",
+          features: ["Gregory Lake Views", "Log Fireplaces", "Ceylon Tea Tastings", "English Garden"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star3: [
+        {
+          name: "Hotel Topaz Kandy & Marina Bentota",
+          stars: 3,
+          location: "Kandy & Bentota",
+          tagline: "Warm Sri Lankan hospitality with outdoor swimming pools and peaceful tropical garden settings",
+          features: ["Swimming Pool", "Tropical Gardens", "Buffet Breakfast", "Free Wi-Fi"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star2: [
+        {
+          name: "Clock Inn Colombo",
+          stars: 2,
+          location: "Galle Road, Colombo",
+          tagline: "Clean modern budget hotel on central Galle Road with private air-conditioned ensuite rooms",
+          features: ["Galle Face 10min", "Air Conditioning", "Free High-Speed Wi-Fi", "24/7 Front Desk"],
+          lastMinuteAvailable: true,
+        },
+      ],
+    },
+  },
+  {
+    destinationId: "united-kingdom",
+    destinationName: "United Kingdom",
+    country: "United Kingdom",
+    hotels: {
+      star5: [
+        {
+          name: "The Savoy London & The Balmoral Edinburgh",
+          stars: 5,
+          location: "Strand London & Princes Street Edinburgh",
+          tagline: "Legendary British royal heritage: world-famous Thames riverside luxury and Edinburgh's iconic clocktower landmark",
+          features: ["Thames River Front", "Iconic Clocktower View", "Michelin Dining by Gordon Ramsay", "Traditional Afternoon Tea"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star4: [
+        {
+          name: "Radisson Blu Durham & Novotel Glasgow Centre",
+          stars: 4,
+          location: "River Wear Durham & Sauchiehall St Glasgow",
+          tagline: "Riverside tranquility overlooking Durham Castle and sleek contemporary rooms in central Glasgow",
+          features: ["River Wear Views", "Indoor Heated Pool & Sauna", "Bistro Dining", "Walking Distance to Rail Stations"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "Moxy Edinburgh Airport",
+          stars: 4,
+          location: "Edinburgh",
+          tagline: "Vibrant, stylish lifestyle boutique hotel with 24/7 bar, gym, and seamless tram link to the Royal Mile",
+          features: ["Direct Tram to City Center", "Boutique Bar & Lounge", "Fitness Center", "Soundproof Rooms"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star3: [
+        {
+          name: "Ibis London Earls Court",
+          stars: 3,
+          location: "Earls Court / West Kensington, London",
+          tagline: "Dependable modern London hotel with La Table restaurant, footsteps from West Brompton tube station",
+          features: ["Underground Tube 3min", "Direct Heathrow Link", "La Table Restaurant", "Full English Breakfast"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star2: [
+        {
+          name: "Point A Hotel London Kings Cross",
+          stars: 2,
+          location: "Kings Cross, London",
+          tagline: "Smart, spotless budget stay with comfortable Hypnos beds and unbeatable rail connections across the UK",
+          features: ["Kings Cross St Pancras 5min", "Hypnos Luxury Mattresses", "High-speed Wi-Fi", "Air Conditioning"],
+          lastMinuteAvailable: true,
+        },
+      ],
+    },
+  },
+  {
+    destinationId: "uttarakhand",
+    destinationName: "Uttarakhand",
+    country: "India",
+    hotels: {
+      star5: [
+        {
+          name: "Ananda in the Himalayas & The Taj Corbett Resort",
+          stars: 5,
+          location: "Narendra Nagar Rishikesh & Jim Corbett",
+          tagline: "World's leading destination spa palace in the Himalayan foothills and luxury riverside riverbank villas in Corbett",
+          features: ["World-Famous Spa & Yoga", "Private Riverside Villas", "Gourmet Organic Dining", "Jungle Safari Concierge"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star4: [
+        {
+          name: "Hotel Blue Pine Resort Corbett & Value & Spa Mussoorie",
+          stars: 4,
+          location: "Jim Corbett & Mussoorie Mall Road",
+          tagline: "Serene jungle resort gardens with swimming pool and mountain spa relaxation overlooking Doon Valley",
+          features: ["Swimming Pool", "Himalayan Valley Panoramas", "Full-Service Spa", "Multi-Cuisine Buffet"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "Vaapi Comfort Inn (Naukuchiatal Nainital)",
+          stars: 4,
+          location: "Naukuchiatal Lake, Nainital",
+          tagline: "Peaceful nine-cornered lake sanctuary offering boating, paragliding, and pine-scented mountain air",
+          features: ["Lakefront Setting", "Lush Lawn Gardens", "Bonfire Evenings", "Spacious Deluxe Suites"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star3: [
+        {
+          name: "Hotel Blue Pine Haridwar & Hotel NV Rishikesh",
+          stars: 3,
+          location: "Haridwar & Rishikesh",
+          tagline: "Clean, comfortable spiritual retreat hotels located within minutes of holy ghats and Ganga aarti",
+          features: ["Har Ki Pauri Proximity", "Pure Vegetarian Dining", "AC Deluxe Rooms", "Temple Tour Assistance"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star2: [
+        {
+          name: "Hotel Ganga View Haridwar",
+          stars: 2,
+          location: "Ganga Ghat, Haridwar",
+          tagline: "Affordable, clean private rooms with sacred Ganga views and easy walking access to bathing ghats",
+          features: ["Ganga River Proximity", "Room Service", "Free Wi-Fi", "24/7 Hot Water"],
+          lastMinuteAvailable: true,
+        },
+      ],
+    },
+  },
+  {
+    destinationId: "grand-europe",
+    destinationName: "Grand Europe",
+    country: "Austria, Hungary, Czechia, Germany & Netherlands",
+    hotels: {
+      star5: [
+        {
+          name: "Hotel Sacher Vienna & Grand Hotel Krasnapolsky Amsterdam",
+          stars: 5,
+          location: "Kärntner Ring Vienna & Dam Square Amsterdam",
+          tagline: "Legendary European high-luxury: the home of Original Sacher-Torte and royal suites directly on Dam Square",
+          features: ["Dam Square Front", "Historic Royal Luxury", "Original Sacher-Torte", "Michelin Dining"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star4: [
+        {
+          name: "Moxy Vienna City East & Mercure Budapest Castle Hill",
+          stars: 4,
+          location: "Vienna & Budapest",
+          tagline: "Vibrant modern lifestyle comfort in Vienna and classic Hungarian castle-hill elegance on the Danube",
+          features: ["Buda Castle Walk", "Direct U-Bahn / Metro", "Chic Cocktail Bar", "Buffet Breakfast"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "Panorama Hotel Prague",
+          stars: 4,
+          location: "Pankrac, Prague",
+          tagline: "Four-star comfort with rooftop wellness centre (Top Deck) offering panoramic views of Prague's spires",
+          features: ["Rooftop Panoramic Pool", "Direct Metro to Old Town", "Spa & Sauna", "Spacious Deluxe Rooms"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star3: [
+        {
+          name: "Ibis Frankfurt City Messe & Ibis Amsterdam City West",
+          stars: 3,
+          location: "Frankfurt & Amsterdam",
+          tagline: "Dependable, spotless Accor comfort with Sweet Bed mattresses and rapid connections to canal centers",
+          features: ["Direct Train / Tram to Center", "Sweet Bed by Ibis", "24/7 Snack Bar", "Free High-Speed Wi-Fi"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star2: [
+        {
+          name: "Meininger Hotel Amsterdam City West",
+          stars: 2,
+          location: "Sloterdijk, Amsterdam",
+          tagline: "Modern, clean design budget hotel located directly at Sloterdijk station, 5 minutes by train to Central",
+          features: ["Sloterdijk Station 2min", "Game Zone & Bar", "Spotless Private Ensuites", "Guest Kitchen"],
+          lastMinuteAvailable: true,
+        },
+      ],
+    },
+  },
+  {
+    destinationId: "vietnam",
+    destinationName: "Vietnam",
+    country: "Vietnam",
+    hotels: {
+      star5: [
+        {
+          name: "Sofitel Legend Metropole Hanoi & The Reverie Saigon",
+          stars: 5,
+          location: "French Quarter Hanoi & District 1 Ho Chi Minh City",
+          tagline: "Century-old French colonial grandeur in Hanoi paired with Italian haute-design opulence in Saigon",
+          features: ["French Colonial Heritage", "Helipad Access", "Luxury Spas", "World-Class Fine Dining"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star4: [
+        {
+          name: "Moonview Hotel Hanoi & White Lotus Hotel Saigon",
+          stars: 4,
+          location: "Hanoi Old Quarter & District 1 Saigon",
+          tagline: "Charming boutique comfort in the heart of historic merchant guilds and Saigon rooftop river views",
+          features: ["Rooftop Pool & Bar", "Walk to Hoan Kiem Lake", "Ben Thanh Market 5min", "Vietnamese Buffet"],
+          lastMinuteAvailable: true,
+        },
+        {
+          name: "La Regina Classic Cruise (Halong Bay)",
+          stars: 4,
+          location: "Halong Bay & Lan Ha Bay",
+          tagline: "Elegant boutique wooden cruiser featuring private balcony cabins, panoramic sundeck, and gourmet dining",
+          features: ["Private Balcony Cabins", "Sundeck Tai Chi", "Kayaking & Cave Excursions", "Seafood Gala Dinners"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star3: [
+        {
+          name: "Church Boutique Hotel Hanoi & Silverland Yen Saigon",
+          stars: 3,
+          location: "St. Joseph Cathedral Hanoi & Central Saigon",
+          tagline: "Stylish boutique hotels located steps away from Hanoi's Gothic cathedral and Saigon city parks",
+          features: ["Cathedral 2min Walk", "Rooftop Jacuzzi", "Complimentary Afternoon Tea", "Free Wi-Fi"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star2: [
+        {
+          name: "Hanoi City Backpackers Hostel (Private Rooms)",
+          stars: 2,
+          location: "Old Quarter, Hanoi",
+          tagline: "Clean, air-conditioned private rooms in the heart of Hanoi's street-food haven",
+          features: ["Old Quarter Center", "Air Conditioning", "Free Breakfast", "Tour Desk"],
+          lastMinuteAvailable: true,
+        },
+      ],
+    },
+  },
+  {
+    destinationId: "vietnam-hanoi-halong",
+    destinationName: "Vietnam - Hanoi & Halong",
+    country: "Vietnam",
+    hotels: {
+      star5: [
+        {
+          name: "Capella Hanoi & Ambassador Cruise Halong",
+          stars: 5,
+          location: "Hoan Kiem Hanoi & Halong Bay",
+          tagline: "Bill Bensley operatic 5-star palace near Hanoi Opera House and colossal twin-sundeck luxury cruise vessel",
+          features: ["Opera Suite Luxury", "Private Jacuzzis on Cruise", "Michelin Dining", "Private Limousine Transfers"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star4: [
+        {
+          name: "The Ann Hanoi & La Regina Classic Cruise",
+          stars: 4,
+          location: "Hanoi French Quarter & Halong Bay",
+          tagline: "Rooftop swimming pool and contemporary elegance in Hanoi combined with private balcony cruise cabins",
+          features: ["Rooftop City Pool", "Private Balcony Sea Cabins", "French Quarter 5min", "Gourmet Vietnamese Dining"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star3: [
+        {
+          name: "Moonview Hotel Hanoi",
+          stars: 3,
+          location: "Hang Than, Old Quarter, Hanoi",
+          tagline: "Warm, welcoming boutique hotel with panoramic rooftop restaurant overlooking the Red River and Old Town",
+          features: ["Rooftop River View Restaurant", "Dong Xuan Market 3min", "Authentic Breakfast", "Tour Desk"],
+          lastMinuteAvailable: true,
+        },
+      ],
+      star2: [
+        {
+          name: "Little Charm Hanoi",
+          stars: 2,
+          location: "Old Quarter, Hanoi",
+          tagline: "Charming boutique budget stay with indoor swimming pool and comfortable private air-conditioned rooms",
+          features: ["Indoor Pool", "Air Conditioned", "Old Quarter Location", "Free Breakfast"],
+          lastMinuteAvailable: true,
+        },
+      ],
+    },
+  },
 ];
 
 // Helper to find hotels by destination
