@@ -8,19 +8,19 @@ export function cn(...inputs: ClassValue[]) {
 /**
  * Formats a phone number safely for Google Sheets & Excel.
  * Prevents leading '+' from triggering formula evaluation (#ERROR! Formula parse error).
- * Returns standardized format like "(+91) 7016841389" which is evaluated as pure text by spreadsheets
+ * Returns standardized format like "(+91) 9876543210" which is evaluated as pure text by spreadsheets
  * and correctly dialed by smartphone dialers and 'tel:' links.
  */
 export function formatSafePhoneNumber(raw: string): string {
   if (!raw) return "";
   const trimmed = raw.trim();
 
-  // If already formatted like "(+91) 7016841389", return as-is
+  // If already formatted like "(+91) 9876543210", return as-is
   if (/^\(\+\d{1,4}\)/.test(trimmed)) {
     return trimmed;
   }
 
-  // If starts with '+' e.g. "+91 7016841389", "+91 70168 41389", "+91-7016841389"
+  // If starts with '+' e.g. "+91 9876543210", "+91 98765 43210", "+91-9876543210"
   if (trimmed.startsWith("+")) {
     const match = trimmed.match(/^\+(\d{1,4})[\s-]*(.*)$/);
     if (match) {
@@ -42,7 +42,7 @@ export function formatSafePhoneNumber(raw: string): string {
     return `(+91) ${digits}`;
   }
 
-  // 12-digit Indian number starting with 91 (e.g. 917016841389)
+  // 12-digit Indian number starting with 91 (e.g. 919876543210)
   if (/^91[6-9]\d{9}$/.test(digits)) {
     return `(+91) ${digits.slice(2)}`;
   }

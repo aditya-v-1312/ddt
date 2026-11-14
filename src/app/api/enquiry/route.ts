@@ -90,7 +90,7 @@ export async function POST(request: NextRequest) {
     const referenceId = `${prefix}-${todayStr}-${randomSuffix}`;
     const createdAt = new Date().toISOString();
 
-    // Standardize phone number safely with country code in parentheses e.g. "(+91) 7016841389"
+    // Standardize phone number safely with country code in parentheses e.g. "(+91) 9876543210"
     // This permanently prevents Google Sheets and Excel formula parse errors (#ERROR!)
     const cleanPhone = formatSafePhoneNumber(phone);
 

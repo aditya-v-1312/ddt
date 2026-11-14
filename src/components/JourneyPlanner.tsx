@@ -178,7 +178,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
     // Client-side validation: Phone must contain at least 7 digits
     const phoneDigits = formData.phone.replace(/\D/g, "");
     if (!formData.phone.trim() || phoneDigits.length < 7) {
-      setSubmitError("Please enter a valid phone or WhatsApp number (e.g. +91 70168 41389).");
+      setSubmitError("Please enter a valid phone or WhatsApp number (e.g. +91 98765 43210).");
       return;
     }
 
@@ -709,7 +709,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                               setSubmitError(null);
                               setFormData({ ...formData, name: e.target.value });
                             }}
-                            placeholder="e.g. Aditya Chandiramani"
+                            placeholder="Enter your full name"
                             className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#07101F] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium transition-colors"
                           />
                         </div>
@@ -735,12 +735,12 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                               setSubmitError(null);
                               setFormData({ ...formData, phone: e.target.value });
                             }}
-                            placeholder="+91 70168 41389"
+                            placeholder="+91 98765 43210"
                             className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#07101F] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium transition-colors"
                           />
                         </div>
                         <span className="text-[11px] text-[#697181] font-sans mt-1 block">
-                          Enter 10-digit mobile number with or without +91 (e.g. +91 70168 41389 or 7016841389)
+                          Enter 10-digit mobile number with or without +91 (e.g. +91 98765 43210)
                         </span>
                       </div>
                     </div>
