@@ -78,7 +78,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Peak Tram, Madame Tussauds, Star Ferry & Night Market. Overnight in Hong Kong",
         description:
           "Enjoy breakfast at hotel. Embark on a scenic excursion to Ngong Ping 360 with shared transfers. Enjoy a breathtaking cable car ride offering panoramic views of lush mountains, the South China Sea, and HKIA. Explore Ngong Ping Village, serene Po Lin Monastery, and the majestic Tian Tan Buddha. In the evening, explore Hong Kong by Night: Peak Tram funicular to Victoria Peak, Madame Tussauds wax museum, and the iconic Star Ferry harbour cruise.",
-        image: "https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 3,
@@ -89,7 +89,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Return to hotel and Overnight in Hong Kong",
         description:
           "Embark on a magical full-day excursion to Hong Kong Disneyland with shared return transfers. Experience enchanting themed lands, thrilling attractions, spectacular live entertainment, beloved Disney characters, and dazzling evening fireworks.",
-        image: "https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 4,
@@ -100,7 +100,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Return to hotel and Overnight in Hong Kong",
         description:
           "Full-day excursion to Ocean Park Hong Kong with shared return transfers. Explore world-class marine exhibits, thrill coasters, giant pandas, wildlife encounters, and scenic cable car views overlooking the South China Sea.",
-        image: "https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 5,
@@ -111,7 +111,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Explore Macau on your own and Overnight in Macau",
         description:
           "After breakfast, check out and proceed to the ferry terminal for your high-speed ferry transfer to Macau across the Pearl River Delta. Check into your hotel and spend the rest of the day exploring the 'Las Vegas of Asia' with its grand casino resorts and Portuguese heritage.",
-        image: "https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 6,
@@ -122,7 +122,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Free at leisure and Overnight in Macau",
         description:
           "Discover Macau's rich Portuguese-Chinese heritage: iconic Ruins of St. Paul's, Senado Square, ancient A-Ma Temple, and a photo stop at the towering Macau Tower before an evening at leisure.",
-        image: "https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 7,
@@ -133,7 +133,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Tour ends with wonderful memories",
         description:
           "After breakfast, check out from hotel and proceed to the ferry terminal for your direct return ferry to Hong Kong International Airport to catch your flight home.",
-        image: "https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=1600&q=85",
       },
     ],
   },
@@ -191,7 +191,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Overnight in Vienna",
         description:
           "Guided panoramic tour of Vienna along the majestic Ringstrasse, State Opera, Hofburg Palace, Parliament, and St. Stephen's Cathedral. In the evening, enjoy a transfer to the charming Grinzing district known for wine taverns and local dining.",
-        image: "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 3,
@@ -201,7 +201,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Overnight in Budapest",
         description:
           "Drive to Budapest, capital of Hungary. Free time for lunch in the lively Váci Utca area. Later, experience a scenic boat cruise on the Danube River with vistas of Buda and Pest, followed by a city tour of Heroes' Square, Buda Castle, and Parliament.",
-        image: "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 4,
@@ -211,7 +211,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Overnight in Prague",
         description:
           "Depart early for Bratislava on the Danube. Stroll through the charming Old Town, admire Michael's Gate, and have lunch at a local restaurant. Continue onwards to Prague, the Baroque jewel, and spend the evening in Old Town Square.",
-        image: "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 5,
@@ -221,7 +221,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Overnight in Prague",
         description:
           "Guided city tour of Prague Castle (entrance included), St. Vitus Cathedral, Charles Bridge, and Astronomical Clock. Enjoy a relaxing boat cruise on the Vltava River (included), with the afternoon free for cobblestone boutiques.",
-        image: "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1562979314-bee7453e911c?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 6,
@@ -231,7 +231,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Overnight in Frankfurt",
         description:
           "Depart for Bohemian Pilsen to see its historic Town Hall and Cathedral. Continue along the scenic Romantic Road to Rothenburg ob der Tauber, a fairy-tale medieval town with half-timbered houses. Conclude the drive in Frankfurt at Römer Square.",
-        image: "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1549877452-9c387954fbc2?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 7,
@@ -240,7 +240,7 @@ export const travelPackages: TravelPackage[] = [
         morning: "Departure from Frankfurt Airport",
         description:
           "After breakfast, check out of your hotel. Transfer to Frankfurt Airport for your flight back home with unforgettable memories.",
-        image: "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1600&q=85",
       },
     ],
   },
@@ -297,7 +297,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Phillip Island world-famous Penguin Parade, return to Rendezvous Melbourne",
         description:
           "Visit the hallowed Melbourne Cricket Ground for an exclusive guided tour of player rooms and the Long Room. Take in 360-degree views from the Eureka Skydeck. In the afternoon, head southeast to Moonlit Sanctuary to meet kangaroos and koalas, ending with the enchanting sunset Penguin Parade on Phillip Island.",
-        image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 3,
@@ -308,7 +308,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Marvel at the Gibson Steps, Loch Ard Gorge & 12 Apostles, overnight in Crowne Metropol",
         description:
           "Experience one of the world's greatest coastal road journeys. Drive along rugged cliffs and golden surf beaches, spot koalas in eucalyptus forests, visit historic Apollo Bay, and witness the majestic limestone rock formations of the 12 Apostles and Loch Ard Gorge.",
-        image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 4,
@@ -319,7 +319,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Immerse in tropical Cairns night markets and esplanade",
         description:
           "Fly from Melbourne to Cairns, the gateway to Australia's Great Barrier Reef and ancient Daintree rainforest. Relax at your resort or wander the Cairns Esplanade Lagoon.",
-        image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 5,
@@ -330,7 +330,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Kuranda Scenic Railway return journey, overnight in Mercure Cairns",
         description:
           "Glide effortlessly above Australia's ancient Wet Tropics World Heritage rainforest on the Skyrail Cableway. Explore the vibrant arts and crafts village of Kuranda, and witness the dramatic cascading beauty of Barron Falls from deep within the forest.",
-        image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1529963183134-61a90db47eaf?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 6,
@@ -341,7 +341,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Return to Cairns Plaza hotel with evening at leisure",
         description:
           "Set sail across the turquoise waters of the Great Barrier Reef to Green Island. Spend the day swimming, snorkeling among vibrant coral reefs, or exploring marine life aboard a glass-bottom boat, accompanied by a delicious tropical buffet lunch.",
-        image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 7,
@@ -363,7 +363,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Evening at leisure around Darling Harbour, overnight at Novotel Central City Centre",
         description:
           "Enjoy Sydney's premier attractions using your Merlin 4-in-1 Pass: ascend the Sydney Tower Eye, encounter koalas and crocodiles at WILD LIFE Sydney, discover 13,000 marine animals at SEA LIFE Aquarium, and pose with stars at Madame Tussauds.",
-        image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 9,
@@ -373,7 +373,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Board flight for onward journey home",
         description:
           "After breakfast, check out of your hotel and transfer to Sydney International Airport for your flight back home, carrying unforgettable Australian memories.",
-        image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85",
       },
     ],
   },
@@ -428,7 +428,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Upland Park for breathtaking panoramic sunset vistas of Baku Bay and the iconic Flame Towers",
         description:
           "Experience Baku's blend of ancient Silk Road history and modern glamour. Walk the cobblestone lanes of the Maiden Tower and Shirvanshahs Palace, stroll through Little Venice canals along the Caspian Sea, and take in the panoramic sunset skyline from Upland Park.",
-        image: "https://images.unsplash.com/photo-1598471171818-4720938f3192?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 3,
@@ -450,7 +450,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Atashgah 17th-century Zoroastrian Fire Temple and naturally burning Yanardag Fire Mountain",
         description:
           "Discover why Azerbaijan is known as the 'Land of Fire'. Inspect 40,000-year-old rock engravings in Gobustan, explore rare bubbling mud volcanoes, visit the sacred eternal flames of Atashgah Zoroastrian Fire Temple, and marvel at Yanardag's burning hillside.",
-        image: "https://images.unsplash.com/photo-1598471171818-4720938f3192?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 5,
@@ -515,7 +515,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Visit Goa Gajah (Elephant Cave) and sacred holy springs of Tirta Empul at Tampaksiring",
         description:
           "Explore Bali's cultural heartland: silverwork at Celuk, woodcarving in Mas, traditional Balinese paintings in Ubud, and lunch overlooking the majestic volcanic caldera of Mount Batur.",
-        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 3,
@@ -526,7 +526,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Marvel at the dramatic waves crashing against the temple during golden sunset",
         description:
           "Visit one of Bali's seven sacred sea temples. Perched dramatically on an offshore rock formation, Tanah Lot is steeped in Balinese Hindu mythology and offers one of the most photographed sunsets on earth.",
-        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 4,
@@ -537,7 +537,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Return to resort with evening at leisure for beachfront dining",
         description:
           "Head to Nusa Dua's water adventure playground. Skim across turquoise waters on a jet ski, glide through the air on the flying fish, and enjoy group laughs on a high-speed banana boat ride.",
-        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 5,
@@ -548,7 +548,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Explore the bustling street food and neon-lit avenues of Bukit Bintang",
         description:
           "Fly from Bali to Malaysia's dynamic capital. Transfer to your central hotel and spend the evening shopping along the Golden Triangle or dining at Jalan Alor.",
-        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 6,
@@ -559,7 +559,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Photo stop at the iconic Petronas Twin Towers and KL Tower, evening at leisure",
         description:
           "Tour Malaysia's grand capital: view the golden-domed King's Palace, the National Monument commemorating independence, the historic Sultan Abdul Samad building at Merdeka Square, and the world-famous Petronas Twin Towers.",
-        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 7,
@@ -570,7 +570,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Enjoy indoor theme parks, Snow World, Casino de Genting, overnight at First World Hotel",
         description:
           "Climb the 272 rainbow steps at Batu Caves, then ascend into the cool mountain mist of Genting Highlands via the Awana SkyWay cable car. Enjoy premier entertainment at First World Hotel and SkyAvenue.",
-        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 8,
@@ -580,7 +580,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Depart with bags full of souvenirs and unforgettable memories",
         description:
           "Check out from your hotel and transfer to KLIA for your return flight home, concluding an incredible multi-country holiday.",
-        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1600&q=85",
       },
     ],
   },
@@ -631,7 +631,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Holy springs of Tirta Empul at Tampaksiring, return to hotel",
         description:
           "Discover the cultural treasures of Bali: traditional handicrafts in Celuk, wood carvings in Mas, holy spring baths of Tirta Empul, and the sweeping caldera vistas of Mount Batur.",
-        image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 3,
@@ -642,7 +642,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Sunset viewing at Tanah Lot rock formation, overnight in Kuta",
         description:
           "Witness Bali's most iconic sea temple perched dramatically on an offshore reef formation as the setting sun paints the sky in shades of gold and violet.",
-        image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 4,
@@ -653,7 +653,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Relax on white sand beach, return to resort for final evening in Bali",
         description:
           "Enjoy high-octane water adventures in the warm turquoise waters of Tanjung Benoa with full safety gear and certified instructors.",
-        image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 5,
@@ -717,7 +717,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Tokyo Tower Main Deck observation views, tour ends at Tokyo Station, overnight in Yotsuya",
         description:
           "Tour Tokyo's most iconic landmarks on the famous Hato Bus: stroll the serene forests of Meiji Shrine, the Imperial Palace plaza, the ancient halls of Senso-Ji Temple in Asakusa, and take in the panoramic skyline from Tokyo Tower's Main Deck.",
-        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 3,
@@ -728,7 +728,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Courier heavy luggage to Osaka, tour concludes at Shinjuku, overnight in New Hankyu",
         description:
           "Ascend to the 5th Station of majestic Mount Fuji (2,300m above sea level). Cruise across serene Lake Ashi with views of Fuji's snow-capped peak, and ride the Komagatake Ropeway high above the Hakone volcanic valley.",
-        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 4,
@@ -750,7 +750,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Visit Osaka Castle & Osaka Castle Park (90 mins), return to hotel",
         description:
           "Take in 360-degree open-air views from the Floating Garden Observatory bridging the twin Umeda Sky towers. Cruise along the Okawa River aboard the Aqua Liner, and explore the historic stone ramparts and museum of Osaka Castle.",
-        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 6,
@@ -760,7 +760,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Private car transfer to Kansai International Airport (KIX)",
         description:
           "Your private car will escort you directly from your Osaka hotel to Kansai International Airport for your flight back home, completing an unforgettable Japanese journey.",
-        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1600&q=85",
       },
     ],
   },
@@ -818,7 +818,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Photo stop at the iconic Bird's Nest Olympic Stadium, return to hotel",
         description:
           "Ascend the legendary Great Wall of China at Juyong Pass nestled within the Guangou Valley. Learn the ancient craft of jade carving and view the 2008 Olympic Bird's Nest stadium.",
-        image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 3,
@@ -840,7 +840,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Big Wild Goose Pagoda North Square musical water and light fountain show",
         description:
           "Experience the ultra-smooth Chinese high-speed railway to Xi'an, the ancient starting point of the Silk Road. In the evening, witness Asia's largest musical fountain show against the historic Big Wild Goose Pagoda.",
-        image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 5,
@@ -851,7 +851,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Photo stop at the Ancient City Wall and street food stroll in the vibrant Muslim Quarter",
         description:
           "Stand before the archaeological wonder of Emperor Qin Shi Huang's subterranean army, buried for over 2,200 years. Later, stroll the bustling food stalls and handicraft souks of the Muslim Quarter.",
-        image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 6,
@@ -862,7 +862,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Visit Elephant Trunk Hill landmark at the confluence of Li and Taohua rivers",
         description:
           "Fly south to Guilin, renowned for its dramatic karst limestone landscape. View the natural landmark of Elephant Trunk Hill drinking from the river and visit an authentic green tea plantation.",
-        image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 7,
@@ -873,7 +873,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Explore Yangshuo West Street with its cafes, boutiques and vibrant nightlife",
         description:
           "Drift along the world-renowned Li River through scenes straight out of a traditional Chinese watercolor painting, concluding on the lively pedestrian avenue of Yangshuo West Street.",
-        image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 8,
@@ -895,7 +895,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Historic Bund promenade with evening skyline views of the Oriental Pearl Tower",
         description:
           "Explore Shanghai's highlights: sacred white jade statues at the Jade Buddha Temple, sky-high vistas from Jinmao Tower, and an evening stroll along the historic waterfront Bund.",
-        image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 10,
@@ -958,7 +958,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Ascend to the 124th floor observation deck of Burj Khalifa for panoramic sunset vistas",
         description:
           "Tour Dubai's iconic architecture: Jumeirah Mosque, the sail-shaped Burj Al Arab, and the aromatic spice and glittering gold souks. Conclude at the summit of Burj Khalifa, the tallest building on earth.",
-        image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 3,
@@ -969,7 +969,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Barbecue dinner under the stars at Bedouin desert camp with belly dancing and Tanoura performances",
         description:
           "Experience the timeless magic of the Arabian desert. Skim across red dunes in a 4x4, sip authentic Arabic coffee and dates, and feast on a lavish BBQ dinner with live traditional Emirati music and dance.",
-        image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 4,
@@ -990,7 +990,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Private transfer to Dubai International Airport for departure",
         description:
           "Check out from your hotel and transfer to the airport with bags full of souvenirs and wonderful memories of Dubai.",
-        image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=1600&q=85",
       },
     ],
   },
@@ -1045,7 +1045,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Transfer to Giza railway station for 1st-class Sleeper Train to Aswan with dinner onboard",
         description:
           "Marvel at human history's greatest monument: the Pyramids of Giza and the enigmatic Sphinx. Browse Tutankhamun's gold treasures at the Egyptian Museum before boarding the overnight sleeper train south along the Nile.",
-        image: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 3,
@@ -1056,7 +1056,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Check-in at Obelisk Nile Hotel, optional evening Sound & Light show at Philae Temple",
         description:
           "Arrive in sunny Nubian Aswan. Visit the modern engineering marvel of the High Dam and inspect the massive granite obelisk carved directly into ancient bedrock before relaxing by the Nile.",
-        image: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 4,
@@ -1078,7 +1078,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Check-in at Temple Luxor Hotel, optional Sound & Light show at Karnak",
         description:
           "Journey north along the Nile to ancient Thebes (Luxor). Walk through the towering stone columns of the Hypostyle Hall at Karnak, the largest religious temple complex ever constructed.",
-        image: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 6,
@@ -1089,7 +1089,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Transfer to Luxor station for overnight Tourist Sleeper Train to Cairo with dinner",
         description:
           "Explore the West Bank necropolis where pharaohs were buried in secret cliff tombs. Visit Queen Hatshepsut's terraced colonnaded temple and the giant stone Colossi of Memnon before taking the train back to Cairo.",
-        image: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 7,
@@ -1110,7 +1110,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Fly home with memories of ancient wonders",
         description:
           "Say goodbye to Egypt as your representative transfers you to Cairo International Airport for your return flight home.",
-        image: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1600&q=85",
       },
     ],
   },
@@ -1177,7 +1177,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Visit sacred Bodbe Monastery, wine tasting at KTW Winery, return to Vista Hotel in Tbilisi",
         description:
           "Experience Georgia's 8,000-year winemaking heritage. Taste freshly baked puri bread and salty cheese in Badiauri, stroll the fortified hilltop town of Sighnaghi with views of the Alazani Valley, and enjoy premium Georgian wines.",
-        image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 4,
@@ -1199,7 +1199,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Visit Dariali Gorge at the Russian border, return to Tbilisi, overnight at Vista Hotel",
         description:
           "Take a 4x4 mountain drive to Georgia's most iconic postcard sight: the 14th-century Gergeti Trinity Church framed against the towering 5,047m peak of Mount Kazbek. Explore the granite canyon of Dariali Gorge before returning to Tbilisi.",
-        image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 6,
@@ -1262,7 +1262,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Shopping at Bagatelle Mall of Mauritius, return to hotel for dinner",
         description:
           "Explore the rich French and British colonial history of Port Louis. Stroll beneath the colorful umbrella canopy of Caudan Waterfront, visit the historic hilltop Citadel Fort for panoramic harbor views, and shop at Bagatelle Mall.",
-        image: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 3,
@@ -1284,7 +1284,7 @@ export const travelPackages: TravelPackage[] = [
         evening: "Speedboat ride back to mainland, transfer to hotel for final evening dinner",
         description:
           "Experience Mauritius' most famous island paradise. Speed across the emerald bay to Île aux Cerfs to swim in crystal-clear waters, stroll along powder-soft sands, or participate in watersports like parasailing and undersea walks.",
-        image: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1600&q=85",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85",
       },
       {
         day: 5,
@@ -1350,7 +1350,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Drive to seaside art town Asilah; admire whitewashed houses, vibrant murals & ramparts",
         evening: "Arrive in Tangier, gateway between Europe and Africa, check-in at MIA Urban Detroit",
         description: "Admire Casablanca's monumental Hassan II Mosque perched over the Atlantic. Continue along the scenic coastline to Asilah, renowned for artistic murals and ocean views, before reaching Tangier.",
-        image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 3,
@@ -1360,7 +1360,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Scenic drive through the green peaks of the Rif Mountains",
         evening: "Arrive in Chefchaouen, the 'Blue Pearl of Morocco', check-in at Dar Annasr Hotel",
         description: "Discover Tangier where the Mediterranean meets the Atlantic, then ascend through the Rif Mountains to magical Chefchaouen, nestled under dramatic mountain peaks.",
-        image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 4,
@@ -1370,7 +1370,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Hike up to the historic Spanish Mosque for panoramic views over the blue valley",
         evening: "Depart for Fes, Morocco's spiritual and culinary capital, check-in at Zahrat Al Jabal",
         description: "Spend a magical morning photographing Chefchaouen's world-famous blue stairs and doorways. Take in the valley vista from the Spanish Mosque before driving to imperial Fes.",
-        image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 5,
@@ -1380,7 +1380,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Bab Bou Jeloud (Blue Gate), Attarine Madrasa, ancient Chouara Tannery & Al-Qarawiyyin",
         evening: "Visit Royal Palace 7 bronze gates and Borj Sud fortress for sunset skyline views",
         description: "Step back into the Middle Ages in the world's largest car-free urban area. Marvel at intricate tilework, fragrant spice souks, leather tanneries, and historic madrasas.",
-        image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 6,
@@ -1390,7 +1390,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Explore ancient Roman UNESCO city of Volubilis: triumphal arches & mosaic floors",
         evening: "Scenic drive to Morocco's coastal capital Rabat, check-in at Malak Hotel",
         description: "Discover the colossal 17th-century ramparts of Meknes and walk among the preserved Roman columns and mosaic courtyards of Volubilis, then continue to graceful Rabat.",
-        image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 7,
@@ -1400,7 +1400,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Scenic drive through central Moroccan plains toward Marrakech",
         evening: "Arrive in Marrakech, check-in at LeCaspien Hotel, evening at leisure",
         description: "Tour Rabat's serene Andalusian Gardens and the 12th-century Hassan Tower, then travel south to legendary Marrakech, the historic oasis of caravans.",
-        image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 8,
@@ -1419,7 +1419,7 @@ export const travelPackages: TravelPackage[] = [
         morning: "Breakfast at hotel, leisure morning for last-minute souvenir shopping in the Medina",
         noonToEvening: "Private transfer to Marrakech Menara Airport (or Casablanca) for your return flight",
         description: "Savor a final Moroccan breakfast and mint tea before your private car escorts you to the airport, concluding an unforgettable 9-day imperial Moroccan odyssey.",
-        image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=85"
       }
     ]
   },
@@ -1476,7 +1476,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Best Western Patong, afternoon relaxation or shopping at Jungceylon",
         evening: "Experience the vibrant energy and street food of Bangla Road and Patong Beach",
         description: "Journey back across the bridge to Phuket, Thailand's largest tropical island. Spend the evening enjoying golden sands, sunset cocktails, and lively night markets in Patong.",
-        image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 4,
@@ -1486,7 +1486,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Swim in emerald Pileh Lagoon, visit Viking Cave and Monkey Beach, buffet lunch",
         evening: "Return to Phuket pier and transfer back to hotel for your final evening",
         description: "Experience the Andaman Sea's crown jewels: dramatic soaring limestone peaks, crystal-clear turquoise waters in Pileh Lagoon, and world-class snorkeling around Phi Phi Islands.",
-        image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 5,
@@ -1546,7 +1546,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Tour the historic Moscow Kremlin territory, Tsar Bell, Tsar Cannon & Cathedrals",
         evening: "Visit Cathedral of Christ the Saviour and enjoy panoramic views from Patriarch Bridge",
         description: "Discover Russia's political and spiritual epicenter. Walk cobblestone Red Square, gaze at St. Basil's vibrant onion domes, and enter the Kremlin's medieval cathedral square.",
-        image: "https://images.unsplash.com/photo-1513326738677-b964603b136d?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 3,
@@ -1556,7 +1556,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Board the high-speed Sapsan train whisking through Russian countryside in 3.5 hours",
         evening: "Arrive at Moskovsky Station in St. Petersburg, transfer to Holiday Inn Vorota",
         description: "Marvel at Moscow's museum-like metro stations before boarding the cutting-edge Sapsan bullet train to Peter the Great's grand northern Venice on the Baltic Sea.",
-        image: "https://images.unsplash.com/photo-1513326738677-b964603b136d?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 4,
@@ -1566,7 +1566,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Explore Peter and Paul Fortress, birthplace of the city and Romanov burial site",
         evening: "Admire the intricate mosaic domes of the Church of the Savior on Spilled Blood",
         description: "Immerse in the breathtaking baroque and neoclassical splendor of St. Petersburg along the Neva River, surrounded by grand palaces, bridges, and gilded cathedral domes.",
-        image: "https://images.unsplash.com/photo-1513326738677-b964603b136d?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 5,
@@ -1576,7 +1576,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "View masterworks by Leonardo da Vinci, Rembrandt, Raphael, and Impressionist masters",
         evening: "Leisure evening on Palace Square or optional Neva River canal cruise",
         description: "Explore one of the world's greatest art museums, housed inside the gilded former winter residence of Russian Tsars containing over 3 million masterpieces.",
-        image: "https://images.unsplash.com/photo-1513326738677-b964603b136d?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 6,
@@ -1586,7 +1586,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Marvel at the Grand Cascade fountains powered entirely by natural water pressure",
         evening: "Return to St. Petersburg for a farewell Russian imperial dinner",
         description: "Travel to the Gulf of Finland to witness the dazzling gold statues and water cascades of Peterhof, celebrating Peter the Great's naval triumphs.",
-        image: "https://images.unsplash.com/photo-1513326738677-b964603b136d?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 7,
@@ -1595,7 +1595,7 @@ export const travelPackages: TravelPackage[] = [
         morning: "Breakfast at hotel, morning stroll along the Moika and Fontanka canal bridges",
         noonToEvening: "Transfer to Pulkovo International Airport for your flight back home",
         description: "Enjoy a final morning taking in the grand vistas of the Neva River before your private transfer to Pulkovo Airport for your departure flight.",
-        image: "https://images.unsplash.com/photo-1513326738677-b964603b136d?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1548625361-195fe5795df5?auto=format&fit=crop&w=1600&q=85"
       }
     ]
   },
@@ -1636,7 +1636,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Ibis Budget Imperial, afternoon refresh",
         evening: "Evening excursion to the world-first Singapore Night Safari with guided tram ride",
         description: "Welcome to the Lion City! Arrive at world-renowned Changi Airport and transfer to your hotel. In the evening, journey into the Mandai rainforest for the famous Night Safari.",
-        image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 2,
@@ -1646,7 +1646,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Experience cutting-edge rides: Battlestar Galactica, Transformers 3D, Jurassic Park",
         evening: "Explore Hollywood and New York themed zones, return to hotel in evening",
         description: "Spend a full day immersed in cinematic magic at Southeast Asia's only Universal Studios theme park featuring 24 exhilarating rides, shows, and attractions.",
-        image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 3,
@@ -1686,7 +1686,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Visit National Monument, National Mosque & Independence Square (Dataran Merdeka)",
         evening: "Shopping at Suria KLCC or Bukit Bintang fashion malls",
         description: "Discover Malaysia's dynamic capital: gaze up at the gleaming stainless-steel spires of the Petronas Towers and explore rich Moorish colonial architecture.",
-        image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 7,
@@ -1736,7 +1736,7 @@ export const travelPackages: TravelPackage[] = [
     startingStar: 3,
     priceNote: "Customizable across 2★ Smart Budget to 5★ Marina Bay Sands luxury",
     popular: true,
-    coverImage: "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=1600&q=85",
+    coverImage: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85",
     itinerary: [
       {
         day: 1,
@@ -1746,7 +1746,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at J8 Hotel / Ibis Budget, afternoon leisure to unpack",
         evening: "Evening excursion to the Mandai Night Safari, exploring nocturnal wildlife via tram",
         description: "Welcome to Singapore! Arrive at Changi Airport and transfer to your hotel. In the evening, journey into the lush Mandai rainforest to witness over 2,500 animals in their nocturnal habitats.",
-        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 2,
@@ -1776,7 +1776,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Visit Gardens by the Bay: walk beneath the 35m indoor waterfall in Cloud Forest & Flower Dome",
         evening: "Watch the Supertrees light up during the dazzling Garden Rhapsody evening show",
         description: "Capture classic photos with the Merlion overlooking Marina Bay Sands, explore multicultural heritage enclaves, and enter the climate-controlled conservatories of Gardens by the Bay.",
-        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 5,
@@ -1785,7 +1785,7 @@ export const travelPackages: TravelPackage[] = [
         morning: "Breakfast at hotel, free time for shopping on Orchard Road or Bugis Junction",
         noonToEvening: "Transfer to Changi Airport; visit Jewel Changi's indoor Rain Vortex before departure",
         description: "Spend your final hours shopping before transferring to Changi Airport. Gaze at the world's tallest indoor waterfall at Jewel before boarding your flight back home.",
-        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85"
       }
     ]
   },
@@ -1821,7 +1821,7 @@ export const travelPackages: TravelPackage[] = [
     startingStar: 3,
     priceNote: "Customizable across 3★, 4★, and 5★ multi-nation tiers",
     popular: true,
-    coverImage: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1600&q=85",
+    coverImage: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85",
     itinerary: [
       {
         day: 1,
@@ -1831,7 +1831,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Value Hotel Thomson, relax and unpack",
         evening: "Evening transfer to Mandai Night Safari with guided tram tour",
         description: "Begin your grand tri-nation odyssey in Singapore. Transfer to your hotel and spend the evening discovering the world's first nocturnal zoo in the Mandai rainforest.",
-        image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 2,
@@ -1841,7 +1841,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Afternoon at Sentosa Island: Cable car ride, S.E.A. Aquarium & Siloso Beach",
         evening: "Spectacular Wings of Time night show, return to hotel",
         description: "Explore the vibrant cultural quarters of Singapore and spend an exhilarating afternoon on resort island Sentosa enjoying world-class marine life and evening pyrotechnics.",
-        image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 3,
@@ -1851,7 +1851,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Cross the international causeway, scenic drive through rubber & palm plantations",
         evening: "Arrive in Kuala Lumpur, check-in at Cosmo Hotel, evening dining in Bukit Bintang",
         description: "Cross into Malaysia and journey through scenic tropical country to capital Kuala Lumpur. Spend the evening exploring the golden triangle shopping and dining precinct.",
-        image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 4,
@@ -1861,7 +1861,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Independence Square (Dataran Merdeka), National Mosque & Cocoa Boutique",
         evening: "Leisure evening at Suria KLCC and Lake Symphony water fountains",
         description: "Discover the architectural wonders of Kuala Lumpur, from colonial heritage squares to the futuristic stainless-steel spires of the Petronas Twin Towers.",
-        image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 5,
@@ -1871,7 +1871,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Ride the Awana SkyWay gondola above prehistoric rainforest to Genting",
         evening: "Check-in at First World Hotel, enjoy high-altitude casinos, malls & indoor theme parks",
         description: "Climb the colorful temple steps of Batu Caves, then soar into the cool mountain air of Genting Highlands for a fun-filled night of entertainment above the clouds.",
-        image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 6,
@@ -1881,7 +1881,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Arrive at Suvarnabhumi Airport, meet Thai chauffeur and drive directly to Pattaya",
         evening: "Check-in at Sunbeam Hotel Pattaya, evening stroll along the lively Pattaya Beach Road",
         description: "Fly to Thailand and enjoy a comfortable highway drive to the seaside resort city of Pattaya. Settle in and enjoy warm Gulf of Thailand sea breezes.",
-        image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 7,
@@ -1901,7 +1901,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Scenic drive to Bangkok, check-in at Ecotel Bangkok / Gusto Pratunam",
         evening: "Evening shopping at Pratunam wholesale garment market or Platinum Fashion Mall",
         description: "Journey from the coast to Thailand's vibrant royal capital, Bangkok. Enjoy world-class shopping in Pratunam and savor mouth-watering Thai street food.",
-        image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 9,
@@ -1911,7 +1911,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Drive past Chinatown, Flower Market, Democracy Monument & Royal Grand Palace",
         evening: "Chao Phraya River Princess dinner cruise with live international band",
         description: "Marvel at Bangkok's sacred golden temples and glide along the Chao Phraya River on a luxury dinner cruise past illuminated monuments like Wat Arun.",
-        image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 10,
@@ -1981,7 +1981,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Pass the Blue House, explore Bukchon Hanok Village traditional tiled roofs",
         evening: "Stroll Insadong antique art street and ascend N Seoul Tower for 360-degree night views",
         description: "Step into the Joseon dynasty at Seoul's grandest royal palace. Wander preservation alleys of Bukchon and take in the sparkling sea of city lights from N Seoul Tower.",
-        image: "https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 3,
@@ -1991,7 +1991,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Jeonju Lahan Hotel, don traditional Hanbok attire for photos",
         evening: "Savor authentic Jeonju Bibimbap, explore over 800 preserved timber Hanok houses",
         description: "Journey south to Jeonju, celebrated for traditional Korean food and heritage architecture. Walk the cobblestone lanes of the historic Hanok Village in silk Hanbok.",
-        image: "https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 4,
@@ -2001,7 +2001,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Yeosu Ramada, ride the Yeosu Ocean Cable Car gliding above the harbour",
         evening: "Stroll across Odongdo Island lighthouse trail, evening Big-O show or oceanfront seafood",
         description: "Travel to beautiful Yeosu on the southern sea. Glide over turquoise waters on the marine cable car and walk among the ancient camellia forests of Odongdo Island.",
-        image: "https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 5,
@@ -2011,7 +2011,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Signiel Busan / Grand Josun, stroll along pristine Haeundae Beach",
         evening: "Walk across the curving Songdo Cloud Trails skywalk over crashing ocean waves",
         description: "Arrive in Busan, famed for dynamic beaches, coastal bridges, and mountains. Relax on Haeundae's soft sand and enjoy an evening stroll along the illuminated waterfront.",
-        image: "https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 6,
@@ -2021,7 +2021,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Explore colourful hillside Gamcheon Culture Village ('Santorini of the East')",
         evening: "Visit Jagalchi Fish Market, South Korea's largest seafood market, and BIFF Square",
         description: "Experience the unique contrast of ancient Buddhist sea temples and vibrant rainbow houses in Gamcheon, followed by fresh seafood dining at bustling Jagalchi Market.",
-        image: "https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 7,
@@ -2031,7 +2031,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Swiss Grand Hotel, afternoon shopping in Myeongdong cosmetics haven",
         evening: "Farewell Korean BBQ dinner and night shopping at Dongdaemun Design Plaza (DDP)",
         description: "Speed across the length of South Korea on the ultra-smooth KTX bullet train. Spend your final evening indulging in K-beauty shopping and world-famous Korean BBQ.",
-        image: "https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 8,
@@ -2040,7 +2040,7 @@ export const travelPackages: TravelPackage[] = [
         morning: "Breakfast at hotel, check-out, free time for last-minute supermarket snack shopping",
         noonToEvening: "Private transfer to Incheon International Airport for departure flight",
         description: "Bid farewell to the Land of the Morning Calm before your private transfer to Incheon Airport, concluding an enriching 8-day Korean adventure.",
-        image: "https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1600&q=85"
       }
     ]
   },
@@ -2090,7 +2090,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Scenic mountain drive past Ramboda Falls; tour a working Ceylon tea factory",
         evening: "Check-in at Single Tree Mount Nuwara Eliya ('Little England'), Gregory Lake walk",
         description: "Pay respects at Buddhism's most revered shrine in Kandy, then wind through emerald mountain passes blanketed in world-renowned Ceylon tea bushes to cool Nuwara Eliya.",
-        image: "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 3,
@@ -2100,7 +2100,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Hibiscus Beach Hotel Bentota, relax on golden palm-lined beaches",
         evening: "Sunset walk along Bentota beach, fresh seafood dinner by the Indian Ocean",
         description: "Descend from the misty highlands to Sri Lanka's sun-drenched golden coast. Unwind on the wide sandy beaches of Bentota with soothing ocean breezes.",
-        image: "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 4,
@@ -2110,7 +2110,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Drive to Colombo: Gangaramaya Temple, Galle Face Green & Odel shopping",
         evening: "Transfer to Bandaranaike International Airport for your departure flight",
         description: "Glide through the mangrove eco-system of Madu River, take in the colonial architecture and seaside promenade of Colombo, and transfer to the airport with sweet island memories.",
-        image: "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85"
       }
     ]
   },
@@ -2159,7 +2159,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Enjoy parasailing, underwater sea walking, swimming, Indian buffet lunch",
         evening: "Return to Pattaya pier, free evening for nightlife and Walking Street",
         description: "Speed across the bay to pristine Coral Island. Relax on powdery white sands, participate in watersports, and enjoy a delicious hot Indian buffet lunch.",
-        image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 3,
@@ -2169,7 +2169,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Scenic drive to Bangkok, check-in at Ecotel Bangkok / Gusto Pratunam",
         evening: "Evening at leisure for shopping in Pratunam wholesale markets or Platinum Mall",
         description: "Journey back to Thailand's buzzing royal metropolis. Explore the master gem cutters at Gems Gallery and check in to your central Bangkok hotel.",
-        image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 4,
@@ -2240,7 +2240,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "View Westminster Abbey, Houses of Parliament, Big Ben & ride the London Eye",
         evening: "Thames River sightseeing cruise gliding beneath Tower Bridge",
         description: "Experience London's most famous royal and political monuments, from Buckingham Palace to the historic clock tower of Big Ben and grand Westminster Abbey.",
-        image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 3,
@@ -2260,7 +2260,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Radisson Blu Durham, explore UNESCO Durham Cathedral & Norman Castle",
         evening: "Walk along the picturesque River Wear and cobblestone market place",
         description: "Travel north to one of Britain's most spectacular medieval cities. Gaze in awe at the Romanesque rib vaults of 11th-century Durham Cathedral perched above the river.",
-        image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 5,
@@ -2270,7 +2270,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Moxy Edinburgh, walk down the historic cobblestones of the Royal Mile",
         evening: "Take in the sunset skyline view from Calton Hill over the Firth of Forth",
         description: "Enter Scotland and arrive in its breathtaking capital, Edinburgh. Walk past medieval closes and wynds along the Royal Mile connecting the castle to Holyroodhouse.",
-        image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 6,
@@ -2280,7 +2280,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Visit Palace of Holyroodhouse (King's official Scottish residence) & Arthur's Seat",
         evening: "Traditional Scottish dining with bagpipes and Scotch whisky tasting",
         description: "Explore the ancient fortress of Edinburgh Castle holding the Stone of Destiny and Mons Meg cannon, followed by royal palace grounds and volcanic crags.",
-        image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 7,
@@ -2290,7 +2290,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Drive to Glasgow, check-in at Novotel Glasgow Centre, George Square walking tour",
         evening: "Explore Glasgow's vibrant live music scene, Victorian architecture, and Buchanan Street",
         description: "Experience the romance of the Scottish Highlands around legendary Loch Lomond before arriving in Scotland's cultural and design powerhouse, Glasgow.",
-        image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 8,
@@ -2361,7 +2361,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Value & Spa Mussoorie, drive up to Lal Tibba highest viewpoint",
         evening: "Enjoy a scenic evening stroll along vibrant Mall Road and Kulri Bazaar",
         description: "Climb into the crisp mountain air of Mussoorie, perched along a 15km horseshoe ridge. Gaze upon distant snow peaks from Lal Tibba and shop for wooden crafts on Mall Road.",
-        image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 4,
@@ -2371,7 +2371,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Visit peaceful Bhatta Falls, Mussoorie Lake, and Gun Hill viewpoint",
         evening: "Return to hotel for a warm buffet dinner overlooking the twinkling Doon Valley",
         description: "Spend a full day exploring Mussoorie's famous mountain waterfalls and scenic spots, taking in panoramic vistas of the Himalayan snowline and forested ridges.",
-        image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 5,
@@ -2381,7 +2381,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Hotel Blue Pine Resort Jim Corbett, relax in jungle resort gardens",
         evening: "Visit Corbett Falls, historic Corbett Museum, and riverside Garjia Devi Temple",
         description: "Travel to India's oldest and most prestigious national park. Pay homage at Garjia Devi Temple situated on a colossal rock in the Kosi River surrounded by sal forests.",
-        image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 6,
@@ -2391,7 +2391,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Breakfast at resort, check-out and scenic mountain drive to Nainital lake district",
         evening: "Check-in at Vaapi Comfort Inn Naukuchiatal, peaceful lake walk",
         description: "Spot spotted deer, wild elephants, and elusive Bengal tigers in Corbett's sal forests before ascending to the tranquil emerald lakes of Nainital.",
-        image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 7,
@@ -2472,7 +2472,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Tour royal Mughal Gardens: Shalimar Bagh, Nishat Bagh 'Garden of Bliss', Chashme Shahi",
         evening: "Sunset Shikara ride on Dal Lake, visiting floating gardens and Nehru Park",
         description: "Check into a carved cedar-wood luxury houseboat on Dal Lake. Stroll beneath terraced fountains and chinar trees in the Mughal Gardens before a tranquil sunset shikara ride.",
-        image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 4,
@@ -2492,7 +2492,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Pony ride / local union cab to snowclad Thajiwas Glacier, Zero Point at Zojila Pass",
         evening: "Return to Srinagar for a warm traditional Kashmiri dinner at your hotel",
         description: "Travel to Sonamarg at 2,740m altitude, the gateway to Ladakh. Play in year-round snow at the foot of Thajiwas Glacier surrounded by pine-covered peaks.",
-        image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 6,
@@ -2512,7 +2512,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Explore Pahalgam 'Valley of Shepherds': excursion to Betaab Valley, Aru Valley & Chandanwari",
         evening: "Return to Srinagar hotel for farewell dinner and packing",
         description: "Visit fragrant saffron fields and 1,100-year-old temple ruins en route to Pahalgam. Wander through lush alpine meadows along the gushing Lidder River.",
-        image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 8,
@@ -2553,7 +2553,7 @@ export const travelPackages: TravelPackage[] = [
     startingStar: 3,
     priceNote: "Customizable across 3★, 4★, and 5★ European grand hotel tiers",
     popular: true,
-    coverImage: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=85",
+    coverImage: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=85",
     itinerary: [
       {
         day: 1,
@@ -2563,7 +2563,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Moxy Vienna City East, unpack and refresh",
         evening: "Evening orientation stroll along Kärntner Strasse to St. Stephen's Cathedral",
         description: "Welcome to Austria's imperial capital. Transfer to your hotel and spend your first evening soaking in Vienna's classical coffeehouse elegance and Gothic cathedral plazas.",
-        image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 2,
@@ -2573,7 +2573,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Visit Schönbrunn Palace gardens, summer imperial residence of the Habsburgs",
         evening: "Transfer to traditional wine-tavern district Grinzing for local dining",
         description: "Discover Vienna's imperial majesty, from grand boulevard monuments to the opulent baroque gardens of Empress Maria Theresa at Schönbrunn.",
-        image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 3,
@@ -2583,7 +2583,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Mercure Budapest Castle Hill, walk along the Danube promenade",
         evening: "Illuminated Danube River evening cruise past the glowing Hungarian Parliament Building",
         description: "Travel east along the Danube to the 'Pearl of the Danube'. Watch Budapest's monumental bridges and neo-Gothic Parliament light up during a romantic evening cruise.",
-        image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 4,
@@ -2593,7 +2593,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Heroes' Square and St. Stephen's Basilica, cross Slovakia to the Czech Republic",
         evening: "Arrive in Prague 'City of a Hundred Spires', check-in at Panorama Hotel Prague",
         description: "Take in the fairy-tale turrets of Fisherman's Bastion before traveling across Central Europe to the Gothic and Baroque wonderland of Prague.",
-        image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 5,
@@ -2603,7 +2603,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Stroll across statue-lined Charles Bridge over the Vltava River, explore Jewish Quarter",
         evening: "Vltava River cruise with dinner views of illuminated Prague Castle on the hill",
         description: "Immerse in Prague's magical medieval heart. Cross iconic Charles Bridge, wander cobblestone alleyways, and admire gothic spires rising over the river.",
-        image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 6,
@@ -2613,7 +2613,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Cross the German border, scenic drive through Bavaria into Hesse to Frankfurt",
         evening: "Check-in at Ibis Frankfurt City Messe, evening stroll along the River Main skyline",
         description: "Explore the ancient stronghold of Bohemian kings at Prague Castle before traveling into Germany to Frankfurt, Europe's dynamic financial and cultural gateway.",
-        image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 7,
@@ -2633,7 +2633,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Explore historic Dam Square, Royal Palace, flower market & Museumplein (Rijksmuseum)",
         evening: "Farewell Dutch dinner, evening stroll along the illuminated Jordaan bridges",
         description: "Experience Amsterdam from its iconic waterways, gliding past 17th-century merchant mansions, stone humpback bridges, houseboats, and lively market plazas.",
-        image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 9,
@@ -2642,7 +2642,7 @@ export const travelPackages: TravelPackage[] = [
         morning: "Breakfast at hotel, leisure morning for last-minute Dutch cheese and tulip bulb shopping",
         noonToEvening: "Transfer to Amsterdam Schiphol Airport for your flight back home",
         description: "Savor your final Dutch pastries before your private coach transfer to Schiphol Airport, concluding an epic multi-capital grand European journey.",
-        image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1600&q=85"
       }
     ]
   },
@@ -2671,7 +2671,7 @@ export const travelPackages: TravelPackage[] = [
     startingStar: 4,
     priceNote: "Customizable across 3★, 4★, and 5★ colonial heritage tiers",
     popular: true,
-    coverImage: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=85",
+    coverImage: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1600&q=85",
     itinerary: [
       {
         day: 1,
@@ -2681,7 +2681,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Check-in at Moonview Hotel Hanoi, rest after your flight",
         evening: "1-Hour traditional cyclo ride through the bustling 36 Streets of Hanoi Old Quarter",
         description: "Welcome to Vietnam! Settle into your hotel and embark on a quintessential cyclo ride through the ancient guild streets of Hanoi's vibrant Old Quarter around Hoan Kiem Lake.",
-        image: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 2,
@@ -2701,7 +2701,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Brunch while cruising back to port, transfer to Hanoi airport for flight to Saigon",
         evening: "Arrive in Ho Chi Minh City, check-in at White Lotus Hotel, evening stroll along Dong Khoi",
         description: "Greet the dawn over misty karst peaks with Tai Chi before exploring Surprise Cave. Fly south to dynamic Ho Chi Minh City (Saigon) and discover its French-colonial boulevards.",
-        image: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 4,
@@ -2711,7 +2711,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Return to Saigon: visit War Remnants Museum, Reunification Palace, Notre Dame Cathedral",
         evening: "Photograph the French-designed Central Post Office and Opera House, local dinner",
         description: "Crawl into the legendary wartime guerrilla tunnel network of Cu Chi, then return to central Saigon to marvel at historic colonial architecture and moving wartime exhibitions.",
-        image: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 5,
@@ -2778,7 +2778,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Rowed bamboo boat through mystical river water caves, climb Hang Mua Dragon Peak",
         evening: "Enjoy panoramic views over Tam Coc valleys, return to Hanoi for dinner",
         description: "Discover the breathtaking limestone landscape of 'Inland Halong Bay'. Drift on quiet emerald rivers through cavernous tunnels and ascend 500 stone steps for epic mountain views.",
-        image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 3,
@@ -2788,7 +2788,7 @@ export const travelPackages: TravelPackage[] = [
         noonToEvening: "Board La Regina Cruise, enjoy welcome drink and gourmet lunch cruising among karst islands",
         evening: "Kayaking around Luon Cave, beach time on Ti Top Island, sunset party & seafood dinner",
         description: "Board an opulent cruise vessel and glide across tranquil emerald waters surrounded by thousands of limestone formations. Kayak under sea arches and swim off sandy island shores.",
-        image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1600&q=85"
+        image: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=85"
       },
       {
         day: 4,
