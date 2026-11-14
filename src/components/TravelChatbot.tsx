@@ -457,7 +457,8 @@ export default function TravelChatbot() {
         "text"
       );
     } else if (conversationalStep === "awaiting_email") {
-      setConsultation((prev) => ({ ...prev, email: text }));
+      const isSkip = /^(skip|none|no|n\/a|-)$/i.test(text.trim());
+      setConsultation((prev) => ({ ...prev, email: isSkip ? "" : text }));
       setConversationalStep("awaiting_notes");
       addBotMessage(
         `Almost done! Do you have any special wishes or preferences? (e.g. pure vegetarian food, honeymoon surprise, airport transfer, or type 'None')`,

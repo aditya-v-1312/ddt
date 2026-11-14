@@ -20,12 +20,16 @@ export function formatSafePhoneNumber(raw: string): string {
     return trimmed;
   }
 
-  // If starts with '+' e.g. "+91 7016841389", "+91-7016841389", "+917016841389"
+  // If starts with '+' e.g. "+91 7016841389", "+91 70168 41389", "+91-7016841389"
   if (trimmed.startsWith("+")) {
     const match = trimmed.match(/^\+(\d{1,4})[\s-]*(.*)$/);
     if (match) {
       const code = match[1];
       const rest = match[2].trim();
+      const restDigits = rest.replace(/\D/g, "");
+      if (restDigits.length === 10) {
+        return `(+${code}) ${restDigits}`;
+      }
       return `(+${code}) ${rest}`.trim();
     }
   }

@@ -72,8 +72,19 @@ export default function InquiryModal() {
     e.preventDefault();
     setError(null);
 
-    if (!name.trim() || !phone.trim() || !email.trim()) {
-      setError("Please fill in your name, phone number, and email.");
+    if (!name.trim() || !phone.trim()) {
+      setError("Please provide your name and phone number.");
+      return;
+    }
+
+    const digits = phone.replace(/\D/g, "");
+    if (digits.length < 7) {
+      setError("Please enter a valid phone or WhatsApp number (minimum 7-10 digits).");
+      return;
+    }
+
+    if (email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      setError("Please enter a valid email address or leave it blank.");
       return;
     }
 
@@ -330,8 +341,7 @@ export default function InquiryModal() {
                     <Mail size={15} className="absolute left-3.5 top-3.5 text-white/40 pointer-events-none" />
                     <input
                       type="email"
-                      required
-                      placeholder="Email Address *"
+                      placeholder="Email Address (Optional)"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full bg-white/[0.05] border border-white/15 focus:border-[#E2B18D] rounded-xl pl-10 pr-4 py-3 font-sans text-xs text-white placeholder-white/35 focus:outline-none focus:ring-1 focus:ring-[#E2B18D] transition-colors"

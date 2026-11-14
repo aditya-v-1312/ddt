@@ -7,6 +7,7 @@ import {
   Compass,
   Calendar,
   Users,
+  User,
   Send,
   CheckCircle2,
   MessageCircle,
@@ -167,6 +168,26 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitError(null);
+
+    // Client-side validation: Name is mandatory
+    if (!formData.name.trim()) {
+      setSubmitError("Please enter your full name.");
+      return;
+    }
+
+    // Client-side validation: Phone must contain at least 7 digits
+    const phoneDigits = formData.phone.replace(/\D/g, "");
+    if (!formData.phone.trim() || phoneDigits.length < 7) {
+      setSubmitError("Please enter a valid phone or WhatsApp number (e.g. +91 70168 41389).");
+      return;
+    }
+
+    // Client-side validation: Email is optional, but if entered it must look like an email
+    if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      setSubmitError("Please enter a valid email address or leave it blank.");
+      return;
+    }
+
     setSubmitting(true);
 
     try {
@@ -174,9 +195,9 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim(),
           department: "tours",
           destination: formData.destination,
           travelMonth: formData.travelMonth,
@@ -678,42 +699,72 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                         <label className="block text-xs font-mono uppercase tracking-wider text-[#697181] mb-1.5 font-bold">
                           Your Full Name *
                         </label>
-                        <input
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          placeholder="e.g. Priya Sharma"
-                          className="w-full px-5 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#07101F] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium"
-                        />
+                        <div className="relative">
+                          <User className="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-[#697181]/50 pointer-events-none" />
+                          <input
+                            type="text"
+                            required
+                            value={formData.name}
+                            onChange={(e) => {
+                              setSubmitError(null);
+                              setFormData({ ...formData, name: e.target.value });
+                            }}
+                            placeholder="e.g. Aditya Chandiramani"
+                            className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#07101F] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium transition-colors"
+                          />
+                        </div>
                       </div>
 
                       <div>
-                        <label className="block text-xs font-mono uppercase tracking-wider text-[#697181] mb-1.5 font-bold">
-                          WhatsApp / Phone Number *
-                        </label>
-                        <input
-                          type="tel"
-                          required
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="+91 98765 43210"
-                          className="w-full px-5 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#07101F] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium"
-                        />
+                        <div className="flex items-center justify-between mb-1.5">
+                          <label className="block text-xs font-mono uppercase tracking-wider text-[#697181] font-bold">
+                            WhatsApp / Phone Number *
+                          </label>
+                          <span className="text-[11px] text-emerald-700 font-sans font-medium flex items-center gap-1">
+                            <ShieldCheck size={12} className="text-emerald-600" />
+                            Direct Proposal Delivery
+                          </span>
+                        </div>
+                        <div className="relative">
+                          <Phone className="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-[#B87543] pointer-events-none" />
+                          <input
+                            type="tel"
+                            required
+                            value={formData.phone}
+                            onChange={(e) => {
+                              setSubmitError(null);
+                              setFormData({ ...formData, phone: e.target.value });
+                            }}
+                            placeholder="+91 70168 41389"
+                            className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#07101F] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium transition-colors"
+                          />
+                        </div>
+                        <span className="text-[11px] text-[#697181] font-sans mt-1 block">
+                          Enter 10-digit mobile number with or without +91 (e.g. +91 70168 41389 or 7016841389)
+                        </span>
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-[#697181] mb-1.5 font-bold">
-                        Email Address (Optional)
-                      </label>
-                      <input
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="yourname@domain.com"
-                        className="w-full px-5 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#07101F] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium"
-                      />
+                      <div className="flex items-center justify-between mb-1.5">
+                        <label className="block text-xs font-mono uppercase tracking-wider text-[#697181] font-bold">
+                          Email Address <span className="text-[11px] text-[#697181]/70 font-normal lowercase">(optional)</span>
+                        </label>
+                        <span className="text-[11px] text-[#697181] font-sans">For formal PDF quotation copy</span>
+                      </div>
+                      <div className="relative">
+                        <Mail className="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-[#697181]/50 pointer-events-none" />
+                        <input
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => {
+                            setSubmitError(null);
+                            setFormData({ ...formData, email: e.target.value });
+                          }}
+                          placeholder="yourname@domain.com (optional)"
+                          className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#07101F] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium transition-colors"
+                        />
+                      </div>
                     </div>
 
                     <div>

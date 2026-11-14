@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     const {
       name,
       phone,
-      email,
+      email = "",
       department = "tours",
       serviceType = "holiday",
       destination = "",
@@ -55,10 +55,26 @@ export async function POST(request: NextRequest) {
       sourceUrl = "",
     } = body;
 
-    // Field validations
-    if (!name?.trim() || !phone?.trim() || !email?.trim()) {
+    // Field validations: Name and Phone are mandatory so travel desks can connect via Call or WhatsApp
+    if (!name?.trim() || !phone?.trim()) {
       return NextResponse.json(
-        { error: "Please provide your name, phone number, and email." },
+        { error: "Please provide your name and phone number." },
+        { status: 400 }
+      );
+    }
+
+    const digitsOnly = String(phone).replace(/\D/g, "");
+    if (digitsOnly.length < 7) {
+      return NextResponse.json(
+        { error: "Please enter a valid phone or WhatsApp number (at least 7 to 10 digits)." },
+        { status: 400 }
+      );
+    }
+
+    const cleanEmail = email?.trim() || "";
+    if (cleanEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)) {
+      return NextResponse.json(
+        { error: "Please enter a valid email address, or leave it blank." },
         { status: 400 }
       );
     }
@@ -83,7 +99,7 @@ export async function POST(request: NextRequest) {
       createdAt,
       name: name.trim(),
       phone: cleanPhone,
-      email: email.trim(),
+      email: cleanEmail || "Not provided",
       department: department as "ticketing" | "tours" | "holidays",
       targetEmail,
       assignedContact,
