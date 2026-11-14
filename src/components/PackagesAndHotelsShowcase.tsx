@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useDeferredValue } from "react";
 import Image from "next/image";
 import { travelPackages, TravelPackage, ItineraryDay } from "@/data/packages";
 import { getHotelsByDestination, HotelOption } from "@/data/hotels";
@@ -57,6 +57,7 @@ export default function PackagesAndHotelsShowcase() {
   // Search & Filter state
   const [selectedTheme, setSelectedTheme] = useState<ThemeCategory>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const deferredSearch = useDeferredValue(searchQuery);
   const [activeDestinationFilter, setActiveDestinationFilter] = useState<string>("all");
 
   // Per-card selected hotel star tier (default to package's startingStar or 4★)
@@ -112,8 +113,21 @@ export default function PackagesAndHotelsShowcase() {
     return Array.from(map.entries()).map(([id, name]) => ({ id, name }));
   }, []);
 
+  // Pre-compiled search index for instant zero-lag filtering
+  const packageSearchIndex = useMemo(() => {
+    const map = new Map<string, string>();
+    travelPackages.forEach((pkg) => {
+      const stops = pkg.itinerary.map((d) => `${d.title} ${d.location}`).join(" ");
+      const combined = `${pkg.title} ${pkg.destinationName} ${pkg.tagline} ${pkg.description} ${stops}`.toLowerCase();
+      map.set(pkg.id, combined);
+    });
+    return map;
+  }, []);
+
   // Filtered packages pipeline
   const filteredPackages = useMemo(() => {
+    const cleanQuery = deferredSearch.toLowerCase().trim();
+
     return travelPackages.filter((pkg) => {
       // 1. Theme Filter
       if (selectedTheme !== "all") {
@@ -128,27 +142,17 @@ export default function PackagesAndHotelsShowcase() {
         return false;
       }
 
-      // 3. Search query
-      if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase().trim();
-        const inTitle = pkg.title.toLowerCase().includes(q);
-        const inDest = pkg.destinationName.toLowerCase().includes(q);
-        const inDesc = pkg.description.toLowerCase().includes(q);
-        const inTagline = pkg.tagline.toLowerCase().includes(q);
-        const inItinerary = pkg.itinerary.some(
-          (d) =>
-            d.title.toLowerCase().includes(q) ||
-            d.location.toLowerCase().includes(q) ||
-            d.description.toLowerCase().includes(q)
-        );
-        if (!inTitle && !inDest && !inDesc && !inTagline && !inItinerary) {
+      // 3. Search query (matches indexed content instantaneously)
+      if (cleanQuery) {
+        const indexText = packageSearchIndex.get(pkg.id) || "";
+        if (!indexText.includes(cleanQuery)) {
           return false;
         }
       }
 
       return true;
     });
-  }, [selectedTheme, activeDestinationFilter, searchQuery]);
+  }, [selectedTheme, activeDestinationFilter, deferredSearch, packageSearchIndex]);
 
   const handleStarTierChange = (packageId: string, star: 2 | 3 | 4 | 5) => {
     setCardStarTier((prev) => ({ ...prev, [packageId]: star }));
@@ -292,47 +296,59 @@ export default function PackagesAndHotelsShowcase() {
         ========================================================= */}
         <div className="mb-14 space-y-6">
           {/* Live Search & Summary Ribbon */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-5 p-4 sm:p-5 rounded-3xl bg-gradient-to-r from-[#0C1B38] via-[#09152B] to-[#0C1B38] border-2 border-amber-500/30 backdrop-blur-xl shadow-2xl">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-5 p-4 sm:p-5 rounded-3xl bg-gradient-to-r from-[#0C1B38] via-[#09152B] to-[#0C1B38] border-2 border-amber-500/30 shadow-xl">
             <div className="relative w-full md:max-w-xl">
-              <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-amber-400" />
+              <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-amber-400 pointer-events-none" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    (e.target as HTMLInputElement).blur();
+                  }
+                }}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="none"
+                spellCheck={false}
                 placeholder="Search by country, city, or landmark (e.g. Tokyo, Eiffel Tower, Bali, Nile, Alps)..."
-                className="w-full pl-12 pr-12 py-4 rounded-2xl bg-white/[0.08] border-2 border-white/20 text-base sm:text-lg text-white placeholder-white/50 focus:outline-none focus:border-amber-400 transition-colors font-sans font-medium"
+                className="w-full pl-12 pr-12 py-4 rounded-2xl bg-[#071329] border-2 border-white/20 text-base sm:text-lg text-white placeholder-white/45 focus:outline-none focus:border-amber-400 font-sans font-medium transition-colors"
               />
               {searchQuery && (
                 <button
                   type="button"
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 p-1 rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-colors"
                   aria-label="Clear Search"
                 >
-                  <X size={18} />
+                  <X size={16} />
                 </button>
               )}
             </div>
 
-            <div className="flex items-center gap-4 text-sm font-sans text-white/80">
-              <span className="font-mono text-amber-300 font-bold text-base sm:text-lg">
+            <div className="flex items-center gap-4 text-sm font-sans text-white/80 shrink-0">
+              <span className="font-mono text-amber-300 font-bold text-base sm:text-lg whitespace-nowrap">
                 Showing {filteredPackages.length} of {travelPackages.length} Expeditions
               </span>
 
-              {(selectedTheme !== "all" || activeDestinationFilter !== "all" || searchQuery) && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSelectedTheme("all");
-                    setActiveDestinationFilter("all");
-                    setSearchQuery("");
-                  }}
-                  className="inline-flex items-center gap-1.5 text-sm text-amber-200 hover:text-white underline font-mono font-bold"
-                >
-                  <RotateCcw size={14} />
-                  <span>Reset Filters</span>
-                </button>
-              )}
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedTheme("all");
+                  setActiveDestinationFilter("all");
+                  setSearchQuery("");
+                }}
+                className={`inline-flex items-center gap-1.5 text-sm text-amber-200 hover:text-white underline font-mono font-bold transition-opacity ${
+                  selectedTheme !== "all" || activeDestinationFilter !== "all" || searchQuery
+                    ? "opacity-100 cursor-pointer"
+                    : "opacity-0 pointer-events-none"
+                }`}
+              >
+                <RotateCcw size={14} />
+                <span>Reset</span>
+              </button>
             </div>
           </div>
 
@@ -397,29 +413,30 @@ export default function PackagesAndHotelsShowcase() {
         {/* =========================================================
             4. VIBRANT PACKAGE CARDS (LARGER FONTS + HIGH CONTRAST)
         ========================================================= */}
-        {filteredPackages.length === 0 ? (
-          <div className="text-center py-24 rounded-3xl border-2 border-white/15 bg-[#0C1B38]/60 p-10 space-y-5">
-            <Compass size={48} className="mx-auto text-amber-400/60" />
-            <h3 className="font-serif text-3xl text-white font-light">No Journeys Match Your Search</h3>
-            <p className="text-base text-white/70 font-sans max-w-lg mx-auto">
-              We couldn't find any packages matching "{searchQuery}". You can clear your filters or request a bespoke custom itinerary tailored from scratch.
-            </p>
-            <div className="pt-3">
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedTheme("all");
-                  setActiveDestinationFilter("all");
-                  setSearchQuery("");
-                }}
-                className="px-8 py-3 rounded-full bg-amber-400 text-slate-950 text-sm uppercase tracking-wider font-extrabold shadow-lg shadow-amber-500/30"
-              >
-                Reset All Filters
-              </button>
+        <div className="min-h-[600px] transition-all duration-300">
+          {filteredPackages.length === 0 ? (
+            <div className="text-center py-24 rounded-3xl border-2 border-white/15 bg-[#0C1B38]/60 p-10 space-y-5">
+              <Compass size={48} className="mx-auto text-amber-400/60" />
+              <h3 className="font-serif text-3xl text-white font-light">No Journeys Match Your Search</h3>
+              <p className="text-base text-white/70 font-sans max-w-lg mx-auto">
+                We couldn't find any packages matching "{searchQuery}". You can clear your filters or request a bespoke custom itinerary tailored from scratch.
+              </p>
+              <div className="pt-3">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedTheme("all");
+                    setActiveDestinationFilter("all");
+                    setSearchQuery("");
+                  }}
+                  className="px-8 py-3 rounded-full bg-amber-400 text-slate-950 text-sm uppercase tracking-wider font-extrabold shadow-lg shadow-amber-500/30"
+                >
+                  Reset All Filters
+                </button>
+              </div>
             </div>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          ) : (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {filteredPackages.map((pkg) => {
               const currentStar = getCardStar(pkg);
               const tierHotels = getHotelsForTier(pkg, currentStar);
@@ -669,6 +686,7 @@ export default function PackagesAndHotelsShowcase() {
             })}
           </div>
         )}
+      </div>
 
         {/* =========================================================
             5. BESPOKE CUSTOM JOURNEY CONCIERGE BANNER
