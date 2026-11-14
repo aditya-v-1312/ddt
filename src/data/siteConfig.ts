@@ -93,7 +93,7 @@ export const siteConfig: SiteConfig = {
       badge: "Curated · Bespoke Itineraries",
       phone: "+917487083499",
       phoneDisplay: "+91 74870 83499",
-      email: "sakshi@darshdreamtours.com",
+      email: "info@darshdreamtours.com",
       description:
         "Custom luxury travel, bespoke India & global itineraries planned personally around you.",
     },

@@ -112,7 +112,7 @@ export const travelImages = {
   },
 
   // About Us Section (Authentic atmospheric travel photograph - no fake portrait person)
-  aboutSakshi: {
+  aboutTeam: {
     url: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=85",
     alt: "Traveler standing overlooking an expansive open valley horizon at sunrise",
     caption: "Darsh Dream Tours — Curated Travel Architecture",

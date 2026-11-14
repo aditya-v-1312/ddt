@@ -88,8 +88,8 @@ export default function AboutPage() {
             <div className="lg:col-span-5">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[#E8E3DA] shadow-md">
                 <Image
-                  src={travelImages.aboutSakshi.url}
-                  alt={travelImages.aboutSakshi.alt}
+                  src={travelImages.aboutTeam.url}
+                  alt={travelImages.aboutTeam.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover transition-transform duration-1000 ease-out hover:scale-105"

@@ -188,7 +188,7 @@
           </div>
 
           <footer>
-            <p>© DARSH DREAM TOURS · Curated Journeys by Sakshi Chandiramani · <a href="/">Return to Website</a></p>
+            <p>© DARSH DREAM TOURS · Curated Luxury Journeys &amp; Travel Desks · <a href="/">Return to Website</a></p>
           </footer>
         </div>
       </body>

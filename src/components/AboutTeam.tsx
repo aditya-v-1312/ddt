@@ -7,7 +7,7 @@ import { travelImages } from "@/data/images";
 import { MapPin, Sparkles, Phone, Mail, ArrowRight, Compass } from "lucide-react";
 import { useInquiry } from "@/context/InquiryContext";
 
-export const AboutSakshi: React.FC = () => {
+export const AboutTeam: React.FC = () => {
   const { openInquiry } = useInquiry();
   return (
     <section id="about" className="py-28 sm:py-36 bg-[#F8F7F3] text-[#17213A] relative border-t border-[#E7E4DA]">
@@ -22,8 +22,8 @@ export const AboutSakshi: React.FC = () => {
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(8,21,47,0.08)] bg-[#08152F]">
                 {/* Official/Curated Portrait Slot */}
                 <Image
-                  src={travelImages.aboutSakshi.url}
-                  alt={travelImages.aboutSakshi.alt}
+                  src={travelImages.aboutTeam.url}
+                  alt={travelImages.aboutTeam.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover object-top"
@@ -117,4 +117,4 @@ export const AboutSakshi: React.FC = () => {
   );
 };
 
-export default AboutSakshi;
+export default AboutTeam;
