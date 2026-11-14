@@ -138,7 +138,7 @@ export const GoogleTrustBadge: React.FC<GoogleTrustBadgeProps> = ({
       <div className="flex items-center gap-2">
         <GoogleStarRating rating={googleReviewsData.rating} />
         <span className="font-sans text-[11px] font-medium tracking-wider text-white">
-          5.0 on Google
+          5.0 on Google (15 Reviews)
         </span>
       </div>
 

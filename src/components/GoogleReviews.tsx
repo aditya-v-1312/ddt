@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { ArrowUpRight, MessageSquareHeart, CheckCircle2 } from "lucide-react";
+import React, { useState } from "react";
+import { ArrowUpRight, MessageSquareHeart, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
 import { googleReviewsData } from "@/data/googleReviews";
 import { GoogleIcon, GoogleStarRating } from "./GoogleTrustBadge";
 
@@ -15,6 +15,8 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
   className = "",
 }) => {
   const isDark = theme === "dark";
+  const [showAll, setShowAll] = useState(false);
+  const displayedReviews = showAll ? googleReviewsData.reviews : googleReviewsData.reviews.slice(0, 5);
 
   return (
     <section
@@ -100,7 +102,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
             </div>
 
             <div>
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 <span className="font-serif text-3xl sm:text-4xl font-light">
                   5.0
                 </span>
@@ -108,9 +110,12 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
                   rating={5}
                   className="w-4 h-4 sm:w-5 sm:h-5"
                 />
+                <span className={`font-mono text-xs font-bold px-2.5 py-1 rounded-full ${isDark ? "bg-[#B87543]/20 text-[#E2B18D] border border-[#B87543]/30" : "bg-[#B87543]/10 text-[#B87543] border border-[#B87543]/20"}`}>
+                  15 Verified 5-Star Reviews
+                </span>
               </div>
               <p
-                className={`font-sans text-xs uppercase tracking-wider mt-1 ${
+                className={`font-sans text-xs uppercase tracking-wider mt-1.5 ${
                   isDark ? "text-white/50" : "text-[#697181]"
                 }`}
               >
@@ -135,7 +140,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {googleReviewsData.reviews.map((rev) => (
+          {displayedReviews.map((rev) => (
             <div
               key={rev.id}
               className={`rounded-2xl border p-8 flex flex-col justify-between transition-all duration-300 ${
@@ -258,15 +263,40 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
               href={googleReviewsData.googleShareUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#B87543] bg-[#B87543]/10 px-6 py-3.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B87543] hover:bg-[#B87543] hover:text-white transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#B87543] bg-[#B87543]/10 px-6 py-3.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-[#B87543] hover:bg-[#B87543] hover:text-white transition-all duration-300"
             >
               <span>Leave a Google Review</span>
               <ArrowUpRight
-                size={12}
+                size={14}
                 className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </a>
           </div>
+        </div>
+
+        {/* View All / Collapse Button */}
+        <div className="mt-12 text-center">
+          <button
+            type="button"
+            onClick={() => setShowAll((prev) => !prev)}
+            className={`inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-sans text-xs uppercase tracking-[0.2em] font-bold transition-all shadow-md hover:scale-105 ${
+              isDark
+                ? "bg-white/10 hover:bg-[#E2B18D] text-white hover:text-[#07101F] border border-white/20"
+                : "bg-[#101A2E] hover:bg-[#B87543] text-white"
+            }`}
+          >
+            {showAll ? (
+              <>
+                <span>Show Featured Reviews</span>
+                <ChevronUp size={16} />
+              </>
+            ) : (
+              <>
+                <span>View All 15 Google Reviews</span>
+                <ChevronDown size={16} />
+              </>
+            )}
+          </button>
         </div>
       </div>
     </section>
