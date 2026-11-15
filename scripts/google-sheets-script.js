@@ -29,7 +29,7 @@ function doPost(e) {
         "Email",
         "Destination",
         "Service / Package",
-        "Hotel Category (2★-5★)",
+        "Hotel Category (3★-5★)",
         "Preferred Hotel",
         "Travel Month / Timing",
         "Travelers",

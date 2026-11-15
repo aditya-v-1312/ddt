@@ -651,7 +651,7 @@ export default function Home() {
       </section>
 
       {/* =========================================================
-          05.5 — PACKAGES, 2★ TO 5★ HOTELS & LAST-MINUTE DESK
+          05.5 — PACKAGES, 3★ TO 5★ HOTELS (4★ DEFAULT) & LAST-MINUTE DESK
       ========================================================= */}
       <PackagesAndHotelsShowcase />
 

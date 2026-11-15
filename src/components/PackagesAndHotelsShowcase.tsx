@@ -46,9 +46,8 @@ interface ThemeTab {
 // Curated high-resolution preview photos for hotel star tiers
 const STAR_TIER_IMAGES: Record<number, string> = {
   5: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=85", // 5-Star Oceanfront Luxury Suite
-  4: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=85", // 4-Star Chic Boutique Resort
+  4: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=85", // 4-Star Chic Boutique Resort (Default)
   3: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=85", // 3-Star Modern Comfort Room
-  2: "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=85", // 2-Star Clean Smart Stay
 };
 
 export default function PackagesAndHotelsShowcase() {
@@ -60,13 +59,13 @@ export default function PackagesAndHotelsShowcase() {
   const deferredSearch = useDeferredValue(searchQuery);
   const [activeDestinationFilter, setActiveDestinationFilter] = useState<string>("all");
 
-  // Per-card selected hotel star tier (default to package's startingStar or 4★)
-  const [cardStarTier, setCardStarTier] = useState<Record<string, 2 | 3 | 4 | 5>>({});
+  // Per-card selected hotel star tier (defaults to 4★)
+  const [cardStarTier, setCardStarTier] = useState<Record<string, 3 | 4 | 5>>({});
 
   // Modal state
   const [selectedPackageForModal, setSelectedPackageForModal] = useState<TravelPackage | null>(null);
   const [activeDayIndex, setActiveDayIndex] = useState<number>(0);
-  const [modalStarTab, setModalStarTab] = useState<2 | 3 | 4 | 5>(4);
+  const [modalStarTab, setModalStarTab] = useState<3 | 4 | 5>(4);
 
   const themeTabs: ThemeTab[] = [
     { id: "all", label: "All Expeditions", icon: <Globe size={16} /> },
@@ -154,14 +153,14 @@ export default function PackagesAndHotelsShowcase() {
     });
   }, [selectedTheme, activeDestinationFilter, deferredSearch, packageSearchIndex]);
 
-  const handleStarTierChange = (packageId: string, star: 2 | 3 | 4 | 5) => {
+  const handleStarTierChange = (packageId: string, star: 3 | 4 | 5) => {
     setCardStarTier((prev) => ({ ...prev, [packageId]: star }));
   };
 
   const openItineraryModal = (pkg: TravelPackage, initialDayIndex = 0) => {
     setSelectedPackageForModal(pkg);
     setActiveDayIndex(initialDayIndex);
-    const selectedStar = cardStarTier[pkg.id] || pkg.startingStar || 4;
+    const selectedStar = cardStarTier[pkg.id] || (pkg.startingStar === 5 ? 5 : 4);
     setModalStarTab(selectedStar);
   };
 
@@ -169,17 +168,16 @@ export default function PackagesAndHotelsShowcase() {
     setSelectedPackageForModal(null);
   };
 
-  const getCardStar = (pkg: TravelPackage): 2 | 3 | 4 | 5 => {
-    return cardStarTier[pkg.id] || pkg.startingStar || 4;
+  const getCardStar = (pkg: TravelPackage): 3 | 4 | 5 => {
+    return cardStarTier[pkg.id] || (pkg.startingStar === 5 ? 5 : 4);
   };
 
-  const getHotelsForTier = (pkg: TravelPackage, star: 2 | 3 | 4 | 5): HotelOption[] => {
+  const getHotelsForTier = (pkg: TravelPackage, star: 3 | 4 | 5): HotelOption[] => {
     const destHotels = getHotelsByDestination(pkg.destinationId);
     if (!destHotels) return [];
     if (star === 5) return destHotels.hotels.star5;
     if (star === 4) return destHotels.hotels.star4;
-    if (star === 3) return destHotels.hotels.star3;
-    return destHotels.hotels.star2;
+    return destHotels.hotels.star3;
   };
 
   const extractRouteStops = (pkg: TravelPackage): string[] => {
@@ -228,7 +226,7 @@ export default function PackagesAndHotelsShowcase() {
               </h3>
 
               <p className="text-base sm:text-lg text-white/85 font-sans font-normal leading-relaxed">
-                Facing “Sold Out” notices on public booking apps? Our direct wholesale inventory desks access unpublished room allocations across <strong>2★, 3★, 4★, and 5★ hotels worldwide</strong> with instant confirmation.
+                Facing “Sold Out” notices on public booking apps? Our direct wholesale inventory desks access unpublished room allocations across <strong>3★, 4★, and 5★ hotels worldwide</strong> with instant confirmation.
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-sm font-sans font-medium">
@@ -238,7 +236,7 @@ export default function PackagesAndHotelsShowcase() {
                 </div>
                 <div className="flex items-center gap-2 text-white/90">
                   <span className="h-2 w-2 rounded-full bg-amber-400" />
-                  <span>2★ to 5★ Guaranteed</span>
+                  <span>3★ to 5★ Guaranteed</span>
                 </div>
                 <div className="flex items-center gap-2 text-white/90">
                   <span className="h-2 w-2 rounded-full bg-emerald-400" />
@@ -287,7 +285,7 @@ export default function PackagesAndHotelsShowcase() {
           </h2>
 
           <p className="text-lg sm:text-xl text-white/90 font-sans font-light leading-relaxed">
-            Every itinerary is an authentic master-plan featuring curated day schedules, landmark entrances, private transfers, and flexible hotel tiers from <strong>2★ Budget Smart to 5★ Ultra Luxury</strong>.
+            Every itinerary is an authentic master-plan featuring curated day schedules, landmark entrances, private transfers, and flexible hotel tiers from <strong>3★ Comfort &amp; 4★ Boutique to 5★ Ultra Luxury</strong>.
           </p>
         </div>
 
@@ -480,7 +478,7 @@ export default function PackagesAndHotelsShowcase() {
                         </div>
 
                         <span className="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-mono text-xs uppercase font-extrabold shadow-lg">
-                          ★ 2★ to 5★ Ready
+                          ★ 3★ to 5★ Ready
                         </span>
                       </div>
 
@@ -558,11 +556,11 @@ export default function PackagesAndHotelsShowcase() {
                       </div>
 
                       {/* Star Buttons */}
-                      <div className="grid grid-cols-4 gap-2">
-                        {([2, 3, 4, 5] as const).map((star) => {
+                      <div className="grid grid-cols-3 gap-2">
+                        {([3, 4, 5] as const).map((star) => {
                           const isSelected = currentStar === star;
                           const starLabel =
-                            star === 5 ? "Luxury" : star === 4 ? "Boutique" : star === 3 ? "Comfort" : "Smart";
+                            star === 5 ? "Luxury" : star === 4 ? "Boutique (Default)" : "Comfort";
                           return (
                             <button
                               key={star}
@@ -577,7 +575,7 @@ export default function PackagesAndHotelsShowcase() {
                               <span className="text-base sm:text-lg block font-extrabold leading-tight">
                                 {star}★
                               </span>
-                              <span className="text-[10px] sm:text-xs uppercase tracking-wider block font-semibold">
+                              <span className="text-[10px] sm:text-xs uppercase tracking-wider block font-semibold truncate">
                                 {starLabel}
                               </span>
                             </button>
@@ -888,7 +886,7 @@ export default function PackagesAndHotelsShowcase() {
 
                     {/* Star Tier Tabs */}
                     <div className="flex gap-1.5">
-                      {([2, 3, 4, 5] as const).map((s) => (
+                      {([3, 4, 5] as const).map((s) => (
                         <button
                           key={s}
                           type="button"
@@ -899,7 +897,7 @@ export default function PackagesAndHotelsShowcase() {
                               : "bg-white/10 text-white/80 hover:text-white"
                           }`}
                         >
-                          {s}★ Tier
+                          {s}★ {s === 4 ? "Tier (Default)" : "Tier"}
                         </button>
                       ))}
                     </div>

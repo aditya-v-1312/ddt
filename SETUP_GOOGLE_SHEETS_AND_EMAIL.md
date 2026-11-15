@@ -1,7 +1,7 @@
 # Darsh Dream Tours — Secure Enquiry System, Google Sheets & Email Setup
 
 ## 1. Overview
-The website features an interactive **Personal Travel Concierge Chatbot** that conversationally collects trip preferences, packages, 2★ to 5★ hotel choices, and contact details with international country codes.
+The website features an interactive **Personal Travel Concierge Chatbot** that conversationally collects trip preferences, packages, 3★ to 5★ hotel choices (with 4★ as default), and contact details with international country codes.
 
 Inquiries are captured and routed as follows:
 - **Local Fallback Storage:** Automatically saved to `src/data/enquiries.json` (zero lead loss, offline-safe).
@@ -91,5 +91,5 @@ GOOGLE_SHEETS_WEBHOOK_URL="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exe
 ```
 Every time a client finishes chatting with the concierge:
 1. It automatically appends a formatted row to your Google Sheet with:
-   `Timestamp | Reference ID | Urgent? | Department | Assigned Desk | Customer Name | Phone (With Country Code) | Email | Destination | Service/Package | Hotel Category (2★-5★) | Hotel Name | Travel Month | Travelers | Special Requests | Status`
+   `Timestamp | Reference ID | Urgent? | Department | Assigned Desk | Customer Name | Phone (With Country Code) | Email | Destination | Service/Package | Hotel Category (3★-5★) | Hotel Name | Travel Month | Travelers | Special Requests | Status`
 2. It automatically sends an email alert with full trip details directly to **`sakshi@darshdreamtours.com`**.

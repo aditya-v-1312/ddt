@@ -11,7 +11,7 @@ export interface InquiryInitialData {
   destination?: string;
   packageId?: string;
   packageTitle?: string;
-  starRating?: 2 | 3 | 4 | 5;
+  starRating?: 3 | 4 | 5;
   hotelName?: string;
   travelMonth?: string;
   travelersCount?: string | number;
@@ -25,7 +25,7 @@ interface InquiryContextType {
   openInquiry: (data?: InquiryInitialData) => void;
   closeInquiry: () => void;
   openLastMinuteHotelDesk: (city?: string) => void;
-  openPackageInquiry: (packageTitle: string, destination: string, starRating?: 2 | 3 | 4 | 5) => void;
+  openPackageInquiry: (packageTitle: string, destination: string, starRating?: 3 | 4 | 5) => void;
 }
 
 const InquiryContext = createContext<InquiryContextType | undefined>(undefined);
@@ -63,7 +63,7 @@ export const InquiryProvider: React.FC<{ children: ReactNode }> = ({ children })
     });
   };
 
-  const openPackageInquiry = (packageTitle: string, destination: string, starRating?: 2 | 3 | 4 | 5) => {
+  const openPackageInquiry = (packageTitle: string, destination: string, starRating: 3 | 4 | 5 = 4) => {
     openInquiry({
       department: "tours",
       serviceType: "holiday",

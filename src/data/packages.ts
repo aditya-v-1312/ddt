@@ -20,7 +20,7 @@ export interface TravelPackage {
   tagline: string;
   description: string;
   inclusions: string[];
-  startingStar: 2 | 3 | 4 | 5;
+  startingStar: 3 | 4 | 5;
   priceNote: string;
   popular?: boolean;
   coverImage?: string;
@@ -41,8 +41,8 @@ export const travelPackages: TravelPackage[] = [
     description:
       "A complete 7-day dual-destination journey combining vibrant Victoria Harbour skyline, the majestic Tian Tan Buddha, world-class theme parks (Disneyland & Ocean Park), and the rich Portuguese-Chinese heritage, mega-resorts, and entertainment of Macau.",
     inclusions: [
-      "4 Nights accommodation in Hong Kong (choice of 2★, 3★, 4★, or 5★)",
-      "2 Nights accommodation in Macau (choice of 2★, 3★, 4★, or 5★)",
+      "4 Nights accommodation in Hong Kong (choice of 3★, 4★, or 5★)",
+      "2 Nights accommodation in Macau (choice of 3★, 4★, or 5★)",
       "Daily international breakfast at hotels",
       "Arrival meet & greet with SIC (Seat in Coach) scheduled airport transfers",
       "Scenic Ngong Ping 360 Cable Car, Big Buddha & Po Lin Monastery excursion (shared transfers)",
@@ -54,7 +54,7 @@ export const travelPackages: TravelPackage[] = [
       "Return ferry transfer from Macau to Hong Kong International Airport (direct check-in)",
     ],
     startingStar: 3,
-    priceNote: "Customizable across 2★ Budget Smart to 5★ Luxury Palace tiers",
+    priceNote: "Customizable across 3★ Comfort, 4★ Boutique to 5★ Luxury Palace tiers",
     popular: true,
     coverImage: "https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&w=1600&q=85",
     itinerary: [
@@ -169,7 +169,7 @@ export const travelPackages: TravelPackage[] = [
       "Frankfurt Römer Square historic center visit",
     ],
     startingStar: 3,
-    priceNote: "Customizable across 2★ Budget Smart to 5★ Luxury Palace tiers",
+    priceNote: "Customizable across 3★ Comfort, 4★ Boutique to 5★ Luxury Palace tiers",
     popular: true,
     coverImage: "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=1600&q=85",
     itinerary: [
@@ -606,8 +606,8 @@ export const travelPackages: TravelPackage[] = [
       "Water-sports package at Tanjung Benoa Beach (1 ride Banana Boat, Flying Fish & Jet Ski on SIC)",
       "All entrance fees to temples and monuments as per itinerary",
     ],
-    startingStar: 2,
-    priceNote: "Available in 2★ budget smart to 5★ private pool villas",
+    startingStar: 3,
+    priceNote: "Available in 3★ boutique comfort to 5★ private pool villas",
     popular: true,
     coverImage: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1600&q=85",
     itinerary: [
@@ -1328,7 +1328,7 @@ export const travelPackages: TravelPackage[] = [
       "Airport arrival and departure transfers"
     ],
     startingStar: 3,
-    priceNote: "Customizable across 2★, 3★, 4★, and 5★ luxury riad tiers",
+    priceNote: "Customizable across 3★, 4★, and 5★ luxury riad tiers",
     popular: true,
     coverImage: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=1600&q=85",
     itinerary: [
@@ -1734,7 +1734,7 @@ export const travelPackages: TravelPackage[] = [
       "Return airport transfers in private / shared AC coach"
     ],
     startingStar: 3,
-    priceNote: "Customizable across 2★ Smart Budget to 5★ Marina Bay Sands luxury",
+    priceNote: "Customizable across 3★ Modern Comfort, 4★ Boutique to 5★ Marina Bay Sands luxury",
     popular: true,
     coverImage: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=85",
     itinerary: [

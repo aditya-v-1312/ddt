@@ -41,7 +41,7 @@ export interface ItineraryFormData {
   destination: string;
   travelMonth: string;
   duration: string;
-  hotelTier: 2 | 3 | 4 | 5;
+  hotelTier: 3 | 4 | 5;
   travelStyle: string;
   travelersCount: number;
   specialRequests: string[];
@@ -543,7 +543,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                         Accommodations &amp; Travel Style
                       </h3>
                       <p className="text-sm sm:text-base text-[#697181] font-sans mt-1">
-                        Darsh Dream Tours provides direct wholesale inventory across 2★ to 5★ luxury tiers.
+                        Darsh Dream Tours provides direct wholesale inventory across 3★, 4★, and 5★ luxury tiers.
                       </p>
                     </div>
 
@@ -552,12 +552,11 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       <label className="block text-xs font-mono uppercase tracking-widest text-[#697181] mb-3 font-bold">
                         Preferred Hotel Category:
                       </label>
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         {[
+                          { tier: 4 as const, title: "4★ Premium Boutique (Default)", desc: "Kerry Hotel, Boutique & Heritage Stays" },
                           { tier: 5 as const, title: "5★ Ultra Luxury", desc: "Ritz-Carlton, Peninsula, Luxury Resorts" },
-                          { tier: 4 as const, title: "4★ Premium Boutique", desc: "Kerry Hotel, Boutique & Heritage Stays" },
                           { tier: 3 as const, title: "3★ Modern Comfort", desc: "Clean, Verified Central City Stays" },
-                          { tier: 2 as const, title: "2★ Smart Budget", desc: "Cost-Efficient Clean Wholesale Hotels" },
                         ].map((h) => {
                           const isSel = formData.hotelTier === h.tier;
                           return (

@@ -188,7 +188,7 @@ export default function TravelChatbot() {
       {
         id: "msg-welcome-2",
         sender: "bot",
-        text: "Whether you're looking for curated holiday packages, 2★ to 5★ hotel reservations, or urgent last-minute room allocations, I am here to guide you. How can our team assist you today?",
+        text: "Whether you're looking for curated holiday packages, 3★, 4★, or 5★ hotel reservations, or urgent last-minute room allocations, I am here to guide you. How can our team assist you today?",
         type: "service_select",
         timestamp: getTimeString(),
       },
@@ -213,7 +213,7 @@ export default function TravelChatbot() {
       {
         id: "msg-lm-2",
         sender: "bot",
-        text: "Our dedicated travel desks access direct wholesale allocations across 2★, 3★, 4★, and 5★ hotels even when online booking sites show 'Sold Out'.",
+        text: "Our dedicated travel desks access direct wholesale allocations across 3★, 4★, and 5★ hotels even when online booking sites show 'Sold Out'.",
         timestamp: getTimeString(),
       },
     ]);
@@ -235,15 +235,16 @@ export default function TravelChatbot() {
         timestamp: getTimeString(),
       },
     ]);
-    addBotMessage(`Would you like to explore our curated packages for ${dest}, or select a specific hotel category (2★ to 5★)?`, "package_select", { destination: dest }, 500);
+    addBotMessage(`Would you like to explore our curated packages for ${dest}, or select a specific hotel category (3★ to 5★)?`, "package_select", { destination: dest }, 500);
   };
 
-  const startPackageFlow = (dest: string, pkgTitle: string, stars?: 2 | 3 | 4 | 5) => {
+  const startPackageFlow = (dest: string, pkgTitle: string, stars?: 3 | 4 | 5) => {
+    const selectedStar = stars || 4;
     setConsultation((prev) => ({
       ...prev,
       destination: dest,
       packageTitle: pkgTitle,
-      hotelRating: stars ? `${stars}-Star` : undefined,
+      hotelRating: `${selectedStar}-Star`,
       serviceType: "holiday",
     }));
     setConversationalStep("idle");
@@ -255,7 +256,7 @@ export default function TravelChatbot() {
         timestamp: getTimeString(),
       },
     ]);
-    addBotMessage(`What hotel category would you prefer for this journey in ${dest}? We partner with verified 2★, 3★, 4★, and 5★ hotels:`, "hotel_select", { destination: dest }, 500);
+    addBotMessage(`What hotel category would you prefer for this journey in ${dest}? We partner with verified 3★, 4★, and 5★ hotels (4★ Boutique is our travelers' favorite default):`, "hotel_select", { destination: dest }, 500);
   };
 
   // --- SELECTION HANDLERS ---
@@ -273,7 +274,7 @@ export default function TravelChatbot() {
       addBotMessage("✈️ Our Ticketing Desk handles domestic & international flights, visas, and corporate travel. Where are you flying to?", "destination_select", { isTicketing: true });
     } else {
       setConsultation((prev) => ({ ...prev, serviceType: "hotel_only", urgentLastMinute: false }));
-      addBotMessage("🏨 We provide negotiated wholesale rates across 2-star, 3-star, 4-star, and 5-star hotels globally. Which city do you need a stay in?", "destination_select");
+      addBotMessage("🏨 We provide negotiated wholesale rates across 3-star, 4-star, and 5-star hotels globally. Which city do you need a stay in?", "destination_select");
     }
   };
 
@@ -290,7 +291,7 @@ export default function TravelChatbot() {
       if (availablePackages.length > 0) {
         addBotMessage(`Here are our most popular curated packages for ${destName}. You can pick one or choose custom:`, "package_select", { destination: destName });
       } else {
-        addBotMessage(`What style of accommodation would you prefer in ${destName}? We partner with verified 2★, 3★, 4★, and 5★ hotels:`, "hotel_select", { destination: destName });
+        addBotMessage(`What style of accommodation would you prefer in ${destName}? We partner with verified 3★, 4★, and 5★ hotels:`, "hotel_select", { destination: destName });
       }
     }
   };
@@ -658,7 +659,7 @@ export default function TravelChatbot() {
                 <ShieldCheck size={12} />
                 <span>Verified Travel Agency</span>
               </span>
-              <span>2★ · 3★ · 4★ · 5★ Hotel Inventories</span>
+              <span>3★ · 4★ (Default) · 5★ Hotel Inventories</span>
               <span className="text-red-400 font-medium">⚡ Last-Minute Desk</span>
             </div>
 
@@ -720,12 +721,12 @@ export default function TravelChatbot() {
 
                         <button
                           type="button"
-                          onClick={() => handleServiceSelect("hotel_only", "🏨 Hotel Booking (2★ to 5★)")}
+                          onClick={() => handleServiceSelect("hotel_only", "🏨 Hotel Booking (3★ to 5★)")}
                           className="flex items-center justify-between p-2.5 rounded-xl border border-white/15 bg-white/5 hover:bg-[#E2B18D] hover:text-[#0C1E3D] hover:border-transparent transition-all text-left text-xs font-semibold group"
                         >
                           <span className="flex items-center gap-2">
                             <span>🏨</span>
-                            <span>Hotel Stays Only (2★, 3★, 4★, 5★)</span>
+                            <span>Hotel Stays Only (3★, 4★, 5★)</span>
                           </span>
                           <ChevronRight size={14} className="opacity-60 group-hover:translate-x-1 transition-transform" />
                         </button>
@@ -814,79 +815,68 @@ export default function TravelChatbot() {
                       </div>
                     )}
 
-                    {/* Step: Hotel Star Selector (2★, 3★, 4★, 5★) */}
+                    {/* Step: Hotel Star Selector (3★, 4★ Default, 5★) */}
                     {msg.type === "hotel_select" && (
                       <div className="mt-3 space-y-3">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          {/* 5-STAR */}
-                          <button
-                            type="button"
-                            onClick={() => handleHotelSelect("5-Star Luxury", hotelDataForDest?.hotels.star5[0]?.name)}
-                            className="p-3 rounded-xl border border-amber-500/30 bg-amber-950/20 hover:bg-amber-600/30 hover:border-amber-400 transition-all text-left group"
-                          >
-                            <div className="flex items-center gap-1 text-amber-400">
-                              <Star size={12} className="fill-amber-400" />
-                              <Star size={12} className="fill-amber-400" />
-                              <Star size={12} className="fill-amber-400" />
-                              <Star size={12} className="fill-amber-400" />
-                              <Star size={12} className="fill-amber-400" />
-                            </div>
-                            <h5 className="font-semibold text-xs text-white mt-1">5-Star Ultra Luxury</h5>
-                            <p className="text-[10px] text-white/60 mt-0.5 line-clamp-2">
-                              {hotelDataForDest?.hotels.star5[0]?.name || "Palace, beachfront villas, private butler, Michelin dining"}
-                            </p>
-                          </button>
-
-                          {/* 4-STAR */}
+                        <div className="grid grid-cols-1 gap-2">
+                          {/* 4-STAR (RECOMMENDED DEFAULT) */}
                           <button
                             type="button"
                             onClick={() => handleHotelSelect("4-Star Premium", hotelDataForDest?.hotels.star4[0]?.name)}
-                            className="p-3 rounded-xl border border-blue-500/30 bg-blue-950/20 hover:bg-blue-600/30 hover:border-blue-400 transition-all text-left group"
+                            className="p-3.5 rounded-xl border-2 border-blue-400/50 bg-blue-950/30 hover:bg-blue-600/30 hover:border-blue-400 transition-all text-left group relative shadow-md"
                           >
+                            <span className="absolute top-2.5 right-3 px-2 py-0.5 rounded-full bg-blue-500/30 text-blue-200 border border-blue-400/30 font-mono text-[9px] uppercase tracking-wider font-bold">
+                              Recommended Default
+                            </span>
                             <div className="flex items-center gap-1 text-blue-400">
-                              <Star size={12} className="fill-blue-400" />
-                              <Star size={12} className="fill-blue-400" />
-                              <Star size={12} className="fill-blue-400" />
-                              <Star size={12} className="fill-blue-400" />
+                              <Star size={13} className="fill-blue-400" />
+                              <Star size={13} className="fill-blue-400" />
+                              <Star size={13} className="fill-blue-400" />
+                              <Star size={13} className="fill-blue-400" />
                             </div>
                             <h5 className="font-semibold text-xs text-white mt-1">4-Star Premium Boutique</h5>
-                            <p className="text-[10px] text-white/60 mt-0.5 line-clamp-2">
+                            <p className="text-[10px] text-white/70 mt-0.5 line-clamp-2">
                               {hotelDataForDest?.hotels.star4[0]?.name || "Chic upscale boutique hotels, pools, prime city view rooms"}
                             </p>
                           </button>
 
-                          {/* 3-STAR */}
-                          <button
-                            type="button"
-                            onClick={() => handleHotelSelect("3-Star Comfort", hotelDataForDest?.hotels.star3[0]?.name)}
-                            className="p-3 rounded-xl border border-emerald-500/30 bg-emerald-950/20 hover:bg-emerald-600/30 hover:border-emerald-400 transition-all text-left group"
-                          >
-                            <div className="flex items-center gap-1 text-emerald-400">
-                              <Star size={12} className="fill-emerald-400" />
-                              <Star size={12} className="fill-emerald-400" />
-                              <Star size={12} className="fill-emerald-400" />
-                            </div>
-                            <h5 className="font-semibold text-xs text-white mt-1">3-Star Comfort & Central</h5>
-                            <p className="text-[10px] text-white/60 mt-0.5 line-clamp-2">
-                              {hotelDataForDest?.hotels.star3[0]?.name || "Clean, contemporary, top-rated central location with breakfast"}
-                            </p>
-                          </button>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            {/* 5-STAR */}
+                            <button
+                              type="button"
+                              onClick={() => handleHotelSelect("5-Star Luxury", hotelDataForDest?.hotels.star5[0]?.name)}
+                              className="p-3 rounded-xl border border-amber-500/30 bg-amber-950/20 hover:bg-amber-600/30 hover:border-amber-400 transition-all text-left group"
+                            >
+                              <div className="flex items-center gap-1 text-amber-400">
+                                <Star size={12} className="fill-amber-400" />
+                                <Star size={12} className="fill-amber-400" />
+                                <Star size={12} className="fill-amber-400" />
+                                <Star size={12} className="fill-amber-400" />
+                                <Star size={12} className="fill-amber-400" />
+                              </div>
+                              <h5 className="font-semibold text-xs text-white mt-1">5-Star Ultra Luxury</h5>
+                              <p className="text-[10px] text-white/60 mt-0.5 line-clamp-2">
+                                {hotelDataForDest?.hotels.star5[0]?.name || "Palace, beachfront villas, private butler, Michelin dining"}
+                              </p>
+                            </button>
 
-                          {/* 2-STAR */}
-                          <button
-                            type="button"
-                            onClick={() => handleHotelSelect("2-Star Budget Smart", hotelDataForDest?.hotels.star2[0]?.name)}
-                            className="p-3 rounded-xl border border-purple-500/30 bg-purple-950/20 hover:bg-purple-600/30 hover:border-purple-400 transition-all text-left group"
-                          >
-                            <div className="flex items-center gap-1 text-purple-400">
-                              <Star size={12} className="fill-purple-400" />
-                              <Star size={12} className="fill-purple-400" />
-                            </div>
-                            <h5 className="font-semibold text-xs text-white mt-1">2-Star Value Smart</h5>
-                            <p className="text-[10px] text-white/60 mt-0.5 line-clamp-2">
-                              {hotelDataForDest?.hotels.star2[0]?.name || "Spotless, vetted budget lodgings for smart corporate/leisure travelers"}
-                            </p>
-                          </button>
+                            {/* 3-STAR */}
+                            <button
+                              type="button"
+                              onClick={() => handleHotelSelect("3-Star Comfort", hotelDataForDest?.hotels.star3[0]?.name)}
+                              className="p-3 rounded-xl border border-emerald-500/30 bg-emerald-950/20 hover:bg-emerald-600/30 hover:border-emerald-400 transition-all text-left group"
+                            >
+                              <div className="flex items-center gap-1 text-emerald-400">
+                                <Star size={12} className="fill-emerald-400" />
+                                <Star size={12} className="fill-emerald-400" />
+                                <Star size={12} className="fill-emerald-400" />
+                              </div>
+                              <h5 className="font-semibold text-xs text-white mt-1">3-Star Comfort &amp; Central</h5>
+                              <p className="text-[10px] text-white/60 mt-0.5 line-clamp-2">
+                                {hotelDataForDest?.hotels.star3[0]?.name || "Clean, contemporary, top-rated central location with breakfast"}
+                              </p>
+                            </button>
+                          </div>
                         </div>
 
                         {hotelDataForDest && (
@@ -896,10 +886,9 @@ export default function TravelChatbot() {
                             </span>
                             <div className="flex flex-wrap gap-1.5">
                               {[
-                                ...hotelDataForDest.hotels.star5.slice(0, 1),
                                 ...hotelDataForDest.hotels.star4.slice(0, 1),
+                                ...hotelDataForDest.hotels.star5.slice(0, 1),
                                 ...hotelDataForDest.hotels.star3.slice(0, 1),
-                                ...hotelDataForDest.hotels.star2.slice(0, 1),
                               ].map((h) => (
                                 <button
                                   key={h.name}
@@ -1145,6 +1134,13 @@ export default function TravelChatbot() {
                 </button>
                 <button
                   type="button"
+                  onClick={() => handleHotelSelect("4-Star Premium")}
+                  className="px-2.5 py-1 rounded-full bg-blue-900/40 border border-blue-500/40 text-blue-200 text-[10px] font-semibold whitespace-nowrap hover:bg-blue-800 transition-colors"
+                >
+                  ⭐️ 4★ Boutique (Default)
+                </button>
+                <button
+                  type="button"
                   onClick={() => handleHotelSelect("5-Star Luxury")}
                   className="px-2.5 py-1 rounded-full bg-amber-900/40 border border-amber-500/40 text-amber-200 text-[10px] font-semibold whitespace-nowrap hover:bg-amber-800 transition-colors"
                 >
@@ -1152,10 +1148,10 @@ export default function TravelChatbot() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => handleHotelSelect("2-Star Budget Smart")}
-                  className="px-2.5 py-1 rounded-full bg-purple-900/40 border border-purple-500/40 text-purple-200 text-[10px] font-semibold whitespace-nowrap hover:bg-purple-800 transition-colors"
+                  onClick={() => handleHotelSelect("3-Star Comfort")}
+                  className="px-2.5 py-1 rounded-full bg-emerald-900/40 border border-emerald-500/40 text-emerald-200 text-[10px] font-semibold whitespace-nowrap hover:bg-emerald-800 transition-colors"
                 >
-                  ⭐️ 2★ Budget Smart
+                  ⭐️ 3★ Comfort
                 </button>
               </div>
             )}
