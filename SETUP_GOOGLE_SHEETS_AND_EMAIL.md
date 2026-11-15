@@ -6,7 +6,7 @@ The website features an interactive **Personal Travel Concierge Chatbot** that c
 Inquiries are captured and routed as follows:
 - **Local Fallback Storage:** Automatically saved to `src/data/enquiries.json` (zero lead loss, offline-safe).
 - **Google Sheets Integration:** Automatically appends a new row to your Google Sheet with timestamp, reference ID, customer contact info, destination, package, hotel choice, and notes.
-- **Instant Email Alerts:** Automatically sends formatted email notifications exclusively to `info@darshdreamtours.com` so the central desk can review and assign/forward the inquiry to the appropriate department.
+- **Instant Email Alerts:** Automatically sends formatted email notifications directly to `sakshi@darshdreamtours.com` for immediate review and action.
 - **No Direct WhatsApp:** All communication is routed securely without exposing private staff numbers.
 
 ---
@@ -92,4 +92,4 @@ GOOGLE_SHEETS_WEBHOOK_URL="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exe
 Every time a client finishes chatting with the concierge:
 1. It automatically appends a formatted row to your Google Sheet with:
    `Timestamp | Reference ID | Urgent? | Department | Assigned Desk | Customer Name | Phone (With Country Code) | Email | Destination | Service/Package | Hotel Category (2★-5★) | Hotel Name | Travel Month | Travelers | Special Requests | Status`
-2. It automatically sends an email alert with full trip details exclusively to **`info@darshdreamtours.com`**.
+2. It automatically sends an email alert with full trip details directly to **`sakshi@darshdreamtours.com`**.

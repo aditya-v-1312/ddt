@@ -350,7 +350,7 @@ export default function TravelChatbot() {
     );
   };
 
-  // Automatically submit the form behind the scenes and email info@darshdreamtours.com
+  // Automatically submit the form behind the scenes and email sakshi@darshdreamtours.com
   const executeIndirectSubmission = async (completedData: typeof consultation) => {
     setIsTyping(true);
     addBotMessage("Submitting your request to our central desk...", "text", null, 300);
@@ -389,9 +389,9 @@ export default function TravelChatbot() {
 
       // Final Confirmation Message: NO WHATSAPP, NO INDIVIDUAL STAFF NAMES
       addBotMessage(
-        `Thank you, ${completedData.name}! Your travel consultation request has been delivered directly via mail to our central desk at info@darshdreamtours.com.\n\n` +
+        `Thank you, ${completedData.name}! Your travel consultation request has been delivered directly via mail to our team at sakshi@darshdreamtours.com.\n\n` +
           `📋 Reference ID: ${refId}\n\n` +
-          `Our team will review your requirements and reply with your customized itinerary and exclusive wholesale rates to ${completedData.email}.`,
+          `Our team will review your requirements and reply with your customized itinerary and exclusive wholesale rates to ${completedData.email || "your contact details"}.`,
         "confirmation",
         {
           ...completedData,
@@ -402,7 +402,7 @@ export default function TravelChatbot() {
     } catch (err) {
       setIsTyping(false);
       addBotMessage(
-        `Thank you, ${completedData.name}! Your request has been logged. Our team at info@darshdreamtours.com will review it and reply to you shortly.`,
+        `Thank you, ${completedData.name}! Your request has been logged. Our team at sakshi@darshdreamtours.com will review it and reply to you shortly.`,
         "confirmation",
         completedData,
         400
@@ -1076,8 +1076,8 @@ export default function TravelChatbot() {
 
                         <div className="text-xs text-white/85 space-y-1.5 leading-relaxed">
                           <p>
-                            <strong>Central Mailbox:</strong>{" "}
-                            <span className="font-mono text-[#E2B18D]">info@darshdreamtours.com</span>
+                            <strong>Desk Mailbox:</strong>{" "}
+                            <span className="font-mono text-[#E2B18D]">sakshi@darshdreamtours.com</span>
                           </p>
                           <p>
                             <strong>Status:</strong> Dispatched & Awaiting Specialist Review

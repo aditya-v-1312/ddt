@@ -4,8 +4,8 @@
  * Handles International Country Codes (+91, +971, +44, +1, etc.) without #ERROR!
  * ============================================================================
  * 
- * Central Email Destination: info@darshdreamtours.com
- * (All alerts route exclusively to central info desk for review & delegation)
+ * Central Email Destination: sakshi@darshdreamtours.com
+ * (All alerts route to sakshi@darshdreamtours.com for immediate action & delegation)
  * ============================================================================
  */
 
@@ -96,9 +96,9 @@ function doPost(e) {
     var newRow = sheet.getLastRow();
     sheet.getRange(newRow, 7).setNumberFormat("@");
 
-    // 2. SEND INSTANT EMAIL NOTIFICATION EXCLUSIVELY TO INFO@DARSHDREAMTOURS.COM
+    // 2. SEND INSTANT EMAIL NOTIFICATION TO SAKSHI@DARSHDREAMTOURS.COM
     try {
-      var recipientEmail = "info@darshdreamtours.com";
+      var recipientEmail = data.targetEmail || "sakshi@darshdreamtours.com";
 
       var cleanPhoneDisplay = safePhone;
       var dialNumber = safePhone.replace(/[^\d+]/g, '');

@@ -79,9 +79,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // All email alerts go strictly to info@darshdreamtours.com for central review & delegation
-    const targetEmail = "info@darshdreamtours.com";
-    const assignedContact = "Darsh Dream Tours Central Desk (info@darshdreamtours.com)";
+    // All email alerts go to sakshi@darshdreamtours.com
+    const targetEmail = "sakshi@darshdreamtours.com";
+    const assignedContact = "Darsh Dream Tours Desk (sakshi@darshdreamtours.com)";
 
     // Generate unique reference ID
     const prefix = urgentLastMinute ? "URG" : "DDT";
@@ -188,7 +188,7 @@ export async function GET() {
     service: "Darsh Dream Tours Enquiry & Chatbot Gateway",
     departments: [
       { id: "ticketing", contact: "Ticketing Desk (+91 70483 86900)", email: "sales@darshdreamtours.com", service: "Flights, Visas & Last-Minute Hotel Desk" },
-      { id: "tours", contact: "Tours Desk (+91 74870 83499)", email: "info@darshdreamtours.com", service: "Bespoke Tours, Honeymoon & Packages" },
+      { id: "tours", contact: "Tours Desk (+91 74870 83499)", email: "sakshi@darshdreamtours.com", service: "Bespoke Tours, Honeymoon & Packages" },
       { id: "holidays", contact: "Holidays Desk (+91 97243 91674)", email: "info@darshdreamtours.com", service: "Group Tours & Luxury Island Holidays" },
     ],
   });
