@@ -36,7 +36,7 @@ function doPost(e) {
         "Special Requests",
         "Status"
       ]);
-      sheet.getRange(1, 1, 1, 16).setFontWeight("bold").setBackground("#07101F").setFontColor("#FFFFFF");
+      sheet.getRange(1, 1, 1, 16).setFontWeight("bold").setBackground("#0C1E3D").setFontColor("#FFFFFF");
       sheet.setFrozenRows(1);
       // Format entire column 7 (Phone) as Plain Text
       sheet.getRange("G:G").setNumberFormat("@");
@@ -116,7 +116,7 @@ function doPost(e) {
 
       var htmlBody = ""
         + "<div style='font-family: Arial, sans-serif; max-width: 620px; margin: 0 auto; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden;'>"
-        + "  <div style='background: #07101F; padding: 24px; color: #FFFFFF; text-align: center;'>"
+        + "  <div style='background: #0C1E3D; padding: 24px; color: #FFFFFF; text-align: center;'>"
         + "    <h2 style='margin: 0; font-size: 20px; letter-spacing: 2px; color: #E2B18D;'>DARSH DREAM TOURS</h2>"
         + "    <p style='margin: 6px 0 0; font-size: 13px; color: #9CA3AF;'>Personal Travel Concierge & Lead Notification</p>"
         + "  </div>"

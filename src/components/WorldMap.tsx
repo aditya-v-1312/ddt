@@ -37,7 +37,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
   };
 
   return (
-    <section className="relative py-28 sm:py-36 bg-[#08152F] text-white overflow-hidden">
+    <section className="relative py-28 sm:py-36 bg-[#0C1E3D] text-white overflow-hidden">
       {/* Background Starlight Ambience */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-[#244586] rounded-full blur-3xl" />
@@ -75,7 +75,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
 
       {/* Interactive Map Visual Stage */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="relative rounded-3xl bg-[#050D20] border border-[#1C366B]/50 p-4 sm:p-8 lg:p-12 overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.6)]">
+        <div className="relative rounded-3xl bg-[#0A1934] border border-[#1C366B]/50 p-4 sm:p-8 lg:p-12 overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.6)]">
           {/* Subtle Latitude / Longitude Luxury Grid Lines */}
           <div className="absolute inset-0 pointer-events-none opacity-20">
             <svg viewBox="0 0 1000 500" className="w-full h-full" preserveAspectRatio="none">
@@ -96,7 +96,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
               preserveAspectRatio="xMidYMid meet"
             >
               {/* World Continents Outlines */}
-              <g fill="#0D1F42" stroke="#1C366B" strokeWidth="1" opacity="0.85">
+              <g fill="#163366" stroke="#254E8E" strokeWidth="1" opacity="0.9">
                 {/* Europe */}
                 <path d="M 460 110 Q 500 90, 530 110 T 540 160 T 490 190 T 450 160 Z" />
                 <path d="M 480 80 Q 510 50, 520 80 T 500 110 Z" />
@@ -208,7 +208,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({ onSelectDestination }) => {
 
             {/* Active Destination Waypoint Inspection Card */}
             {activePin && (
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-md bg-[#08152F]/95 backdrop-blur-xl border border-[#B87543]/40 rounded-2xl p-5 sm:p-6 shadow-2xl transition-all duration-500 animate-in fade-in">
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-md bg-[#0C1E3D]/95 backdrop-blur-xl border border-[#B87543]/40 rounded-2xl p-5 sm:p-6 shadow-2xl transition-all duration-500 animate-in fade-in">
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#D99767]">

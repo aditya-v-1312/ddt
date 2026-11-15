@@ -19,7 +19,7 @@ export const AboutTeam: React.FC = () => {
               {/* Outer Decorative Frame */}
               <div className="absolute -inset-3 rounded-3xl border border-[#9A5B2D]/25 transform -rotate-1 pointer-events-none" />
 
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(8,21,47,0.08)] bg-[#08152F]">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(8,21,47,0.08)] bg-[#0C1E3D]">
                 {/* Official/Curated Portrait Slot */}
                 <Image
                   src={travelImages.aboutTeam.url}
@@ -28,7 +28,7 @@ export const AboutTeam: React.FC = () => {
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#08152F]/75 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E3D]/75 via-transparent to-transparent" />
 
                 {/* Bottom Identifier */}
                 <div className="absolute bottom-6 left-6 right-6 text-white">
@@ -46,7 +46,7 @@ export const AboutTeam: React.FC = () => {
                 <MapPin className="w-4 h-4 text-[#9A5B2D]" />
                 <div className="text-left">
                   <div className="text-[10px] uppercase tracking-wider text-[#687080] font-sans">Boutique Agency</div>
-                  <div className="text-xs font-semibold text-[#08152F] font-sans">Vadodara, Gujarat</div>
+                  <div className="text-xs font-semibold text-[#0C1E3D] font-sans">Vadodara, Gujarat</div>
                 </div>
               </div>
             </div>
@@ -59,7 +59,7 @@ export const AboutTeam: React.FC = () => {
               <span>Personal Hospitality</span>
             </div>
 
-            <h2 className="font-serif text-4xl sm:text-6xl text-[#08152F] tracking-tight leading-[1.08] mb-2">
+            <h2 className="font-serif text-4xl sm:text-6xl text-[#0C1E3D] tracking-tight leading-[1.08] mb-2">
               ABOUT OUR TEAM
             </h2>
 
@@ -68,7 +68,7 @@ export const AboutTeam: React.FC = () => {
             </p>
 
             <blockquote className="border-l-2 border-[#9A5B2D] pl-6 my-4">
-              <p className="font-serif italic text-xl sm:text-2xl text-[#08152F] leading-snug">
+              <p className="font-serif italic text-xl sm:text-2xl text-[#0C1E3D] leading-snug">
                 "Travel is personal. Every journey begins with understanding where you want to go, how you want to travel, and what you want to experience."
               </p>
             </blockquote>
@@ -87,7 +87,7 @@ export const AboutTeam: React.FC = () => {
               <button
                 type="button"
                 onClick={() => openInquiry({ department: "tours" })}
-                className="inline-flex items-center justify-center space-x-3 px-8 py-4 rounded-full bg-[#08152F] hover:bg-[#9A5B2D] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-md group"
+                className="inline-flex items-center justify-center space-x-3 px-8 py-4 rounded-full bg-[#0C1E3D] hover:bg-[#9A5B2D] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-md group"
               >
                 <Compass className="w-4 h-4 text-[#D99767] group-hover:text-white transition-colors" />
                 <span>Contact Us</span>
@@ -96,7 +96,7 @@ export const AboutTeam: React.FC = () => {
 
               <a
                 href={`tel:${siteConfig.departments[1].phone}`}
-                className="inline-flex items-center justify-center space-x-2 px-6 py-4 rounded-full border border-[#E7E4DA] hover:border-[#08152F] text-[#08152F] text-xs uppercase tracking-[0.2em] font-medium transition-colors bg-white"
+                className="inline-flex items-center justify-center space-x-2 px-6 py-4 rounded-full border border-[#E7E4DA] hover:border-[#0C1E3D] text-[#0C1E3D] text-xs uppercase tracking-[0.2em] font-medium transition-colors bg-white"
               >
                 <Phone className="w-3.5 h-3.5 text-[#9A5B2D]" />
                 <span>Tours: {siteConfig.departments[1].phoneDisplay}</span>
@@ -104,7 +104,7 @@ export const AboutTeam: React.FC = () => {
 
               <a
                 href={`mailto:${siteConfig.contact.email}`}
-                className="inline-flex items-center justify-center space-x-2 px-6 py-4 rounded-full border border-[#E7E4DA] hover:border-[#08152F] text-[#08152F] text-xs uppercase tracking-[0.2em] font-medium transition-colors bg-white"
+                className="inline-flex items-center justify-center space-x-2 px-6 py-4 rounded-full border border-[#E7E4DA] hover:border-[#0C1E3D] text-[#0C1E3D] text-xs uppercase tracking-[0.2em] font-medium transition-colors bg-white"
               >
                 <Mail className="w-3.5 h-3.5 text-[#9A5B2D]" />
                 <span>Email Us</span>

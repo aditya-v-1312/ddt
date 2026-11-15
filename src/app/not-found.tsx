@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen bg-[#07101F] text-white flex flex-col justify-between selection:bg-[#B87543] selection:text-white">
+    <main className="min-h-screen bg-[#0C1E3D] text-white flex flex-col justify-between selection:bg-[#B87543] selection:text-white">
       <Navbar />
 
       <section className="relative flex-1 flex items-center justify-center px-5 py-40 sm:px-8 lg:px-12 overflow-hidden">
@@ -28,7 +28,7 @@ export default function NotFound() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
               href="/"
-              className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#07101F] hover:bg-[#E2B18D] transition-all duration-300 shadow-md hover:scale-[1.02]"
+              className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0C1E3D] hover:bg-[#E2B18D] transition-all duration-300 shadow-md hover:scale-[1.02]"
             >
               <span>Return to Homepage</span>
               <ArrowUpRight size={14} />

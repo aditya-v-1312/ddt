@@ -139,7 +139,7 @@ export default function InquiryModal() {
   const currentDeptInfo = siteConfig.departments.find((d) => d.id === department);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-[#07101F]/80 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-[#0C1E3D]/80 backdrop-blur-md animate-in fade-in duration-200">
       <div
         className="relative w-full max-w-2xl bg-[#0B1528] border border-white/15 rounded-3xl shadow-2xl text-white overflow-hidden my-auto"
         onClick={(e) => e.stopPropagation()}
@@ -237,7 +237,7 @@ export default function InquiryModal() {
                 <button
                   type="button"
                   onClick={handleResetAndClose}
-                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white text-[#07101F] font-sans text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-[#E2B18D] transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white text-[#0C1E3D] font-sans text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-[#E2B18D] transition-colors"
                 >
                   Done & Close
                 </button>
@@ -441,16 +441,16 @@ export default function InquiryModal() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full group inline-flex items-center justify-center gap-3 rounded-full bg-white py-4 px-8 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[#07101F] shadow-[0_4px_20px_rgba(255,255,255,0.15)] transition-all duration-300 hover:bg-[#E2B18D] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full group inline-flex items-center justify-center gap-3 rounded-full bg-white py-4 px-8 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0C1E3D] shadow-[0_4px_20px_rgba(255,255,255,0.15)] transition-all duration-300 hover:bg-[#E2B18D] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>
-                      <Loader2 size={16} className="animate-spin text-[#07101F]" />
+                      <Loader2 size={16} className="animate-spin text-[#0C1E3D]" />
                       <span>Submitting Securely...</span>
                     </>
                   ) : (
                     <>
-                      <Send size={15} className="text-[#07101F]" />
+                      <Send size={15} className="text-[#0C1E3D]" />
                       <span>Submit Travel Enquiry</span>
                     </>
                   )}

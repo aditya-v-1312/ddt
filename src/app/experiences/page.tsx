@@ -98,7 +98,7 @@ export default function ExperiencesPage() {
       {/* =========================================================
           HERO
       ========================================================= */}
-      <section className="relative overflow-hidden bg-[#07101F] px-5 pb-24 pt-40 text-white sm:px-8 sm:pb-32 lg:px-12">
+      <section className="relative overflow-hidden bg-[#0C1E3D] px-5 pb-24 pt-40 text-white sm:px-8 sm:pb-32 lg:px-12">
         <div className="absolute right-[-120px] top-[-140px] h-[520px] w-[520px] rounded-full border border-[#B87543]/15 pointer-events-none" />
         <div className="absolute right-[-40px] top-[-60px] h-[360px] w-[360px] rounded-full border border-[#B87543]/10 pointer-events-none" />
         <div className="absolute -top-32 -left-32 h-80 w-80 rounded-full bg-[#B87543]/15 blur-[120px] pointer-events-none" />
@@ -156,7 +156,7 @@ export default function ExperiencesPage() {
               >
                 <div>
                   {/* Image header */}
-                  <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-[#07101F] mb-6">
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-[#0C1E3D] mb-6">
                     <Image
                       src={exp.image}
                       alt={exp.title}
@@ -217,7 +217,7 @@ export default function ExperiencesPage() {
       {/* =========================================================
           CTA
       ========================================================= */}
-      <section className="bg-[#07101F] px-5 py-28 text-white sm:px-8 sm:py-36 lg:px-12 border-t border-white/10">
+      <section className="bg-[#0C1E3D] px-5 py-28 text-white sm:px-8 sm:py-36 lg:px-12 border-t border-white/10">
         <div className="mx-auto max-w-[1440px]">
           <div className="max-w-4xl">
             <p className="eyebrow mb-6 !text-[#E2B18D]">
@@ -238,7 +238,7 @@ export default function ExperiencesPage() {
             <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
                 href="/plan"
-                className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#E2B18D] px-8 py-5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#07101F] transition-all duration-300 hover:bg-white shadow-lg hover:scale-[1.02]"
+                className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#E2B18D] px-8 py-5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0C1E3D] transition-all duration-300 hover:bg-white shadow-lg hover:scale-[1.02]"
               >
                 <span>Start Planning</span>
                 <ArrowUpRight

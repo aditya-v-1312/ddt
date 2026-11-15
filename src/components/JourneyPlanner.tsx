@@ -306,7 +306,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
             <Compass className="w-4 h-4 text-[#B87543]" />
             <span>Custom Itinerary Studio</span>
           </div>
-          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-[#07101F] tracking-tight leading-[1.04]">
+          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-[#0C1E3D] tracking-tight leading-[1.04]">
             Craft Your Dream Journey
           </h2>
           <p className="text-base sm:text-lg text-[#697181] font-sans font-light max-w-xl mx-auto leading-relaxed">
@@ -381,7 +381,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                 {currentStep === 1 && (
                   <div className="space-y-8 animate-in fade-in duration-300">
                     <div>
-                      <h3 className="font-serif text-3xl sm:text-4xl text-[#07101F] font-light">
+                      <h3 className="font-serif text-3xl sm:text-4xl text-[#0C1E3D] font-light">
                         Where would you like to travel?
                       </h3>
                       <p className="text-sm sm:text-base text-[#697181] font-sans mt-1">
@@ -400,7 +400,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                             onClick={() => setFormData({ ...formData, destination: dest.name })}
                             className={`px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-sans tracking-wide transition-all flex items-center gap-2 ${
                               isSelected
-                                ? "bg-[#07101F] text-white font-semibold shadow-md scale-[1.02]"
+                                ? "bg-[#0C1E3D] text-white font-semibold shadow-md scale-[1.02]"
                                 : "bg-[#F7F5F0] border border-[#101A2E]/15 text-[#101A2E] hover:border-[#B87543] hover:bg-white"
                             }`}
                           >
@@ -427,7 +427,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                             setFormData({ ...formData, destination: e.target.value })
                           }
                           placeholder="e.g. South of France & Swiss Alps, Japan Sakura Tour, Golden Triangle..."
-                          className="w-full pl-12 pr-5 py-4 rounded-2xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#07101F] placeholder-[#697181]/60 text-base font-sans focus:outline-none focus:border-[#B87543] transition-colors font-medium"
+                          className="w-full pl-12 pr-5 py-4 rounded-2xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#0C1E3D] placeholder-[#697181]/60 text-base font-sans focus:outline-none focus:border-[#B87543] transition-colors font-medium"
                         />
                       </div>
                     </div>
@@ -437,7 +437,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                         type="button"
                         onClick={handleNext}
                         disabled={!formData.destination.trim()}
-                        className="inline-flex items-center gap-2 px-9 py-4 rounded-full bg-[#07101F] hover:bg-[#B87543] disabled:opacity-40 text-white text-xs uppercase tracking-[0.2em] font-bold transition-all shadow-md hover:scale-[1.02]"
+                        className="inline-flex items-center gap-2 px-9 py-4 rounded-full bg-[#0C1E3D] hover:bg-[#B87543] disabled:opacity-40 text-white text-xs uppercase tracking-[0.2em] font-bold transition-all shadow-md hover:scale-[1.02]"
                       >
                         <span>Next: When &amp; Days</span>
                         <ArrowRight className="w-4 h-4" />
@@ -450,7 +450,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                 {currentStep === 2 && (
                   <div className="space-y-8 animate-in fade-in duration-300">
                     <div>
-                      <h3 className="font-serif text-3xl sm:text-4xl text-[#07101F] font-light">
+                      <h3 className="font-serif text-3xl sm:text-4xl text-[#0C1E3D] font-light">
                         When &amp; for how long?
                       </h3>
                       <p className="text-sm sm:text-base text-[#697181] font-sans mt-1">
@@ -473,7 +473,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                               onClick={() => setFormData({ ...formData, travelMonth: m })}
                               className={`p-3.5 rounded-2xl text-left border text-xs sm:text-sm font-sans transition-all flex items-center gap-2.5 ${
                                 isSel
-                                  ? "bg-[#07101F] text-white border-[#07101F] font-semibold shadow-md"
+                                  ? "bg-[#0C1E3D] text-white border-[#0C1E3D] font-semibold shadow-md"
                                   : "bg-[#F7F5F0] border-[#101A2E]/15 text-[#101A2E] hover:border-[#B87543] hover:bg-white"
                               }`}
                             >
@@ -517,7 +517,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       <button
                         type="button"
                         onClick={handleBack}
-                        className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#697181] hover:text-[#07101F] font-mono font-bold transition-colors"
+                        className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#697181] hover:text-[#0C1E3D] font-mono font-bold transition-colors"
                       >
                         <ArrowLeft className="w-4 h-4" />
                         <span>Back</span>
@@ -526,7 +526,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       <button
                         type="button"
                         onClick={handleNext}
-                        className="inline-flex items-center gap-2 px-9 py-4 rounded-full bg-[#07101F] hover:bg-[#B87543] text-white text-xs uppercase tracking-[0.2em] font-bold transition-all shadow-md hover:scale-[1.02]"
+                        className="inline-flex items-center gap-2 px-9 py-4 rounded-full bg-[#0C1E3D] hover:bg-[#B87543] text-white text-xs uppercase tracking-[0.2em] font-bold transition-all shadow-md hover:scale-[1.02]"
                       >
                         <span>Next: Stays &amp; Style</span>
                         <ArrowRight className="w-4 h-4" />
@@ -539,7 +539,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                 {currentStep === 3 && (
                   <div className="space-y-8 animate-in fade-in duration-300">
                     <div>
-                      <h3 className="font-serif text-3xl sm:text-4xl text-[#07101F] font-light">
+                      <h3 className="font-serif text-3xl sm:text-4xl text-[#0C1E3D] font-light">
                         Accommodations &amp; Travel Style
                       </h3>
                       <p className="text-sm sm:text-base text-[#697181] font-sans mt-1">
@@ -567,7 +567,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                               onClick={() => setFormData({ ...formData, hotelTier: h.tier })}
                               className={`p-4 rounded-2xl text-left border transition-all ${
                                 isSel
-                                  ? "bg-[#07101F] text-white border-[#07101F] font-bold shadow-lg scale-[1.02]"
+                                  ? "bg-[#0C1E3D] text-white border-[#0C1E3D] font-bold shadow-lg scale-[1.02]"
                                   : "bg-[#F7F5F0] border-[#101A2E]/15 text-[#101A2E] hover:border-[#B87543] hover:bg-white"
                               }`}
                             >
@@ -621,7 +621,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                         >
                           <Minus size={16} />
                         </button>
-                        <span className="w-16 text-center font-mono text-xl font-bold text-[#07101F]">
+                        <span className="w-16 text-center font-mono text-xl font-bold text-[#0C1E3D]">
                           {formData.travelersCount}
                         </span>
                         <button
@@ -669,7 +669,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       <button
                         type="button"
                         onClick={handleBack}
-                        className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#697181] hover:text-[#07101F] font-mono font-bold transition-colors"
+                        className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#697181] hover:text-[#0C1E3D] font-mono font-bold transition-colors"
                       >
                         <ArrowLeft className="w-4 h-4" />
                         <span>Back</span>
@@ -678,7 +678,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                       <button
                         type="button"
                         onClick={handleNext}
-                        className="inline-flex items-center gap-2 px-9 py-4 rounded-full bg-[#07101F] hover:bg-[#B87543] text-white text-xs uppercase tracking-[0.2em] font-bold transition-all shadow-md hover:scale-[1.02]"
+                        className="inline-flex items-center gap-2 px-9 py-4 rounded-full bg-[#0C1E3D] hover:bg-[#B87543] text-white text-xs uppercase tracking-[0.2em] font-bold transition-all shadow-md hover:scale-[1.02]"
                       >
                         <span>Next: Review &amp; Contact</span>
                         <ArrowRight className="w-4 h-4" />
@@ -691,7 +691,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                 {currentStep === 4 && (
                   <div className="space-y-7 animate-in fade-in duration-300">
                     <div>
-                      <h3 className="font-serif text-3xl sm:text-4xl text-[#07101F] font-light">
+                      <h3 className="font-serif text-3xl sm:text-4xl text-[#0C1E3D] font-light">
                         Where should we send your travel plan?
                       </h3>
                       <p className="text-sm sm:text-base text-[#697181] font-sans mt-1">
@@ -700,7 +700,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                     </div>
 
                     {/* Live Blueprint Summary Box */}
-                    <div className="p-4 sm:p-5 rounded-2xl bg-[#07101F] text-white space-y-2 border border-[#B87543]/30 shadow-md">
+                    <div className="p-4 sm:p-5 rounded-2xl bg-[#0C1E3D] text-white space-y-2 border border-[#B87543]/30 shadow-md">
                       <div className="flex items-center justify-between text-xs font-mono text-[#E2B18D] uppercase tracking-wider font-bold">
                         <span className="flex items-center gap-1.5">
                           <Sparkles size={14} className="text-[#E2B18D]" />
@@ -742,7 +742,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                               setFormData({ ...formData, name: e.target.value });
                             }}
                             placeholder="Enter your full name"
-                            className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#07101F] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium transition-colors"
+                            className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#0C1E3D] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium transition-colors"
                           />
                         </div>
                       </div>
@@ -768,7 +768,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                               setFormData({ ...formData, phone: e.target.value });
                             }}
                             placeholder="+91 98765 43210"
-                            className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#07101F] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium transition-colors"
+                            className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#0C1E3D] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium transition-colors"
                           />
                         </div>
                         <span className="text-[11px] text-[#697181] font-sans mt-1 block">
@@ -794,7 +794,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                             setFormData({ ...formData, email: e.target.value });
                           }}
                           placeholder="yourname@domain.com (optional)"
-                          className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#07101F] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium transition-colors"
+                          className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#0C1E3D] placeholder-[#697181]/50 text-base font-sans focus:outline-none focus:border-[#B87543] font-medium transition-colors"
                         />
                       </div>
                     </div>
@@ -808,7 +808,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                         value={formData.customNotes}
                         onChange={(e) => setFormData({ ...formData, customNotes: e.target.value })}
                         placeholder="e.g. Specific flight schedule, private candlelight dinner, infant cot needed..."
-                        className="w-full px-5 py-3.5 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#07101F] placeholder-[#697181]/50 text-sm font-sans focus:outline-none focus:border-[#B87543]"
+                        className="w-full px-5 py-3.5 rounded-xl bg-[#F7F5F0] border border-[#101A2E]/20 text-[#0C1E3D] placeholder-[#697181]/50 text-sm font-sans focus:outline-none focus:border-[#B87543]"
                       />
                     </div>
 
@@ -823,7 +823,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                         type="button"
                         onClick={handleBack}
                         disabled={submitting}
-                        className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#697181] hover:text-[#07101F] font-mono font-bold transition-colors order-2 sm:order-1"
+                        className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#697181] hover:text-[#0C1E3D] font-mono font-bold transition-colors order-2 sm:order-1"
                       >
                         <ArrowLeft className="w-4 h-4" />
                         <span>Back</span>
@@ -843,7 +843,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                         <button
                           type="submit"
                           disabled={!formData.name.trim() || !formData.phone.trim() || submitting}
-                          className="inline-flex items-center justify-center gap-2 px-9 py-4 rounded-full bg-[#07101F] hover:bg-[#B87543] disabled:opacity-40 text-white text-xs uppercase tracking-[0.2em] font-extrabold transition-all shadow-md hover:scale-[1.02]"
+                          className="inline-flex items-center justify-center gap-2 px-9 py-4 rounded-full bg-[#0C1E3D] hover:bg-[#B87543] disabled:opacity-40 text-white text-xs uppercase tracking-[0.2em] font-extrabold transition-all shadow-md hover:scale-[1.02]"
                         >
                           {submitting ? (
                             <>
@@ -879,7 +879,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({ prefilledDestina
                 <p className="text-xs font-mono uppercase tracking-widest text-emerald-700 font-bold">
                   Ref: {referenceId} · Enquiry Confirmed
                 </p>
-                <h3 className="font-serif text-3xl sm:text-5xl text-[#07101F]">
+                <h3 className="font-serif text-3xl sm:text-5xl text-[#0C1E3D]">
                   Thank you, {formData.name}!
                 </h3>
                 <p className="text-base sm:text-lg text-[#697181] font-sans font-light max-w-lg mx-auto">

@@ -9,7 +9,7 @@ import { useInquiry } from "@/context/InquiryContext";
 export const FinalCTA: React.FC = () => {
   const { openInquiry } = useInquiry();
   return (
-    <section className="relative py-32 sm:py-44 bg-[#08152F] text-white overflow-hidden">
+    <section className="relative py-32 sm:py-44 bg-[#0C1E3D] text-white overflow-hidden">
       {/* Background Animated Flight Path Arc */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <svg

@@ -77,7 +77,7 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) =>
 
   return (
     <div
-      className={`fixed inset-0 z-[100] flex flex-col justify-between overflow-hidden bg-[#050D1C] text-white transition-opacity duration-500 select-none ${
+      className={`fixed inset-0 z-[100] flex flex-col justify-between overflow-hidden bg-[#0A1A36] text-white transition-opacity duration-500 select-none ${
         phase === "out" ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
@@ -88,7 +88,7 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) =>
       </div>
 
       {/* Top Header Strip */}
-      <header className="relative z-20 flex items-center justify-between px-6 py-4 sm:px-10 border-b border-white/10 backdrop-blur-md bg-[#050D1C]/70">
+      <header className="relative z-20 flex items-center justify-between px-6 py-4 sm:px-10 border-b border-white/10 backdrop-blur-md bg-[#0A1A36]/70">
         <div className="flex items-center gap-4">
           <div className="relative h-10 w-36 sm:h-11 sm:w-44">
             <Image
@@ -116,7 +116,7 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) =>
         <button
           type="button"
           onClick={handleFinish}
-          className="group inline-flex items-center gap-2 rounded-full border border-[#E2B18D]/40 bg-white/10 hover:bg-[#E2B18D] hover:text-[#07101F] px-5 py-2 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-md shadow-md"
+          className="group inline-flex items-center gap-2 rounded-full border border-[#E2B18D]/40 bg-white/10 hover:bg-[#E2B18D] hover:text-[#0C1E3D] px-5 py-2 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-md shadow-md"
         >
           <span>Enter Website</span>
           <ArrowUpRight
@@ -142,7 +142,7 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) =>
 
           {/* Interactive Drag Cue Badge */}
           <div className="absolute top-3 inset-x-0 flex justify-center pointer-events-none">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#050D1C]/80 px-4 py-1 text-[9px] font-sans uppercase tracking-[0.22em] text-white/60 backdrop-blur-md">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#0A1A36]/80 px-4 py-1 text-[9px] font-sans uppercase tracking-[0.22em] text-white/60 backdrop-blur-md">
               <Compass size={11} className="text-[#E2B18D]" />
               <span>Drag to rotate globe · Click any destination or corridor</span>
             </span>
@@ -151,7 +151,7 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) =>
       </div>
 
       {/* Corridor Quick Selector Strip */}
-      <div className="relative z-20 px-4 py-2 bg-[#050D1C]/60 backdrop-blur-md border-t border-white/5 flex items-center justify-center overflow-x-auto no-scrollbar">
+      <div className="relative z-20 px-4 py-2 bg-[#0A1A36]/60 backdrop-blur-md border-t border-white/5 flex items-center justify-center overflow-x-auto no-scrollbar">
         <div className="flex items-center gap-1.5 sm:gap-2">
           <span className="text-[9px] font-mono uppercase tracking-widest text-[#E2B18D]/70 hidden md:inline mr-2">
             Explore Routes:
@@ -166,7 +166,7 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) =>
                 onClick={() => setSelectedLocation(loc)}
                 className={`px-3 py-1 rounded-full text-[9px] font-sans uppercase tracking-wider transition-all duration-200 whitespace-nowrap flex items-center gap-1.5 border ${
                   isActive
-                    ? "bg-[#E2B18D] text-[#07101F] border-[#E2B18D] font-bold shadow-md"
+                    ? "bg-[#E2B18D] text-[#0C1E3D] border-[#E2B18D] font-bold shadow-md"
                     : isOrigin
                     ? "bg-white/10 text-white border-[#E2B18D]/50 hover:bg-white/20"
                     : "bg-white/5 text-white/70 border-white/10 hover:border-white/30 hover:text-white"
@@ -181,7 +181,7 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) =>
       </div>
 
       {/* Bottom Progress Bar & Flight Corridor Counter */}
-      <footer className="relative z-20 px-6 py-3.5 sm:px-10 border-t border-white/10 backdrop-blur-md bg-[#050D1C]/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <footer className="relative z-20 px-6 py-3.5 sm:px-10 border-t border-white/10 backdrop-blur-md bg-[#0A1A36]/80 flex flex-col sm:flex-row items-center justify-between gap-3">
         <div className="flex items-center gap-4 text-[10px] font-sans uppercase tracking-[0.2em] text-white/50">
           <span className="text-[#E2B18D] font-semibold">12+ Global Flight Corridors</span>
           <span className="hidden md:inline text-white/20">|</span>

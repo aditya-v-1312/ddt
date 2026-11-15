@@ -36,7 +36,7 @@ export const Testimonials: React.FC = () => {
             <Sparkles className="w-3.5 h-3.5" />
             <span>Traveler Experiences</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl text-[#08152F] tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl text-[#0C1E3D] tracking-tight">
             WORDS FROM OUR GUESTS
           </h2>
         </div>
@@ -54,7 +54,7 @@ export const Testimonials: React.FC = () => {
                 </p>
               </div>
               <div className="pt-4 border-t border-[#E7E4DA]">
-                <p className="font-sans font-semibold text-sm text-[#08152F]">{item.traveler}</p>
+                <p className="font-sans font-semibold text-sm text-[#0C1E3D]">{item.traveler}</p>
                 <p className="font-sans text-xs text-[#9A5B2D] uppercase tracking-wider">
                   Journey to {item.destination}
                 </p>

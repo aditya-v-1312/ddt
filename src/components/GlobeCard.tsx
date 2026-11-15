@@ -30,7 +30,7 @@ export default function GlobeCard({ location, onClose }: GlobeCardProps) {
         rounded-2xl
         border
         border-white/20
-        bg-[#07101F]/95
+        bg-[#0C1E3D]/95
         p-5
         sm:p-6
         shadow-[0_20px_60px_rgba(0,0,0,0.7)]
@@ -102,7 +102,7 @@ export default function GlobeCard({ location, onClose }: GlobeCardProps) {
             <button
               type="button"
               onClick={() => openInquiry({ department: "tours" })}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-white py-2.5 px-4 text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-[#07101F] hover:bg-[#E2B18D] transition-colors shadow-md"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-white py-2.5 px-4 text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-[#0C1E3D] hover:bg-[#E2B18D] transition-colors shadow-md"
             >
               <span>Connect With Our Team</span>
               <ArrowUpRight size={13} />
@@ -111,7 +111,7 @@ export default function GlobeCard({ location, onClose }: GlobeCardProps) {
             <button
               type="button"
               onClick={() => openInquiry({ destination: location.city, department: location.department || "tours" })}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#E2B18D] py-3 px-4 text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-[#07101F] hover:bg-white transition-all shadow-md hover:scale-[1.01]"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#E2B18D] py-3 px-4 text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-[#0C1E3D] hover:bg-white transition-all shadow-md hover:scale-[1.01]"
             >
               <Compass size={13} />
               <span>Inquire for {location.city}</span>

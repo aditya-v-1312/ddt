@@ -51,7 +51,7 @@ export default function Home() {
       ========================================================= */}
       <section
         id="top"
-        className="relative min-h-[100svh] overflow-hidden bg-[#07101F]"
+        className="relative min-h-[100svh] overflow-hidden bg-[#0C1E3D]"
       >
         {/* Background Visual with Multi-Layered Gradients */}
         <div className="absolute inset-0">
@@ -65,9 +65,9 @@ export default function Home() {
           />
 
           {/* Vignette and Atmospheric Lighting */}
-          <div className="absolute inset-0 bg-[#07101F]/60" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#07101F]/90 via-[#07101F]/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#07101F] via-transparent to-[#07101F]/40" />
+          <div className="absolute inset-0 bg-[#0C1E3D]/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0C1E3D]/90 via-[#0C1E3D]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E3D] via-transparent to-[#0C1E3D]/40" />
           <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-[#B87543]/15 blur-[120px] pointer-events-none" />
         </div>
 
@@ -113,7 +113,7 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => openInquiry({ department: "tours" })}
-                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-8 py-4 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[#07101F] shadow-[0_4px_20px_rgba(255,255,255,0.15)] transition-all duration-300 hover:bg-[#E2B18D] hover:shadow-[0_6px_25px_rgba(226,177,141,0.3)] hover:scale-[1.02]"
+                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-8 py-4 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0C1E3D] shadow-[0_4px_20px_rgba(255,255,255,0.15)] transition-all duration-300 hover:bg-[#E2B18D] hover:shadow-[0_6px_25px_rgba(226,177,141,0.3)] hover:scale-[1.02]"
                 >
                   <Compass size={15} />
                   <span>Plan With Us</span>
@@ -234,7 +234,7 @@ export default function Home() {
             {/* Dubai (6 cols) */}
             <Link
               href="/plan?destination=Dubai"
-              className="group relative overflow-hidden rounded-2xl bg-[#07101F] lg:col-span-6 shadow-sm transition-all duration-700 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-2xl bg-[#0C1E3D] lg:col-span-6 shadow-sm transition-all duration-700 hover:shadow-xl"
             >
               <div className="relative aspect-[16/11] overflow-hidden">
                 <Image
@@ -245,7 +245,7 @@ export default function Home() {
                   className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07101F]/90 via-[#07101F]/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E3D]/90 via-[#0C1E3D]/20 to-transparent" />
 
                 {/* Top Badge */}
                 <div className="absolute top-5 left-5">
@@ -265,7 +265,7 @@ export default function Home() {
                     </h3>
                   </div>
 
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 text-white backdrop-blur-sm transition-all duration-300 group-hover:border-[#E2B18D] group-hover:bg-[#E2B18D] group-hover:text-[#07101F]">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 text-white backdrop-blur-sm transition-all duration-300 group-hover:border-[#E2B18D] group-hover:bg-[#E2B18D] group-hover:text-[#0C1E3D]">
                     <ArrowUpRight size={18} />
                   </span>
                 </div>
@@ -275,7 +275,7 @@ export default function Home() {
             {/* Kashmir (3 cols) */}
             <Link
               href="/plan?destination=Kashmir"
-              className="group relative overflow-hidden rounded-2xl bg-[#07101F] lg:col-span-3 shadow-sm transition-all duration-700 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-2xl bg-[#0C1E3D] lg:col-span-3 shadow-sm transition-all duration-700 hover:shadow-xl"
             >
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
@@ -286,7 +286,7 @@ export default function Home() {
                   className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07101F]/90 via-[#07101F]/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E3D]/90 via-[#0C1E3D]/20 to-transparent" />
 
                 <div className="absolute top-5 left-5">
                   <span className="rounded-full border border-white/20 bg-black/40 px-3 py-1 font-sans text-[9px] uppercase tracking-[0.2em] text-white/90 backdrop-blur-md">
@@ -308,7 +308,7 @@ export default function Home() {
             {/* Switzerland (3 cols) */}
             <Link
               href="/plan?destination=Switzerland"
-              className="group relative overflow-hidden rounded-2xl bg-[#07101F] lg:col-span-3 shadow-sm transition-all duration-700 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-2xl bg-[#0C1E3D] lg:col-span-3 shadow-sm transition-all duration-700 hover:shadow-xl"
             >
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
@@ -319,7 +319,7 @@ export default function Home() {
                   className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07101F]/90 via-[#07101F]/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E3D]/90 via-[#0C1E3D]/20 to-transparent" />
 
                 <div className="absolute top-5 left-5">
                   <span className="rounded-full border border-white/20 bg-black/40 px-3 py-1 font-sans text-[9px] uppercase tracking-[0.2em] text-white/90 backdrop-blur-md">
@@ -480,7 +480,7 @@ export default function Home() {
             {/* Spread 1: DUBAI */}
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16 items-center">
               <div className="lg:col-span-7">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-[#07101F] shadow-lg">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-[#0C1E3D] shadow-lg">
                   <Image
                     src={travelImages.dubai.url}
                     alt={travelImages.dubai.alt}
@@ -537,7 +537,7 @@ export default function Home() {
             {/* Spread 2: KASHMIR */}
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16 items-center">
               <div className="lg:col-span-7 lg:order-2">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-[#07101F] shadow-lg">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-[#0C1E3D] shadow-lg">
                   <Image
                     src={travelImages.kashmir.url}
                     alt={travelImages.kashmir.alt}
@@ -594,7 +594,7 @@ export default function Home() {
             {/* Spread 3: MALDIVES */}
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16 items-center">
               <div className="lg:col-span-7">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-[#07101F] shadow-lg">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-[#0C1E3D] shadow-lg">
                   <Image
                     src={travelImages.maldives.url}
                     alt={travelImages.maldives.alt}
@@ -680,7 +680,7 @@ export default function Home() {
       {/* =========================================================
           07 — WHY DARSH DREAM (TRAVEL, THOUGHTFULLY PLANNED)
       ========================================================= */}
-      <section className="bg-[#07101F] px-5 py-28 text-white sm:px-8 sm:py-36 lg:px-12 relative overflow-hidden">
+      <section className="bg-[#0C1E3D] px-5 py-28 text-white sm:px-8 sm:py-36 lg:px-12 relative overflow-hidden">
         <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-[#B87543]/10 blur-[130px] pointer-events-none" />
 
         <div className="mx-auto max-w-[1440px] relative z-10">
@@ -849,7 +849,7 @@ export default function Home() {
       {/* =========================================================
           10 — FINAL CTA
       ========================================================= */}
-      <section className="relative overflow-hidden bg-[#07101F] px-5 py-28 text-white sm:px-8 sm:py-36 lg:px-12 border-t border-white/10">
+      <section className="relative overflow-hidden bg-[#0C1E3D] px-5 py-28 text-white sm:px-8 sm:py-36 lg:px-12 border-t border-white/10">
         <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full border border-[#B87543]/15 pointer-events-none" />
         <div className="absolute -right-10 -top-10 h-56 w-56 rounded-full border border-[#B87543]/10 pointer-events-none" />
 
@@ -892,7 +892,7 @@ export default function Home() {
             <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
                 href="/plan"
-                className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#E2B18D] px-8 py-5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#07101F] transition-all duration-300 hover:bg-white shadow-lg hover:scale-[1.02]"
+                className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#E2B18D] px-8 py-5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0C1E3D] transition-all duration-300 hover:bg-white shadow-lg hover:scale-[1.02]"
               >
                 <span>Plan My Journey</span>
                 <ArrowUpRight

@@ -529,7 +529,7 @@ export default function TravelChatbot() {
       {!isOpen && (
         <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 select-none">
           {proactiveToast && (
-            <div className="relative max-w-xs sm:max-w-sm rounded-2xl bg-[#07101F]/95 border border-[#E2B18D]/40 p-4 shadow-[0_12px_40px_rgba(0,0,0,0.4)] backdrop-blur-xl text-white animate-in fade-in slide-in-from-bottom-3 duration-300">
+            <div className="relative max-w-xs sm:max-w-sm rounded-2xl bg-[#0C1E3D]/95 border border-[#E2B18D]/40 p-4 shadow-[0_12px_40px_rgba(0,0,0,0.4)] backdrop-blur-xl text-white animate-in fade-in slide-in-from-bottom-3 duration-300">
               <button
                 type="button"
                 onClick={() => setProactiveToast(false)}
@@ -539,9 +539,9 @@ export default function TravelChatbot() {
                 <X size={13} />
               </button>
               <div className="flex items-start gap-3">
-                <div className="relative h-9 w-9 flex-shrink-0 rounded-full bg-gradient-to-br from-[#B87543] to-[#E2B18D] flex items-center justify-center text-[#07101F] font-bold text-xs shadow-md">
+                <div className="relative h-9 w-9 flex-shrink-0 rounded-full bg-gradient-to-br from-[#B87543] to-[#E2B18D] flex items-center justify-center text-[#0C1E3D] font-bold text-xs shadow-md">
                   <Compass size={18} />
-                  <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full bg-emerald-500 ring-2 ring-[#07101F]" />
+                  <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full bg-emerald-500 ring-2 ring-[#0C1E3D]" />
                 </div>
                 <div className="space-y-1">
                   <p className="text-[10px] uppercase tracking-wider text-[#E2B18D] font-mono font-semibold">
@@ -554,7 +554,7 @@ export default function TravelChatbot() {
                     <button
                       type="button"
                       onClick={() => openInquiry({ serviceType: "holiday" })}
-                      className="px-2.5 py-1 rounded-full bg-white text-[#07101F] text-[10px] font-semibold hover:bg-[#E2B18D] transition-colors"
+                      className="px-2.5 py-1 rounded-full bg-white text-[#0C1E3D] text-[10px] font-semibold hover:bg-[#E2B18D] transition-colors"
                     >
                       Plan a Trip ✨
                     </button>
@@ -575,14 +575,14 @@ export default function TravelChatbot() {
           <button
             type="button"
             onClick={() => openInquiry()}
-            className="group relative flex items-center gap-3 rounded-full bg-gradient-to-r from-[#0E1C38] via-[#07101F] to-[#0E1C38] border border-[#E2B18D]/50 hover:border-[#E2B18D] px-4 py-3 sm:px-5 sm:py-3.5 text-white shadow-[0_10px_35px_rgba(0,0,0,0.5)] transition-all duration-300 hover:scale-105 active:scale-95"
+            className="group relative flex items-center gap-3 rounded-full bg-gradient-to-r from-[#163366] via-[#0C1E3D] to-[#163366] border border-[#E2B18D]/50 hover:border-[#E2B18D] px-4 py-3 sm:px-5 sm:py-3.5 text-white shadow-[0_10px_35px_rgba(0,0,0,0.5)] transition-all duration-300 hover:scale-105 active:scale-95"
             aria-label="Open Darsh Travel Concierge Chatbot"
           >
             <div className="relative">
-              <div className="h-9 w-9 rounded-full bg-gradient-to-tr from-[#B87543] to-[#E2B18D] flex items-center justify-center text-[#07101F] shadow-md group-hover:rotate-12 transition-transform">
-                <MessageSquare size={17} className="fill-[#07101F]" />
+              <div className="h-9 w-9 rounded-full bg-gradient-to-tr from-[#B87543] to-[#E2B18D] flex items-center justify-center text-[#0C1E3D] shadow-md group-hover:rotate-12 transition-transform">
+                <MessageSquare size={17} className="fill-[#0C1E3D]" />
               </div>
-              <span className="absolute -top-1 -right-1 h-3.5 w-3.5 rounded-full bg-emerald-500 ring-2 ring-[#07101F] animate-pulse" />
+              <span className="absolute -top-1 -right-1 h-3.5 w-3.5 rounded-full bg-emerald-500 ring-2 ring-[#0C1E3D] animate-pulse" />
             </div>
             <div className="text-left hidden sm:block">
               <p className="text-[10px] uppercase font-mono tracking-widest text-[#E2B18D]">
@@ -593,7 +593,7 @@ export default function TravelChatbot() {
               </p>
             </div>
             {unreadBadge && (
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#E2B18D] text-[10px] font-bold text-[#07101F]">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#E2B18D] text-[10px] font-bold text-[#0C1E3D]">
                 1
               </span>
             )}
@@ -605,17 +605,17 @@ export default function TravelChatbot() {
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/60 backdrop-blur-md animate-in fade-in duration-200">
           <div
-            className="relative flex flex-col w-full h-[94vh] sm:h-[85vh] sm:max-h-[720px] max-w-lg rounded-t-3xl sm:rounded-3xl border border-white/15 bg-[#07101F] text-white shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden"
+            className="relative flex flex-col w-full h-[94vh] sm:h-[85vh] sm:max-h-[720px] max-w-lg rounded-t-3xl sm:rounded-3xl border border-white/15 bg-[#0C1E3D] text-white shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Header */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-[#0A162D]">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-[#11264E]">
               <div className="flex items-center gap-3">
                 <div className="relative h-10 w-10 rounded-full bg-gradient-to-tr from-[#B87543] to-[#E2B18D] p-0.5 shadow-md">
-                  <div className="h-full w-full rounded-full bg-[#07101F] flex items-center justify-center">
+                  <div className="h-full w-full rounded-full bg-[#0C1E3D] flex items-center justify-center">
                     <Compass size={20} className="text-[#E2B18D]" />
                   </div>
-                  <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-emerald-500 ring-2 ring-[#07101F]" />
+                  <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-emerald-500 ring-2 ring-[#0C1E3D]" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
@@ -653,7 +653,7 @@ export default function TravelChatbot() {
             </div>
 
             {/* Sub-Header Trust Ribbon */}
-            <div className="px-5 py-2 bg-[#0E1C38] border-b border-white/5 flex items-center justify-between text-[10px] font-sans text-white/60">
+            <div className="px-5 py-2 bg-[#163366] border-b border-white/5 flex items-center justify-between text-[10px] font-sans text-white/60">
               <span className="flex items-center gap-1.5 text-[#E2B18D]">
                 <ShieldCheck size={12} />
                 <span>Verified Travel Agency</span>
@@ -673,7 +673,7 @@ export default function TravelChatbot() {
                   <div
                     className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
                       msg.sender === "user"
-                        ? "bg-gradient-to-r from-[#B87543] to-[#E2B18D] text-[#07101F] font-medium rounded-br-none shadow-md"
+                        ? "bg-gradient-to-r from-[#B87543] to-[#E2B18D] text-[#0C1E3D] font-medium rounded-br-none shadow-md"
                         : "bg-white/10 border border-white/10 text-white/95 rounded-bl-none backdrop-blur-md"
                     }`}
                   >
@@ -685,7 +685,7 @@ export default function TravelChatbot() {
                         <button
                           type="button"
                           onClick={() => handleServiceSelect("holiday", "🌴 Plan a Holiday / Curated Package")}
-                          className="flex items-center justify-between p-2.5 rounded-xl border border-white/15 bg-white/5 hover:bg-[#E2B18D] hover:text-[#07101F] hover:border-transparent transition-all text-left text-xs font-semibold group"
+                          className="flex items-center justify-between p-2.5 rounded-xl border border-white/15 bg-white/5 hover:bg-[#E2B18D] hover:text-[#0C1E3D] hover:border-transparent transition-all text-left text-xs font-semibold group"
                         >
                           <span className="flex items-center gap-2">
                             <span>🌴</span>
@@ -709,7 +709,7 @@ export default function TravelChatbot() {
                         <button
                           type="button"
                           onClick={() => handleServiceSelect("ticketing", "✈️ Flight & Visa Desk (Ticketing)")}
-                          className="flex items-center justify-between p-2.5 rounded-xl border border-white/15 bg-white/5 hover:bg-[#E2B18D] hover:text-[#07101F] hover:border-transparent transition-all text-left text-xs font-semibold group"
+                          className="flex items-center justify-between p-2.5 rounded-xl border border-white/15 bg-white/5 hover:bg-[#E2B18D] hover:text-[#0C1E3D] hover:border-transparent transition-all text-left text-xs font-semibold group"
                         >
                           <span className="flex items-center gap-2">
                             <span>✈️</span>
@@ -721,7 +721,7 @@ export default function TravelChatbot() {
                         <button
                           type="button"
                           onClick={() => handleServiceSelect("hotel_only", "🏨 Hotel Booking (2★ to 5★)")}
-                          className="flex items-center justify-between p-2.5 rounded-xl border border-white/15 bg-white/5 hover:bg-[#E2B18D] hover:text-[#07101F] hover:border-transparent transition-all text-left text-xs font-semibold group"
+                          className="flex items-center justify-between p-2.5 rounded-xl border border-white/15 bg-white/5 hover:bg-[#E2B18D] hover:text-[#0C1E3D] hover:border-transparent transition-all text-left text-xs font-semibold group"
                         >
                           <span className="flex items-center gap-2">
                             <span>🏨</span>
@@ -750,7 +750,7 @@ export default function TravelChatbot() {
                               key={d.name}
                               type="button"
                               onClick={() => handleDestinationSelect(d.name)}
-                              className="px-2.5 py-2 rounded-lg border border-white/10 bg-white/5 hover:bg-[#E2B18D] hover:text-[#07101F] text-xs font-medium text-left flex items-center gap-2 transition-all truncate"
+                              className="px-2.5 py-2 rounded-lg border border-white/10 bg-white/5 hover:bg-[#E2B18D] hover:text-[#0C1E3D] text-xs font-medium text-left flex items-center gap-2 transition-all truncate"
                             >
                               <span>{d.flag}</span>
                               <span className="truncate">{d.name}</span>
@@ -795,7 +795,7 @@ export default function TravelChatbot() {
                                 <button
                                   type="button"
                                   onClick={() => handlePackageSelect(pkg)}
-                                  className="px-3 py-1 rounded-full bg-[#E2B18D] text-[#07101F] text-[10px] font-bold hover:bg-white transition-colors"
+                                  className="px-3 py-1 rounded-full bg-[#E2B18D] text-[#0C1E3D] text-[10px] font-bold hover:bg-white transition-colors"
                                 >
                                   Select Package →
                                 </button>
@@ -938,14 +938,14 @@ export default function TravelChatbot() {
                             <button
                               type="button"
                               onClick={() => handleTimingSelect("Within Next 48-72 Hours")}
-                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#07101F] transition-all"
+                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#0C1E3D] transition-all"
                             >
                               Next 48–72 Hours
                             </button>
                             <button
                               type="button"
                               onClick={() => handleTimingSelect("This Weekend")}
-                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#07101F] transition-all"
+                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#0C1E3D] transition-all"
                             >
                               This Weekend
                             </button>
@@ -955,35 +955,35 @@ export default function TravelChatbot() {
                             <button
                               type="button"
                               onClick={() => handleTimingSelect("This Month")}
-                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#07101F] transition-all"
+                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#0C1E3D] transition-all"
                             >
                               This Month
                             </button>
                             <button
                               type="button"
                               onClick={() => handleTimingSelect("Next Month")}
-                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#07101F] transition-all"
+                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#0C1E3D] transition-all"
                             >
                               Next Month
                             </button>
                             <button
                               type="button"
                               onClick={() => handleTimingSelect("In 2-3 Months")}
-                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#07101F] transition-all"
+                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#0C1E3D] transition-all"
                             >
                               In 2–3 Months
                             </button>
                             <button
                               type="button"
                               onClick={() => handleTimingSelect("Festive Season")}
-                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#07101F] transition-all"
+                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#0C1E3D] transition-all"
                             >
                               Festive Season
                             </button>
                             <button
                               type="button"
                               onClick={() => handleTimingSelect("Flexible / Exploring Dates")}
-                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#07101F] transition-all"
+                              className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#0C1E3D] transition-all"
                             >
                               Flexible
                             </button>
@@ -998,28 +998,28 @@ export default function TravelChatbot() {
                         <button
                           type="button"
                           onClick={() => handleTravelersSelect("1 Solo Traveler")}
-                          className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#07101F] transition-all"
+                          className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#0C1E3D] transition-all"
                         >
                           👤 Solo (1)
                         </button>
                         <button
                           type="button"
                           onClick={() => handleTravelersSelect("2 Travelers (Couple / Honeymoon)")}
-                          className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#07101F] transition-all"
+                          className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#0C1E3D] transition-all"
                         >
                           👫 Couple (2)
                         </button>
                         <button
                           type="button"
                           onClick={() => handleTravelersSelect("Family with Kids (3-4)")}
-                          className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#07101F] transition-all"
+                          className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#0C1E3D] transition-all"
                         >
                           👨‍👩‍👧 Family (3–4)
                         </button>
                         <button
                           type="button"
                           onClick={() => handleTravelersSelect("Group / Corporate (5+)")}
-                          className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#07101F] transition-all"
+                          className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-xs font-medium hover:bg-[#E2B18D] hover:text-[#0C1E3D] transition-all"
                         >
                           👥 Group (5+)
                         </button>
@@ -1035,10 +1035,10 @@ export default function TravelChatbot() {
                               key={c.code}
                               type="button"
                               onClick={() => handleCountryCodePick(c)}
-                              className="px-2.5 py-2 rounded-xl border border-white/10 bg-white/5 hover:bg-[#E2B18D] hover:text-[#07101F] text-xs font-medium text-left flex items-center gap-1.5 transition-all truncate group"
+                              className="px-2.5 py-2 rounded-xl border border-white/10 bg-white/5 hover:bg-[#E2B18D] hover:text-[#0C1E3D] text-xs font-medium text-left flex items-center gap-1.5 transition-all truncate group"
                             >
                               <span className="text-sm">{c.flag}</span>
-                              <span className="font-mono font-bold text-[11px] text-[#E2B18D] group-hover:text-[#07101F]">
+                              <span className="font-mono font-bold text-[11px] text-[#E2B18D] group-hover:text-[#0C1E3D]">
                                 {c.code}
                               </span>
                               <span className="text-[10px] opacity-75 truncate">{c.name}</span>
@@ -1057,7 +1057,7 @@ export default function TravelChatbot() {
                         <button
                           type="button"
                           onClick={handleNotesSkip}
-                          className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-[#E2B18D] hover:text-[#07101F] text-xs font-medium border border-white/20 transition-all"
+                          className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-[#E2B18D] hover:text-[#0C1E3D] text-xs font-medium border border-white/20 transition-all"
                         >
                           No special requests, please proceed 👍
                         </button>
@@ -1098,7 +1098,7 @@ export default function TravelChatbot() {
                           <button
                             type="button"
                             onClick={closeInquiry}
-                            className="w-full py-2 px-3 rounded-lg bg-[#E2B18D] text-[#07101F] text-xs font-bold hover:bg-white transition-colors"
+                            className="w-full py-2 px-3 rounded-lg bg-[#E2B18D] text-[#0C1E3D] text-xs font-bold hover:bg-white transition-colors"
                           >
                             Done
                           </button>
@@ -1128,7 +1128,7 @@ export default function TravelChatbot() {
 
             {/* Bottom Quick-Action Shortcuts */}
             {conversationalStep === "idle" && (
-              <div className="px-4 py-2 bg-[#0A162D] border-t border-white/10 flex items-center gap-2 overflow-x-auto no-scrollbar">
+              <div className="px-4 py-2 bg-[#11264E] border-t border-white/10 flex items-center gap-2 overflow-x-auto no-scrollbar">
                 <button
                   type="button"
                   onClick={() => handleServiceSelect("last_minute_hotel", "⚡ Urgent Hotel Desk")}
@@ -1163,7 +1163,7 @@ export default function TravelChatbot() {
             {/* Bottom Conversational Chat Input */}
             <form
               onSubmit={handleTextSubmit}
-              className="p-3 sm:p-4 bg-[#07101F] border-t border-white/10 flex items-center gap-2"
+              className="p-3 sm:p-4 bg-[#0C1E3D] border-t border-white/10 flex items-center gap-2"
             >
               <input
                 ref={inputRef}
@@ -1182,7 +1182,7 @@ export default function TravelChatbot() {
               <button
                 type="submit"
                 disabled={!inputText.trim()}
-                className="h-9 w-9 rounded-full bg-[#E2B18D] text-[#07101F] flex items-center justify-center hover:bg-white transition-colors disabled:opacity-40 disabled:hover:bg-[#E2B18D]"
+                className="h-9 w-9 rounded-full bg-[#E2B18D] text-[#0C1E3D] flex items-center justify-center hover:bg-white transition-colors disabled:opacity-40 disabled:hover:bg-[#E2B18D]"
                 aria-label="Send message"
               >
                 <Send size={15} />

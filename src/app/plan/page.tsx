@@ -26,7 +26,7 @@ export default function PlanPage() {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="relative overflow-hidden bg-[#07101F] px-5 pb-20 pt-36 text-white sm:px-8 sm:pb-28 sm:pt-40 lg:px-12">
+      <section className="relative overflow-hidden bg-[#0C1E3D] px-5 pb-20 pt-36 text-white sm:px-8 sm:pb-28 sm:pt-40 lg:px-12">
         <div className="absolute right-[-120px] top-[-140px] h-[520px] w-[520px] rounded-full border border-[#B87543]/15 pointer-events-none" />
         <div className="absolute right-[-40px] top-[-60px] h-[360px] w-[360px] rounded-full border border-[#B87543]/10 pointer-events-none" />
         <div className="absolute -top-32 -left-32 h-80 w-80 rounded-full bg-[#B87543]/15 blur-[120px] pointer-events-none" />
@@ -68,7 +68,7 @@ export default function PlanPage() {
       </div>
 
       {/* Alternative direct contact banner */}
-      <section className="bg-[#07101F] px-5 py-20 text-white sm:px-8 lg:px-12 border-t border-white/10">
+      <section className="bg-[#0C1E3D] px-5 py-20 text-white sm:px-8 lg:px-12 border-t border-white/10">
         <div className="mx-auto max-w-[1440px] flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <div>
             <p className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#E2B18D] font-bold mb-2">
@@ -111,7 +111,7 @@ export default function PlanPage() {
           <button
             type="button"
             onClick={() => openInquiry({ department: "tours" })}
-            className="inline-flex items-center gap-3 rounded-full border border-[#B87543] bg-[#B87543] px-9 py-4 font-sans text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-[#07101F] transition-all duration-300 shadow-lg hover:scale-105"
+            className="inline-flex items-center gap-3 rounded-full border border-[#B87543] bg-[#B87543] px-9 py-4 font-sans text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-[#0C1E3D] transition-all duration-300 shadow-lg hover:scale-105"
           >
             <Compass size={18} />
             <span>Open Fast Inquiry Form</span>

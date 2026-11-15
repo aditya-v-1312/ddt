@@ -24,10 +24,10 @@ export default function Hero() {
         />
 
         {/* Dark cinematic overlay */}
-        <div className="absolute inset-0 bg-[#07101F]/55" />
+        <div className="absolute inset-0 bg-[#0C1E3D]/55" />
 
         {/* Subtle directional gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07101F]/85 via-[#07101F]/45 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0C1E3D]/85 via-[#0C1E3D]/45 to-transparent" />
 
         {/* Bottom fade */}
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#101A2E] to-transparent" />

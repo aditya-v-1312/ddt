@@ -201,7 +201,7 @@ export default function PackagesAndHotelsShowcase() {
   };
 
   return (
-    <section id="packages" className="relative py-28 sm:py-36 bg-[#040C1A] text-white overflow-hidden">
+    <section id="packages" className="relative py-28 sm:py-36 bg-[#0C1E3D] text-white overflow-hidden">
       {/* Radiant vibrant background ambience */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 -left-48 w-[650px] h-[650px] bg-gradient-to-br from-amber-500/20 to-orange-600/10 rounded-full blur-[160px]" />
@@ -296,7 +296,7 @@ export default function PackagesAndHotelsShowcase() {
         ========================================================= */}
         <div className="mb-14 space-y-6">
           {/* Live Search & Summary Ribbon */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-5 p-4 sm:p-5 rounded-3xl bg-gradient-to-r from-[#0C1B38] via-[#09152B] to-[#0C1B38] border-2 border-amber-500/30 shadow-xl">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-5 p-4 sm:p-5 rounded-3xl bg-gradient-to-r from-[#122A56] via-[#0E2246] to-[#122A56] border-2 border-amber-500/30 shadow-xl">
             <div className="relative w-full md:max-w-xl">
               <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-amber-400 pointer-events-none" />
               <input
@@ -314,7 +314,7 @@ export default function PackagesAndHotelsShowcase() {
                 autoCapitalize="none"
                 spellCheck={false}
                 placeholder="Search by country, city, or landmark (e.g. Tokyo, Eiffel Tower, Bali, Nile, Alps)..."
-                className="w-full pl-12 pr-12 py-4 rounded-2xl bg-[#071329] border-2 border-white/20 text-base sm:text-lg text-white placeholder-white/45 focus:outline-none focus:border-amber-400 font-sans font-medium transition-colors"
+                className="w-full pl-12 pr-12 py-4 rounded-2xl bg-[#0D2040] border-2 border-white/20 text-base sm:text-lg text-white placeholder-white/45 focus:outline-none focus:border-amber-400 font-sans font-medium transition-colors"
               />
               {searchQuery && (
                 <button
@@ -415,7 +415,7 @@ export default function PackagesAndHotelsShowcase() {
         ========================================================= */}
         <div className="min-h-[600px] transition-all duration-300">
           {filteredPackages.length === 0 ? (
-            <div className="text-center py-24 rounded-3xl border-2 border-white/15 bg-[#0C1B38]/60 p-10 space-y-5">
+            <div className="text-center py-24 rounded-3xl border-2 border-white/15 bg-[#122A56]/60 p-10 space-y-5">
               <Compass size={48} className="mx-auto text-amber-400/60" />
               <h3 className="font-serif text-3xl text-white font-light">No Journeys Match Your Search</h3>
               <p className="text-base text-white/70 font-sans max-w-lg mx-auto">
@@ -447,14 +447,14 @@ export default function PackagesAndHotelsShowcase() {
               return (
                 <div
                   key={pkg.id}
-                  className="group relative rounded-3xl border-2 border-amber-500/25 bg-gradient-to-b from-[#0E2040] via-[#09152B] to-[#050D1C] hover:border-amber-400 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.65)] hover:shadow-[0_25px_70px_rgba(245,158,11,0.22)]"
+                  className="group relative rounded-3xl border-2 border-amber-500/25 bg-gradient-to-b from-[#0E2040] via-[#0E2246] to-[#0A1A36] hover:border-amber-400 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.65)] hover:shadow-[0_25px_70px_rgba(245,158,11,0.22)]"
                 >
                   {/* Top Glowing Metallic Accent */}
                   <div className="h-1.5 bg-gradient-to-r from-amber-500 via-yellow-300 to-amber-500 opacity-80 group-hover:opacity-100 transition-opacity" />
 
                   {/* Hero Cover Image Slot */}
                   {pkg.coverImage && (
-                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#0A162D]">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#11264E]">
                       <Image
                         src={pkg.coverImage}
                         alt={pkg.title}
@@ -464,7 +464,7 @@ export default function PackagesAndHotelsShowcase() {
                         priority={false}
                       />
                       {/* Rich Dual-Gradient Overlays */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0E2040] via-[#09152B]/40 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0E2040] via-[#0E2246]/40 to-transparent" />
                       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/30" />
 
                       {/* Top Badges */}
@@ -691,7 +691,7 @@ export default function PackagesAndHotelsShowcase() {
         {/* =========================================================
             5. BESPOKE CUSTOM JOURNEY CONCIERGE BANNER
         ========================================================= */}
-        <div className="mt-24 p-8 sm:p-14 rounded-3xl border-2 border-amber-500/30 bg-gradient-to-r from-[#0C1B38] via-[#09152B] to-[#0C1B38] backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left shadow-2xl">
+        <div className="mt-24 p-8 sm:p-14 rounded-3xl border-2 border-amber-500/30 bg-gradient-to-r from-[#122A56] via-[#0E2246] to-[#122A56] backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left shadow-2xl">
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2 text-amber-300 text-xs sm:text-sm font-mono uppercase tracking-widest font-bold">
               <ShieldCheck size={16} />
@@ -732,7 +732,7 @@ export default function PackagesAndHotelsShowcase() {
       ========================================================= */}
       {selectedPackageForModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 sm:p-6 overflow-y-auto">
-          <div className="relative w-full max-w-4xl rounded-3xl border-2 border-amber-500/40 bg-[#071329] text-white shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col">
+          <div className="relative w-full max-w-4xl rounded-3xl border-2 border-amber-500/40 bg-[#0D2040] text-white shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col">
             {/* Modal Header */}
             <div className="p-6 sm:p-8 border-b border-white/15 flex items-center justify-between bg-[#0B1A38]">
               <div className="space-y-1.5">
@@ -765,7 +765,7 @@ export default function PackagesAndHotelsShowcase() {
             </div>
 
             {/* Day Selector Ribbon */}
-            <div className="p-4 sm:p-5 border-b border-white/15 bg-[#050D1C] overflow-x-auto flex gap-2.5 scrollbar-none">
+            <div className="p-4 sm:p-5 border-b border-white/15 bg-[#0A1A36] overflow-x-auto flex gap-2.5 scrollbar-none">
               {selectedPackageForModal.itinerary.map((day, idx) => (
                 <button
                   key={day.day}
@@ -794,7 +794,7 @@ export default function PackagesAndHotelsShowcase() {
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                       {/* Photo Slot for that Day (5 cols) */}
                       <div className="md:col-span-5 space-y-3">
-                        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-white/20 bg-[#0A162D] shadow-xl">
+                        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-white/20 bg-[#11264E] shadow-xl">
                           <Image
                             src={dayImg}
                             alt={currentDay.title}

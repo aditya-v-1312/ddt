@@ -21,7 +21,7 @@ export default function AboutPage() {
       {/* =========================================================
           01 — HERO (QUIET, CINEMATIC EDITORIAL)
       ========================================================= */}
-      <section className="relative overflow-hidden bg-[#07101F] text-white">
+      <section className="relative overflow-hidden bg-[#0C1E3D] text-white">
         <div className="absolute inset-0 pointer-events-none opacity-20">
           <div className="absolute right-[-10%] top-[-10%] h-[500px] w-[500px] rounded-full border border-[#B87543]/20" />
           <div className="absolute right-[5%] top-[15%] h-[350px] w-[350px] rounded-full border border-white/10" />
@@ -316,7 +316,7 @@ export default function AboutPage() {
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-[#07101F] shadow-lg">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-[#0C1E3D] shadow-lg">
                 <Image
                   src={travelImages.switzerland.url}
                   alt={travelImages.switzerland.alt}
@@ -324,7 +324,7 @@ export default function AboutPage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07101F]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E3D]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white font-sans text-xs">
                   <span>Planning for travellers across India</span>
                   <span className="text-[#E2B18D]">Boutique Care</span>
@@ -400,7 +400,7 @@ export default function AboutPage() {
       {/* =========================================================
           07 — FINAL CTA (DARK NAVY SECTION)
       ========================================================= */}
-      <section className="relative overflow-hidden bg-[#07101F] px-5 py-28 text-white sm:px-8 sm:py-36 lg:px-12 border-t border-white/10">
+      <section className="relative overflow-hidden bg-[#0C1E3D] px-5 py-28 text-white sm:px-8 sm:py-36 lg:px-12 border-t border-white/10">
         <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full border border-[#B87543]/15 pointer-events-none" />
         <div className="absolute -right-10 -top-10 h-56 w-56 rounded-full border border-[#B87543]/10 pointer-events-none" />
 
@@ -424,7 +424,7 @@ export default function AboutPage() {
             <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
                 href="/plan"
-                className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#E2B18D] px-8 py-5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#07101F] transition-all duration-300 hover:bg-white shadow-lg hover:scale-[1.02]"
+                className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#E2B18D] px-8 py-5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0C1E3D] transition-all duration-300 hover:bg-white shadow-lg hover:scale-[1.02]"
               >
                 <span>Plan Your Journey</span>
                 <ArrowUpRight

@@ -44,7 +44,7 @@ export const WhyDarshDream: React.FC = () => {
             <Sparkles className="w-3.5 h-3.5" />
             <span>Our Travel Philosophy</span>
           </div>
-          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-[#08152F] tracking-tight leading-[1.06]">
+          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-[#0C1E3D] tracking-tight leading-[1.06]">
             TRAVEL WITH SOMEONE WHO CARES
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#687080] font-sans font-light leading-relaxed">
@@ -68,13 +68,13 @@ export const WhyDarshDream: React.FC = () => {
                       <div className="w-14 h-14 rounded-full bg-[#F8F7F3] border border-[#E7E4DA] flex items-center justify-center font-serif text-2xl text-[#9A5B2D] group-hover:border-[#9A5B2D] group-hover:bg-white transition-all shadow-sm">
                         {item.num}
                       </div>
-                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#08152F] group-hover:text-[#9A5B2D] transition-colors border border-[#E7E4DA]">
+                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#0C1E3D] group-hover:text-[#9A5B2D] transition-colors border border-[#E7E4DA]">
                         <Icon className="w-4 h-4" />
                       </div>
                     </div>
 
                     {/* Headline */}
-                    <h3 className="font-serif text-2xl sm:text-3xl text-[#08152F] tracking-tight mb-2">
+                    <h3 className="font-serif text-2xl sm:text-3xl text-[#0C1E3D] tracking-tight mb-2">
                       {item.title}
                     </h3>
 

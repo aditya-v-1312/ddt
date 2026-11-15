@@ -29,7 +29,7 @@ export const FeaturedJourneys: React.FC<FeaturedJourneysProps> = ({ onSelectJour
             <Sparkles className="w-3.5 h-3.5" />
             <span>Magazine Spotlight</span>
           </div>
-          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-[#08152F] tracking-tight leading-[1.06]">
+          <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-[#0C1E3D] tracking-tight leading-[1.06]">
             FEATURED JOURNEYS
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#687080] font-sans font-light leading-relaxed">
@@ -52,7 +52,7 @@ export const FeaturedJourneys: React.FC<FeaturedJourneysProps> = ({ onSelectJour
             >
               {/* Large Editorial Photograph */}
               <div className="w-full lg:w-7/12">
-                <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden shadow-[0_24px_60px_rgba(8,21,47,0.1)] group bg-[#08152F]">
+                <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden shadow-[0_24px_60px_rgba(8,21,47,0.1)] group bg-[#0C1E3D]">
                   <Image
                     src={journey.image}
                     alt={journey.imageAlt}
@@ -64,7 +64,7 @@ export const FeaturedJourneys: React.FC<FeaturedJourneysProps> = ({ onSelectJour
 
                   {/* Corner Badge */}
                   <div className="absolute top-6 left-6 z-10">
-                    <span className="text-[10px] sm:text-[11px] font-sans font-semibold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full bg-white/95 text-[#08152F] shadow-sm">
+                    <span className="text-[10px] sm:text-[11px] font-sans font-semibold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full bg-white/95 text-[#0C1E3D] shadow-sm">
                       {journey.tag}
                     </span>
                   </div>
@@ -85,7 +85,7 @@ export const FeaturedJourneys: React.FC<FeaturedJourneysProps> = ({ onSelectJour
                   {journey.title}
                 </span>
 
-                <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#08152F] tracking-tight leading-[1.12] mt-2 mb-3">
+                <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#0C1E3D] tracking-tight leading-[1.12] mt-2 mb-3">
                   {journey.headline}
                 </h3>
 
@@ -101,7 +101,7 @@ export const FeaturedJourneys: React.FC<FeaturedJourneysProps> = ({ onSelectJour
 
                 {/* Key Inclusions / Highlights */}
                 <div className="bg-[#F8F7F3] rounded-2xl p-6 border border-[#E7E4DA] mb-8">
-                  <h4 className="text-xs font-sans uppercase tracking-wider font-semibold text-[#08152F] mb-3">
+                  <h4 className="text-xs font-sans uppercase tracking-wider font-semibold text-[#0C1E3D] mb-3">
                     Curated Signature Inclusions
                   </h4>
                   <ul className="space-y-2">
@@ -121,7 +121,7 @@ export const FeaturedJourneys: React.FC<FeaturedJourneysProps> = ({ onSelectJour
                 <div>
                   <button
                     onClick={() => handleEnquire(journey)}
-                    className="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-[#08152F] hover:bg-[#9A5B2D] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-md group"
+                    className="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-[#0C1E3D] hover:bg-[#9A5B2D] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-md group"
                   >
                     <span>Plan This Journey</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

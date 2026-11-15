@@ -41,7 +41,7 @@ export const TravelCategories: React.FC<TravelCategoriesProps> = ({ onSelectCate
               <Compass className="w-3.5 h-3.5" />
               <span>Tailored Travel Styles</span>
             </div>
-            <h2 className="font-serif text-4xl sm:text-6xl text-[#08152F] tracking-tight leading-[1.08]">
+            <h2 className="font-serif text-4xl sm:text-6xl text-[#0C1E3D] tracking-tight leading-[1.08]">
               FIND YOUR JOURNEY
             </h2>
             <p className="mt-4 text-base sm:text-lg text-[#687080] font-sans font-light max-w-2xl leading-relaxed">
@@ -60,7 +60,7 @@ export const TravelCategories: React.FC<TravelCategoriesProps> = ({ onSelectCate
         {/* Dominant Feature Category Spread */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-16 sm:mb-24 bg-white p-6 sm:p-10 rounded-3xl border border-[#E7E4DA] shadow-[0_12px_40px_rgba(8,21,47,0.04)]">
           <div className="lg:col-span-7">
-            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md bg-[#08152F]">
+            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md bg-[#0C1E3D]">
               <Image
                 src={selectedCategory.image}
                 alt={selectedCategory.title}
@@ -69,7 +69,7 @@ export const TravelCategories: React.FC<TravelCategoriesProps> = ({ onSelectCate
                 className="object-cover transition-transform duration-1000 ease-out hover:scale-105"
               />
               <div className="absolute top-5 left-5 z-10">
-                <span className="text-[10px] font-sans uppercase tracking-[0.2em] px-4 py-1.5 rounded-full bg-white/95 text-[#08152F] font-semibold shadow-sm">
+                <span className="text-[10px] font-sans uppercase tracking-[0.2em] px-4 py-1.5 rounded-full bg-white/95 text-[#0C1E3D] font-semibold shadow-sm">
                   {selectedCategory.badge}
                 </span>
               </div>
@@ -81,7 +81,7 @@ export const TravelCategories: React.FC<TravelCategoriesProps> = ({ onSelectCate
             <span className="text-xs uppercase tracking-[0.25em] font-sans font-semibold text-[#9A5B2D]">
               Featured Travel Style
             </span>
-            <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#08152F] tracking-tight mt-1 mb-3">
+            <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#0C1E3D] tracking-tight mt-1 mb-3">
               {selectedCategory.title}
             </h3>
             <p className="font-serif italic text-base text-[#687080] mb-4">
@@ -95,7 +95,7 @@ export const TravelCategories: React.FC<TravelCategoriesProps> = ({ onSelectCate
               <span className="block text-[11px] uppercase tracking-wider text-[#687080] font-sans mb-1.5">
                 Signature Focus:
               </span>
-              <p className="text-xs font-sans text-[#08152F] font-medium">
+              <p className="text-xs font-sans text-[#0C1E3D] font-medium">
                 {selectedCategory.curatedFocus}
               </p>
               <div className="mt-3 flex items-center space-x-2 text-xs text-[#9A5B2D] font-sans">
@@ -107,7 +107,7 @@ export const TravelCategories: React.FC<TravelCategoriesProps> = ({ onSelectCate
             <div>
               <button
                 onClick={() => handlePlanClick(selectedCategory)}
-                className="inline-flex items-center space-x-2 px-7 py-3.5 rounded-full bg-[#08152F] hover:bg-[#9A5B2D] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md group"
+                className="inline-flex items-center space-x-2 px-7 py-3.5 rounded-full bg-[#0C1E3D] hover:bg-[#9A5B2D] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md group"
               >
                 <span>Plan This Journey Style</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -129,7 +129,7 @@ export const TravelCategories: React.FC<TravelCategoriesProps> = ({ onSelectCate
                 onClick={() => handleCategoryClick(cat)}
                 className="group cursor-pointer flex flex-col p-4 rounded-2xl border border-[#E7E4DA] bg-white hover:border-[#9A5B2D]/40 transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#08152F] mb-3">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#0C1E3D] mb-3">
                   <Image
                     src={cat.image}
                     alt={cat.title}
@@ -144,7 +144,7 @@ export const TravelCategories: React.FC<TravelCategoriesProps> = ({ onSelectCate
                   {cat.badge}
                 </span>
 
-                <h5 className="font-serif text-xl text-[#08152F] group-hover:text-[#9A5B2D] transition-colors">
+                <h5 className="font-serif text-xl text-[#0C1E3D] group-hover:text-[#9A5B2D] transition-colors">
                   {cat.title}
                 </h5>
 
@@ -152,7 +152,7 @@ export const TravelCategories: React.FC<TravelCategoriesProps> = ({ onSelectCate
                   {cat.subtitle}
                 </p>
 
-                <div className="mt-3 pt-2 border-t border-[#E7E4DA] flex items-center justify-between text-[11px] text-[#08152F] font-sans group-hover:text-[#9A5B2D]">
+                <div className="mt-3 pt-2 border-t border-[#E7E4DA] flex items-center justify-between text-[11px] text-[#0C1E3D] font-sans group-hover:text-[#9A5B2D]">
                   <span>View Details</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </div>

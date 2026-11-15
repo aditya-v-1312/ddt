@@ -47,7 +47,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "py-3 bg-[#F7F5F0]/90 backdrop-blur-xl border-b border-[#101A2E]/[0.07] shadow-[0_4px_24px_rgba(0,0,0,0.03)]"
-            : "py-5 sm:py-7 bg-gradient-to-b from-[#07101F]/85 via-[#07101F]/40 to-transparent"
+            : "py-5 sm:py-7 bg-gradient-to-b from-[#0C1E3D]/85 via-[#0C1E3D]/40 to-transparent"
         }`}
       >
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12">
@@ -132,7 +132,7 @@ export default function Navbar() {
               className={`group inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${
                 scrolled
                   ? "border border-[#101A2E]/15 bg-[#101A2E] text-white hover:bg-[#B87543] hover:border-[#B87543] shadow-sm"
-                  : "border border-white/30 bg-white/10 text-white backdrop-blur-md hover:bg-white hover:text-[#07101F]"
+                  : "border border-white/30 bg-white/10 text-white backdrop-blur-md hover:bg-white hover:text-[#0C1E3D]"
               }`}
             >
               <span>Enquire</span>
@@ -161,7 +161,7 @@ export default function Navbar() {
 
       {/* Sleek Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-[60] bg-[#07101F]/98 backdrop-blur-2xl text-white transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-[60] bg-[#0C1E3D]/98 backdrop-blur-2xl text-white transition-all duration-500 lg:hidden ${
           mobileOpen
             ? "visible opacity-100"
             : "invisible opacity-0 pointer-events-none"
@@ -265,7 +265,7 @@ export default function Navbar() {
                   closeMobile();
                   openInquiry({ department: "tours" });
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 border border-[#B87543] bg-[#B87543] py-3.5 px-4 font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-white hover:bg-white hover:text-[#07101F] transition-all rounded-full"
+                className="w-full inline-flex items-center justify-center gap-2 border border-[#B87543] bg-[#B87543] py-3.5 px-4 font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-white hover:bg-white hover:text-[#0C1E3D] transition-all rounded-full"
               >
                 <Compass size={14} />
                 <span>Plan With Us (Concierge Chat)</span>

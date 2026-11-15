@@ -217,9 +217,9 @@ export default function DestinationsPage() {
       {/* =========================================================
           HERO (CINEMATIC CONTINENTAL OVERVIEW)
       ========================================================= */}
-      <section className="relative min-h-[720px] overflow-hidden bg-[#07101F] px-5 pb-24 pt-40 text-white sm:px-8 sm:pb-28 lg:px-12">
+      <section className="relative min-h-[720px] overflow-hidden bg-[#0C1E3D] px-5 pb-24 pt-40 text-white sm:px-8 sm:pb-28 lg:px-12">
         <WorldMapGraphic />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#07101F] via-[#07101F]/85 to-[#07101F]/20" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0C1E3D] via-[#0C1E3D]/85 to-[#0C1E3D]/20" />
         <div className="absolute -top-32 -left-32 h-80 w-80 rounded-full bg-[#B87543]/15 blur-[120px] pointer-events-none" />
 
         <div className="relative z-10 mx-auto flex min-h-[560px] max-w-[1440px] items-center">
@@ -251,7 +251,7 @@ export default function DestinationsPage() {
               <div className="mt-9 flex items-center gap-4">
                 <a
                   href="#explore"
-                  className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#07101F] hover:bg-[#E2B18D] transition-all duration-300 shadow-md hover:scale-[1.02]"
+                  className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0C1E3D] hover:bg-[#E2B18D] transition-all duration-300 shadow-md hover:scale-[1.02]"
                 >
                   <span>Browse All</span>
                   <ArrowUpRight size={14} />
@@ -320,7 +320,7 @@ export default function DestinationsPage() {
               <Link
                 key={dest.name}
                 href={`/plan?destination=${encodeURIComponent(dest.name)}`}
-                className="group relative block overflow-hidden rounded-2xl bg-[#07101F] shadow-sm transition-all duration-700 hover:shadow-2xl hover:scale-[1.01]"
+                className="group relative block overflow-hidden rounded-2xl bg-[#0C1E3D] shadow-sm transition-all duration-700 hover:shadow-2xl hover:scale-[1.01]"
               >
                 <div className="relative aspect-[4/5] overflow-hidden bg-[#E8E3DA]">
                   <Image
@@ -332,7 +332,7 @@ export default function DestinationsPage() {
                   />
 
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#07101F]/90 via-[#07101F]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E3D]/90 via-[#0C1E3D]/20 to-transparent" />
 
                   {/* Top Badges */}
                   <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
@@ -355,7 +355,7 @@ export default function DestinationsPage() {
                         {dest.name}
                       </h3>
 
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/25 text-white/80 backdrop-blur-sm transition-all duration-300 group-hover:border-[#E2B18D] group-hover:bg-[#E2B18D] group-hover:text-[#07101F]">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/25 text-white/80 backdrop-blur-sm transition-all duration-300 group-hover:border-[#E2B18D] group-hover:bg-[#E2B18D] group-hover:text-[#0C1E3D]">
                         <ArrowUpRight size={16} />
                       </span>
                     </div>
@@ -404,7 +404,7 @@ export default function DestinationsPage() {
       {/* =========================================================
           FINAL CTA
       ========================================================= */}
-      <section className="bg-[#07101F] px-5 py-28 text-white sm:px-8 sm:py-36 lg:px-12 border-t border-white/10">
+      <section className="bg-[#0C1E3D] px-5 py-28 text-white sm:px-8 sm:py-36 lg:px-12 border-t border-white/10">
         <div className="mx-auto max-w-[1440px]">
           <div className="max-w-4xl">
             <p className="eyebrow mb-6 !text-[#E2B18D]">Start Planning</p>
@@ -425,7 +425,7 @@ export default function DestinationsPage() {
             <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
                 href="/plan"
-                className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#E2B18D] px-8 py-5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#07101F] transition-all duration-300 hover:bg-white shadow-lg hover:scale-[1.02]"
+                className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#E2B18D] px-8 py-5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0C1E3D] transition-all duration-300 hover:bg-white shadow-lg hover:scale-[1.02]"
               >
                 <span>Plan Your Journey</span>
                 <ArrowUpRight

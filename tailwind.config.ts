@@ -10,17 +10,17 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          royal: "#244586",
-          navy: "#08152F",
-          midnight: "#050D20",
-          navySoft: "#152B59",
-          navyBorder: "#1C366B",
+          royal: "#28519e",
+          navy: "#0C1E3D",
+          midnight: "#0A1934",
+          navySoft: "#18366B",
+          navyBorder: "#22498F",
           copper: "#9A5B2D",
           warmCopper: "#B87543",
           copperLight: "#D99767",
           sand: "#F8F7F3",
           sandMuted: "#EFECE3",
-          dark: "#17213A",
+          dark: "#1B2848",
           muted: "#687080",
           border: "#E7E4DA",
         },

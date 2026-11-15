@@ -301,10 +301,10 @@ export const WorldGlobeScene: React.FC<WorldGlobeSceneProps> = ({ selected, onSe
       cy,
       R
     );
-    oceanGrad.addColorStop(0, "#0F2042");
-    oceanGrad.addColorStop(0.5, "#09152B");
-    oceanGrad.addColorStop(0.9, "#050D1D");
-    oceanGrad.addColorStop(1, "#030814");
+    oceanGrad.addColorStop(0, "#1A3668");
+    oceanGrad.addColorStop(0.5, "#10264E");
+    oceanGrad.addColorStop(0.9, "#0C1E3D");
+    oceanGrad.addColorStop(1, "#08162F");
 
     ctx.beginPath();
     ctx.arc(cx, cy, R, 0, Math.PI * 2);

@@ -22,7 +22,7 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
   ];
 
   return (
-    <footer id="contact" className="bg-[#07101F] text-white pt-20 pb-12 border-t border-white/10">
+    <footer id="contact" className="bg-[#0C1E3D] text-white pt-20 pb-12 border-t border-white/10">
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-14 border-b border-white/10">
           {/* Brand Column (4 cols) */}
@@ -52,7 +52,7 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
               <button
                 type="button"
                 onClick={() => openInquiry({ department: "tours" })}
-                className="w-fit inline-flex items-center gap-2 rounded-full border border-[#B87543] bg-[#B87543] hover:bg-white hover:text-[#07101F] px-6 py-3 font-sans text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-white transition-all shadow-md"
+                className="w-fit inline-flex items-center gap-2 rounded-full border border-[#B87543] bg-[#B87543] hover:bg-white hover:text-[#0C1E3D] px-6 py-3 font-sans text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-white transition-all shadow-md"
               >
                 <span>Submit Travel Enquiry</span>
               </button>

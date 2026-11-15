@@ -23,7 +23,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
       id="google-reviews"
       className={`relative px-5 py-24 sm:px-8 sm:py-32 lg:px-12 border-t ${
         isDark
-          ? "bg-[#07101F] text-white border-white/10"
+          ? "bg-[#0C1E3D] text-white border-white/10"
           : "bg-[#FAF9F5] text-[#101A2E] border-[#101A2E]/10"
       } ${className}`}
     >
@@ -60,7 +60,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
                 rel="noopener noreferrer"
                 className={`group inline-flex items-center gap-3 rounded-full px-7 py-3.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] transition-all duration-300 shadow-sm hover:scale-[1.02] ${
                   isDark
-                    ? "bg-[#E2B18D] text-[#07101F] hover:bg-white"
+                    ? "bg-[#E2B18D] text-[#0C1E3D] hover:bg-white"
                     : "bg-[#101A2E] text-white hover:bg-[#B87543]"
                 }`}
               >
@@ -281,7 +281,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = ({
             onClick={() => setShowAll((prev) => !prev)}
             className={`inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-sans text-xs uppercase tracking-[0.2em] font-bold transition-all shadow-md hover:scale-105 ${
               isDark
-                ? "bg-white/10 hover:bg-[#E2B18D] text-white hover:text-[#07101F] border border-white/20"
+                ? "bg-white/10 hover:bg-[#E2B18D] text-white hover:text-[#0C1E3D] border border-white/20"
                 : "bg-[#101A2E] hover:bg-[#B87543] text-white"
             }`}
           >

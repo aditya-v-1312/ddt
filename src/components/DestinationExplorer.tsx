@@ -53,7 +53,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
               <Compass className="w-3.5 h-3.5" />
               <span>Curated Waypoints</span>
             </div>
-            <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-[#08152F] tracking-tight leading-[1.06]">
+            <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-[#0C1E3D] tracking-tight leading-[1.06]">
               EXPLORE THE WORLD
             </h2>
             <p className="mt-4 text-base sm:text-lg text-[#687080] font-sans font-light max-w-2xl leading-relaxed">
@@ -75,8 +75,8 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
                 onClick={() => setActiveFilter(tab.id)}
                 className={`px-4 py-2 rounded-full text-xs font-sans uppercase tracking-[0.16em] transition-all duration-300 ${
                   activeFilter === tab.id
-                    ? "bg-[#08152F] text-white"
-                    : "text-[#687080] hover:text-[#08152F]"
+                    ? "bg-[#0C1E3D] text-white"
+                    : "text-[#687080] hover:text-[#0C1E3D]"
                 }`}
               >
                 {tab.label}
@@ -96,7 +96,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
             <div className="lg:col-span-8">
               <div
                 onClick={() => setSelectedDest(featureDest)}
-                className="relative aspect-[16/10] sm:aspect-[16/9] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,21,47,0.08)] cursor-pointer group bg-[#08152F]"
+                className="relative aspect-[16/10] sm:aspect-[16/9] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,21,47,0.08)] cursor-pointer group bg-[#0C1E3D]"
               >
                 <Image
                   src={featureDest.image}
@@ -108,12 +108,12 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
 
                 <div className="absolute top-6 left-6 z-10">
-                  <span className="text-[11px] font-sans uppercase tracking-[0.2em] px-4 py-1.5 rounded-full bg-white/95 text-[#08152F] font-semibold shadow-sm">
+                  <span className="text-[11px] font-sans uppercase tracking-[0.2em] px-4 py-1.5 rounded-full bg-white/95 text-[#0C1E3D] font-semibold shadow-sm">
                     {featureDest.subtitle}
                   </span>
                 </div>
 
-                <div className="absolute bottom-6 right-6 z-10 w-10 h-10 rounded-full bg-white text-[#08152F] flex items-center justify-center transition-all duration-300 group-hover:bg-[#9A5B2D] group-hover:text-white group-hover:scale-110 shadow-md">
+                <div className="absolute bottom-6 right-6 z-10 w-10 h-10 rounded-full bg-white text-[#0C1E3D] flex items-center justify-center transition-all duration-300 group-hover:bg-[#9A5B2D] group-hover:text-white group-hover:scale-110 shadow-md">
                   <ArrowUpRight className="w-5 h-5" />
                 </div>
               </div>
@@ -125,7 +125,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
               <span className="text-xs uppercase tracking-[0.25em] font-sans font-semibold text-[#9A5B2D]">
                 Signature Destination
               </span>
-              <h3 className="font-serif text-3xl sm:text-5xl text-[#08152F] tracking-tight mt-1 mb-3">
+              <h3 className="font-serif text-3xl sm:text-5xl text-[#0C1E3D] tracking-tight mt-1 mb-3">
                 {featureDest.name}
               </h3>
               <p className="font-serif italic text-base text-[#687080] mb-4">
@@ -139,7 +139,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
                 <span className="block text-[11px] uppercase tracking-wider text-[#687080] font-sans mb-2">
                   Curated Highlights:
                 </span>
-                <ul className="space-y-1.5 text-xs text-[#08152F] font-sans font-medium">
+                <ul className="space-y-1.5 text-xs text-[#0C1E3D] font-sans font-medium">
                   {featureDest.highlights.map((h, i) => (
                     <li key={i} className="flex items-center space-x-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#9A5B2D]" />
@@ -152,7 +152,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
               <div>
                 <button
                   onClick={() => handlePlanDestination(featureDest)}
-                  className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-sans font-semibold text-[#08152F] hover:text-[#9A5B2D] group transition-colors"
+                  className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-sans font-semibold text-[#0C1E3D] hover:text-[#9A5B2D] group transition-colors"
                 >
                   <span>Enquire For Itinerary</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -171,7 +171,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
               onClick={() => setSelectedDest(verticalDest1)}
               className="group cursor-pointer flex flex-col"
             >
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_16px_40px_rgba(8,21,47,0.06)] bg-[#08152F] mb-5">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_16px_40px_rgba(8,21,47,0.06)] bg-[#0C1E3D] mb-5">
                 <Image
                   src={verticalDest1.image}
                   alt={verticalDest1.name}
@@ -181,14 +181,14 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
                 <div className="absolute top-5 left-5 z-10">
-                  <span className="text-[10px] font-sans uppercase tracking-widest px-3.5 py-1 rounded-full bg-white/90 text-[#08152F] font-medium">
+                  <span className="text-[10px] font-sans uppercase tracking-widest px-3.5 py-1 rounded-full bg-white/90 text-[#0C1E3D] font-medium">
                     {verticalDest1.subtitle}
                   </span>
                 </div>
               </div>
               <div className="flex items-start justify-between">
                 <div>
-                  <h4 className="font-serif text-2xl sm:text-3xl text-[#08152F] group-hover:text-[#9A5B2D] transition-colors">
+                  <h4 className="font-serif text-2xl sm:text-3xl text-[#0C1E3D] group-hover:text-[#9A5B2D] transition-colors">
                     {verticalDest1.name}
                   </h4>
                   <p className="text-xs sm:text-sm text-[#687080] font-sans mt-1 line-clamp-2">
@@ -207,7 +207,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
               onClick={() => setSelectedDest(verticalDest2)}
               className="group cursor-pointer flex flex-col md:mt-12"
             >
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_16px_40px_rgba(8,21,47,0.06)] bg-[#08152F] mb-5">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_16px_40px_rgba(8,21,47,0.06)] bg-[#0C1E3D] mb-5">
                 <Image
                   src={verticalDest2.image}
                   alt={verticalDest2.name}
@@ -217,14 +217,14 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
                 <div className="absolute top-5 left-5 z-10">
-                  <span className="text-[10px] font-sans uppercase tracking-widest px-3.5 py-1 rounded-full bg-white/90 text-[#08152F] font-medium">
+                  <span className="text-[10px] font-sans uppercase tracking-widest px-3.5 py-1 rounded-full bg-white/90 text-[#0C1E3D] font-medium">
                     {verticalDest2.subtitle}
                   </span>
                 </div>
               </div>
               <div className="flex items-start justify-between">
                 <div>
-                  <h4 className="font-serif text-2xl sm:text-3xl text-[#08152F] group-hover:text-[#9A5B2D] transition-colors">
+                  <h4 className="font-serif text-2xl sm:text-3xl text-[#0C1E3D] group-hover:text-[#9A5B2D] transition-colors">
                     {verticalDest2.name}
                   </h4>
                   <p className="text-xs sm:text-sm text-[#687080] font-sans mt-1 line-clamp-2">
@@ -245,7 +245,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
         {panoramicDest && (
           <div
             onClick={() => setSelectedDest(panoramicDest)}
-            className="relative rounded-3xl overflow-hidden aspect-[21/10] sm:aspect-[21/8] bg-[#08152F] shadow-[0_20px_50px_rgba(8,21,47,0.08)] cursor-pointer group"
+            className="relative rounded-3xl overflow-hidden aspect-[21/10] sm:aspect-[21/8] bg-[#0C1E3D] shadow-[0_20px_50px_rgba(8,21,47,0.08)] cursor-pointer group"
           >
             <Image
               src={panoramicDest.image}
@@ -270,7 +270,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
               </div>
 
               <div className="shrink-0">
-                <span className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-white/90 text-[#08152F] font-sans text-xs uppercase tracking-[0.16em] font-semibold group-hover:bg-[#9A5B2D] group-hover:text-white transition-all shadow-md">
+                <span className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-white/90 text-[#0C1E3D] font-sans text-xs uppercase tracking-[0.16em] font-semibold group-hover:bg-[#9A5B2D] group-hover:text-white transition-all shadow-md">
                   <span>Discover {panoramicDest.name}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </span>
@@ -290,7 +290,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
                 onClick={() => setSelectedDest(dest)}
                 className="group cursor-pointer flex flex-col"
               >
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm bg-[#08152F] mb-4">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm bg-[#0C1E3D] mb-4">
                   <Image
                     src={dest.image}
                     alt={dest.name}
@@ -300,13 +300,13 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="text-[10px] font-sans uppercase tracking-widest px-3 py-1 rounded-full bg-white/90 text-[#08152F] font-medium">
+                    <span className="text-[10px] font-sans uppercase tracking-widest px-3 py-1 rounded-full bg-white/90 text-[#0C1E3D] font-medium">
                       {dest.subtitle}
                     </span>
                   </div>
                 </div>
 
-                <h4 className="font-serif text-2xl text-[#08152F] group-hover:text-[#9A5B2D] transition-colors">
+                <h4 className="font-serif text-2xl text-[#0C1E3D] group-hover:text-[#9A5B2D] transition-colors">
                   {dest.name}
                 </h4>
                 <p className="text-xs text-[#687080] font-sans mt-1 line-clamp-1">
@@ -323,7 +323,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#08152F]/80 backdrop-blur-md animate-in fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#0C1E3D]/80 backdrop-blur-md animate-in fade-in"
           onClick={() => setSelectedDest(null)}
         >
           <div
@@ -337,7 +337,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#08152F] via-[#08152F]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E3D] via-[#0C1E3D]/30 to-transparent" />
               <button
                 onClick={() => setSelectedDest(null)}
                 className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-[#9A5B2D] transition-colors"
@@ -364,7 +364,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
               </p>
 
               <div className="mb-6 bg-white p-4 rounded-xl border border-[#E7E4DA]">
-                <h4 className="text-xs font-sans font-semibold uppercase tracking-wider text-[#08152F] mb-2 flex items-center space-x-2">
+                <h4 className="text-xs font-sans font-semibold uppercase tracking-wider text-[#0C1E3D] mb-2 flex items-center space-x-2">
                   <Sparkles className="w-3.5 h-3.5 text-[#9A5B2D]" />
                   <span>Curated Highlights</span>
                 </h4>
@@ -377,14 +377,14 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({
 
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-[#E7E4DA]">
                 <div className="text-xs text-[#687080] font-sans">
-                  Best Window: <strong className="text-[#08152F]">{selectedDest.bestTimeToVisit}</strong>
+                  Best Window: <strong className="text-[#0C1E3D]">{selectedDest.bestTimeToVisit}</strong>
                 </div>
                 <button
                   onClick={() => {
                     handlePlanDestination(selectedDest);
                     setSelectedDest(null);
                   }}
-                  className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#08152F] hover:bg-[#9A5B2D] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md"
+                  className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#0C1E3D] hover:bg-[#9A5B2D] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md"
                 >
                   Plan {selectedDest.name} Journey →
                 </button>
