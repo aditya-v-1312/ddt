@@ -1,20 +1,17 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/data/siteConfig";
-import WorldGlobeScene from "./WorldGlobeScene";
-import GlobeCard from "./GlobeCard";
-import { locations, originLocation, Location } from "@/data/countries";
-import { ArrowUpRight, Compass, Sparkles, Navigation, RotateCcw } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 
 interface IntroAnimationProps {
   onComplete: () => void;
 }
 
 export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) => {
-  const [phase, setPhase] = useState<"active" | "out" | "done">("active");
-  const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
+  const [phase, setPhase] = useState<"animating" | "out" | "done">("animating");
   const [progress, setProgress] = useState(0);
 
   const handleFinish = () => {
@@ -27,7 +24,7 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) =>
     setTimeout(() => {
       setPhase("done");
       onComplete();
-    }, 550);
+    }, 600);
   };
 
   useEffect(() => {
@@ -49,163 +46,264 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) =>
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    // Progress timer over ~8.5 seconds
-    const interval = setInterval(() => {
+    // Auto-advance progress bar over ~4.2 seconds
+    const durationMs = 4200;
+    const intervalMs = 40;
+    const step = (intervalMs / durationMs) * 100;
+
+    const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
-          clearInterval(interval);
+          clearInterval(timer);
           handleFinish();
           return 100;
         }
-        return prev + 1.2;
+        return Math.min(100, prev + step);
       });
-    }, 100);
+    }, intervalMs);
 
     return () => {
-      clearInterval(interval);
+      clearInterval(timer);
       document.body.style.overflow = originalOverflow;
     };
   }, []);
 
   if (phase === "done") return null;
 
-  // Popular quick-selection corridors for instant exploration
-  const keyDestinations = [
-    originLocation,
-    ...locations.slice(0, 6), // Dubai, Swiss Alps, Paris, London, Maldives, Bali
-  ];
-
   return (
-    <div
-      className={`fixed inset-0 z-[100] flex flex-col justify-between overflow-hidden bg-[#0A1A36] text-white transition-opacity duration-500 select-none ${
-        phase === "out" ? "opacity-0 pointer-events-none" : "opacity-100"
-      }`}
-    >
-      {/* Background Starlight Ambience */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#2F80FF]/15 rounded-full blur-[140px]" />
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#B87543]/15 rounded-full blur-[140px]" />
-      </div>
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: phase === "out" ? 0 : 1 }}
+        transition={{ duration: 0.55, ease: "easeInOut" }}
+        className="fixed inset-0 z-[100] flex flex-col justify-between overflow-hidden bg-[#07101F] text-white select-none"
+      >
+        {/* Background Luxury Ambient Glows */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* Radial center flare */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: [0.8, 1.2, 1], opacity: [0, 0.45, 0.35] }}
+            transition={{ duration: 2.5, ease: "easeOut" }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[850px] sm:h-[850px] rounded-full bg-gradient-to-tr from-[#1E4E8C]/20 via-[#B87543]/15 to-transparent blur-[140px]"
+          />
 
-      {/* Top Header Strip */}
-      <header className="relative z-20 flex items-center justify-between px-6 py-4 sm:px-10 border-b border-white/10 backdrop-blur-md bg-[#0A1A36]/70">
-        <div className="flex items-center gap-4">
-          <div className="relative h-10 w-36 sm:h-11 sm:w-44">
-            <Image
-              src="/images/logo-light.png"
-              alt={siteConfig.name}
-              fill
-              priority
-              sizes="180px"
-              className="object-contain object-left drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)]"
-            />
-          </div>
+          {/* Top subtle blue rim */}
+          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[#1E4E8C]/15 rounded-full blur-[160px]" />
 
-          <div className="hidden sm:flex items-center gap-2 pl-4 border-l border-white/15">
+          {/* Bottom subtle copper rim */}
+          <div className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[#B87543]/15 rounded-full blur-[160px]" />
+
+          {/* Subtle Starlight / Dust Particles */}
+          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:32px_32px]" />
+        </div>
+
+        {/* Top Header Strip */}
+        <motion.header
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative z-20 flex items-center justify-between px-6 py-5 sm:px-10 border-b border-white/5 backdrop-blur-md bg-[#07101F]/40"
+        >
+          {/* Left status badge */}
+          <div className="flex items-center gap-3">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E2B18D] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#B87543]"></span>
             </span>
-            <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-white/60">
-              Vadodara Hub · Worldwide Flight Network
+            <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.25em] text-[#E2B18D]">
+              Boutique Travel Atelier · Vadodara
             </span>
           </div>
-        </div>
 
-        {/* Enter Website Button */}
-        <button
-          type="button"
-          onClick={handleFinish}
-          className="group inline-flex items-center gap-2 rounded-full border border-[#E2B18D]/40 bg-white/10 hover:bg-[#E2B18D] hover:text-[#0C1E3D] px-5 py-2 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-md shadow-md"
-        >
-          <span>Enter Website</span>
-          <ArrowUpRight
-            size={13}
-            className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-          />
-        </button>
-      </header>
-
-      {/* Center 3D Interactive World Globe Stage */}
-      <div className="relative z-10 flex-1 flex items-center justify-center min-h-0 w-full overflow-hidden">
-        <div className="relative w-full h-full max-w-6xl max-h-[75vh] mx-auto flex items-center justify-center">
-          <WorldGlobeScene
-            selected={selectedLocation}
-            onSelect={(loc) => setSelectedLocation(loc)}
-          />
-
-          {/* Floating Waypoint Detail Card */}
-          <GlobeCard
-            location={selectedLocation}
-            onClose={() => setSelectedLocation(null)}
-          />
-
-          {/* Interactive Drag Cue Badge */}
-          <div className="absolute top-3 inset-x-0 flex justify-center pointer-events-none">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#0A1A36]/80 px-4 py-1 text-[9px] font-sans uppercase tracking-[0.22em] text-white/60 backdrop-blur-md">
-              <Compass size={11} className="text-[#E2B18D]" />
-              <span>Drag to rotate globe · Click any destination or corridor</span>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Corridor Quick Selector Strip */}
-      <div className="relative z-20 px-4 py-2 bg-[#0A1A36]/60 backdrop-blur-md border-t border-white/5 flex items-center justify-center overflow-x-auto no-scrollbar">
-        <div className="flex items-center gap-1.5 sm:gap-2">
-          <span className="text-[9px] font-mono uppercase tracking-widest text-[#E2B18D]/70 hidden md:inline mr-2">
-            Explore Routes:
-          </span>
-          {keyDestinations.map((loc) => {
-            const isOrigin = loc.id === "vadodara";
-            const isActive = selectedLocation?.id === loc.id;
-            return (
-              <button
-                key={loc.id}
-                type="button"
-                onClick={() => setSelectedLocation(loc)}
-                className={`px-3 py-1 rounded-full text-[9px] font-sans uppercase tracking-wider transition-all duration-200 whitespace-nowrap flex items-center gap-1.5 border ${
-                  isActive
-                    ? "bg-[#E2B18D] text-[#0C1E3D] border-[#E2B18D] font-bold shadow-md"
-                    : isOrigin
-                    ? "bg-white/10 text-white border-[#E2B18D]/50 hover:bg-white/20"
-                    : "bg-white/5 text-white/70 border-white/10 hover:border-white/30 hover:text-white"
-                }`}
-              >
-                {isOrigin && <span className="h-1.5 w-1.5 rounded-full bg-[#E2B18D] animate-ping" />}
-                <span>{isOrigin ? "🇮🇳 India (Hub)" : loc.city}</span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Bottom Progress Bar & Flight Corridor Counter */}
-      <footer className="relative z-20 px-6 py-3.5 sm:px-10 border-t border-white/10 backdrop-blur-md bg-[#0A1A36]/80 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <div className="flex items-center gap-4 text-[10px] font-sans uppercase tracking-[0.2em] text-white/50">
-          <span className="text-[#E2B18D] font-semibold">12+ Global Flight Corridors</span>
-          <span className="hidden md:inline text-white/20">|</span>
-          <span className="hidden md:inline">Departing Vadodara to Europe, Middle East, Asia & Americas</span>
-        </div>
-
-        {/* Progress Bar indicator */}
-        <div className="flex items-center gap-4 w-full sm:w-auto">
-          <div className="flex-1 sm:w-36 h-1 rounded-full bg-white/10 overflow-hidden">
-            <div
-              className="h-full bg-gradient-to-r from-[#B87543] to-[#E2B18D] transition-all duration-150 ease-out"
-              style={{ width: `${Math.min(100, progress)}%` }}
-            />
-          </div>
+          {/* Right Skip / Enter Website Button */}
           <button
             type="button"
             onClick={handleFinish}
-            className="text-[10px] font-sans uppercase tracking-widest text-white/40 hover:text-white transition-colors whitespace-nowrap"
+            className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 hover:bg-[#E2B18D] hover:text-[#07101F] hover:border-[#E2B18D] px-4 py-2 sm:px-5 sm:py-2.5 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-white/90 transition-all duration-300 backdrop-blur-md shadow-sm"
           >
-            Skip Intro →
+            <span>Enter Website</span>
+            <ArrowUpRight
+              size={13}
+              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
           </button>
+        </motion.header>
+
+        {/* Center Stage: The Signature Logo Assembly */}
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6">
+          <div className="relative flex flex-col items-center">
+            {/* Logo Container (517 x 332 aspect ratio) */}
+            <div className="relative w-[280px] sm:w-[380px] md:w-[440px] aspect-[517/332]">
+              {/* 1. Left Blue Wing (slides from left) */}
+              <motion.div
+                initial={{ x: -160, opacity: 0, scale: 0.94 }}
+                animate={{ x: 0, opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.95,
+                  delay: 0.35,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="absolute inset-0 pointer-events-none"
+              >
+                <Image
+                  src="/images/logo-part-left-blue-light.png"
+                  alt="Emblem Left Wing"
+                  fill
+                  sizes="440px"
+                  priority
+                  className="object-contain drop-shadow-[0_4px_24px_rgba(30,78,140,0.5)]"
+                />
+              </motion.div>
+
+              {/* 2. Right Blue Arch (curves from right) */}
+              <motion.div
+                initial={{ x: 160, opacity: 0, scale: 0.94 }}
+                animate={{ x: 0, opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.95,
+                  delay: 0.5,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="absolute inset-0 pointer-events-none"
+              >
+                <Image
+                  src="/images/logo-part-right-blue-light.png"
+                  alt="Emblem Right Arch"
+                  fill
+                  sizes="440px"
+                  priority
+                  className="object-contain drop-shadow-[0_4px_24px_rgba(30,78,140,0.5)]"
+                />
+              </motion.div>
+
+              {/* 3. Brown / Copper Path (rises up from bottom into the emblem) */}
+              <motion.div
+                initial={{ y: 140, opacity: 0, scaleY: 0.8 }}
+                animate={{ y: 0, opacity: 1, scaleY: 1 }}
+                transition={{
+                  duration: 1.05,
+                  delay: 0.75,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="absolute inset-0 pointer-events-none origin-bottom"
+              >
+                <Image
+                  src="/images/logo-part-brown-path-light.png"
+                  alt="Emblem Journey Path"
+                  fill
+                  sizes="440px"
+                  priority
+                  className="object-contain drop-shadow-[0_4px_24px_rgba(184,117,67,0.6)]"
+                />
+              </motion.div>
+
+              {/* 4. Emblem Unified Glow Flash when parts lock into place */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{
+                  opacity: [0, 0.8, 0],
+                  scale: [0.95, 1.04, 1],
+                }}
+                transition={{
+                  duration: 0.8,
+                  delay: 1.55,
+                  ease: "easeOut",
+                }}
+                className="absolute inset-0 pointer-events-none bg-gradient-to-r from-transparent via-white/20 to-transparent blur-md mix-blend-overlay"
+              />
+
+              {/* 5. Shimmer Glint that sweeps diagonally across the assembled emblem */}
+              <motion.div
+                initial={{ x: "-100%", opacity: 0 }}
+                animate={{ x: "200%", opacity: [0, 0.7, 0] }}
+                transition={{
+                  duration: 0.85,
+                  delay: 1.7,
+                  ease: "easeInOut",
+                }}
+                className="absolute top-0 bottom-1/3 left-0 w-1/3 pointer-events-none bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12"
+              />
+
+              {/* 6. Text Layer: DARSH DREAM TOURS (emerges smoothly underneath) */}
+              <motion.div
+                initial={{ y: 25, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.85,
+                  delay: 1.85,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="absolute inset-0 pointer-events-none"
+              >
+                <Image
+                  src="/images/logo-part-text-light.png"
+                  alt="Darsh Dream Tours Typography"
+                  fill
+                  sizes="440px"
+                  priority
+                  className="object-contain drop-shadow-[0_2px_16px_rgba(255,255,255,0.25)]"
+                />
+              </motion.div>
+            </div>
+
+            {/* Subtle Tagline & Attribution Narrative */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, delay: 2.3, ease: "easeOut" }}
+              className="mt-6 flex flex-col items-center text-center max-w-md px-4"
+            >
+              {/* Golden Hairline Divider */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 2.2, ease: "easeOut" }}
+                className="h-px w-24 bg-gradient-to-r from-transparent via-[#E2B18D]/60 to-transparent mb-4"
+              />
+
+              <p className="font-serif italic text-base sm:text-lg text-[#E2B18D] tracking-wide font-light">
+                "{siteConfig.tagline}"
+              </p>
+
+              <p className="mt-2 font-sans text-xs text-white/60 font-light tracking-wider">
+                {siteConfig.subTagline}
+              </p>
+            </motion.div>
+          </div>
         </div>
-      </footer>
-    </div>
+
+        {/* Bottom Status & Smooth Progress Bar */}
+        <motion.footer
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="relative z-20 px-6 py-4 sm:px-10 border-t border-white/5 backdrop-blur-md bg-[#07101F]/40 flex flex-col sm:flex-row items-center justify-between gap-3"
+        >
+          <div className="flex items-center gap-3 text-[10px] font-sans uppercase tracking-[0.2em] text-white/40">
+            <Sparkles size={11} className="text-[#E2B18D]" />
+            <span>Vadodara · Gujarat · India & Beyond</span>
+          </div>
+
+          {/* Minimalist Gold Progress Bar indicator */}
+          <div className="flex items-center gap-4 w-full sm:w-auto">
+            <div className="flex-1 sm:w-44 h-[2px] rounded-full bg-white/10 overflow-hidden">
+              <motion.div
+                className="h-full bg-gradient-to-r from-[#B87543] via-[#E2B18D] to-white"
+                style={{ width: `${Math.min(100, progress)}%` }}
+              />
+            </div>
+            <button
+              type="button"
+              onClick={handleFinish}
+              className="text-[10px] font-sans uppercase tracking-widest text-white/50 hover:text-[#E2B18D] transition-colors whitespace-nowrap"
+            >
+              Skip →
+            </button>
+          </div>
+        </motion.footer>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
