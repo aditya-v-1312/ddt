@@ -173,4 +173,18 @@ export const destinations: Destination[] = [
     mapCoords: { x: 68, y: 49 },
     editorialSize: "medium",
   },
+  {
+    id: "puri",
+    name: "Puri & Odisha",
+    region: "india",
+    subtitle: "Sacred Coastal Odyssey",
+    tagline: "Holy Jagannath Darshan • Konark Sun Chariot • Chilika Dolphins",
+    description:
+      "A sacred tapestry of ancient temple devotion, golden sand coastlines, Asia's largest brackish lagoon, and world-heritage architectural marvels.",
+    highlights: ["Shri Jagannath Temple Darshan", "UNESCO Konark Sun Temple", "Chilika Lake Satapada dolphin cruise"],
+    bestTimeToVisit: "October – March",
+    image: travelImages.puri.url,
+    mapCoords: { x: 74, y: 46 },
+    editorialSize: "medium",
+  },
 ];

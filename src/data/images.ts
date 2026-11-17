@@ -82,6 +82,11 @@ export const travelImages = {
     alt: "Pristine white sand beach and turquoise sea in Andaman",
     credit: { photographer: "Tatiana Zhukova", source: "Unsplash" },
   },
+  puri: {
+    url: "https://images.unsplash.com/photo-1621644862417-7e617d91d9d9?auto=format&fit=crop&w=1600&q=85",
+    alt: "Spiritual temple architecture and coastal shores in Puri, Odisha",
+    credit: { photographer: "Unsplash", source: "Unsplash" },
+  },
 
   // Travel Categories (Art-directed editorial themes)
   categories: {

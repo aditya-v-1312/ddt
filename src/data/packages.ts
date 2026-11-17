@@ -2810,6 +2810,257 @@ export const travelPackages: TravelPackage[] = [
         image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1600&q=85"
       }
     ]
+  },
+  // 30. PURI & ODISHA
+  {
+    id: "puri-odisha-4d",
+    destinationId: "puri",
+    destinationName: "Puri & Odisha",
+    title: "Puri & Konark Spiritual Heritage",
+    duration: "4 Days / 3 Nights",
+    type: "Family",
+    tagline: "Shri Jagannath Temple Darshan, Golden Beach, Chilika Lake Satapada & UNESCO Konark Sun Temple",
+    description:
+      "A sacred coastal journey in Odisha crafted for families and spiritual travelers. Receive divine morning darshan at the holy Shri Jagannath Temple, explore historic Gundicha Temple, witness the ancient stone artistry of UNESCO Konark Sun Temple, cruise the tranquil waters of Chilika Lake (Satapada) to spot Irrawaddy dolphins, and stroll the golden sands of Chandrabhaga Beach.",
+    inclusions: [
+      "03 Nights accommodation in 3-Star comfort hotel (02 triple sharing rooms plan)",
+      "Daily breakfast and dinner (MAP meal plan) at hotel",
+      "Private AC vehicle for all airport transfers and local sightseeing",
+      "Pickup from Bhubaneswar Airport / Railway Station and departure drop",
+      "Sacred Shri Jagannath Temple Darshan, Gundicha Temple & Narendra Tank visits",
+      "Excursion to Chilika Lake (Satapada) for dolphin sightseeing boat viewpoints",
+      "Sightseeing tour of 13th-century UNESCO World Heritage Konark Sun Temple",
+      "Evening beach visits at Puri Golden Beach and Chandrabhaga Beach",
+      "Driver allowance, toll taxes, parking charges, and applicable hotel taxes"
+    ],
+    startingStar: 3,
+    priceNote: "Customizable for family & group travel across 3★ Comfort to 4★ Boutique tiers",
+    popular: true,
+    coverImage: "https://images.unsplash.com/photo-1621644862417-7e617d91d9d9?auto=format&fit=crop&w=1600&q=85",
+    itinerary: [
+      {
+        day: 1,
+        title: "Bhubaneswar Arrival – Transfer to Puri & Golden Beach",
+        location: "Bhubaneswar to Puri, Odisha",
+        morning: "Pickup from Bhubaneswar Airport or Railway Station",
+        noonToEvening: "Scenic drive to Puri, hotel check-in and relax",
+        evening: "Visit Puri Golden Beach for sunset, dinner & overnight stay in Puri",
+        description:
+          "Arrive at Bhubaneswar Airport or Railway Station where our private AC vehicle and representative will welcome you. Enjoy a scenic drive to the holy coastal city of Puri. Complete your hotel check-in formalities and unwind. In the evening, stroll along the golden sands of Puri Beach, take in the sea breeze, and savor a hearty dinner at the hotel.",
+        image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1600&q=85"
+      },
+      {
+        day: 2,
+        title: "Puri Local Sightseeing & Shri Jagannath Temple Darshan",
+        location: "Puri, Odisha",
+        morning: "Breakfast at hotel followed by sacred Shri Jagannath Temple Darshan",
+        noonToEvening: "Visit Gundicha Temple & holy Narendra Tank",
+        evening: "Explore local handicraft markets & Puri beach; dinner & overnight stay",
+        description:
+          "Begin the morning with breakfast at the hotel. Proceed for auspicious darshan at the holy Shri Jagannath Temple, one of the revered Char Dham pilgrimage sites. Continue your spiritual exploration with visits to Gundicha Temple (the garden palace of Jagannath) and the historic Narendra Tank. In the late afternoon, explore Puri's vibrant local markets known for Sambalpuri textiles and handcrafted souvenirs, followed by dinner and overnight stay.",
+        image: "https://images.unsplash.com/photo-1621644862417-7e617d91d9d9?auto=format&fit=crop&w=1600&q=85"
+      },
+      {
+        day: 3,
+        title: "Chilika Lake (Satapada) Dolphin Excursion & Konark Sun Temple",
+        location: "Chilika Lake & Konark, Odisha",
+        morning: "Breakfast at hotel; drive to Chilika Lake (Satapada)",
+        noonToEvening: "Dolphin sightseeing boat cruise & visit to UNESCO Konark Sun Temple",
+        evening: "Sunset at Chandrabhaga Beach, return to Puri for dinner & overnight stay",
+        description:
+          "After breakfast, depart for Chilika Lake at Satapada, Asia's largest brackish water lagoon. Board a motorboat cruise to witness the sea mouth and spot playful Irrawaddy dolphins in their natural habitat. Continue onwards to the 13th-century UNESCO World Heritage Konark Sun Temple, world-renowned for its intricate stone chariot architecture and grand mandapas. Wrap up the excursion at picturesque Chandrabhaga Beach before returning to Puri for dinner.",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85"
+      },
+      {
+        day: 4,
+        title: "Puri to Bhubaneswar Departure",
+        location: "Puri to Bhubaneswar, Odisha",
+        morning: "Breakfast at hotel and check-out",
+        noonToEvening: "Private transfer to Bhubaneswar Airport or Railway Station for onward journey",
+        description:
+          "Enjoy breakfast at the hotel and complete check-out formalities. Board your private AC vehicle for the transfer back to Bhubaneswar Airport or Railway Station, taking home cherished spiritual blessings and memorable moments from Odisha.",
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
+      }
+    ]
+  },
+  // 31. ANDAMAN ISLANDS
+  {
+    id: "andaman-islands-6d",
+    destinationId: "andaman",
+    destinationName: "Andaman Islands",
+    title: "Andaman Islands Tropical Haven",
+    duration: "6 Days / 5 Nights",
+    type: "Honeymoon",
+    tagline: "Vadodara Departure • Cellular Jail Light & Sound, Ross Island, Havelock Radhanagar Sunset & Elephant Beach",
+    description:
+      "Curated for travellers departing from Vadodara and Gujarat: 6 days of pristine tropical beauty across Port Blair and Havelock Island. Walk the historic ramparts of Cellular Jail, cruise on modern private catamarans across sapphire seas, witness legendary sunsets at Asia's top-rated Radhanagar Beach, and snorkel vibrant coral reefs at Elephant Beach.",
+    inclusions: [
+      "5 Nights hotel accommodation: 3 Nights in Port Blair + 2 Nights in Havelock Island",
+      "Daily breakfast at confirmed hotels and resorts",
+      "Airport-to-airport transfers and all itinerary travel in private AC vehicle",
+      "Private high-speed ferry tickets for Port Blair – Havelock – Port Blair transfers",
+      "Excursion boat tickets for Ross Island and North Bay Island",
+      "Shared boat transfer for Elephant Beach coral reef excursion",
+      "Entry tickets for Cellular Jail and evening Light & Sound Show",
+      "Visits to Corbyn's Cove Beach, Radhanagar Beach, and Wandoor Beach",
+      "Driver allowance, parking charges, and applicable hotel taxes"
+    ],
+    startingStar: 3,
+    priceNote: "Special Vadodara departure pricing with 3★ Comfort, 4★ Boutique, and 5★ Beach Resort upgrades",
+    popular: true,
+    coverImage: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1600&q=85",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Port Blair, Corbyn's Cove & Cellular Jail Light & Sound",
+        location: "Port Blair, Andaman Islands",
+        morning: "Arrive at Veer Savarkar International Airport, meet representative & transfer to hotel",
+        noonToEvening: "Check-in and relax; visit scenic Corbyn's Cove Beach and Cellular Jail",
+        evening: "Witness the moving Cellular Jail Light & Sound Show; overnight in Port Blair",
+        description:
+          "Arrive at Veer Savarkar International Airport in Port Blair, where our local representative will greet you and assist with private transfer to your hotel. After check-in and leisure, head to Corbyn's Cove Beach fringed with coconut palms. Later, visit the historic Cellular Jail (Kalapani) and witness the evocative evening Light and Sound Show recounting India's heroic struggle for independence. Overnight in Port Blair.",
+        image: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1600&q=85"
+      },
+      {
+        day: 2,
+        title: "Ross Island & North Bay Coral Island Excursion",
+        location: "Port Blair, Andaman Islands",
+        morning: "Breakfast at hotel; board excursion boat to Ross Island",
+        noonToEvening: "Explore colonial ruins on Ross Island, transfer to North Bay Island",
+        evening: "Enjoy optional water sports (scuba, sea walk, snorkeling); return to Port Blair for overnight",
+        description:
+          "After breakfast, board a boat excursion to Ross Island (Netaji Subhash Chandra Bose Dweep), the former British administrative headquarters, now covered in historic ruins and deer sanctuaries. Continue to North Bay Island, famous for colorful coral reefs and rich marine life. Optional adventure sports include glass-bottom boat rides, snorkeling, scuba diving, and sea walking. Return to Port Blair for overnight stay.",
+        image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=85"
+      },
+      {
+        day: 3,
+        title: "Private Ferry to Havelock Island & Radhanagar Beach Sunset",
+        location: "Havelock Island (Swaraj Dweep)",
+        morning: "Breakfast at hotel; transfer to Phoenix Bay Jetty for private ferry to Havelock",
+        noonToEvening: "Arrive at Havelock Island, transfer to beach resort, check in and relax",
+        evening: "Visit world-famous Radhanagar Beach for a breathtaking sunset; overnight stay in Havelock",
+        description:
+          "Enjoy breakfast before transferring to the jetty to board a modern private ferry (Makruzz / Green Ocean / Nautika) to Havelock Island (approx. 2 hours). Check in at your beach resort. In the late afternoon, proceed to Radhanagar Beach (Beach No. 7), rated among the best beaches in Asia, known for its sugar-white sand and mesmerizing turquoise sunset. Overnight in Havelock Island.",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85"
+      },
+      {
+        day: 4,
+        title: "Elephant Beach Excursion & Water Sports",
+        location: "Havelock Island (Swaraj Dweep)",
+        morning: "Breakfast at resort; proceed by speed boat to Elephant Beach",
+        noonToEvening: "Enjoy white sand beach, swimming & optional water activities",
+        evening: "Return to resort by boat; leisure evening and overnight stay in Havelock",
+        description:
+          "After breakfast, take a 20-minute shared boat ride to Elephant Beach, famous for shallow coral reefs and crystal-clear waters. Spend the morning swimming, relaxing under tropical trees, or participating in optional adventure activities like jet skiing, snorkeling, and sea walking. Return to your resort by afternoon and enjoy the serene island atmosphere.",
+        image: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1600&q=85"
+      },
+      {
+        day: 5,
+        title: "Ferry Return to Port Blair & Wandoor Beach Sunset",
+        location: "Port Blair, Andaman Islands",
+        morning: "Breakfast at resort, check-out and transfer to Havelock Jetty",
+        noonToEvening: "Private ferry back to Port Blair; hotel check-in",
+        evening: "Sunset excursion to Wandoor Beach; dinner & overnight stay in Port Blair",
+        description:
+          "Following breakfast, check out from the resort and board the private ferry back to Port Blair. Upon arrival, transfer to your hotel and check in. In the afternoon, take a peaceful drive to Wandoor Beach, known for its tranquil coastline and scenic mangrove views at sunset. Return to the hotel for your final night in the Andamans.",
+        image: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1600&q=85"
+      },
+      {
+        day: 6,
+        title: "Departure Port Blair to Vadodara",
+        location: "Port Blair, Andaman Islands",
+        morning: "Breakfast at hotel and check-out",
+        noonToEvening: "Transfer to Veer Savarkar Airport for flight departure",
+        description:
+          "Enjoy breakfast at the hotel, check out, and transfer by private vehicle to Veer Savarkar International Airport, Port Blair, carrying unforgettable memories of emerald waters and tropical island magic.",
+        image: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1600&q=85"
+      }
+    ]
+  },
+  // 32. KASHMIR SCENIC ESCAPE
+  {
+    id: "kashmir-scenic-escape-5d",
+    destinationId: "kashmir",
+    destinationName: "Kashmir",
+    title: "Kashmir Scenic Valleys & Meadows",
+    duration: "5 Days / 4 Nights",
+    type: "Honeymoon",
+    tagline: "Srinagar 3 Nights & Pahalgam 1 Night • Dal Lake Shikara, Sonamarg Glacier, Gulmarg & Betaab Valley",
+    description:
+      "A romantic and scenic 5-day Kashmir getaway: wake up to morning mist on Dal Lake, marvel at the snowy slopes of Sonamarg, ascend the heights of Gulmarg via Tangmarg, enjoy a serene shikara boat ride with a special candlelight dinner, and wander pine-draped Lidder riverbanks and Betaab Valley in Pahalgam.",
+    inclusions: [
+      "4 Nights accommodation: 3 Nights in Srinagar + 1 Night in Pahalgam",
+      "Daily breakfast and dinner (MAP meal plan) at all hotels",
+      "Private sedan vehicle for all transfers and sightseeing as per itinerary",
+      "Pickup and drop at Srinagar Airport or Railway Station",
+      "1-Hour complimentary Shikara boat ride on world-famous Dal Lake",
+      "Special complimentary candlelight dinner for the couple",
+      "Srinagar Mughal Gardens tour: Shalimar Bagh, Nishat Bagh & Chashme Shahi",
+      "Full-day excursion to Sonamarg 'Meadow of Gold' & Thajiwas Glacier viewpoints",
+      "Full-day excursion to Gulmarg with Gondola cable car ride assistance",
+      "Pahalgam transfer covering saffron fields of Pampore & Lidder river valley",
+      "Driver and vehicle allowances, fuel, toll taxes, and parking fees"
+    ],
+    startingStar: 3,
+    priceNote: "Curated with 3★ comfort lodges, 4★ boutique hotels & luxury houseboats, or 5★ alpine resorts",
+    popular: true,
+    coverImage: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1600&q=85",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Srinagar & Mughal Gardens Sightseeing",
+        location: "Srinagar, Kashmir",
+        morning: "Arrive at Srinagar Airport / Railway Station, meet representative and transfer to hotel",
+        noonToEvening: "Check-in and relax; explore Shalimar Bagh, Nishat Bagh & Chashme Shahi",
+        evening: "Scenic drive along Dal Lake boulevard; dinner & overnight stay in Srinagar",
+        description:
+          "Arrive at Srinagar Airport or Railway Station and receive a warm traditional welcome from our representative. Transfer to your Srinagar hotel and complete check-in formalities. Later, explore the exquisite Mughal Gardens laid out along Dal Lake: Nishat Bagh (Garden of Pleasure), Shalimar Bagh (Abode of Love), and Chashme Shahi (Royal Spring). Savor dinner and rest for the night.",
+        image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1600&q=85"
+      },
+      {
+        day: 2,
+        title: "Full-Day Excursion to Sonamarg 'Meadow of Gold'",
+        location: "Sonamarg, Kashmir",
+        morning: "Breakfast at hotel; depart for scenic drive to Sonamarg (approx. 2.5 hours)",
+        noonToEvening: "Marvel at Sindh river vistas, snowcapped peaks & optional Thajiwas Glacier pony ride",
+        evening: "Return to Srinagar; dinner and overnight stay",
+        description:
+          "After breakfast, proceed on a captivating drive to Sonamarg, situated at 2,740 meters. The route winds through gushing streams of the Sindh River and deep pine valleys. In Sonamarg, take an optional pony ride to Thajiwas Glacier, where snow lingers through much of the year, or enjoy peaceful alpine walks. Drive back to Srinagar in the evening for dinner and overnight stay.",
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
+      },
+      {
+        day: 3,
+        title: "Gulmarg Day Tour & Gondola Cable Car Ride",
+        location: "Gulmarg, Kashmir",
+        morning: "Breakfast at hotel; journey to Gulmarg via scenic Tangmarg pine route",
+        noonToEvening: "Ascend Apharwat peaks via Gulmarg Gondola & stroll high-altitude meadows",
+        evening: "Romantic 1-hour Shikara ride on Dal Lake; dinner & overnight stay in Srinagar",
+        description:
+          "Depart after breakfast towards Gulmarg, the 'Meadow of Flowers'. Drive through picturesque Tangmarg lined with towering pine trees. Upon reaching Gulmarg, ascend on the world-renowned Gulmarg Gondola (Phase 1 & Phase 2, subject to tickets/weather) to Apharwat Peak for breathtaking panoramic Himalayan vistas and snow activities. Return to Srinagar for a peaceful evening Shikara ride on Dal Lake, followed by dinner.",
+        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=85"
+      },
+      {
+        day: 4,
+        title: "Srinagar to Pahalgam Transfer, Saffron Fields & Betaab Valley",
+        location: "Pahalgam, Kashmir",
+        morning: "Breakfast at hotel, check out and drive towards Pahalgam 'Valley of Shepherds'",
+        noonToEvening: "Pass saffron fields of Pampore; explore Lidder river valley, Aru & Betaab valleys",
+        evening: "Check in to Pahalgam hotel; special candlelight dinner & overnight stay",
+        description:
+          "Enjoy breakfast, check out from Srinagar, and drive to Pahalgam. En route, pass the famous saffron fields of Pampore and ancient Avantipur temple ruins. Arrive in Pahalgam nestled by the Lidder River, surrounded by thick pine and deodar forests. Explore scenic spots like Betaab Valley and Aru Valley (via local union transport). Check in to your hotel and enjoy a special romantic candlelight dinner. Overnight stay in Pahalgam.",
+        image: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1600&q=85"
+      },
+      {
+        day: 5,
+        title: "Pahalgam to Srinagar Departure",
+        location: "Pahalgam to Srinagar, Kashmir",
+        morning: "Breakfast at hotel, leisurely morning along Lidder river, and check-out",
+        noonToEvening: "Transfer to Srinagar Airport / Railway Station for onward flight",
+        description:
+          "Wake up to fresh mountain air and enjoy breakfast overlooking pine-clad slopes. Check out and embark on your transfer back to Srinagar Airport or Railway Station, carrying timeless memories of Kashmir's valleys and hospitality.",
+        image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1600&q=85"
+      }
+    ]
   }
 ];
 

@@ -11,6 +11,7 @@ import { useInquiry } from "@/context/InquiryContext";
 const navLinks = [
   { label: "Destinations", href: "/destinations" },
   { label: "Packages & Stays", href: "/#packages" },
+  { label: "Visa Services", href: "/visa" },
   { label: "Experiences", href: "/experiences" },
   { label: "About Us", href: "/about" },
   { label: "Plan a Journey", href: "/plan" },

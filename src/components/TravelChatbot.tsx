@@ -483,7 +483,7 @@ export default function TravelChatbot() {
           `• Account No: ${siteConfig.bank.accountNumber}\n` +
           `• IFSC Code: ${siteConfig.bank.ifscCode}\n` +
           `• Branch: ${siteConfig.bank.branch}\n\n` +
-          `Feel free to share your payment confirmation or receipt to info@darshdreamtours.com.`
+          `Feel free to share your payment confirmation or receipt to sakshi@darshdreamtours.com.`
         );
         return;
       }
@@ -743,6 +743,8 @@ export default function TravelChatbot() {
                             { name: "Maldives", flag: "🇲🇻" },
                             { name: "Bali", flag: "🇮🇩" },
                             { name: "Kashmir", flag: "🏔️" },
+                            { name: "Andaman", flag: "🏝️" },
+                            { name: "Puri & Odisha", flag: "🛕" },
                             { name: "Kerala", flag: "🌴" },
                             { name: "Singapore", flag: "🇸🇬" },
                             { name: "Thailand", flag: "🇹🇭" },

@@ -94,6 +94,19 @@ export default function SitemapPage() {
 
               <li>
                 <Link
+                  href="/visa"
+                  className="group flex items-center justify-between font-medium text-[#17213A] hover:text-[#9A5B2D] transition-colors"
+                >
+                  <span>Visa Assistance &amp; Services</span>
+                  <ArrowUpRight className="w-4 h-4 text-black/30 group-hover:text-[#9A5B2D] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                </Link>
+                <p className="text-[11px] text-[#17213A]/50 font-light mt-0.5">
+                  Hassle-free tourist &amp; business visa documentation &amp; appointment support
+                </p>
+              </li>
+
+              <li>
+                <Link
                   href="/experiences"
                   className="group flex items-center justify-between font-medium text-[#17213A] hover:text-[#9A5B2D] transition-colors"
                 >

@@ -78,6 +78,9 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
               <Link href="/destinations" className="w-fit text-white/80 hover:text-white transition-colors">
                 Destinations
               </Link>
+              <Link href="/visa" className="w-fit text-white/80 hover:text-white transition-colors">
+                Visa Services
+              </Link>
               <Link href="/experiences" className="w-fit text-white/80 hover:text-white transition-colors">
                 Experiences
               </Link>

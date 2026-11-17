@@ -20,6 +20,12 @@ export async function GET() {
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>${baseUrl}/visa</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>${baseUrl}/experiences</loc>
     <lastmod>${now}</lastmod>
     <changefreq>monthly</changefreq>

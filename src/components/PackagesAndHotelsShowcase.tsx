@@ -73,13 +73,13 @@ export default function PackagesAndHotelsShowcase() {
       id: "island",
       label: "Island & Beach",
       icon: <Palmtree size={16} />,
-      matchIds: ["bali", "bali-malaysia", "phuket-krabi", "mauritius", "maldives", "thailand"],
+      matchIds: ["bali", "bali-malaysia", "phuket-krabi", "mauritius", "maldives", "thailand", "andaman", "andaman-islands"],
     },
     {
       id: "culture",
       label: "Imperial & Heritage",
       icon: <Landmark size={16} />,
-      matchIds: ["japan-tokyo-osaka", "china", "morocco", "russia", "egypt", "south-korea", "united-kingdom"],
+      matchIds: ["japan-tokyo-osaka", "china", "morocco", "russia", "egypt", "south-korea", "united-kingdom", "puri", "puri-odisha"],
     },
     {
       id: "grand",
@@ -91,7 +91,7 @@ export default function PackagesAndHotelsShowcase() {
       id: "himalayan",
       label: "Himalayas & Nature",
       icon: <Mountain size={16} />,
-      matchIds: ["kashmir-vaishno-devi", "uttarakhand", "sri-lanka", "georgia", "azerbaijan-baku"],
+      matchIds: ["kashmir", "kashmir-vaishno-devi", "kashmir-scenic-escape", "uttarakhand", "sri-lanka", "georgia", "azerbaijan-baku"],
     },
     {
       id: "metro",
